@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { GenericMobileTableComponent } from './generic-mobile-table.component';
+import {NgModule} from '@angular/core';
+import {GenericMobileTableComponent} from './generic-mobile-table.component';
 import {GenericMobileTableRowComponent} from "./generic-mobile-table-row.component";
 import {SlicePipe} from "@angular/common";
 import {BrowserModule} from "@angular/platform-browser";
