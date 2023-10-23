@@ -1,0 +1,57 @@
+
+<div class="card mb-4"
+     [ngClass]="mobileTableStyle == MobileTableTheme.Primary ? 'mobile-table-primary' :
+                customCssClass
+">
+  <div class="card-header"
+       [ngClass]="mobileTheadStyle == MobileTheadTheme.Primary ? 'mobile-thead-primary' :
+                   customHeaderCssClass">
+    <div class="row">
+      <div class="col-6">
+        {{headers[1]}} {{row[fields[0]]}}
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+
+        <i class="bi bi-three-dots-vertical table-menu-icon-white"  data-bs-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li *ngFor="let action of actions">
+              <a class="dropdown-item" (click)="action.action.call()">
+                {{action.actionName}}
+              </a>
+            </li>
+          </ul>
+        </i>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body mobile-table-body" >
+
+    <label class="text-semibold ">{{headers[0]}}</label>
+
+    <div *ngIf="showSwitch" class="row mb-3">
+      <lib-twentyfive-switch
+        [ngClass]="switchStyle"
+        [id]="id"
+        [checked]="checked"
+        [disabled]="disabled"
+        [switchText]="switchText">
+      </lib-twentyfive-switch>
+    </div>
+
+    <div *ngFor="let elem of fields | slice:1 let i = index">
+      <div class="row">
+        <div class="col-12">
+          <label class="text-semibold">{{headers[i+2]}}</label>
+        </div>
+
+      </div>
+      <div class="row mb-3">
+        <div class="col-12">
+          <label class="mw-100 text-truncate">{{row[elem]}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/twentyfive-table",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "allowedNonPeerDependencies": [
+    "@ng-bootstrap/ng-bootstrap",
+    "bootstrap",
+    "@popperjs/core",
+    "bootstrap-icons",
+    "twentyfive-dropdown",
+    "twentyfive-switch"
+  ]
+}

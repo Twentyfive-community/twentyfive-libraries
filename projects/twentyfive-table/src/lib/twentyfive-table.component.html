@@ -1,0 +1,49 @@
+<table class="table"
+       [ngClass]="tableStyle == TableTheme.Web ? 'web-element' :
+       customCssClass"
+>
+  <thead [ngClass]=" tableHeadStyle == TableHeadTheme.Primary ? 'thead-primary' : customHeaderClass">
+  <tr>
+    <th *ngFor="let elem of headers" scope="col">{{elem}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr table-row
+      [showActions]="showActions"
+      [showSwitch]="showSwitch"
+      [switchText]="switchText"
+      [ngClass]="switchStyle"
+      [id]="id"
+      [checked]="checked"
+      [disabled]="disabled"
+      [actions]="actions"
+      [row]="row"
+      *ngFor="let row of rows">
+
+  </tr>
+  </tbody>
+</table>
+
+
+<div  [ngClass]="paginationStyle == TableTheme.Web ? 'web-element' :
+       customCssClass">
+  <div class="d-flex justify-content-between">
+    <ngb-pagination
+      [collectionSize]="collectionSize"
+      [page]="page"
+      [maxSize]="maxSize"
+      [pageSize]="pageSize"
+      [rotate]="rotate"
+      (pageChange)="pageChange.emit($event)">
+    </ngb-pagination>
+
+    <lib-twentyfive-dropdown
+      [model]="model"
+      (modelChange)="modelChange.emit($event)"
+      [dropdownItems]="dropdownElements">
+    </lib-twentyfive-dropdown>
+  </div>
+</div>
+
+
+

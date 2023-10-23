@@ -1,0 +1,23 @@
+<div class="row"
+
+     [ngClass]="tableStyle == TableTheme.Mobile ? 'mobile-element' :
+       customCssClass"
+>
+  <div *ngFor="let row of rows" class="col-sm-6 col-12">
+    <lib-generic-mobile-table-row
+      [row]="row"
+      [showSwitch]="showSwitch"
+      [switchText]="switchText"
+      [ngClass]="switchStyle"
+      [id]="id"
+      [checked]="checked"
+      [disabled]="disabled"
+      [headers]="headers"
+      [actions]="actions"
+    >
+    </lib-generic-mobile-table-row>
+  </div>
+
+</div>
+
+

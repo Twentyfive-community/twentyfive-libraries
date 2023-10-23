@@ -1,0 +1,14 @@
+<div class="form-check form-switch">
+  <input
+    [ngClass]="switchStyle == SwitchTheme.Primary ? 'switch-25' : customCssClass"
+    class="form-check-input"
+    type="checkbox"
+    role="switch"
+    [id]="id"
+    [checked]="checked"
+    [disabled]="disabled"
+  >
+  <label *ngIf="showLabel"
+         class="form-check-label" >
+    {{switchText}}
+  </label></div>
