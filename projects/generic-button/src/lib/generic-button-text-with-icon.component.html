@@ -1,0 +1,27 @@
+<button
+  [placement]="placement"
+  [ngbTooltip]="tooltipText"
+  (click)="click()"
+  [disabled]="
+  buttonStyle == ButtonTheme.Disabled ? disabled :
+  buttonStyle == ButtonTheme.DisabledOutline ? disabled :
+  null"
+  [routerLink]="routerLink == '' ? null : routerLink"
+  [ngClass]="[
+             buttonStyle == ButtonTheme.Primary ? 'btn btn-primary' :
+             buttonStyle == ButtonTheme.Secondary ? 'btn btn-secondary' :
+             buttonStyle == ButtonTheme.Outline ? 'btn btn-outline-primary' :
+             buttonStyle == ButtonTheme.Disabled ? 'btn btn-disabled' :
+             buttonStyle == ButtonTheme.DisabledOutline ? 'btn btn-outline-disabled' :
+             customCssClass,
+             buttonSize == ButtonSizeWithIconTheme.Small ? 'btn-icon-small' :
+             buttonSize == ButtonSizeWithIconTheme.Medium ? 'btn-icon-medium' :
+             buttonSize == ButtonSizeWithIconTheme.Large ? 'btn-icon-large' :
+             buttonSize == ButtonSizeWithIconTheme.ExtraLarge ? 'btn-icon-extra-large' :
+             buttonSize == ButtonSizeTheme.FullWidth ? 'btn-full-width' :
+             customSizeCssClass
+             ] ">
+  <i *ngIf="iconLeft" [class]="prefixIcon + ' pe-2 icon-size'"></i>
+  {{buttonText}}
+  <i *ngIf="!iconLeft" [class]="suffixIcon + ' ps-2 icon-size'"></i>
+</button>

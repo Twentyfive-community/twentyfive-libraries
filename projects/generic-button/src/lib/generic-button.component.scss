@@ -1,0 +1,38 @@
+.smaller-button-format {
+  padding: 0.8rem 2.5rem;
+  gap: 0.5rem;
+  border-radius: 8px;
+  border: 0;
+  color: white;
+  background: var(--bs-primary);
+
+}
+
+.smaller-button-format:hover {
+  padding: 0.8rem 2.5rem;
+  gap: 0.5rem;
+  border-radius: 8px;
+  border: 0;
+  color: white;
+  background: var(--darker-purple);
+}
+
+.button-format {
+  width: 40vw;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  border-radius: 8px;
+  border: 0;
+  color: #FFFFFF;
+  background: var(--bs-primary);
+}
+
+.button-format:hover {
+  width: 40vw;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  border-radius: 8px;
+  border: 0;
+  color: #FFFFFF;
+  background: var(--darker-purple);
+}

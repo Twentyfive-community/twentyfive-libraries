@@ -1,0 +1,26 @@
+<button
+  [placement]="placement"
+  [ngbTooltip]="tooltipText"
+  [type]="type"
+  (click)="click()"
+  [disabled]="
+  buttonStyle == ButtonTheme.Disabled ? disabled :
+  buttonStyle == ButtonTheme.DisabledOutline ? disabled :
+  null"
+  [routerLink]="routerLink == '' ? null : routerLink"
+  [ngClass]="[buttonStyle == ButtonTheme.Primary ? 'btn btn-primary' :
+             buttonStyle == ButtonTheme.Secondary ? 'btn btn-secondary' :
+             buttonStyle == ButtonTheme.Outline ? 'btn btn-outline-primary' :
+             buttonStyle == ButtonTheme.Disabled ? 'btn btn-disabled' :
+             buttonStyle == ButtonTheme.DisabledOutline ? 'btn btn-outline-disabled' :
+             buttonStyle == ButtonTheme.OnlyText ? 'btn-only-text' :
+             customCssClass,
+             buttonSize == ButtonSizeTheme.Small ? 'btn-small' :
+             buttonSize == ButtonSizeTheme.Medium ? 'btn-medium' :
+             buttonSize == ButtonSizeTheme.Large ? 'btn-large' :
+             buttonSize == ButtonSizeTheme.ExtraLarge ? 'btn-extra-large' :
+             buttonSize == ButtonSizeTheme.FullWidth ? 'btn-full-width' :
+             customSizeCssClass
+             ]">
+  {{buttonText}}
+</button>
