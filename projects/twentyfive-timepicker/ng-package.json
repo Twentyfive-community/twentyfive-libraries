@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/twentyfive-timepicker",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "allowedNonPeerDependencies": [
+    "@ng-bootstrap/ng-bootstrap",
+    "bootstrap",
+    "bootstrap-icons",
+    "twentyfive-input",
+    "@angular/localize"
+  ]
+}

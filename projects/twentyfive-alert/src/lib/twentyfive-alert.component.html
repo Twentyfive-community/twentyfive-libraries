@@ -1,0 +1,19 @@
+<div
+  [ngClass]="
+        alertStyle == AlertTheme.Primary ? 'alert-primary' :
+        alertStyle == AlertTheme.Danger ? 'alert-danger' :
+        alertStyle == AlertTheme.Success ? 'alert-success' :
+        customCssClass"
+  class="alert d-flex align-items-center alert-dismissible fade show"
+  role="alert"
+>
+  <i *ngIf="showIcon" [ngClass]="
+    alertStyle == AlertTheme.Primary ? 'bi bi-chat-dots-fill' :
+    alertStyle == AlertTheme.Danger ?  'bi bi-exclamation-triangle-fill' :
+    alertStyle == AlertTheme.Success ? 'bi bi-check-circle-fill' :
+    customIconClass" class="me-2" ></i>
+  <div><strong class="me-1" *ngIf="showStrongMessage">{{strongMessage}}</strong>{{message}}</div>
+
+
+  <button  *ngIf="showCloseButton" class="btn-close" data-bs-dismiss="alert"></button>
+</div>

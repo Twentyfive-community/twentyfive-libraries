@@ -1,0 +1,28 @@
+<div class="input-group">
+  <div *ngIf="showPrepend" class="input-group-prepend">
+        <span
+          [ngClass]="addonStyle == AddonTheme.Primary ? 'input-group-addon': customAddonCssClass"
+          class="input-group-text">
+
+            <label *ngIf="!showPrependIcon">{{labelText}}</label>
+            <i *ngIf="showPrependIcon" [ngClass]="prependIcon"></i>
+        </span>
+  </div>
+  <input
+    class="form-control"
+    [ngClass]="inputStyle == InputTheme.Primary ? 'input-25': customCssClass"
+    [type]="inputType"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [value]="value"
+  >
+  <div *ngIf="showAppend" class="input-group-append">
+    <button
+      (click)="click()"
+      [ngClass]="[buttonStyle == InputGroupButtonTheme.Primary ? 'btn btn-input-group-primary' :
+             customButtonCssClass]"
+      type="button" >
+      <i [ngClass]="appendIcon"></i>
+    </button>
+  </div>
+</div>

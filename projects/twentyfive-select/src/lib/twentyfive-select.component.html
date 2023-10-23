@@ -1,0 +1,16 @@
+<div class="form-group">
+  <label *ngIf="showLabel" [ngClass]=" labelStyle == LabelTheme.LabelMedium ? 'label-25' : customLabelClass">
+    {{labelText}}
+  </label>
+
+  <select
+    [disabled]="disabled"
+    [ngClass]="selectStyle == SelectTheme.Primary ? 'select-25' : customCssClass" class="form-select form-control">
+    <option>{{defaultSelected}}</option>
+    <option
+      *ngFor="let elem of options"
+      [ngValue]="elem.value"
+      [selected]="elem.selected"
+    >{{elem.optionText}}</option>
+  </select>
+</div>

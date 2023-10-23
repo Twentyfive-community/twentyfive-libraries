@@ -1,0 +1,22 @@
+<div *ngIf="showButton" class="dropdown">
+  <a class="btn btn-primary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    {{model}}
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li *ngFor="let item of dropdownItems" [value]="item.value" (click)="modelChange.emit(item.value)">
+      <a class="dropdown-item">
+        {{item.actionName}}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<i *ngIf="!showButton" [ngClass]="toggleIcon" class="table-menu-icon" data-bs-toggle="dropdown">
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li  *ngFor="let item of dropdownItems" [value]="item.value" [ngModel]="model" (click)="modelChange.emit(item.value)">
+      <a class="dropdown-item">
+        {{item.actionName}}
+      </a>
+    </li>
+  </ul>
+</i>

@@ -1,0 +1,19 @@
+import { NgModule } from '@angular/core';
+import { TwentyfiveMenuItemComponent } from './twentyfive-menu-item.component';
+import {RouterLink, RouterLinkActive} from "@angular/router";
+
+
+
+@NgModule({
+  declarations: [
+    TwentyfiveMenuItemComponent
+  ],
+  imports: [
+    RouterLinkActive,
+    RouterLink
+  ],
+  exports: [
+    TwentyfiveMenuItemComponent
+  ]
+})
+export class TwentyfiveMenuItemModule { }

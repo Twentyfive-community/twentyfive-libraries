@@ -1,0 +1,8 @@
+<label *ngIf="showLabel" [ngClass]="
+labelStyle == LabelTheme.LabelMedium ? 'label-25' :
+labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :
+customLabelClass">
+  {{labelText}}
+</label>
+
+<ngb-timepicker [disabled]="disabled" [required]="required" [(ngModel)]="time" (ngModelChange)="timeChange.emit($event)"></ngb-timepicker>

@@ -1,0 +1,13 @@
+<div class="form-group">
+  <label *ngIf="showLabel" [ngClass]=" labelStyle == LabelTheme.LabelMedium ? 'label-25' : customLabelClass">
+    {{labelText}}
+  </label>
+  <textarea
+    [value]="value"
+    [placeholder]="placeholder"
+    [rows]="rows"
+    [readOnly]="readOnly"
+    [disabled]="disabled"
+    [ngClass]="textareaStyle == TextareaTheme.Primary ? 'textarea-25' : customCssClass"
+    class="form-control"></textarea>
+</div>

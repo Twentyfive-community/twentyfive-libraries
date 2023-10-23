@@ -1,0 +1,25 @@
+<div class="form-group">
+  <label *ngIf="showLabel"
+         [ngClass]="
+         labelStyle == LabelTheme.LabelMedium ? 'label-25' :
+         labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :
+         customLabelClass">
+    {{labelText}}
+  </label>
+  <input [type]="inputType"
+         [ngClass]="inputStyle == InputTheme.Primary ? 'input-25': customCssClass"
+         [placeholder]="placeholder"
+         [readOnly]="readOnly"
+         [value]="value"
+         [disabled]="disabled"
+         [required]="required"
+         [id]="id"
+         class="form-control"
+  >
+  <div class="valid-feedback">
+    {{validText}}
+  </div>
+  <div class="invalid-feedback">
+    {{invalidText}}
+  </div>
+</div>

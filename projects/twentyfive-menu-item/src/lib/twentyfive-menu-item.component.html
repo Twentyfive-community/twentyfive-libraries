@@ -1,0 +1,8 @@
+<div class="ps-4 menu-item d-flex justify-content-start align-items-center"
+     role="button" [routerLink]="navigationUrl"
+     [routerLinkActive]="'menu-item-active'"
+     (click)="click()"
+>
+  <i [class]="icon"></i>
+  <label class="ps-4">{{labelText}}</label>
+</div>
