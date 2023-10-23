@@ -20,6 +20,9 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
+      "Twentyfive-libraries": [
+        "dist/twentyfive-libraries"
+      ],
       "twentyfive-buttons": [
         "dist/twentyfive-buttons"
       ]

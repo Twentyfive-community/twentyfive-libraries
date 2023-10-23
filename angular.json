@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "twentyfive-buttons": {
+    "Twentyfive-libraries": {
       "projectType": "library",
-      "root": "projects/twentyfive-buttons",
-      "sourceRoot": "projects/twentyfive-buttons/src",
+      "root": "projects/twentyfive-libraries",
+      "sourceRoot": "projects/twentyfive-libraries/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/twentyfive-buttons/ng-package.json"
+            "project": "projects/twentyfive-libraries/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/twentyfive-buttons/tsconfig.lib.prod.json"
+              "tsConfig": "projects/twentyfive-libraries/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/twentyfive-buttons/tsconfig.lib.json"
+              "tsConfig": "projects/twentyfive-libraries/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/twentyfive-buttons/tsconfig.spec.json",
+            "tsConfig": "projects/twentyfive-libraries/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -36,6 +36,7 @@
         }
       }
     }
+
   },
   "cli": {
     "analytics": "826c6298-079d-4571-b9ae-6aba585a3255"
