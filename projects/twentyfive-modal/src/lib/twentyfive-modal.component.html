@@ -1,0 +1,74 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 *ngIf="showHeaderTitle" class="modal-title" >{{modalTitle}}</h5>
+    <button type="button" class="btn-close" (click)="onClose.call()"></button>
+  </div>
+  <div class="modal-body">
+
+    <div *ngIf="showIcon" class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <i class="modal-icon" [ngClass]="icon"></i>
+      </div>
+    </div>
+
+    <div *ngIf="!showHeaderTitle" class="row modal-element-padding">
+      <div class="col-12 d-flex justify-content-center">
+        <h4 class="text-center">{{modalTitle}}</h4>
+      </div>
+    </div>
+
+    <div  class="row modal-element-padding">
+      <div class="col-12 d-flex justify-content-center">
+        <label class="text-center">{{bodyText}}</label>
+      </div>
+    </div>
+
+    <!-- WEB BUTTON -->
+    <div class="row d-md-flex d-none">
+      <!--            <div class="col-md-6 order-2 order-md-1 d-md-flex justify-content-md-end">   -->
+      <div class="col-md-6 d-flex justify-content-end">
+        <lib-generic-button
+          (click)="onClose.call()"
+          [buttonSize]="cancelButtonSize"
+          [buttonText]="cancelButtonText"
+          [buttonStyle]="cancelButtonStyle">
+        </lib-generic-button>
+      </div>
+      <!-- <div class="col-md-6 order-1 order-md-2 d-md-flex justify-content-md-start mb-3 mb-md-0">-->
+      <div class="col-md-6 d-flex justify-content-start">
+        <lib-generic-button
+          (click)="onConfirm.call()"
+          [buttonText]="confirmButtonText"
+          [buttonSize]="confirmButtonSize"
+          [buttonStyle]="confirmButtonStyle">
+        </lib-generic-button>
+      </div>
+    </div>
+
+    <!-- MOBILE BUTTON -->
+    <div class="row d-md-none d-flex">
+      <div class="col-md-6 mb-3">
+        <lib-generic-button
+          (click)="onConfirm.call()"
+          [buttonSize]="ButtonSizeTheme.FullWidth"
+          [buttonText]="confirmButtonText"
+          [buttonStyle]="confirmButtonStyle">
+        </lib-generic-button>
+      </div>
+
+      <div class="col-md-6">
+        <lib-generic-button
+          (click)="onClose.call()"
+          [buttonSize]="ButtonSizeTheme.FullWidth"
+          [buttonText]="cancelButtonText"
+          [buttonStyle]="cancelButtonStyle">
+        </lib-generic-button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
