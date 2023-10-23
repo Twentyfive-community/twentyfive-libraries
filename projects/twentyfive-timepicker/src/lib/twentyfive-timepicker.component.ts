@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {InputTheme, LabelTheme} from "twentyfive-input";
+import {LabelTheme} from "twentyfive-input";
 import {NgbTimepickerConfig} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
