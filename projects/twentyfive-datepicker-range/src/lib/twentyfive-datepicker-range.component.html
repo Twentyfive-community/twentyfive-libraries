@@ -1,0 +1,85 @@
+<label *ngIf="showLabel" [ngClass]=" labelStyle == LabelTheme.LabelMedium ? 'label-25' :
+         labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :
+customLabelClass">
+  {{labelText}}
+</label>
+
+
+
+<form class="row row-cols-sm-auto">
+  <input
+    name="datepicker"
+    class="form-control dp-hidden"
+    ngbDatepicker
+    #datepicker="ngbDatepicker"
+    [autoClose]="'outside'"
+    [weekdays]="TranslationWidth.Narrow"
+    (dateSelect)="onDateSelection($event)"
+    [displayMonths]="numberOfMonths"
+    [dayTemplate]="t"
+    outsideDays="hidden"
+    [startDate]="fromDate!"
+  />
+  <ng-template #t let-date let-focused="focused">
+            <span
+              class="custom-day"
+              [class.focused]="focused"
+              [class.range]="isRange(date)"
+              [class.faded]="isHovered(date) || isInside(date)"
+              (mouseenter)="hoveredDate = date"
+              (mouseleave)="hoveredDate = null"
+            >{{ date.day }}
+            </span>
+  </ng-template>
+
+  <div class="col-12">
+
+    <!-- FIRST INPUT -->
+    <div class="input-group pb-3 pb-sm-0">
+      <input
+        #dpFromDate
+        class="form-control"
+        placeholder="yyyy-mm-dd"
+        name="dpFromDate"
+        [ngClass]="datePickerStyle == DatePickerTheme.Primary ? 'datepicker-25': customCssClass"
+        [value]="formatter.format(fromDate!)"
+        (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
+      />
+      <button
+        [disabled]="disabledInput"
+        [ngClass]="[
+                     datePickerButtonStyle == DatePickerButtonTheme.ButtonPrimary ? 'btn datepicker-button-primary'  :
+                     customButtonClass,
+                         buttonIcon,
+        ]"
+        (click)="datepicker.toggle()"
+        type="button">
+      </button>
+    </div>
+  </div>
+
+
+  <!-- SECOND INPUT -->
+  <div class="col-12">
+    <div class="input-group">
+      <input
+        #dpToDate
+        class="form-control"
+        placeholder="yyyy-mm-dd"
+        name="dpToDate"
+        [ngClass]="datePickerStyle == DatePickerTheme.Primary ? 'datepicker-25': customCssClass"
+        [value]="formatter.format(toDate!)"
+        (input)="toDate = validateInput(toDate, dpToDate.value)"
+      />
+      <button
+        [disabled]="disabledInput"
+        [ngClass]="[
+        datePickerButtonStyle == DatePickerButtonTheme.ButtonPrimary ? 'btn datepicker-button-primary'  : customButtonClass,
+        buttonIcon,
+        ]"
+        (click)="datepicker.toggle()"
+        type="button">
+      </button>
+    </div>
+  </div>
+</form>

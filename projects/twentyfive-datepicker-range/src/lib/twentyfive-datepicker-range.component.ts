@@ -1,0 +1,103 @@
+import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
+import {NgbCalendar, NgbDate, NgbDateParserFormatter} from "@ng-bootstrap/ng-bootstrap";
+import {ItalianDateFormatter} from "../utilities/italian-date-formatter";
+import {TwentyDate} from "./twenty-date";
+import {DatePickerButtonTheme, DatePickerTheme, LabelTheme} from "../constants/genetric-components-themes";
+import {TranslationWidth} from "@angular/common";
+
+
+@Component({
+  selector: 'lib-twentyfive-datepicker-range',
+  templateUrl : 'twentyfive-datepicker-range.component.html',
+  styleUrls: ['twentyfive-datepicker-range.component.scss'],
+  providers: [
+    { provide: NgbDateParserFormatter, useClass: ItalianDateFormatter }
+  ],
+
+})
+export class TwentyfiveDatepickerRangeComponent  implements OnInit{
+
+  @Input() labelText: string = 'Label';
+  @Input() showLabel: boolean = true;
+  @Input() labelStyle: LabelTheme = LabelTheme.LabelMedium;
+  @Input() customLabelClass: string = '';
+  @Input() buttonIcon: string = 'bi bi-calendar-week';
+  @Input() disabledInput: boolean = false;
+  @Input() datePickerStyle: DatePickerTheme = DatePickerTheme.Primary;
+  @Input() datePickerButtonStyle: DatePickerButtonTheme = DatePickerButtonTheme.ButtonPrimary;
+  @Input() customCssClass: string = '';
+  @Input() customButtonClass: string = '';
+  @Output() dateSelect:EventEmitter<any> = new EventEmitter<any>();
+
+  @Input() hoveredDate: NgbDate | undefined | null = undefined;
+  @Input() fromDate: NgbDate | undefined | null;
+  @Input() toDate: NgbDate | undefined | null;
+
+  numberOfMonths: number = 2;
+
+  constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
+    this.fromDate = calendar.getToday();
+    this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
+  }
+
+  ngOnInit(): void {
+    if(window.innerWidth <= 768){
+      this.numberOfMonths = 1;
+    } else {
+      this.numberOfMonths = 2;
+    }
+  }
+
+  onDateSelection(date: NgbDate) {
+    if (!this.fromDate && !this.toDate) {
+      this.fromDate = date;
+    } else if (this.fromDate && !this.toDate && date && date.after(this.fromDate)) {
+      this.toDate = date;
+    } else {
+      this.toDate = undefined;
+      this.fromDate = date;
+    }
+    this.dateSelect.emit(new TwentyDate(this.fromDate , this.toDate))
+  }
+
+  isHovered(date: NgbDate) {
+    return (
+      this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) && date.before(this.hoveredDate)
+    );
+  }
+
+  isInside(date: NgbDate) {
+    return this.toDate && date.after(this.fromDate) && date.before(this.toDate);
+  }
+
+  isRange(date: NgbDate) {
+    return (
+      date.equals(this.fromDate) ||
+      (this.toDate && date.equals(this.toDate)) ||
+      this.isInside(date) ||
+      this.isHovered(date)
+    );
+  }
+
+  validateInput(currentValue: NgbDate | undefined | null, input: string): NgbDate | undefined | null {
+    const parsed = this.formatter.parse(input);
+    return parsed && this.calendar.isValid(NgbDate.from(parsed)) ? NgbDate.from(parsed) : currentValue;
+  }
+
+  protected readonly LabelTheme = LabelTheme;
+  protected readonly TranslationWidth = TranslationWidth;
+  protected readonly DatePickerTheme = DatePickerTheme;
+  protected readonly DatePickerButtonTheme = DatePickerButtonTheme;
+
+  @HostListener("window:resize" , []) changeSize() {
+    if(window.innerWidth < 768){
+      this.numberOfMonths = 1;
+    } else {
+      this.numberOfMonths = 2;
+    }
+  }
+
+
+
+}
+
