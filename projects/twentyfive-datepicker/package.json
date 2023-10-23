@@ -11,7 +11,7 @@
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
     "tslib": "^2.3.0",
-    "twentyfive-input": "^0.0.5"
+    "twentyfive-input": "^0.0.8"
   },
   "sideEffects": false
 }
