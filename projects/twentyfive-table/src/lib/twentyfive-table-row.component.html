@@ -9,7 +9,7 @@
 </td>
 
 
-<td *ngFor="let elem of fields">{{row[elem]}}</td>
+<td *ngFor="let elem of headers">{{row[elem]}}</td>
 
 <td *ngIf="showActions" class="action-td">
   <div *ngIf="actions.length <= 3">
@@ -20,14 +20,14 @@
       [placement]="action.placement"
       [ngbTooltip]="action.tooltipText"
       [ngClass]="action.icon"
-      (click)="action.action.call()">
+      (click)="action.action(row)">
     </i>
   </div>
   <div *ngIf="actions.length > 3">
     <i class="bi bi-three-dots-vertical table-icon" data-bs-toggle="dropdown">
       <ul class="dropdown-menu">
         <li *ngFor="let action of actions">
-          <a class="dropdown-item" (click)="action.action.call()">
+          <a class="dropdown-item" (click)="action.action(row)">
             {{action.actionName}}
           </a>
         </li>

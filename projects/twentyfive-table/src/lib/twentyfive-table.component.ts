@@ -21,6 +21,7 @@ export class TwentyfiveTableComponent {
 
 
 
+
   @Input() switchText: string = '';
   @Input() id: string = '';
   @Input() disabled: boolean = false;

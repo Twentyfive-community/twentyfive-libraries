@@ -17,7 +17,7 @@ export class TwentyfiveTableRowComponent implements OnInit{
   @Input() actions: any = [];
   @Input() showActions: boolean = false;
   @Input() switchStyle:  SwitchTheme = SwitchTheme.Primary;
-
+  @Input() headers: string[] = [];
   @Input() showSwitch: boolean = false;
 
   fields : string[] = [];
