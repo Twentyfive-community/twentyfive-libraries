@@ -1,8 +1,10 @@
 //@import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
-@import "src/_variables.scss";
-@import '../node_modules/bootstrap/scss/bootstrap';
+@import "./_variables.scss";
+@import '../../../node_modules/bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
-@import url('../node_modules/bootstrap-icons/font/bootstrap-icons.css');
+@import url('node_modules/bootstrap-icons/font/bootstrap-icons.css');
+
+
 
 //navbar style
 $navbar-dark-color: white;
@@ -39,29 +41,47 @@ input{
 
 
 //MENU ITEM
-@media (max-width: 768px) {
-  .menu-item-active{
-    background-color: $menu-item-active-mobile;
-  }
-
-  .menu-item:hover{
-    background-color: $menu-item-active-mobile;
-  }
+.menu-item-active{
+  background-color: $primary-active;
 }
+
+.menu-item:hover{
+  background-color: $primary-active;
+}
+.menu-item-text{
+  color: $white;
+}
+.menu-icon{
+  color: $white;
+}
+
 .menu-item{
   height: 64px;
   width: 100%;
 }
-.menu-item:hover{
-  background-color: $menu-item-hover;
+.sidebar{
+  background-color: $sidebar;
 }
-// $className-active is used to extend with routerLinkActive functionality
-.menu-item-active{
-  background-color: $menu-item-active;
+
+@media (min-width: 768px) {
+  .menu-item:hover{
+    background-color: $secondary-hover;
+  }
+  // $className-active is used to extend with routerLinkActive functionality
+  .menu-item-active{
+    background-color: $secondary;
+  }
+  .menu-item-active:hover{
+    background-color: $secondary;
+  }
+  .menu-item-text{
+    color: $black-25;
+  }
+  .menu-icon{
+    color: $black-25;
+  }
 }
-.menu-item-active:hover{
-  background-color: $menu-item-active;
-}
+
 
 
 //TEXTS
@@ -109,7 +129,13 @@ label{
   font-size: 0.75rem;
   color: $black-25;
 }
+
 .label-25{
+  color: $black-25;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.label-25-bold{
   font-weight: 600;
   color: $black-25;
   font-size: 1rem;
@@ -169,7 +195,7 @@ label{
   color: $disabled-placeholder;
 }
 .switch-25:checked{
- border: none;
+  border: none;
 }
 .switch-25:focus{
   color: $disabled-placeholder;
@@ -177,12 +203,17 @@ label{
 
 }
 .switch-25:disabled {
-   border-color: $disabled-placeholder;
+  border-color: $disabled-placeholder;
 }
 .form-switch .form-check-input {
   --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23909090'/%3e%3c/svg%3e");
 }
-
+.form-switch .form-check-input:focus{
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23909090'/%3e%3c/svg%3e");
+}
+.form-switch .form-check-input:checked:focus{
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23FFFFFF'/%3e%3c/svg%3e");
+}
 
 
 //ICONS
@@ -389,6 +420,7 @@ th{
 
 }
 .dropdown-item{
+  cursor: pointer;
   font-style: normal;
   display: flex;
   align-items: center;
@@ -516,8 +548,14 @@ ngb-datepicker{
   border-width: 0.1em 0.1em 0 0!important;
 }
 //date picker month and year dropdown
-.ngb-dp-navigation-select {
-  display: none !important;
+ngb-datepicker-navigation-select>.form-select  {
+  cursor: pointer;
+  box-shadow: none!important;
+  margin: 0 0.25rem;
+  border-color: $border-grey;
+}
+ngb-datepicker-navigation-select>.form-select:focus {
+  border-color: $border-grey;
 }
 //datepicker week header
 .ngb-dp-weekdays {
@@ -538,7 +576,7 @@ ngb-datepicker{
 }
 //datepicker current day
 [ngbDatepickerDayView].active:not(.bg-primary){
-   background-color: $white!important;
+  background-color: $white!important;
 }
 .ngb-dp-today{
   outline: 1px solid $primary!important;
@@ -548,6 +586,61 @@ ngb-datepicker{
 .ngb-dp-week{
   gap: 0.2rem;
   margin-bottom: 0.2rem;
+}
+
+.ngb-dp-month-name{
+  background-color: $white !important;
+  color: $black-25 !important;
+}
+
+.prova {
+
+}
+
+
+//DATEPICKER RANGE
+.dp-hidden {
+  //ciao
+  width: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+.custom-day {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0.25rem;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range,
+.custom-day:hover {
+  background-color: $primary;
+  color: $white;
+}
+.custom-day.faded {
+  background-color: $primary-opaque;
+  color: $black-25;
+}
+
+
+
+
+
+
+//TIMEPICKER
+.ngb-tp-input{
+  border-color: $border-grey;
+  border-width: 0.0313rem;
+  height: 2.75rem;
+  color: $black-25;
+}
+.ngb-tp-input:focus{
+  border-color: $border-grey;
 }
 
 
@@ -572,6 +665,25 @@ ngb-datepicker{
   color: $black-25;
 }
 
+.btn-input-group-primary{
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  font-size: 1rem;
+  color: $white;
+  background-color: $primary;
+}
+.btn-input-group-primary:hover {
+  color: $white;
+  background-color: $primary-hover;
+}
+.btn-input-group-primary:hover:active {
+  color: $white;
+  background-color: $primary-hover;
+}
 
 
 //TEXTAREA
