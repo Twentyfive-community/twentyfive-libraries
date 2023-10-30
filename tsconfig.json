@@ -26,6 +26,9 @@
       "twentyfive-autocomplete": [
         "dist/twentyfive-autocomplete"
       ],
+      "twentyfive-autocomplete-sync-async": [
+        "dist/twentyfive-autocomplete-sync-async"
+      ],
       "twentyfive-buttons": [
         "dist/twentyfive-buttons"
       ]

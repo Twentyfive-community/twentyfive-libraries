@@ -1,0 +1,16 @@
+<fieldset class="form-inline">
+  <div class="form-group">
+    <input id="typeahead-http" type="text" class="form-control mx-sm-3" [class.is-invalid]="searchFailed" [formControl]="model"
+           [ngbTypeahead]="search" [inputFormatter]="formatter" [resultTemplate]="nTemplt" placeholder="search.." />
+    <small *ngIf="searching" class="form-text text-muted">searching...</small>
+    <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+  </div>
+</fieldset>
+
+<ng-template #nTemplt let-r="result" let-t="term">
+
+  <span style="padding-top: 8px; padding-bottom: 8px">
+      {{ r[textToShowField] }}
+    </span>
+
+</ng-template>

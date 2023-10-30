@@ -630,6 +630,39 @@
           }
         }
       }
+    },
+    "twentyfive-autocomplete-sync-async": {
+      "projectType": "library",
+      "root": "projects/twentyfive-autocomplete-sync-async",
+      "sourceRoot": "projects/twentyfive-autocomplete-sync-async/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/twentyfive-autocomplete-sync-async/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/twentyfive-autocomplete-sync-async/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/twentyfive-autocomplete-sync-async/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/twentyfive-autocomplete-sync-async/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   },
 
