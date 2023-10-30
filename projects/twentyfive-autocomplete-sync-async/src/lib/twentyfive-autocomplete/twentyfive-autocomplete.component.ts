@@ -65,6 +65,7 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
         }
       ),
       switchMap(elem => {
+        console.log("CIAOOOO", elem)
         if(this.isPaginated){
           return of(elem['content']);
         }
