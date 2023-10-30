@@ -18,6 +18,9 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
   @Input()
   isAsync: boolean = false;
 
+  @Input()
+  isPaginated: boolean = false;
+
   // Dataset is used if is NOT @async, so we have all the possible values in the client
   @Input()
   dataset: any[] = [];
@@ -61,6 +64,13 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
           }
         }
       ),
+      switchMap(elem => {
+        console.log("CIAOOOO", elem)
+        if(this.isPaginated){
+          return of(elem['content']);
+        }
+        return of(elem);
+      }),
       tap(() => this.searching = false)
     )
 
