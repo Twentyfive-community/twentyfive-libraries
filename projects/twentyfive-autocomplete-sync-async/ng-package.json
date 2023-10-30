@@ -3,5 +3,9 @@
   "dest": "../../dist/twentyfive-autocomplete-sync-async",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "@ng-bootstrap/ng-bootstrap",
+    "bootstrap"
+  ]
 }
