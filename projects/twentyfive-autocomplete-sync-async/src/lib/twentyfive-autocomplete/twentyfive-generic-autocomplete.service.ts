@@ -6,5 +6,5 @@ import {Observable} from "rxjs";
 })
 export abstract class TwentyfiveGenericAutocompleteService {
 
-  abstract search(searchParam:string): Observable<any>;
+  abstract search(search:string): Observable<any>;
 }
