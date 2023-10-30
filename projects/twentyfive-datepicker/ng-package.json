@@ -8,6 +8,6 @@
     "@ng-bootstrap/ng-bootstrap",
     "bootstrap",
     "@popperjs/core",
-    "twentyfive-input",
+    "twentyfive-input"
   ]
 }

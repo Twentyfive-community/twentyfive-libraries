@@ -97,7 +97,10 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
     }
   }
 
-
+  reset(){
+    this.fromDate = null;
+    this.toDate = null;
+  }
 
 }
 
