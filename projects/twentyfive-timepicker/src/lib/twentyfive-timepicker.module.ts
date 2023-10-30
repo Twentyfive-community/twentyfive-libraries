@@ -7,12 +7,15 @@ import {RouterOutlet} from "@angular/router";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { TwentyfiveGenericTimepickerComponent } from './twentyfive-generic-timepicker/twentyfive-generic-timepicker.component';
+import { TwentyfiveInputTimepickerComponent } from './twentyfive-input-timepicker/twentyfive-input-timepicker.component';
 
 
 
 @NgModule({
   declarations: [
-    TwentyfiveTimepickerComponent
+    TwentyfiveGenericTimepickerComponent,
+    TwentyfiveInputTimepickerComponent
   ],
     imports: [
       BrowserModule,
@@ -27,7 +30,8 @@ import {HttpClientModule} from "@angular/common/http";
         NgbTimepicker
     ],
   exports: [
-    TwentyfiveTimepickerComponent
+    TwentyfiveGenericTimepickerComponent,
+    TwentyfiveInputTimepickerComponent
   ]
 })
 export class TwentyfiveTimepickerModule { }

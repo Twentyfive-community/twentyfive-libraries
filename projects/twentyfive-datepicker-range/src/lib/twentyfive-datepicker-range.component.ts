@@ -98,7 +98,6 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
   }
 
   reset(){
-    console.log("ciao")
     this.fromDate = null;
     this.toDate = null;
   }
