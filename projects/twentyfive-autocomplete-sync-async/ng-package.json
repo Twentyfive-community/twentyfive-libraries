@@ -6,6 +6,7 @@
   },
   "allowedNonPeerDependencies": [
     "@ng-bootstrap/ng-bootstrap",
-    "bootstrap"
+    "bootstrap",
+    "@popperjs/core"
   ]
 }

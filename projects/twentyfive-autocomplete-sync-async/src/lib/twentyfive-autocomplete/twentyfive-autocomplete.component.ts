@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {catchError, distinctUntilChanged, Observable,debounceTime, of, OperatorFunction, switchMap, tap} from "rxjs";
 import {TwentyfiveGenericAutocompleteService} from "./twentyfive-generic-autocomplete.service";
@@ -38,6 +38,9 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
 
   @Input()
   debounceTime: number = 300;
+
+  @Output()
+  onElementSelected: EventEmitter<any> = new EventEmitter<any>();
 
 
 
@@ -86,6 +89,11 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
       return fieldToMatch.includes(termToMatch);
     });
     return of(result);
+  }
+
+  elementClicked(r: any){
+    this.model = r[this.textToShowField];
+    this.onElementSelected.emit(r);
   }
 
 }
