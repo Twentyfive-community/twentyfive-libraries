@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SwitchTheme} from "twentyfive-switch";
+import {TableHeader} from "./table-header";
 
 @Component({
   selector: 'tr[table-row]',
@@ -17,13 +18,13 @@ export class TwentyfiveTableRowComponent implements OnInit{
   @Input() actions: any = [];
   @Input() showActions: boolean = false;
   @Input() switchStyle:  SwitchTheme = SwitchTheme.Primary;
-  @Input() headers: string[] = [];
+  @Input() headers: TableHeader[] = [];
+
   @Input() showSwitch: boolean = false;
 
-  fields : string[] = [];
 
   ngOnInit() {
-    this.fields = Object.getOwnPropertyNames(this.row);
   }
+
 }
 
