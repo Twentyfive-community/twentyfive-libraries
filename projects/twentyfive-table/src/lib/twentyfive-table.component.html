@@ -4,7 +4,7 @@
 >
   <thead [ngClass]=" tableHeadStyle == TableHeadTheme.Primary ? 'thead-primary' : customHeaderClass">
   <tr>
-    <th *ngFor="let elem of headers" scope="col">{{elem}}</th>
+    <th *ngFor="let elem of headers" scope="col">{{elem.name}}</th>
   </tr>
   </thead>
   <tbody>

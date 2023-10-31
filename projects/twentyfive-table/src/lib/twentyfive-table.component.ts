@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {SwitchTheme} from 'twentyfive-switch';
+import {TableHeader} from "./table-header";
 
 @Component({
   selector: 'lib-twentyfive-table',
@@ -16,7 +17,7 @@ export class TwentyfiveTableComponent {
   @Input() actions: any = [];
   @Input() showActions: boolean = false;
   @Input() rows: any[] = [];
-  @Input() headers: any[] = [];
+  @Input() headers: TableHeader[] = [];
   @Input() paginationStyle: any;
 
 
