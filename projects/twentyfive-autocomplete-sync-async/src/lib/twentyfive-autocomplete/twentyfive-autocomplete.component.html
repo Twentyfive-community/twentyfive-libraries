@@ -9,7 +9,7 @@
 
 <ng-template #nTemplt let-r="result" let-t="term">
 
-  <span style="padding-top: 8px; padding-bottom: 8px">
+  <span style="padding-top: 8px; padding-bottom: 8px" (click)="elementClicked(r)">
       {{ r[textToShowField] }}
     </span>
 
