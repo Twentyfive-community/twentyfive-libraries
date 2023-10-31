@@ -10,7 +10,7 @@
 
 
 <td *ngFor="let elem of headers, let i = index"
->{{row[elem.value]}}</td>
+>{{row[elem.value ?? 0]}}</td>
 
 <td *ngIf="showActions" class="action-td">
   <div *ngIf="actions.length <= 3">
