@@ -5,6 +5,7 @@
   <thead [ngClass]=" tableHeadStyle == TableHeadTheme.Primary ? 'thead-primary' : customHeaderClass">
   <tr>
     <th *ngFor="let elem of headers" scope="col">{{elem.name}}</th>
+    <th *ngIf="actions.length > 0">Azioni</th>
   </tr>
   </thead>
   <tbody>
