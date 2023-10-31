@@ -13,5 +13,8 @@
          [disabled]="disabled"
          [required]="required"
          [id]="id"
+         [ngModel]="time"
+         (ngModelChange)="changeTime.emit($event)"
+
          class="form-control"
   ></div>

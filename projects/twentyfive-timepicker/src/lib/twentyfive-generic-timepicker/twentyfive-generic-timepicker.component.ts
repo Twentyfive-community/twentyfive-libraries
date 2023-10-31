@@ -9,6 +9,8 @@ import {InputTheme, LabelTheme} from "../../constants/genetric-components-themes
 export class TwentyfiveGenericTimepickerComponent {
   @Input() placeholder: string = 'Placeholder';
   @Input() value: string = '';
+  @Input() time: any;
+
   @Input() labelText: string = 'Label text';
   @Input() id: string = '';
   @Input() readOnly: boolean = false;
@@ -23,6 +25,8 @@ export class TwentyfiveGenericTimepickerComponent {
   @Input() customLabelClass: string = '';
 
   @Output() changeTime:EventEmitter<any> = new EventEmitter<any>()
+
+
 
   protected readonly InputTheme = InputTheme;
   protected readonly LabelTheme = LabelTheme;
