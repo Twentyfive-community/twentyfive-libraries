@@ -17,13 +17,18 @@ export class TwentyfiveTableRowComponent implements OnInit{
   @Input() actions: any = [];
   @Input() showActions: boolean = false;
   @Input() switchStyle:  SwitchTheme = SwitchTheme.Primary;
-  @Input() headers: string[] = [];
+  @Input() headers: any[] = [];
+
   @Input() showSwitch: boolean = false;
 
   fields : string[] = [];
 
   ngOnInit() {
     this.fields = Object.getOwnPropertyNames(this.row);
+  }
+
+  getFilteredFields(): any[] {
+    return this.fields.filter(field => this.headers.includes(field));
   }
 }
 

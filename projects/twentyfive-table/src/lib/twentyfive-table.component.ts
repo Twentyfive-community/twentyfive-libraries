@@ -16,7 +16,7 @@ export class TwentyfiveTableComponent {
   @Input() actions: any = [];
   @Input() showActions: boolean = false;
   @Input() rows: any[] = [];
-  @Input() headers: string[] = [];
+  @Input() headers: any[] = [];
   @Input() paginationStyle: any;
 
 
