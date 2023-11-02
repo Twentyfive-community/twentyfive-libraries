@@ -21,6 +21,7 @@ export class TwentyfiveModalService {
     cancelButtonText:string,
     confirmButtonText:string,
     {
+      onAbort = emptyFunction,
       onConfirm = emptyFunction,
       icon = 'bi bi-exclamation-circle',
       showHeaderTitle = true,
@@ -40,6 +41,7 @@ export class TwentyfiveModalService {
       });
 
     let finalFunction = pipe(onConfirm,this.closing);
+    let onAbortFunction = pipe(onAbort, this.closing);
     this.modalRef.componentInstance.bodyText = bodyText;
     this.modalRef.componentInstance.modalTitle = modalTitle;
     this.modalRef.componentInstance.confirmButtonText = confirmButtonText;
@@ -51,7 +53,7 @@ export class TwentyfiveModalService {
     this.modalRef.componentInstance.cancelButtonStyle = cancelButtonStyle;
     this.modalRef.componentInstance.cancelButtonSize = cancelButtonSize;
     this.modalRef.componentInstance.confirmButtonSize = confirmButtonSize;
-    this.modalRef.componentInstance.onClose = this.closing;
+    this.modalRef.componentInstance.onClose = onAbortFunction;
     this.modalRef.componentInstance.onConfirm = finalFunction;
 
   }
