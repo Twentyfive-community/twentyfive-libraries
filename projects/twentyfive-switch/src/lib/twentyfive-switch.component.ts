@@ -8,6 +8,7 @@ import {Component, Input} from '@angular/core';
 export class TwentyfiveSwitchComponent {
 
   @Input() switchText: string = 'Text';
+  @Input() value : any ;
   @Input() id: string = '';
   @Input() disabled: boolean = false;
   @Input() showLabel: boolean = true;
