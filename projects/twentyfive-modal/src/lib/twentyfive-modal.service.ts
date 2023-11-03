@@ -53,8 +53,10 @@ export class TwentyfiveModalService {
     this.modalRef.componentInstance.cancelButtonStyle = cancelButtonStyle;
     this.modalRef.componentInstance.cancelButtonSize = cancelButtonSize;
     this.modalRef.componentInstance.confirmButtonSize = confirmButtonSize;
-    this.modalRef.componentInstance.onClose = onAbortFunction;
+    this.modalRef.componentInstance.onAbort = onAbortFunction;
     this.modalRef.componentInstance.onConfirm = finalFunction;
+    this.modalRef.componentInstance.onClose = this.closing;
+
 
   }
 
