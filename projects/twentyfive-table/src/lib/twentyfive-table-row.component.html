@@ -3,6 +3,8 @@
     [ngClass]="switchStyle"
     [id]="id"
     [checked]="checked"
+    [value]="checked"
+    (changeValue)="eventChange($event)"
     [disabled]="disabled"
     [switchText]="switchText">
   </lib-twentyfive-switch>

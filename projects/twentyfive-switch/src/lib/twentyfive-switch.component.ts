@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'lib-twentyfive-switch',
@@ -13,10 +13,16 @@ export class TwentyfiveSwitchComponent {
   @Input() disabled: boolean = false;
   @Input() showLabel: boolean = true;
   @Input() checked: boolean = false;
+  @Output() changeValue = new EventEmitter<any>();
 
+  change(event: any){
+    this.changeValue.emit(event);
+  }
   @Input() switchStyle: SwitchTheme = SwitchTheme.Primary;
 
   @Input() customCssClass: string = '';
+
+
   protected readonly SwitchTheme = SwitchTheme;
 }
 

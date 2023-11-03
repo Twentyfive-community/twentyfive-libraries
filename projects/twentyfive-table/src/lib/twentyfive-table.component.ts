@@ -42,8 +42,14 @@ export class TwentyfiveTableComponent {
   @Output() pageChange:EventEmitter<number> = new EventEmitter<number>();
   @Input() dropdownElements:any[] = [];
   @Output() rowClicked = new EventEmitter<any>();
+  @Output() switchClick = new EventEmitter<any>();
+
   onRowClick(selectedRow:any) {
     this.rowClicked.emit(selectedRow);
+  }
+
+  changeSwitchValue(event: any) {
+    this.switchClick.emit(event);
   }
 
 

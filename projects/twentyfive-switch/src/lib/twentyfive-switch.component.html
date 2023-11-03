@@ -5,9 +5,11 @@
     type="checkbox"
     role="switch"
     [id]="id"
-    [ngModel] = "value"
     [checked]="checked"
     [disabled]="disabled"
+    [ngModel]="value"
+    (ngModelChange)="change($event)"
+
   >
   <label *ngIf="showLabel"
          class="form-check-label" >

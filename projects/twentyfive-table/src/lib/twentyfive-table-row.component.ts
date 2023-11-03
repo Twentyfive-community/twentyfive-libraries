@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {SwitchTheme} from "twentyfive-switch";
 import {TableHeader} from "./table-header";
 
@@ -21,6 +21,12 @@ export class TwentyfiveTableRowComponent implements OnInit{
   @Input() headers: TableHeader[] = [];
 
   @Input() showSwitch: boolean = false;
+
+  @Output() changeSwitchValue = new EventEmitter<any>();
+
+  eventChange(event: any) {
+    this.changeSwitchValue.emit(event);
+  }
 
 
   ngOnInit() {
