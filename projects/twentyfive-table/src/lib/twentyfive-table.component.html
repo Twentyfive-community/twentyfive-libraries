@@ -21,6 +21,7 @@
       [disabled]="disabled"
       [actions]="actions"
       [row]="row"
+      (click)="onRowClick(row)"
       *ngFor="let row of rows">
   </tr>
   </tbody>
