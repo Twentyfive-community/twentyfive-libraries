@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {TwentyfiveSwitchModule} from "twentyfive-switch";
+import {TwentyfiveDropdownModule} from "twentyfive-dropdown";
 
 
 
@@ -27,7 +28,10 @@ import {TwentyfiveSwitchModule} from "twentyfive-switch";
     FormsModule,
     HttpClientModule,
     NgbModule,
-    TwentyfiveSwitchModule
+    TwentyfiveSwitchModule,
+    TwentyfiveDropdownModule,
+    BrowserModule,
+
   ],
   exports: [
     GenericMobileTableComponent,

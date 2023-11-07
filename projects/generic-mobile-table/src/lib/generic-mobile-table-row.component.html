@@ -8,26 +8,26 @@
                    customHeaderCssClass">
     <div class="row">
       <div class="col-6">
-        {{headers[1]}} {{row[fields[0]]}}
       </div>
       <div class="col-6 d-flex justify-content-end">
 
-        <i class="bi bi-three-dots-vertical table-menu-icon-white"  data-bs-toggle="dropdown">
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li *ngFor="let action of actions">
-              <a class="dropdown-item" (click)="action.action.call()">
-                {{action.actionName}}
-              </a>
-            </li>
-          </ul>
-        </i>
+        <lib-twentyfive-dropdown [showButton]="false" toggleIcon="bi bi-three-dots-vertical" [dropdownItems]="actions"></lib-twentyfive-dropdown>
+        <!--  <i class="bi bi-three-dots-vertical table-menu-icon-white"  data-bs-toggle="dropdown">
+              <ul class="dropdown-menu dropdown-menu-end">
+                  <li *ngFor="let action of actions">
+                      <a class="dropdown-item" (click)="action.action.call()">
+                          {{action.actionName}}
+                      </a>
+                  </li>
+              </ul>
+          </i>-->
       </div>
     </div>
   </div>
 
   <div class="card-body mobile-table-body" >
 
-    <label class="text-semibold ">{{headers[0]}}</label>
+    <label class="text-semibold "> On/Off</label>
 
     <div *ngIf="showSwitch" class="row mb-3">
       <lib-twentyfive-switch
@@ -35,20 +35,22 @@
         [id]="id"
         [checked]="checked"
         [disabled]="disabled"
+        [value]="checked"
+        (changeValue)="eventChange($event)"
         [switchText]="switchText">
       </lib-twentyfive-switch>
     </div>
 
-    <div *ngFor="let elem of fields | slice:1 let i = index">
+    <div *ngFor="let elem of headers | slice:0 let i = index">
       <div class="row">
         <div class="col-12">
-          <label class="text-semibold">{{headers[i+2]}}</label>
+          <label class="text-semibold">{{elem.name}}</label>
         </div>
 
       </div>
       <div class="row mb-3">
         <div class="col-12">
-          <label class="mw-100 text-truncate">{{row[elem]}}</label>
+          <label class="mw-100 text-truncate">{{elem.value ?? ''}}</label>
         </div>
       </div>
     </div>

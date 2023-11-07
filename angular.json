@@ -300,7 +300,6 @@
         }
       }
     },
-
     "generic-button": {
       "projectType": "library",
       "root": "projects/generic-button",
@@ -663,8 +662,42 @@
           }
         }
       }
+    },
+    "twentyfive-modal-generic-component": {
+      "projectType": "library",
+      "root": "projects/twentyfive-modal-generic-component",
+      "sourceRoot": "projects/twentyfive-modal-generic-component/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/twentyfive-modal-generic-component/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/twentyfive-modal-generic-component/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/twentyfive-modal-generic-component/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/twentyfive-modal-generic-component/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   },
+
 
 
   "cli": {

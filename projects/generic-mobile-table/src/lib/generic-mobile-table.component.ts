@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'lib-generic-mobile-table',
@@ -6,6 +6,7 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./generic-mobile-table.component.scss']
 })
 export class GenericMobileTableComponent {
+
 
   @Input() actions: any = [];
   @Input() headers: any = [];
@@ -23,6 +24,13 @@ export class GenericMobileTableComponent {
 
   @Input() customSwitchCssClass: string = '';
   @Input() customCssClass: string = '';
+  @Output() switchClick = new EventEmitter<any>();
+
+
+  changeSwitchValue(event: any) {
+    this.switchClick.emit(event);
+  }
+
 
   protected readonly TableTheme = TableTheme;
 

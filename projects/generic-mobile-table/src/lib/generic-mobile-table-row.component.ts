@@ -1,11 +1,13 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {TableHeader} from "./table-header";
 
 @Component({
   selector: 'lib-generic-mobile-table-row',
   templateUrl: './generic-mobile-table-row.component.html',
   styleUrls: ['./generic-mobile-table-row.component.scss']
 })
-export class GenericMobileTableRowComponent {
+export class GenericMobileTableRowComponent{
+
 
   @Input() mobileTableStyle: MobileTableTheme = MobileTableTheme.Primary;
   @Input() mobileTheadStyle: MobileTheadTheme = MobileTheadTheme.Primary;
@@ -13,7 +15,7 @@ export class GenericMobileTableRowComponent {
   @Input() customHeaderCssClass: string = '';
   @Input() row: any;
   @Input() actions: any = [];
-  @Input() headers: any = [];
+  @Input() headers: TableHeader [] = [];
   @Input() rows: any = [];
   @Input() showActions: boolean = false;
   @Input() showSwitch: boolean = false;
@@ -24,11 +26,18 @@ export class GenericMobileTableRowComponent {
   @Input() showLabel: boolean = true;
   @Input() checked: boolean = false;
 
-  @Input() switchStyle:any;
+  @Input() switchStyle: any;
 
   @Input() customSwitchCssClass: string = '';
 
-  fields : string[] = [];
+  @Output() changeSwitchValue = new EventEmitter<any>();
+
+  eventChange(event: any) {
+    this.changeSwitchValue.emit(event);
+  }
+
+
+  fields: string[] = [];
   protected readonly MobileTableTheme = MobileTableTheme;
   protected readonly MobileTheadTheme = MobileTheadTheme;
 
@@ -36,6 +45,7 @@ export class GenericMobileTableRowComponent {
     this.fields = Object.getOwnPropertyNames(this.row);
   }
 }
+
 
 export enum MobileTableTheme {
   Primary = 'mobile-table-primary',

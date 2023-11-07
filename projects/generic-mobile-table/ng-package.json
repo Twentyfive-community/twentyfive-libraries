@@ -4,10 +4,14 @@
   "lib": {
     "entryFile": "src/public-api.ts"
   },
+  "assets": [
+    "./src/assets/**/*.*"
+  ],
   "allowedNonPeerDependencies": [
     "@ng-bootstrap/ng-bootstrap",
     "bootstrap",
     "@popperjs/core",
-    "twentyfive-switch"
+    "twentyfive-switch",
+    "twentyfive-dropdown"
   ]
 }

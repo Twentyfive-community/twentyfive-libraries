@@ -1,15 +1,15 @@
 {
   "name": "twentyfive-input",
-  "version": "0.0.8",
+  "version": "0.0.11",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0",
     "@ng-bootstrap/ng-bootstrap": "^15.1.1",
     "bootstrap": "^5.3.2",
-    "bootstrap-icons": "^1.11.1"
+    "bootstrap-icons": "^1.11.1",
+    "tslib": "^2.3.0"
   },
   "sideEffects": false
 }

@@ -13,6 +13,7 @@ export class TwentyfiveModalGenericComponentService {
   open(template: any, size: string) {
     return this.ngModalService.open(template, {
       size: size,
+      centered: true
     });
   }
 

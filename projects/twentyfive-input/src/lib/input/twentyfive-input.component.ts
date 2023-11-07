@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'lib-twentyfive-input',
@@ -23,6 +23,11 @@ export class TwentyfiveInputComponent {
 
   @Input() customCssClass: string = '';
   @Input() customLabelClass: string = '';
+  @Output() changeValue = new EventEmitter<any>();
+
+  changeInput(event: any){
+    this.changeValue.emit(event);
+  }
 
   protected readonly InputTheme = InputTheme;
   protected readonly LabelTheme = LabelTheme;

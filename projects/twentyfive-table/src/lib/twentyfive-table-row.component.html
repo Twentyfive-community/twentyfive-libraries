@@ -14,7 +14,7 @@
 <td *ngFor="let elem of headers, let i = index"
 >{{row[elem.value ?? 0]}}</td>
 
-<td *ngIf="showActions">
+<td *ngIf="showActions" class="d-flex justify-content-end">
   <div *ngIf="actions.length <= 3">
     <i
       *ngFor="let action of actions"
