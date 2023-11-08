@@ -2,6 +2,8 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {catchError, distinctUntilChanged, Observable,debounceTime, of, OperatorFunction, switchMap, tap} from "rxjs";
 import {TwentyfiveGenericAutocompleteService} from "./twentyfive-generic-autocomplete.service";
+import {InputTheme, LabelTheme} from "../../constants/genetric-components-themes";
+
 
 @Component({
   selector: 'lib-twentyfive-autocomplete',
@@ -42,12 +44,19 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
   @Output()
   onElementSelected: EventEmitter<any> = new EventEmitter<any>();
 
-
+  @Input() inputStyle: any;
+  @Input() labelStyle: any;
+  @Input() customCssClass: string = '';
+  @Input() customLabelClass: string = '';
+  @Input() labelText: string = '';
+  @Input() placeholder: string = 'Cerca...';
+  @Input() searchingText: string = 'Searching...';
+  @Input() invalidText: string = 'Sorry, suggestions could not be loaded.';
+  @Input() showLabel: boolean = true;
 
 
   ngOnInit() {
   }
-
 
   search: OperatorFunction<string, any[]> = (text$: Observable<string>) =>
     text$.pipe(
@@ -95,5 +104,8 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
     this.model = r[this.textToShowField];
     this.onElementSelected.emit(r);
   }
+
+  protected readonly InputTheme = InputTheme;
+  protected readonly LabelTheme = LabelTheme;
 
 }

@@ -1,7 +1,24 @@
 <fieldset class="form-inline">
   <div class="form-group">
-    <input id="typeahead-http" type="text" class="form-control mx-sm-3" [class.is-invalid]="searchFailed" [formControl]="model"
-           [ngbTypeahead]="search" [inputFormatter]="formatter" [resultTemplate]="nTemplt" placeholder="search.." />
+    <label *ngIf="showLabel"
+           [ngClass]="
+         labelStyle == LabelTheme.LabelMedium ? 'label-25' :
+         labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :
+         customLabelClass">
+      {{labelText}}
+    </label>
+    <input
+      [ngClass]="inputStyle == InputTheme.Primary ? 'input-25': customCssClass"
+      id="typeahead-http"
+      type="text"
+      class="form-control"
+      [class.is-invalid]="searchFailed"
+      [formControl]="model"
+      [ngbTypeahead]="search"
+      [inputFormatter]="formatter"
+      [resultTemplate]="nTemplt"
+      [placeholder]="placeholder"
+    >
     <small *ngIf="searching" class="form-text text-muted">searching...</small>
     <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
   </div>

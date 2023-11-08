@@ -1,12 +1,9 @@
 <label *ngIf="showLabel" [ngClass]=" labelStyle == LabelTheme.LabelMedium ? 'label-25' :
-         labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :
-customLabelClass">
+         labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :customLabelClass">
   {{labelText}}
 </label>
 
-
-
-<form class="row row-cols-sm-auto">
+<form class="row row-cols-md-auto">
   <input
     name="datepicker"
     class="form-control dp-hidden"
@@ -18,8 +15,7 @@ customLabelClass">
     [displayMonths]="numberOfMonths"
     [dayTemplate]="t"
     outsideDays="hidden"
-    [startDate]="fromDate!"
-  />
+    [startDate]="fromDate!"/>
   <ng-template #t let-date let-focused="focused">
             <span
               class="custom-day"
@@ -32,10 +28,9 @@ customLabelClass">
             </span>
   </ng-template>
 
-  <div class="col-12">
-
-    <!-- FIRST INPUT -->
-    <div class="input-group pb-3 pb-sm-0">
+  <!-- FIRST INPUT -->
+  <div class="col-12 col-md-6 pb-3 pb-md-0">
+    <div class="input-group">
       <input
         #dpFromDate
         class="form-control"
@@ -50,8 +45,7 @@ customLabelClass">
         [ngClass]="[
                      datePickerButtonStyle == DatePickerButtonTheme.ButtonPrimary ? 'btn datepicker-button-primary'  :
                      customButtonClass,
-                         buttonIcon,
-        ]"
+                     buttonIcon, ]"
         (click)="datepicker.toggle()"
         type="button">
       </button>
@@ -60,7 +54,7 @@ customLabelClass">
 
 
   <!-- SECOND INPUT -->
-  <div class="col-12">
+  <div class="col-12 col-md-6">
     <div class="input-group">
       <input
         #dpToDate

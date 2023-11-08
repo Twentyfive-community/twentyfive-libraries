@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { TwentyfiveCheckboxComponent } from './twentyfive-checkbox.component';
-import {NgClass} from "@angular/common";
+import {NgClass, NgIf} from "@angular/common";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
+
+
 
 
 
@@ -8,9 +12,12 @@ import {NgClass} from "@angular/common";
   declarations: [
     TwentyfiveCheckboxComponent
   ],
-    imports: [
-        NgClass
-    ],
+  imports: [
+    NgClass,
+    ReactiveFormsModule,
+    NgIf,
+    FormsModule
+  ],
   exports: [
     TwentyfiveCheckboxComponent
   ]
