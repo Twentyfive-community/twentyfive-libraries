@@ -54,6 +54,7 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
   @Input() invalidText: string = 'Sorry, suggestions could not be loaded.';
   @Input() showLabel: boolean = true;
   @Output() changeValue = new EventEmitter<any>();
+  @Input() value: any;
 
 
   ngOnInit() {

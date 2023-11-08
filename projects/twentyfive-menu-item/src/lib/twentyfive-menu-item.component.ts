@@ -4,7 +4,7 @@ import {emptyFunction} from "./emptyFunction";
 @Component({
   selector: 'lib-twentyfive-menu-item',
   templateUrl: `./twentyfive-menu-item.component.html`,
-  styleUrls: ['../../src/styles.scss']
+  styleUrls: ['../assets/styles.scss']
 })
 export class TwentyfiveMenuItemComponent {
   @Input() labelText: string | undefined | null = 'Text';

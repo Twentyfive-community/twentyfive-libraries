@@ -1,5 +1,5 @@
-@import "./_variables.scss";
-@import '../node_modules/bootstrap/scss/bootstrap';
+@import "./variables";
+@import '../../../../node_modules/bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 @import url('node_modules/bootstrap-icons/font/bootstrap-icons.css');
 
@@ -38,15 +38,7 @@ input{
 
 
 //MENU ITEM
-@media (max-width: 768px) {
-  .menu-item-active{
-    background-color: $menu-item-active-mobile;
-  }
 
-  .menu-item:hover{
-    background-color: $menu-item-active-mobile;
-  }
-}
 .menu-item{
   height: 64px;
   width: 100%;
@@ -56,10 +48,44 @@ input{
 }
 // $className-active is used to extend with routerLinkActive functionality
 .menu-item-active{
-  background-color: $menu-item-active;
+  background-color: $primary-active;
 }
-.menu-item-active:hover{
-  background-color: $menu-item-active;
+
+.menu-item:hover{
+  background-color: $primary-active;
+}
+.menu-item-text{
+  color: $white;
+}
+.menu-icon{
+  color: $white;
+}
+
+.menu-item{
+  height: 64px;
+  width: 100%;
+}
+.sidebar{
+  background-color: $sidebar;
+}
+
+@media (min-width: 768px) {
+  .menu-item:hover{
+    background-color: $secondary-hover;
+  }
+  // $className-active is used to extend with routerLinkActive functionality
+  .menu-item-active{
+    background-color: $secondary;
+  }
+  .menu-item-active:hover{
+    background-color: $secondary;
+  }
+  .menu-item-text{
+    color: $black-25;
+  }
+  .menu-icon{
+    color: $black-25;
+  }
 }
 
 

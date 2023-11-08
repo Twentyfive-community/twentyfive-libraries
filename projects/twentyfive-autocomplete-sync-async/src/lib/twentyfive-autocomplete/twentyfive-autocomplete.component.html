@@ -18,8 +18,8 @@
       [inputFormatter]="formatter"
       [resultTemplate]="nTemplt"
       [placeholder]="placeholder"
-      [ngModel]="nTemplt"
-      (ngModelChange)="change($event)"
+      [ngModel]="value"
+      (ngModelChange)="change(nTemplt)"
     >
     <small *ngIf="searching" class="form-text text-muted">searching...</small>
     <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
