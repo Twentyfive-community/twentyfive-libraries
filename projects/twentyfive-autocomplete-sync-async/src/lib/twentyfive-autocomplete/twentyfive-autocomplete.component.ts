@@ -53,6 +53,7 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
   @Input() searchingText: string = 'Searching...';
   @Input() invalidText: string = 'Sorry, suggestions could not be loaded.';
   @Input() showLabel: boolean = true;
+  @Output() changeValue = new EventEmitter<any>();
 
 
   ngOnInit() {
@@ -108,4 +109,7 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
   protected readonly InputTheme = InputTheme;
   protected readonly LabelTheme = LabelTheme;
 
+  change(event: any) {
+    this.changeValue.emit(event);
+  }
 }
