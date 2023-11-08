@@ -32,6 +32,8 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
   @Input() hoveredDate: NgbDate | undefined | null = undefined;
   @Input() fromDate: NgbDate | undefined | null;
   @Input() toDate: NgbDate | undefined | null;
+  @Input() placeHolderDateStart: string = 'Data inizio';
+  @Input() placeHolderDateEnd: any = 'Data fine';
 
   numberOfMonths: number = 2;
 

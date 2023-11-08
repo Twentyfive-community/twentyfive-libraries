@@ -39,7 +39,7 @@ customLabelClass">
       <input
         #dpFromDate
         class="form-control"
-        placeholder="dd/mm/yyyy"
+        [placeholder]="placeHolderDateStart"
         name="dpFromDate"
         [ngClass]="datePickerStyle == DatePickerTheme.Primary ? 'datepicker-25': customCssClass"
         [value]="formatter.format(fromDate!)"
@@ -65,7 +65,7 @@ customLabelClass">
       <input
         #dpToDate
         class="form-control"
-        placeholder="yyyy-mm-dd"
+        [placeholder]="placeHolderDateEnd"
         name="dpToDate"
         [ngClass]="datePickerStyle == DatePickerTheme.Primary ? 'datepicker-25': customCssClass"
         [value]="formatter.format(toDate!)"
