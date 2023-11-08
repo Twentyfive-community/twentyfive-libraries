@@ -11,23 +11,23 @@
       </div>
       <div class="col-6 d-flex justify-content-end">
 
-        <lib-twentyfive-dropdown [showButton]="false" toggleIcon="bi bi-three-dots-vertical" [dropdownItems]="actions"></lib-twentyfive-dropdown>
-        <!--  <i class="bi bi-three-dots-vertical table-menu-icon-white"  data-bs-toggle="dropdown">
-              <ul class="dropdown-menu dropdown-menu-end">
-                  <li *ngFor="let action of actions">
-                      <a class="dropdown-item" (click)="action.action.call()">
-                          {{action.actionName}}
-                      </a>
-                  </li>
-              </ul>
-          </i>-->
+       <lib-twentyfive-dropdown  [showButton]="false" toggleIcon="bi bi-three-dots-vertical" [dropdownItems]="actions"></lib-twentyfive-dropdown>
+         <i class="bi bi-three-dots-vertical table-menu-icon-white"  data-bs-toggle="dropdown">
+               <ul class="dropdown-menu dropdown-menu-end">
+                   <li *ngFor="let action of actions">
+                       <a class="dropdown-item" (click)="action.action(row)">
+                           {{action.actionName}}
+                       </a>
+                   </li>
+               </ul>
+           </i>
       </div>
     </div>
   </div>
 
-  <div class="card-body mobile-table-body" >
+  <div class="card-body" >
 
-    <label class="text-semibold "> On/Off</label>
+    <label *ngIf="showSwitch" class="text-semibold "> On/Off</label>
 
     <div *ngIf="showSwitch" class="row mb-3">
       <lib-twentyfive-switch
@@ -41,18 +41,20 @@
       </lib-twentyfive-switch>
     </div>
 
+
     <div *ngFor="let elem of headers | slice:0 let i = index">
       <div class="row">
         <div class="col-12">
           <label class="text-semibold">{{elem.name}}</label>
         </div>
-
       </div>
+
       <div class="row mb-3">
         <div class="col-12">
-          <label class="mw-100 text-truncate">{{elem.value ?? ''}}</label>
+          <label class="mw-100 text-truncate">{{row[elem.value ?? '']}}</label>
         </div>
       </div>
+
     </div>
   </div>
 </div>

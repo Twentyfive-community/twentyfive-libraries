@@ -7,7 +7,6 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class GenericMobileTableComponent {
 
-
   @Input() actions: any = [];
   @Input() headers: any = [];
   @Input() rows: any = [];
@@ -26,13 +25,13 @@ export class GenericMobileTableComponent {
   @Input() customCssClass: string = '';
   @Output() switchClick = new EventEmitter<any>();
 
+  protected readonly TableTheme = TableTheme;
 
   changeSwitchValue(event: any) {
     this.switchClick.emit(event);
   }
 
 
-  protected readonly TableTheme = TableTheme;
 
 }
 

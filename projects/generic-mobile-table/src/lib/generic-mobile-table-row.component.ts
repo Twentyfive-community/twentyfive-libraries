@@ -8,7 +8,6 @@ import {TableHeader} from "./table-header";
 })
 export class GenericMobileTableRowComponent{
 
-
   @Input() mobileTableStyle: MobileTableTheme = MobileTableTheme.Primary;
   @Input() mobileTheadStyle: MobileTheadTheme = MobileTheadTheme.Primary;
   @Input() customCssClass: string = '';
@@ -40,10 +39,6 @@ export class GenericMobileTableRowComponent{
   fields: string[] = [];
   protected readonly MobileTableTheme = MobileTableTheme;
   protected readonly MobileTheadTheme = MobileTheadTheme;
-
-  ngOnInit() {
-    this.fields = Object.getOwnPropertyNames(this.row);
-  }
 }
 
 
