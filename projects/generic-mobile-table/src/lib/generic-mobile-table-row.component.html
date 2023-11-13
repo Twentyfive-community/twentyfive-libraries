@@ -11,8 +11,8 @@
       </div>
       <div class="col-6 d-flex justify-content-end">
 
-       <lib-twentyfive-dropdown  [showButton]="false" toggleIcon="bi bi-three-dots-vertical" [dropdownItems]="actions"></lib-twentyfive-dropdown>
-         <i class="bi bi-three-dots-vertical table-menu-icon-white"  data-bs-toggle="dropdown">
+       <!--<lib-twentyfive-dropdown  [showButton]="false" toggleIcon="bi bi-three-dots-vertical" [dropdownItems]="actions"></lib-twentyfive-dropdown>-->
+         <i class="bi bi-three-dots-vertical table-menu-icon-white area-clickable-increased"  data-bs-toggle="dropdown">
                <ul class="dropdown-menu dropdown-menu-end">
                    <li *ngFor="let action of actions">
                        <a class="dropdown-item" (click)="action.action(row)">

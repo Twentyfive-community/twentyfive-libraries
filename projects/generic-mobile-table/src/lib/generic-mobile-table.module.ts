@@ -9,7 +9,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {TwentyfiveSwitchModule} from "twentyfive-switch";
-import {TwentyfiveDropdownModule} from "twentyfive-dropdown";
 
 
 
@@ -29,7 +28,6 @@ import {TwentyfiveDropdownModule} from "twentyfive-dropdown";
     HttpClientModule,
     NgbModule,
     TwentyfiveSwitchModule,
-    TwentyfiveDropdownModule,
     BrowserModule,
 
   ],
