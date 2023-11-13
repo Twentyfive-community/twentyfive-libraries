@@ -12,14 +12,13 @@
       id="typeahead-http"
       type="text"
       class="form-control"
+      (ngModelChange)="change(nTemplt)"
       [class.is-invalid]="searchFailed"
       [formControl]="model"
       [ngbTypeahead]="search"
       [inputFormatter]="formatter"
       [resultTemplate]="nTemplt"
       [placeholder]="placeholder"
-      [ngModel]="value"
-      (ngModelChange)="change(nTemplt)"
     >
     <small *ngIf="searching" class="form-text text-muted">searching...</small>
     <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>

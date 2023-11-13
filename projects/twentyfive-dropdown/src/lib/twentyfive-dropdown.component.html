@@ -11,7 +11,7 @@
   </ul>
 </div>
 
-<i *ngIf="!showButton" [ngClass]="toggleIcon" class="table-menu-icon" data-bs-toggle="dropdown">
+<i *ngIf="!showButton" [ngClass]="toggleIcon" class="table-menu-icon area-clickable-increased" data-bs-toggle="dropdown">
   <ul class="dropdown-menu dropdown-menu-end">
     <li  *ngFor="let item of dropdownItems" [value]="item.value" [ngModel]="model" (click)="modelChange.emit(item.value)">
       <a class="dropdown-item">
