@@ -1,8 +1,9 @@
 //@import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
-@import "./_variables.scss";
-@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import "./variables.scss";
+@import '../../../../node_modules/bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
-@import url('node_modules/bootstrap-icons/font/bootstrap-icons.css');
+@import url('../../../../node_modules/bootstrap-icons/font/bootstrap-icons.css');
+
 
 //navbar style
 $navbar-dark-color: white;
@@ -375,6 +376,17 @@ th{
   margin-left: 0.75rem;
   font-size: 1.25rem;
 }
+
+.area-clickable-increased { position: relative; }
+.area-clickable-increased::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 250%;
+  height: 200%;
+}
+
 .table-menu-icon-white{
   cursor: pointer;
   font-size: 1rem;
