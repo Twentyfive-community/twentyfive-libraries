@@ -9,6 +9,7 @@
     class="form-control dp-hidden"
     ngbDatepicker
     #datepicker="ngbDatepicker"
+    [disabled]="disableText"
     [autoClose]="'outside'"
     [weekdays]="TranslationWidth.Narrow"
     (dateSelect)="onDateSelection($event)"
@@ -34,6 +35,7 @@
       <input
         #dpFromDate
         class="form-control"
+        [disabled]="disableText"
         [placeholder]="placeHolderDateStart"
         name="dpFromDate"
         [ngClass]="datePickerStyle == DatePickerTheme.Primary ? 'datepicker-25': customCssClass"
