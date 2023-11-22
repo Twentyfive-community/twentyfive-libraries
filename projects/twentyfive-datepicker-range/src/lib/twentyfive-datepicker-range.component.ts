@@ -23,7 +23,7 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
   @Input() customLabelClass: string = '';
   @Input() buttonIcon: string = 'bi bi-calendar-week';
   @Input() disabledInput: boolean = false;
-  @Input()   disableText: boolean = false;
+  @Input() disableText: boolean = false;
   @Input() datePickerStyle: DatePickerTheme = DatePickerTheme.Primary;
   @Input() datePickerButtonStyle: DatePickerButtonTheme = DatePickerButtonTheme.ButtonPrimary;
   @Input() customCssClass: string = '';
