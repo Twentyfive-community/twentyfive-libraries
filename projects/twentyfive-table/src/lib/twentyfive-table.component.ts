@@ -14,6 +14,7 @@ export class TwentyfiveTableComponent {
 
   @Input() customCssClass: string = '';
   @Input() customHeaderClass: string = '';
+  @Input() switchHeaderText: string = 'On/Off';
   @Input() actions: any = [];
   @Input() showActions: boolean = false;
   @Input() rows: any[] = [];

@@ -4,7 +4,7 @@
 >
   <thead [ngClass]=" tableHeadStyle == TableHeadTheme.Primary ? 'thead-primary' : customHeaderClass">
   <tr>
-    <th *ngIf="showSwitch" scope="col">On/Off</th>
+    <th *ngIf="showSwitch" scope="col">{{switchHeaderText}}</th>
     <th *ngFor="let elem of headers" scope="col">{{elem.name}}</th>
     <th *ngIf="showActions" scope="col"></th>
   </tr>
