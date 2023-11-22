@@ -1,8 +1,19 @@
-<div class="ps-4 menu-item d-flex justify-content-start align-items-center"
+
+
+<div *ngIf="!disable" class="ps-4 menu-item d-flex justify-content-start align-items-center"
      role="button" [routerLink]="navigationUrl"
      [routerLinkActive]="'menu-item-active'"
      (click)="click()"
+
 >
-  <i class="menu-icon" [class]="icon"></i>
-  <label class="menu-item-text ps-4">{{labelText}}</label>
+  <i class="menu-icon" [style.color]="labelColor" [class]="icon"></i>
+  <label class="menu-item-text ps-4" [style.color]="labelColor">{{labelText}}</label>
+</div>
+
+<div *ngIf="disable" class="ps-4 menu-item d-flex justify-content-start align-items-center"
+     role="button" [routerLink]="navigationUrl"
+     [routerLinkActive]="'menu-item-active'"
+>
+  <i class="menu-icon" [style.color]="labelColor" [class]="icon"></i>
+  <label class="menu-item-text ps-4" [style.color]="labelColor">{{labelText}}</label>
 </div>

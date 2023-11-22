@@ -11,4 +11,7 @@ export class TwentyfiveMenuItemComponent {
   @Input() icon: string | undefined | null = '';
   @Input() navigationUrl: string | undefined | null = '';
   @Input() click: any = emptyFunction;
+  @Input() disable: boolean | undefined = false;
+  @Input() labelColor: string = '';
+  @Input() inputColor: string = '';
 }
