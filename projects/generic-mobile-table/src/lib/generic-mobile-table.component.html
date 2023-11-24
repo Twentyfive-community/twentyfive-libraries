@@ -11,7 +11,7 @@
       (changeSwitchValue)="changeSwitchValue(row)"
       [ngClass]="switchStyle"
       [id]="id"
-      [checked]="row.active"
+      [checked]="row[checkedField]"
       [disabled]="disabled"
       [headers]="headers"
       [actions]="actions"

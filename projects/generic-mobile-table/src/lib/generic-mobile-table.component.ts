@@ -11,7 +11,7 @@ export class GenericMobileTableComponent {
   @Input() headers: any = [];
   @Input() rows: any = [];
   @Input() tableStyle:any;
-
+  @Input() checkedField: string = '';
   @Input() switchText: string = '';
   @Input() showSwitch: boolean = false;
   @Input() id: string = '';
