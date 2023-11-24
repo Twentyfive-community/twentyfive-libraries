@@ -16,11 +16,12 @@ export class TwentyfiveTableComponent {
   @Input() customHeaderClass: string = '';
   @Input() switchHeaderText: string = 'On/Off';
   @Input() actions: any = [];
+  @Input() active: any;
   @Input() showActions: boolean = false;
   @Input() rows: any[] = [];
   @Input() headers: TableHeader[] = [];
   @Input() paginationStyle: any;
-
+  @Input() checkedField: string = '';
 
 
 
