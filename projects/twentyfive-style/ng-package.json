@@ -6,5 +6,8 @@
   },
   "assets": [
     "./src/assets/**/*.*"
+  ],
+  "allowedNonPeerDependencies": [
+    "@popperjs/core"
   ]
 }
