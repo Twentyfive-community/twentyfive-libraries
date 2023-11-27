@@ -1,8 +1,5 @@
-/*
-@import "./variables.scss";
-@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import "../src/assets/variables.scss";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
-@import url('node_modules/bootstrap-icons/font/bootstrap-icons.css');
 
 //navbar style
 $navbar-dark-color: white;
@@ -39,15 +36,7 @@ input{
 
 
 //MENU ITEM
-@media (max-width: 768px) {
-  .menu-item-active{
-    background-color: $menu-item-active-mobile;
-  }
 
-  .menu-item:hover{
-    background-color: $menu-item-active-mobile;
-  }
-}
 .menu-item{
   height: 64px;
   width: 100%;
@@ -57,10 +46,44 @@ input{
 }
 // $className-active is used to extend with routerLinkActive functionality
 .menu-item-active{
-  background-color: $menu-item-active;
+  background-color: $primary-active;
 }
-.menu-item-active:hover{
-  background-color: $menu-item-active;
+
+.menu-item:hover{
+  background-color: $primary-active;
+}
+.menu-item-text{
+  color: $white;
+}
+.menu-icon{
+  color: $white;
+}
+
+.menu-item{
+  height: 64px;
+  width: 100%;
+}
+.sidebar{
+  background-color: $sidebar;
+}
+
+@media (min-width: 768px) {
+  .menu-item:hover{
+    background-color: $secondary-hover;
+  }
+  // $className-active is used to extend with routerLinkActive functionality
+  .menu-item-active{
+    background-color: $secondary;
+  }
+  .menu-item-active:hover{
+    background-color: $secondary;
+  }
+  .menu-item-text{
+    color: $black-25;
+  }
+  .menu-icon{
+    color: $black-25;
+  }
 }
 
 
@@ -332,10 +355,6 @@ $icon-height: 1.25rem;
 
 
 
-
-
-
-
 //TABLE
 .thead-primary{
   --bs-table-color: #FFFFFF;
@@ -452,7 +471,10 @@ th{
   font-size: 4.75rem;
   color: $primary;
 }
-
+.btn-close{
+  --bs-btn-close-bg: url(
+  "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFF'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+}
 
 
 
@@ -1682,7 +1704,7 @@ ngb-datepicker{
 
 
 
-!*!* root color variables *!
+/*!* root color variables *!
 :root {
   --main-purple: #1A1660;
   --darker-purple: #19194b;
@@ -1816,9 +1838,8 @@ ngb-datepicker{
 .modal-header-style {
   background-color: var(--main-purple);
   color: white;
-}*!
+}*/
 
 
 
 
-*/

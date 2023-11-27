@@ -1,15 +1,16 @@
 {
   "name": "twentyfive-alert",
-  "version": "0.0.23",
+  "version": "0.0.26",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0",
     "@ng-bootstrap/ng-bootstrap": "^15.1.1",
     "bootstrap": "^5.3.2",
-    "bootstrap-icons": "^1.11.1"
+    "bootstrap-icons": "^1.11.1",
+    "tslib": "^2.3.0",
+    "twentyfive-style": "^0.0.9"
   },
   "sideEffects": false
 }
