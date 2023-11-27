@@ -31,6 +31,9 @@
       ],
       "twentyfive-buttons": [
         "dist/twentyfive-buttons"
+      ],
+      "twentyfive-style": [
+        "dist/twentyfive-style"
       ]
     },
     "lib": [
