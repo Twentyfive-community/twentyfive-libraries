@@ -1,5 +1,7 @@
-@import "../src/assets/variables.scss";
+
+@use "variables";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
 
 //navbar style
 $navbar-dark-color: white;
@@ -15,6 +17,10 @@ $menu-item-active-mobile: #1A1635;
 $menu-item-color: black;
 $menu-item-color-mobile: white;
 $button-color-active: #19194b;
+
+.test-cacca{
+  background-color: $cacca ;
+}
 
 
 *[role="button"] > *{cursor: pointer}
