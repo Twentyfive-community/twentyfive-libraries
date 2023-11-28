@@ -1,16 +1,17 @@
 {
   "name": "twentyfive-sidebar",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0",
     "@ng-bootstrap/ng-bootstrap": "^15.1.1",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
-    "twentyfive-menu-item": "^0.0.4"
+    "tslib": "^2.3.0",
+    "twentyfive-menu-item": "^0.0.16",
+    "twentyfive-style": "^0.0.22"
   },
   "sideEffects": false
 }
