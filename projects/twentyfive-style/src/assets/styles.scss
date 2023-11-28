@@ -1,5 +1,5 @@
 
-@use "variables";
+@import "./variables";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
 
@@ -10,7 +10,7 @@ $navbar-padding-y: 20px;
 $navbar-padding-x: 20px;
 $navbar-toggler-focus-width: 1;
 
-//our colors
+/*//our colors*/
 $menu-item-active: #D9D9D9;
 $menu-item-hover: #EEEEEE;
 $menu-item-active-mobile: #1A1635;
@@ -716,7 +716,9 @@ ngb-datepicker{
 
 
 
-//BUTTONS
+/*//BUTTONS
+
+ */
 .btn-primary{
   height: 2.75rem;
   display: flex;
@@ -824,7 +826,9 @@ ngb-datepicker{
 
 
 
+/*
 //BUTTONS ONLY ICON RECTANGULAR
+ */
 .btn-only-icon-primary-sm{
   height: 2.75rem;
   width: 4.5rem;
@@ -1122,7 +1126,9 @@ ngb-datepicker{
 
 
 
+/*
 //BUTTONS ONLY ICON CIRCULAR
+ */
 .btn-only-icon-primary-circular-sm{
   height: 2.75rem;
   width: 2.75rem;
@@ -1734,7 +1740,9 @@ ngb-datepicker{
 
 
 
+/*
 //old
+ */
 .primary-sm-25 {
   padding: 0.75rem 1.5rem;
   border-radius: 8px;

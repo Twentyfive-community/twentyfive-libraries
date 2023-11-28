@@ -4,7 +4,9 @@ $navbar-padding-y: 20px;
 $navbar-padding-x: 20px;
 $navbar-toggler-focus-width: 1;
 
+/*
 //our colors
+ */
 $menu-item-active: #D9D9D9;
 $menu-item-hover: #EEEEEE;
 $menu-item-active-mobile: #1A1635;
@@ -12,7 +14,9 @@ $menu-item-color: black;
 $menu-item-color-mobile: white;
 $button-color-active: #19194b;
 
-//definition colors
+/*//definition colors
+
+ */
 $primary: #1A1660 !default;
 $cacca: $primary !default;
 $primary-hover: #332CA0;
@@ -31,7 +35,9 @@ $disabled-placeholder:#909090;
 
 :root {
 
+ /*
   //BUTTON PRIMARY
+  */
   --button-primary-bg: $primary;
   --button-primary-color: $white;
   --button-primary-border-color: $primary;
@@ -69,7 +75,9 @@ $disabled-placeholder:#909090;
 
 
 
+  /*
   //BUTTON SECONDARY
+   */
   --button-secondary-bg: $secondary;
   --button-secondary-color: $black-25;
   --button-secondary-border-color: $secondary;
@@ -106,7 +114,9 @@ $disabled-placeholder:#909090;
 
 
 
+  /*
   //BUTTON OUTLINE PRIMARY
+   */
   --button-primary-outline-bg: $white;
   --button-primary-outline-color: $primary;
   --button-primary-outline-border-color: $primary;
@@ -143,7 +153,9 @@ $disabled-placeholder:#909090;
 
 
 
-  //BUTTON DISABLED
+  /*//BUTTON DISABLED
+
+   */
   --button-disabled-bg: $secondary;
   --button-disabled-color: $white;
   --button-disabled-border-color: $secondary;
@@ -184,7 +196,9 @@ $disabled-placeholder:#909090;
 
 
 
+  /*
   //BUTTON ONLY TEXT
+   */
   --button-only-text-bg: $transparent;
   --button-only-text-color: $primary;
   --button-only-text-border-color: $transparent;
