@@ -1,4 +1,3 @@
-
 @import "./variables";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
@@ -18,11 +17,6 @@ $menu-item-color: black;
 $menu-item-color-mobile: white;
 $button-color-active: #19194b;
 
-.test-cacca{
-  background-color: $cacca ;
-}
-
-
 *[role="button"] > *{cursor: pointer}
 
 body {
@@ -38,7 +32,6 @@ i{
 input{
   box-shadow: none!important;
 }
-
 
 
 /* MENU ITEM */
