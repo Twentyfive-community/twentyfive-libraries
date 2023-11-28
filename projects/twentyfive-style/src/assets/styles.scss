@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
 
-
+//navbar style
 $navbar-dark-color: white;
 $navbar-dark-brand-color:white;
 $navbar-padding-y: 20px;
@@ -41,9 +41,7 @@ input{
 
 
 
-/*//MENU ITEM
-
- */
+//MENU ITEM
 
 .menu-item{
   height: 64px;
@@ -52,6 +50,7 @@ input{
 .menu-item:hover{
   background-color: $menu-item-hover;
 }
+// $className-active is used to extend with routerLinkActive functionality
 .menu-item-active{
   background-color: $primary-active;
 }
@@ -78,9 +77,7 @@ input{
   .menu-item:hover{
     background-color: $secondary-hover;
   }
-  /*// $className-active is used to extend with routerLinkActive functionality
-
-   */
+  // $className-active is used to extend with routerLinkActive functionality
   .menu-item-active{
     background-color: $secondary;
   }
@@ -96,9 +93,7 @@ input{
 }
 
 
-/*//TEXTS
-
- */
+//TEXTS
 h1{
   font-size: 2.5rem;
   font-weight: 600;
@@ -157,9 +152,7 @@ label{
 }
 
 
-/*//CHECKBOX
-
- */
+//CHECKBOX
 .checkbox-25{
   cursor: pointer;
   border-color: $border-grey;
@@ -179,9 +172,7 @@ label{
 
 
 
-/*//RADIO BUTTONS
-
- */
+//RADIO BUTTONS
 .radio-button-25{
   cursor: pointer;
   border-color: $border-grey;
@@ -200,9 +191,7 @@ label{
 
 
 
-/*//SWITCHES
-
- */
+//SWITCHES
 .switch-25{
   cursor: pointer;
   border-color: $disabled-placeholder;
@@ -225,18 +214,14 @@ label{
 
 
 
-/*//ICONS
-
- */
+//ICONS
 .icon-size{
   font-size: var(--nome-variabile, 1.25rem);
 }
 
 
 
-/*//INPUTS
-
- */
+//INPUTS
 .form-control::placeholder {
   color: $placeholder;
 }
@@ -259,9 +244,7 @@ label{
 
 
 
-/*//SPINNER
-
- */
+//SPINNER
 $diameter: 2.5rem;
 $spinner: 0.125rem;
 $spinner-color: $primary;
@@ -355,9 +338,7 @@ $icon-height: 1.25rem;
 
 
 
-/*//ALERT
-
- */
+//ALERT
 .alert-primary{
   height: 3.75rem;
   border: 0.0313rem solid $primary 0.2;
@@ -380,9 +361,7 @@ $icon-height: 1.25rem;
 
 
 
-/*//TABLE
-
- */
+//TABLE
 .thead-primary{
   --bs-table-color: #FFFFFF;
   --bs-table-bg: #1A1660;
@@ -452,9 +431,7 @@ th{
 
 
 
-/*
 //PAGINATION
- */
 .page-item:first-child .page-link{
   border-radius: 0.5rem;
 }
@@ -481,9 +458,7 @@ th{
 
 
 
-/*
 //MODAL
- */
 .modal-content{
   outline: none;
   border: none;
@@ -509,9 +484,7 @@ th{
 
 
 
-/*
 //DATEPICKER
- */
 .datepicker-25{
   border-color: $border-grey !important;
   height: 2.75rem;
@@ -554,57 +527,41 @@ ngb-datepicker{
   box-shadow: 4px 4px 12px rgb(0,0,0,0.25)!important;
   border: none!important;
 }
-/*
 //datepicker header
- */
 .ngb-dp-header {
   background-color: $white !important;
 }
-/*
 //datepicker button left and right
- */
 .ngb-dp-arrow-btn {
   border-width: 0.5px;
   color: $black-25 !important;
 }
-/*
 //datepicker chevron icon
- */
 .ngb-dp-navigation-chevron{
   border-width: 0.1em 0.1em 0 0!important;
 }
-/*
 //date picker month and year dropdown
- */
 .ngb-dp-navigation-select {
   display: none !important;
 }
-/*//datepicker week header
-
- */
+//datepicker week header
 .ngb-dp-weekdays {
   border-bottom: 0 !important;
   background-color: $white !important;
   color: $black-25 !important;
 }
-/*//datepicker single day header
-
- */
+//datepicker single day header
 .ngb-dp-weekday {
   color: $black-25 !important;
   font-weight: bold;
   font-style: normal !important;
 }
-/*
 //datepicker other month days
- */
 [ngbDatepickerDayView].outside {
   opacity: unset!important;
   color: $secondary!important;
 }
-/*
 //datepicker current day
- */
 [ngbDatepickerDayView].active:not(.bg-primary){
    background-color: $white!important;
 }
@@ -612,9 +569,7 @@ ngb-datepicker{
   outline: 1px solid $primary!important;
   border-radius: 0.25rem;
 }
-/*//datepicker single week row
-
- */
+//datepicker single week row
 .ngb-dp-week{
   gap: 0.2rem;
   margin-bottom: 0.2rem;
@@ -622,9 +577,7 @@ ngb-datepicker{
 
 
 
-/*
 //INPUT-GROUP
- */
 .input-group-addon{
   height: 2.75rem;
   border-top-right-radius: 0;
@@ -646,9 +599,7 @@ ngb-datepicker{
 
 
 
-/*
 //TEXTAREA
- */
 .textarea-25{
   box-shadow: none !important;
   border-color: $border-grey;
@@ -666,9 +617,7 @@ ngb-datepicker{
 
 
 
-/*
 //RANGE SLIDER
- */
 .form-range{
   height: auto;
 }
@@ -693,9 +642,49 @@ ngb-datepicker{
 
 
 
-/*//BUTTON SIZES
+//INPUT-GROUP
+.input-group-addon{
+  height: 2.75rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: $border-grey;
+  border-width: 0.0313rem;
+  background-color: $secondary-hover;
+  color: $black-25;
+}
+.input-group-addon:disabled{
+  height: 2.75rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: $border-grey;
+  border-width: 0.0313rem;
+  background-color: $secondary;
+  color: $black-25;
+}
 
- */
+.btn-input-group-primary{
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  font-size: 1rem;
+  color: $white;
+  background-color: $primary;
+}
+.btn-input-group-primary:hover {
+  color: $white;
+  background-color: $primary-hover;
+}
+.btn-input-group-primary:hover:active {
+  color: $white;
+  background-color: $primary-hover;
+}
+
+
+
+//BUTTON SIZES
 .btn-icon-small{
   width: 10.5rem;
 }
@@ -1726,9 +1715,7 @@ ngb-datepicker{
 
 
 
-/*//SELECT
-
- */
+//SELECT
 .select-25{
   cursor: pointer;
   border-color: $border-grey;
