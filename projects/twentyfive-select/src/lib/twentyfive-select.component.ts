@@ -3,8 +3,7 @@ import {emptyFunction} from "./emptyFunction";
 import {LabelTheme} from "twentyfive-input";
 @Component({
   selector: 'lib-twentyfive-select',
-  templateUrl: `./twentyfive-select.component.html`,
-  styleUrls: ['../../src/styles.scss']
+  templateUrl: `./twentyfive-select.component.html`
 })
 export class TwentyfiveSelectComponent {
   @Input() options: any[] = [];

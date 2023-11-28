@@ -9,6 +9,7 @@
     "bootstrap",
     "bootstrap-icons",
     "twentyfive-input",
-    "@angular/localize"
+    "@angular/localize",
+    "twentyfive-style"
   ]
 }

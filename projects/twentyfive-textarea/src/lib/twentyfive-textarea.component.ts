@@ -2,8 +2,7 @@ import {Component, Input} from '@angular/core';
 import {LabelTheme} from "twentyfive-input";
 @Component({
   selector: 'lib-twentyfive-textarea',
-  templateUrl: `./twentyfive-textarea.component.html`,
-  styleUrls: ['../../src/styles.scss']
+  templateUrl: `./twentyfive-textarea.component.html`
 })
 export class TwentyfiveTextareaComponent {
   @Input() placeholder: string = 'Placeholder';

@@ -2,8 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'lib-twentyfive-checkbox',
-  templateUrl: `./twentyfive-checkbox.component.html`,
-  styleUrls: ['../../src/styles.scss']
+  templateUrl: `./twentyfive-checkbox.component.html`
 })
 export class TwentyfiveCheckboxComponent {
   @Input() checkboxText: string = '';

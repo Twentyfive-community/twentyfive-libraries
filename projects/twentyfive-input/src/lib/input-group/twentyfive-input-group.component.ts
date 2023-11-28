@@ -4,8 +4,7 @@ import {emptyFunction} from "../emptyFunction";
 
 @Component({
   selector: 'lib-twentyfive-input-group',
-  templateUrl: `./twentyfive-input-group.component.html`,
-  styleUrls: ['../../../src/styles.scss']
+  templateUrl: `./twentyfive-input-group.component.html`
 })
 export class TwentyfiveInputGroupComponent {
   @Input() placeholder: string = 'Placeholder';

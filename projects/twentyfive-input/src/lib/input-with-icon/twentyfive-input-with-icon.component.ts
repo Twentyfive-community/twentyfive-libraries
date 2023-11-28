@@ -3,8 +3,7 @@ import {InputTheme} from "../input/twentyfive-input.component";
 
 @Component({
   selector: 'lib-twentyfive-input-with-icon',
-  templateUrl: `./twentyfive-input-with-icon.component.html`,
-  styleUrls: ['../../../src/styles.scss']
+  templateUrl: `./twentyfive-input-with-icon.component.html`
 })
 export class TwentyfiveInputWithIconComponent {
   @Input() placeholder: string = 'Placeholder';

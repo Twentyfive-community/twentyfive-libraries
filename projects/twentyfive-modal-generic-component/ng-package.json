@@ -8,7 +8,7 @@
     "@ng-bootstrap/ng-bootstrap",
     "bootstrap",
     "@popperjs/core",
-    "bootstrap-icons"
-
+    "bootstrap-icons",
+    "twentyfive-style"
   ]
 }

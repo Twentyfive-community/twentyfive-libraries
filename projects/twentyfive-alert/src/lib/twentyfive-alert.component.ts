@@ -2,8 +2,7 @@ import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'lib-twentyfive-alert',
-  templateUrl: `./twentyfive-alert.component.html`,
-  styleUrls: ['../../src/styles.scss']
+  templateUrl: `./twentyfive-alert.component.html`
 })
 export class TwentyfiveAlertComponent {
   @Input() showIcon: boolean = true;

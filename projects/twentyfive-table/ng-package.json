@@ -10,6 +10,7 @@
     "@popperjs/core",
     "bootstrap-icons",
     "twentyfive-dropdown",
-    "twentyfive-switch"
+    "twentyfive-switch",
+    "twentyfive-style"
   ]
 }

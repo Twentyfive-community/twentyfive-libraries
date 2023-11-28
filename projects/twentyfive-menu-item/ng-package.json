@@ -10,6 +10,7 @@
   "allowedNonPeerDependencies": [
     "@ng-bootstrap/ng-bootstrap",
     "bootstrap",
-    "bootstrap-icons"
+    "bootstrap-icons",
+    "twentyfive-style"
   ]
 }

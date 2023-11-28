@@ -3,8 +3,7 @@ import {emptyFunction} from "./emptyFunction";
 
 @Component({
   selector: 'lib-twentyfive-menu-item',
-  templateUrl: `./twentyfive-menu-item.component.html`,
-  styleUrls: ['../assets/styles.scss']
+  templateUrl: `./twentyfive-menu-item.component.html`
 })
 export class TwentyfiveMenuItemComponent {
   @Input() labelText: string | undefined | null = 'Text';

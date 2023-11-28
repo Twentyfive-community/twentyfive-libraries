@@ -27,7 +27,7 @@
 
   <div class="card-body" >
 
-    <label *ngIf="showSwitch" class="text-semibold "> On/Off</label>
+    <label *ngIf="showSwitch" class="text-semibold ">{{switchLabelText}}</label>
 
     <div *ngIf="showSwitch" class="row mb-3">
       <lib-twentyfive-switch

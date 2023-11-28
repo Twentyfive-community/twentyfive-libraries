@@ -1,11 +1,10 @@
 import {Component, Input} from '@angular/core';
 import {emptyFunction} from "./emptyFunction";
-import {ButtonSizeTheme, ButtonTheme} from "generic-buttons";
+import {ButtonSizeTheme, ButtonTheme} from "generic-button";
 
 @Component({
   selector: 'lib-twentyfive-modal',
-  templateUrl: `./twentyfive-modal.component.html`,
-  styleUrls: ['../../src/styles.scss']
+  templateUrl: `./twentyfive-modal.component.html`
 })
 export class TwentyfiveModalComponent {
   @Input() bodyText: string = '';

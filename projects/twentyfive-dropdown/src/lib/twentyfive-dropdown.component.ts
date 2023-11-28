@@ -2,8 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'lib-twentyfive-dropdown',
-  templateUrl: `./twentyfive-dropdown.component.html`,
-  styleUrls: ['../assets/styles.scss']
+  templateUrl: `./twentyfive-dropdown.component.html`
 })
 export class TwentyfiveDropdownComponent {
   @Input() toggleIcon:string = '';

@@ -8,6 +8,7 @@
     "@ng-bootstrap/ng-bootstrap",
     "bootstrap",
     "bootstrap-icons",
-    "twentyfive-menu-item"
+    "twentyfive-menu-item",
+    "twentyfive-style"
   ]
 }

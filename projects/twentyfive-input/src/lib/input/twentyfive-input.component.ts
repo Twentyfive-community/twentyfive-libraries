@@ -2,8 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'lib-twentyfive-input',
-  templateUrl: `./twentyfive-input.component.html`,
-  styleUrls: ['../../../src/styles.scss']
+  templateUrl: `./twentyfive-input.component.html`
 })
 export class TwentyfiveInputComponent {
   @Input() placeholder: string = 'Placeholder';

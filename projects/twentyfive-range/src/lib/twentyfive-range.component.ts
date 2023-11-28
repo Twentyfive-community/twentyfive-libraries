@@ -2,8 +2,7 @@ import {Component, Input} from '@angular/core';
 import {LabelTheme} from "twentyfive-input";
 @Component({
   selector: 'lib-twentyfive-range',
-  templateUrl: `./twentyfive-range.component.html`,
-  styleUrls: ['../../src/styles.scss']
+  templateUrl: `./twentyfive-range.component.html`
 })
 export class TwentyfiveRangeComponent {
   @Input() disabled: boolean = false;
