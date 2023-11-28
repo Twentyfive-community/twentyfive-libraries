@@ -2,6 +2,7 @@ export enum AlertTheme{
     Primary = 'alert-primary',
     Danger = 'alert-danger',
     Success = 'alert-success',
+  Verde = 'alert-ciano'
 }
 
 export enum ButtonSizeWithIconTheme {
