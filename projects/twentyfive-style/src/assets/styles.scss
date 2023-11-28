@@ -572,6 +572,49 @@ ngb-datepicker{
   gap: 0.2rem;
   margin-bottom: 0.2rem;
 }
+.ngb-dp-month-name {
+  background-color: $white !important;
+  color: $black-25 !important;
+}
+
+
+/*DATEPICKER RANGE*/
+.ngb-dp-today.hidden{
+  outline: none !important;
+}
+
+.dp-hidden {
+  width: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.custom-day {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0.25rem;
+}
+
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+
+.custom-day.range,
+.custom-day:hover {
+  background-color: $primary;
+  color: $white;
+}
+
+.custom-day.faded {
+  background-color: $primary-opaque;
+  color: $black-25;
+}
+
+
 
 
 /* INPUT-GROUP */
