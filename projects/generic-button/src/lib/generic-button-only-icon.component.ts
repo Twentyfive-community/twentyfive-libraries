@@ -1,6 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {emptyFunction} from "./constants/empty-function";
-import {ButtonTheme} from "./generic-button.component"
+import {emptyFunction} from "twentyfive-style";
 @Component({
   selector: 'lib-generic-button-only-icon',
   templateUrl: './generic-button-only-icon.component.html',
@@ -14,8 +13,8 @@ export class GenericButtonOnlyIconComponent {
   @Input() tooltipText: string = '';
   @Input() click: any = emptyFunction;
   disabled: boolean = true;
-  @Input() buttonStyle: ButtonTheme = ButtonTheme.PrimaryOnlyIconSmall;
+  @Input() buttonStyle: any;
   @Input() customCssClass: string = '';
-  protected readonly ButtonTheme = ButtonTheme;
+  ButtonTheme: any;
 
 }
