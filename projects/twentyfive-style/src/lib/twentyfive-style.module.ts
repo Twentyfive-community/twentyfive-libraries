@@ -10,7 +10,8 @@ import { TwentyfiveStyleComponent } from './twentyfive-style.component';
   imports: [
   ],
   exports: [
-    TwentyfiveStyleComponent
+    TwentyfiveStyleComponent,
+
   ]
 })
 export class TwentyfiveStyleModule { }

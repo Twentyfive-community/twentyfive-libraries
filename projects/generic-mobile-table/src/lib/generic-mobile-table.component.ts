@@ -26,7 +26,6 @@ export class GenericMobileTableComponent {
   @Input() customCssClass: string = '';
   @Output() switchClick = new EventEmitter<any>();
 
-  protected readonly TableTheme = TableTheme;
 
   changeSwitchValue(event: any) {
     this.switchClick.emit(event);
@@ -36,7 +35,4 @@ export class GenericMobileTableComponent {
 
 }
 
-export enum TableTheme {
-  Web = 'web-element',
-  Mobile = 'mobile-element',
-}
+

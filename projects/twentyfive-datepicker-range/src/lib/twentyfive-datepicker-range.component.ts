@@ -2,10 +2,8 @@ import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@ang
 import {NgbCalendar, NgbDate, NgbDateParserFormatter} from "@ng-bootstrap/ng-bootstrap";
 import {ItalianDateFormatter} from "../utilities/italian-date-formatter";
 import {TwentyDate} from "./twenty-date";
-import {DatePickerButtonTheme, DatePickerTheme, LabelTheme} from "../constants/genetric-components-themes";
 import {TranslationWidth} from "@angular/common";
-
-
+import {LabelTheme, DatePickerTheme, DatePickerButtonTheme} from "twentyfive-style";
 @Component({
   selector: 'lib-twentyfive-datepicker-range',
   templateUrl : 'twentyfive-datepicker-range.component.html',
@@ -87,11 +85,7 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
     return parsed && this.calendar.isValid(NgbDate.from(parsed)) ? NgbDate.from(parsed) : currentValue;
   }
 
-  protected readonly LabelTheme = LabelTheme;
-  protected readonly TranslationWidth = TranslationWidth;
-  protected readonly DatePickerTheme = DatePickerTheme;
-  protected readonly DatePickerButtonTheme = DatePickerButtonTheme;
-
+   readonly TranslationWidth = TranslationWidth;
   @HostListener("window:resize" , []) changeSize() {
     if(window.innerWidth < 768){
       this.numberOfMonths = 1;

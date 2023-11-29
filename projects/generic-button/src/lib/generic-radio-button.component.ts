@@ -12,13 +12,11 @@ export class GenericRadioButtonComponent {
   @Input() id: string  = '';
   @Input() checked: boolean  = false;
   @Input() disabled: boolean  = false;
-  @Input() radioButtonStyle: RadioButtonTheme = RadioButtonTheme.Primary;
+  @Input() radioButtonStyle: any;
 
   @Input() customCssClass: string = '';
-  protected readonly RadioButtonTheme = RadioButtonTheme;
+  RadioButtonTheme: any;
 }
 
 
-export enum RadioButtonTheme{
-  Primary = 'radio-button-25'
-}
+

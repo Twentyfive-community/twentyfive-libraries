@@ -1,6 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {emptyFunction} from "./constants/empty-function";
-import {ButtonTheme, ButtonSizeTheme} from "./generic-button.component";
+import {emptyFunction} from "twentyfive-style";
 
 @Component({
   selector: 'lib-generic-button-text-with-icon',
@@ -24,14 +23,8 @@ export class GenericButtonTextWithIconComponent {
 
   @Input() customCssClass: string = '';
   @Input() customSizeCssClass: string = '';
+  ButtonTheme: any;
+  ButtonSizeWithIconTheme: any;
+  ButtonSizeTheme: any;
+}
 
-  protected readonly ButtonTheme = ButtonTheme;
-  protected readonly ButtonSizeWithIconTheme = ButtonSizeWithIconTheme;
-  protected readonly ButtonSizeTheme = ButtonSizeTheme;
-}
-export enum ButtonSizeWithIconTheme {
-  Small = 'btn-icon-small',
-  Medium = 'btn-icon-medium',
-  Large = 'btn-icon-large',
-  ExtraLarge = 'btn-icon-extra-large',
-}

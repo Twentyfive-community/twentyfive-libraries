@@ -1,20 +1,27 @@
 {
   "name": "twentyfive-style",
-  "version": "0.0.26",
+  "version": "0.0.37",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
   },
   "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@popperjs/core": "^2.11.8",
-    "tslib": "^2.3.0"
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.2",
+    "tslib": "^2.3.0",
+    "sass-loader": "^13.3.2",
+    "resolve-url-loader": "^5.0.0",
+    "css-loader": "^6.8.1"
   },
   "exports": [
     "./src/assets/styles.scss",
     "./src/assets/variables.scss"
   ],
   "files": [
-    "src/assets/**"
+    "src/assets/**",
+    "src/constants/**"
   ],
   "sideEffects": false
 }
