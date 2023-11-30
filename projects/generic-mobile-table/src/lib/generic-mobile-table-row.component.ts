@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {TableHeader} from "./table-header";
+import {MobileTableTheme, MobileTheadTheme} from "twentyfive-style";
 
 @Component({
   selector: 'lib-generic-mobile-table-row',
@@ -37,15 +38,8 @@ export class GenericMobileTableRowComponent{
 
 
   fields: string[] = [];
-  protected readonly MobileTableTheme = MobileTableTheme;
-  protected readonly MobileTheadTheme = MobileTheadTheme;
+
 }
 
 
-export enum MobileTableTheme {
-  Primary = 'mobile-table-primary',
-}
 
-export enum MobileTheadTheme {
-  Primary = 'mobile-thead-primary',
-}

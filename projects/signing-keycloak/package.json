@@ -1,0 +1,14 @@
+{
+  "name": "twentyfive-keycloak",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": "^17.0.4",
+    "@angular/core": "^17.0.4"
+  },
+  "dependencies": {
+    "keycloak-angular": "^15.0.0",
+    "keycloak-js": "^22.0.2",
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
