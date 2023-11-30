@@ -8,7 +8,8 @@
     "@ng-bootstrap/ng-bootstrap",
     "bootstrap",
     "bootstrap-icons",
+    "twentyfive-mobile-table-and-row",
     "generic-buttons",
-    "twentyfive-mobile-table-and-row"
+    "twentyfive-style"
   ]
 }

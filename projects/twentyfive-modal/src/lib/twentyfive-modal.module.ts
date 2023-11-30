@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { TwentyfiveModalComponent } from './twentyfive-modal.component';
+import {NgModule} from '@angular/core';
+import {TwentyfiveModalComponent} from './twentyfive-modal.component';
 import {CommonModule, NgClass, NgIf} from "@angular/common";
 import {GenericButtonModule} from "generic-buttons";
 

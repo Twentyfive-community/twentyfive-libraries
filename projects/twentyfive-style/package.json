@@ -1,6 +1,6 @@
 {
   "name": "twentyfive-style",
-  "version": "0.0.37",
+  "version": "0.0.39",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
@@ -17,11 +17,12 @@
   },
   "exports": [
     "./src/assets/styles.scss",
-    "./src/assets/variables.scss"
+    "./src/assets/variables.scss",
+    "./src/constants/generic-components-themes.ts",
+    "./src/constants/empty-function.ts"
   ],
   "files": [
-    "src/assets/**",
-    "src/constants/**"
+    "src/assets/**"
   ],
   "sideEffects": false
 }
