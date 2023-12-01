@@ -15,14 +15,14 @@ import {BrowserModule} from "@angular/platform-browser";
 
   ],
     imports: [
-        NgClass,
+      NgClass,
       BrowserModule,
       NgbModule,
       RouterOutlet,
       BrowserAnimationsModule,
       ReactiveFormsModule,
       FormsModule,
-      HttpClientModule,
+      HttpClientModule
     ],
   exports: [
     TwentyfiveAlertComponent

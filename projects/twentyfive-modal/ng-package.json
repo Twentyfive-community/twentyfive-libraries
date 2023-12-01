@@ -9,7 +9,6 @@
     "bootstrap",
     "bootstrap-icons",
     "twentyfive-mobile-table-and-row",
-    "generic-buttons",
-    "twentyfive-style"
+    "generic-buttons"
   ]
 }

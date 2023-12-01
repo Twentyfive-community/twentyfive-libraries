@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import { AlertTheme } from 'twentyfive-style';
 
 @Component({
   selector: 'lib-twentyfive-alert',
@@ -17,11 +18,7 @@ export class TwentyfiveAlertComponent {
   @Input() customCssClass: string = '';
   @Input() customIconClass: string = '';
 
-  protected readonly AlertTheme = AlertTheme;
+  protected readonly AlertTheme : any;
 }
 
-export enum AlertTheme{
-  Primary = 'alert-primary',
-  Danger = 'alert-danger',
-  Success = 'alert-success',
-}
+

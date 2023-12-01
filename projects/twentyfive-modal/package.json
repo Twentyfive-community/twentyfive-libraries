@@ -1,6 +1,6 @@
 {
   "name": "twentyfive-modal",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
@@ -9,10 +9,9 @@
     "@ng-bootstrap/ng-bootstrap": "^15.1.1",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
-    "generic-buttons": "^0.0.8",
+    "generic-buttons": "^0.0.37",
     "tslib": "^2.3.0",
-    "twentyfive-mobile-table-and-row": "^0.0.41",
-    "twentyfive-style": "^0.0.38"
+    "twentyfive-mobile-table-and-row": "^0.0.41"
   },
   "sideEffects": false
 }

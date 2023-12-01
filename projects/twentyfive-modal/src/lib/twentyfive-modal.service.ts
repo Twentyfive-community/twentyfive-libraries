@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {pipe} from "rxjs";
-import {emptyFunction} from "./emptyFunction";
-import {ButtonSizeTheme, ButtonTheme} from "twentyfive-style";
+import {emptyFunction} from "../constants/emptyFunction";
+import {ButtonSizeTheme, ButtonTheme} from "../constants/generic-components-themes";
 import {TwentyfiveModalComponent} from "./twentyfive-modal.component";
 
 @Injectable({
