@@ -1,6 +1,6 @@
 {
   "name": "twentyfive-style",
-  "version": "0.0.57",
+  "version": "0.0.61",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
@@ -12,9 +12,7 @@
     "bootstrap-icons": "^1.11.2",
     "tslib": "^2.3.0"
   },
-  "files": [
-    "src/assets/**",
-    "constants"
-  ],
+
+
   "sideEffects": false
 }
