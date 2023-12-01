@@ -1,97 +1,97 @@
-export const enum AlertTheme{
+export enum AlertTheme{
     Primary = 'alert-primary',
     Danger = 'alert-danger',
     Success = 'alert-success',
 }
 
-export const enum ButtonSizeWithIconTheme {
+export  enum ButtonSizeWithIconTheme {
     Small = 'btn-icon-small',
     Medium = 'btn-icon-medium',
     Large = 'btn-icon-large',
     ExtraLarge = 'btn-icon-extra-large',
 }
 
-export const enum CheckboxTheme{
+export  enum CheckboxTheme{
     Primary = 'checkbox-25'
 }
 
-export const enum DatePickerTheme {
+export  enum DatePickerTheme {
     Primary = 'datepicker-25',
 }
 
-export const enum DatePickerButtonTheme {
+export  enum DatePickerButtonTheme {
     ButtonPrimary = 'btn datepicker-button-primary',
 }
 
-export const enum InputTheme {
+export  enum InputTheme {
     Primary = 'input-25',
 }
 
-export const enum  LabelTheme{
+export  enum  LabelTheme{
     LabelMedium= 'label-25',
     LabelBold= 'label-25-bold'
 }
 
-export const enum  AddonTheme{
+export  enum  AddonTheme{
     Primary= 'input-group-addon',
 }
 
-export const enum InputGroupButtonTheme {
+export  enum InputGroupButtonTheme {
     Primary = 'btn-input-group-primary',
 }
 
-export const enum InputIconTheme {
+export  enum InputIconTheme {
     Primary = 'icon-primary-25',
 }
-export const enum BoxTheme {
+export  enum BoxTheme {
     Primary = 'box-primary-25',
 }
 
-export const enum InputWithIconTheme {
+export  enum InputWithIconTheme {
     Primary = 'input-primary-25',
 }
 
-export const enum MobileTableTheme {
+export  enum MobileTableTheme {
     Primary = 'mobile-table-primary',
 }
 
-export const enum MobileTheadTheme {
+export  enum MobileTheadTheme {
     Primary = 'mobile-thead-primary',
 }
 
-export const enum RadioButtonTheme{
+export  enum RadioButtonTheme{
     Primary = 'radio-button-25'
 }
 
-export const enum SelectTheme{
+export  enum SelectTheme{
     Primary = 'select-25'
 }
 
-export const enum SwitchTheme{
+export  enum SwitchTheme{
     Primary = 'switch-25'
 }
 
-export const enum TableHeadTheme {
+export  enum TableHeadTheme {
     Primary = 'thead-primary',
 }
 
-export const enum TableTheme {
+export  enum TableTheme {
     Web = 'web-element',
     Mobile = 'mobile-element',
 }
 
-export const enum TextareaTheme{
+export  enum TextareaTheme{
     Primary = 'textarea-25'
 }
 
-export const enum ButtonSizeTheme {
+export  enum ButtonSizeTheme {
     Small = 'btn-small',
     Medium = 'btn-medium',
     Large = 'btn-large',
     ExtraLarge = 'btn-extra-large',
     FullWidth = 'btn-full-width',
 }
-export const enum ButtonTheme {
+export  enum ButtonTheme {
     Primary = 'btn-primary',
     Secondary = 'btn-secondary',
     Outline = 'btn-outline-primary',
