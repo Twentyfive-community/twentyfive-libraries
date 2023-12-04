@@ -13,12 +13,12 @@ export class TwentyfiveAlertComponent {
   @Input() message: string = 'Message!';
   @Input() strongMessage: string = 'Strong message!';
 
-  @Input() alertStyle: AlertTheme = AlertTheme.Primary;
+  @Input() alertStyle: any;
 
   @Input() customCssClass: string = '';
   @Input() customIconClass: string = '';
 
-  protected readonly AlertTheme : any;
+  protected AlertTheme = AlertTheme;
 }
 
 
