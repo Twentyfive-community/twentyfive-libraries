@@ -1,13 +1,14 @@
 <div>
+
   <label *ngIf="showLabel"
          [ngClass]=" labelStyle == LabelTheme.LabelMedium ? 'label-25' :
          labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :
           customLabelClass">
     {{labelText}}
   </label>
+
   <div class="input-group">
     <input
-
       [weekdays]="TranslationWidth.Narrow"
       [ngClass]="datePickerStyle == DatePickerTheme.Primary ? 'datepicker-25': customCssClass"
       [readOnly]="readOnly"
@@ -19,8 +20,8 @@
       class="form-control"
       ngbDatepicker
       #d="ngbDatepicker"
-
     />
+
     <button
       [disabled]="disabledInput"
       [ngClass]="[
@@ -31,5 +32,6 @@
       [type]="type">
     </button>
   </div>
+
 </div>
 

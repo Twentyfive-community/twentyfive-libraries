@@ -30,7 +30,11 @@ import {TwentyfiveStyleModule} from "twentyfive-style";
     NgbModule,
     TwentyfiveSwitchModule,
     BrowserModule,
-    TwentyfiveStyleModule
+    TwentyfiveStyleModule,
+    TwentyfiveSwitchModule,
+    TwentyfiveSwitchModule,
+    TwentyfiveSwitchModule,
+    TwentyfiveSwitchModule
 
   ],
   exports: [

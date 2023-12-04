@@ -12,7 +12,6 @@ import {GenericButtonModule} from "generic-buttons";
     NgClass,
     GenericButtonModule,
     NgIf,
-    GenericButtonModule,
     CommonModule
   ],
   exports: [

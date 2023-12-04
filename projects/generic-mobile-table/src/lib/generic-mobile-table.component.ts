@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {TableTheme} from "twentyfive-style";
 
 @Component({
   selector: 'lib-generic-mobile-table',
@@ -26,13 +27,11 @@ export class GenericMobileTableComponent {
   @Input() customCssClass: string = '';
   @Output() switchClick = new EventEmitter<any>();
 
-
   changeSwitchValue(event: any) {
     this.switchClick.emit(event);
   }
 
-
-
+  protected readonly TableTheme = TableTheme;
 }
 
 

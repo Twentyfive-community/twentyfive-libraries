@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {catchError, distinctUntilChanged, Observable,debounceTime, of, OperatorFunction, switchMap, tap} from "rxjs";
 import {TwentyfiveGenericAutocompleteService} from "./twentyfive-generic-autocomplete.service";
-import {InputTheme, LabelTheme} from "../../constants/genetric-components-themes";
+import {InputTheme, LabelTheme} from "twentyfive-style";
 
 
 @Component({
@@ -88,8 +88,6 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
     )
 
   formatter = (x: any) => {
-    console.log("FORMATTO");
-    console.log(x);
     return x[this.textToShowField];
   }
 
@@ -107,10 +105,10 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
     this.onElementSelected.emit(r);
   }
 
-  protected readonly InputTheme = InputTheme;
-  protected readonly LabelTheme = LabelTheme;
-
   change(event: any) {
     this.changeValue.emit(event);
   }
+
+  protected readonly InputTheme = InputTheme;
+  protected readonly LabelTheme = LabelTheme;
 }

@@ -6,7 +6,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import {TwentyfiveInputModule} from "twentyfive-input";
 
 
 
@@ -22,8 +21,7 @@ import {TwentyfiveInputModule} from "twentyfive-input";
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgbModule,
-    TwentyfiveInputModule
+    NgbModule
   ],
   exports: [
     TwentyfiveDatepickerComponent

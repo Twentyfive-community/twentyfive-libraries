@@ -9,6 +9,7 @@
     "bootstrap",
     "bootstrap-icons",
     "twentyfive-mobile-table-and-row",
-    "generic-buttons"
+    "generic-buttons",
+    "@popperjs/core"
   ]
 }

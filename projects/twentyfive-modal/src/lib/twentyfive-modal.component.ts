@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {emptyFunction} from "../constants/emptyFunction";
-import {ButtonTheme, ButtonSizeTheme} from "../constants/generic-components-themes";
+import {ButtonSizeTheme, ButtonTheme } from 'twentyfive-style';
 
 @Component({
   selector: 'lib-twentyfive-modal',
@@ -23,6 +23,6 @@ export class TwentyfiveModalComponent {
   @Input() showHeaderTitle: boolean = true;
   @Input() showIcon: boolean = false;
 
-  protected ButtonTheme: ButtonTheme | any
-  protected ButtonSizeTheme: ButtonSizeTheme | any;
+  protected ButtonTheme = ButtonTheme;
+  protected ButtonSizeTheme = ButtonSizeTheme;
 }
