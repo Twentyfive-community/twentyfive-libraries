@@ -11,8 +11,7 @@
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
     "tslib": "^2.3.0",
-    "twentyfive-input": "^0.0.12",
-    "twentyfive-style": "^0.0.22"
+    "@popperjs/core": "^2.11.8"
   },
   "sideEffects": false
 }

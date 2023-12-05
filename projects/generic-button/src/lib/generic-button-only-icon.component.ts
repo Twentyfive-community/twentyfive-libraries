@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {emptyFunction} from "../constants/empty-function";
+import {emptyFunction} from "./empty-function";
 import { ButtonTheme } from 'twentyfive-style';
 
 @Component({

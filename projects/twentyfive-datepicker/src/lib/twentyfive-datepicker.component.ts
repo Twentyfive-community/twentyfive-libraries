@@ -37,9 +37,9 @@ export class TwentyfiveDatepickerComponent {
     this.dateSelected.emit(selectedDate);
   }
 
-  protected readonly TranslationWidth = TranslationWidth;
-  protected readonly DatePickerTheme = DatePickerTheme;
-  protected readonly DatePickerButtonTheme = DatePickerButtonTheme;
-  protected readonly LabelTheme = LabelTheme;
+  protected TranslationWidth = TranslationWidth;
+  protected DatePickerTheme = DatePickerTheme;
+  protected DatePickerButtonTheme = DatePickerButtonTheme;
+  protected LabelTheme = LabelTheme;
 }
 

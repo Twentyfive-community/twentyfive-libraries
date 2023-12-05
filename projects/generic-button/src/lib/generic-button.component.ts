@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {ButtonTheme, ButtonSizeTheme} from "twentyfive-style";
-import {emptyFunction} from "../constants/empty-function";
+import {emptyFunction} from "./empty-function";
 @Component({
   selector: 'lib-generic-button',
   templateUrl: './generic-button.component.html',
