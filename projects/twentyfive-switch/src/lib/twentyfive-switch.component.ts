@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { SwitchTheme } from 'twentyfive-style';
 
 @Component({
   selector: 'lib-twentyfive-switch',
@@ -26,8 +27,4 @@ export class TwentyfiveSwitchComponent {
   protected readonly SwitchTheme = SwitchTheme;
 }
 
-
-export enum SwitchTheme{
-  Primary = 'switch-25'
-}
 

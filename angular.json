@@ -399,6 +399,39 @@
         }
       }
     },
+    "twentyfive-datepicker": {
+      "projectType": "library",
+      "root": "projects/twentyfive-datepicker",
+      "sourceRoot": "projects/twentyfive-datepicker/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/twentyfive-datepicker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/twentyfive-datepicker/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/twentyfive-datepicker/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/twentyfive-datepicker/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
     "twentyfive-datepicker-range": {
       "projectType": "library",
       "root": "projects/twentyfive-datepicker-range",

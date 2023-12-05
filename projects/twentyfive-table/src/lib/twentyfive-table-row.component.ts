@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {SwitchTheme} from "twentyfive-switch";
 import {TableHeader} from "./table-header";
+import { SwitchTheme } from 'twentyfive-style';
 
 @Component({
   selector: 'tr[table-row]',
@@ -8,6 +8,7 @@ import {TableHeader} from "./table-header";
   styleUrls: ['./twentyfive-table-row.component.scss']
 })
 export class TwentyfiveTableRowComponent implements OnInit{
+
   @Input() row: any ;
   @Input() switchText: string = '';
   @Input() id: string = '';
@@ -27,7 +28,6 @@ export class TwentyfiveTableRowComponent implements OnInit{
   eventChange(event: any) {
     this.changeSwitchValue.emit(event);
   }
-
 
   ngOnInit() {
   }

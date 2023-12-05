@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {emptyFunction} from "./emptyFunction";
-import {ButtonSizeTheme, ButtonTheme} from "generic-button";
+import {emptyFunction} from "../constants/emptyFunction";
+import {ButtonSizeTheme, ButtonTheme } from 'twentyfive-style';
 
 @Component({
   selector: 'lib-twentyfive-modal',
@@ -11,15 +11,18 @@ export class TwentyfiveModalComponent {
   @Input() modalTitle: string = '';
   @Input() icon: string = '';
   @Input() cancelButtonText: string = '';
+  @Input() confirmButtonText: string = '';
+
   @Input() cancelButtonStyle: any;
   @Input() cancelButtonSize: any;
-  @Input() confirmButtonText: string = '';
   @Input() confirmButtonStyle: any;
   @Input() confirmButtonSize: any;
+  @Input() onClose: any;
+  @Input() onConfirm: any = emptyFunction;
+
   @Input() showHeaderTitle: boolean = true;
   @Input() showIcon: boolean = false;
-  @Input() onConfirm: any = emptyFunction;
-  protected readonly ButtonTheme = ButtonTheme;
-  protected readonly ButtonSizeTheme = ButtonSizeTheme;
-  @Input() onClose: any;
+
+  protected ButtonTheme = ButtonTheme;
+  protected ButtonSizeTheme = ButtonSizeTheme;
 }

@@ -6,14 +6,12 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule, RouterOutlet} from "@angular/router";
 import {BrowserModule} from "@angular/platform-browser";
-import {TwentyfiveStyleModule} from "twentyfive-style";
 
 
 
 @NgModule({
   declarations: [
     TwentyfiveDatepickerRangeComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -23,8 +21,7 @@ import {TwentyfiveStyleModule} from "twentyfive-style";
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgbModule,
-    TwentyfiveStyleModule
+    NgbModule
   ],
   exports: [
     TwentyfiveDatepickerRangeComponent

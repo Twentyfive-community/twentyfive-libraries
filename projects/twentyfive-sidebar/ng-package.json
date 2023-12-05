@@ -9,6 +9,6 @@
     "bootstrap",
     "bootstrap-icons",
     "twentyfive-menu-item",
-    "twentyfive-style"
+    "@popperjs/core"
   ]
 }

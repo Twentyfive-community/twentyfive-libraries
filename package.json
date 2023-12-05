@@ -24,7 +24,7 @@
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "twentyfive-mobile-table-and-row": "^0.0.5",
-    "twentyfive-style": "^0.0.22",
+    "twentyfive-style": "^0.0.29",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {

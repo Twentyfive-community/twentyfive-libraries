@@ -10,5 +10,9 @@
   },
   "exclude": [
     "**/*.spec.ts"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/constants/**/*.ts"
   ]
 }
