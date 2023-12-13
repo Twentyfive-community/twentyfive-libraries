@@ -1,16 +1,15 @@
-import { NgModule } from '@angular/core';
-import { TwentyfiveModalGenericComponentComponent } from './twentyfive-modal-generic-component.component';
-
+import {NgModule} from '@angular/core';
+import {TwentyfiveModalGenericComponentComponent} from './twentyfive-modal-generic-component.component';
 
 
 @NgModule({
   declarations: [
     TwentyfiveModalGenericComponentComponent
   ],
-  imports: [
-  ],
+  imports: [],
   exports: [
     TwentyfiveModalGenericComponentComponent
   ]
 })
-export class TwentyfiveModalGenericComponentModule { }
+export class TwentyfiveModalGenericComponentModule {
+}
