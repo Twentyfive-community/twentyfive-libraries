@@ -18,7 +18,8 @@
   <div *ngIf="actions.length <= 3">
     <i
       *ngFor="let action of actions"
-      class="table-icon"
+      class="table-icon text-truncate"
+      style="max-width: 150px;"
       [placement]="action.placement"
       [ngbTooltip]="action.tooltipText"
       [ngClass]="action.icon"
