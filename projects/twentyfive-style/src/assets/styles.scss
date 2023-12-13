@@ -65,6 +65,7 @@ input{
 }
 .sidebar{
   background-color: $sidebar;
+  overflow: scroll;
 }
 
 @media (min-width: 768px) {
