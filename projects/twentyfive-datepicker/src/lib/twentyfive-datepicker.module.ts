@@ -1,9 +1,8 @@
 import {NgModule} from '@angular/core';
 import {TwentyfiveDatepickerComponent} from './twentyfive-datepicker.component';
-import {BrowserModule} from "@angular/platform-browser";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule} from "@angular/forms";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgClass, NgIf} from "@angular/common";
 
 
 @NgModule({
@@ -11,11 +10,10 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     TwentyfiveDatepickerComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule,
-    NgbModule
+    NgbModule,
+    NgIf,
+    NgClass,
+    FormsModule
   ],
   exports: [
     TwentyfiveDatepickerComponent
