@@ -89,7 +89,6 @@ input{
 
 
 /* TEXTS */
-
 h1{
   font-size: 2.5rem;
   font-weight: 600;
@@ -619,8 +618,8 @@ ngb-datepicker{
 
 
 
-/* INPUT-GROUP */
-.input-group-addon{
+//INPUT-GROUP
+.input-group-addon {
   height: 2.75rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -629,7 +628,8 @@ ngb-datepicker{
   background-color: $secondary-hover;
   color: $black-25;
 }
-.input-group-addon:disabled{
+
+.input-group-addon:disabled {
   height: 2.75rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -638,6 +638,30 @@ ngb-datepicker{
   background-color: $secondary;
   color: $black-25;
 }
+
+.btn-input-group-primary {
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  font-size: 1rem;
+  color: $white;
+  background-color: $primary;
+}
+
+.btn-input-group-primary:hover {
+  color: $white;
+  background-color: $primary-hover;
+}
+
+.btn-input-group-primary:hover:active {
+  color: $white;
+  background-color: $primary-hover;
+}
+
+
 
 /* TEXTAREA */
 .textarea-25{
