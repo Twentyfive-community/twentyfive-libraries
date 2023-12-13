@@ -238,10 +238,9 @@ label{
 
 
 /* SPINNER */
-
 $diameter: 2.5rem;
 $spinner: 0.125rem;
-$spinner-color: $primary;
+$spinner-color: $primary !default;
 $icon-width: 1.25rem;
 $icon-height: 1.25rem;
 #preloader {
