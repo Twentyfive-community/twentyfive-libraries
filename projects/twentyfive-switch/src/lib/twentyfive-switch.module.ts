@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { TwentyfiveSwitchComponent } from './twentyfive-switch.component';
-import {BrowserModule} from "@angular/platform-browser";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule} from "@angular/forms";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgClass, NgIf} from "@angular/common";
 
 
 
@@ -12,11 +11,10 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     TwentyfiveSwitchComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule,
     NgbModule,
+    NgClass,
+    FormsModule,
+    NgIf
   ],
   exports: [
     TwentyfiveSwitchComponent
