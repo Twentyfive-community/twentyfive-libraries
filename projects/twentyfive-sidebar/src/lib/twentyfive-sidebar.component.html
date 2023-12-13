@@ -1,9 +1,11 @@
 <nav class="sidebar h-100">
   <div *ngFor="let elem of sidebarItems">
     <lib-twentyfive-menu-item
+      [menuItem]="elem"
       [labelText]="elem.title"
       [navigationUrl]="elem.navigationUrl"
-      [icon]="elem.icon">
-    ></lib-twentyfive-menu-item>
+      [icon]="elem.icon"
+      (onClick)="emitEvent($event)">
+    </lib-twentyfive-menu-item>
   </div>
 </nav>

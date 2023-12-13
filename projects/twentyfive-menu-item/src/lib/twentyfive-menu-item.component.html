@@ -1,9 +1,7 @@
-
-
 <div *ngIf="!disable" class="ps-4 menu-item d-flex justify-content-start align-items-center"
      role="button" [routerLink]="navigationUrl"
      [routerLinkActive]="'menu-item-active'"
-     (click)="click()"
+     (click)="click(); emitEvent()"
 
 >
   <i class="menu-icon" [style.color]="labelColor" [class]="icon"></i>

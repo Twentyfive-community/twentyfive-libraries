@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {emptyFunction} from "./emptyFunction";
 
 @Component({
@@ -6,6 +6,9 @@ import {emptyFunction} from "./emptyFunction";
   templateUrl: `./twentyfive-menu-item.component.html`
 })
 export class TwentyfiveMenuItemComponent {
+
+  @Input() menuItem: any;
+
   @Input() labelText: string | undefined | null = 'Text';
   @Input() icon: string | undefined | null = '';
   @Input() navigationUrl: string | undefined | null = '';
@@ -13,4 +16,9 @@ export class TwentyfiveMenuItemComponent {
   @Input() disable: boolean | undefined = false;
   @Input() labelColor: string = '';
   @Input() inputColor: string = '';
+  @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
+
+  emitEvent() {
+    this.onClick.emit(this.menuItem);
+  }
 }

@@ -28,7 +28,7 @@ export class TwentyfiveTableComponent {
   @Input() disabled: boolean = false;
   @Input() checked: boolean = false;
   @Input() showSwitch: boolean = false;
-  @Input() switchStyle:  SwitchTheme = SwitchTheme.Primary;
+  @Input() switchStyle: SwitchTheme = SwitchTheme.Primary;
 
   @Input() maxSize: number = 5;
   @Input() pageSize: number = 5;
