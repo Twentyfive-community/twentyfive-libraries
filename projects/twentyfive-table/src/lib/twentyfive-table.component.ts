@@ -9,7 +9,7 @@ import {SwitchTheme, TableHeadTheme, TableTheme } from 'twentyfive-style';
 })
 export class TwentyfiveTableComponent {
 
-  @Input() tableHeadStyle: TableHeadTheme = TableHeadTheme.Primary;
+  @Input() tableHeadStyle: any;
   @Input() tableStyle:any;
 
   @Input() customCssClass: string = '';
