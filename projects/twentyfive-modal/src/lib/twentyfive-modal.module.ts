@@ -18,4 +18,5 @@ import {GenericButtonModule} from "generic-buttons";
     TwentyfiveModalComponent
   ]
 })
-export class TwentyfiveModalModule { }
+export class TwentyfiveModalModule {
+}
