@@ -68,6 +68,20 @@ input{
   overflow: scroll;
 }
 
+.nav-sidebar {
+  min-width: 277px;
+  max-width: 277px;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-sidebar {
+    margin-left: -277px;
+  }
+}
+
+
+
 @media (min-width: 768px) {
   .menu-item:hover{
     background-color: $secondary-hover;
