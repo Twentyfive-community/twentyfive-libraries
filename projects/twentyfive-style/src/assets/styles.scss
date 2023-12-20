@@ -173,9 +173,16 @@ label{
   border-color: $border-grey;
   border-width: 0.5px;
 }
+
 .checkbox-25:focus{
   border-color: $border-grey;
 }
+
+.checkbox-25:checked{
+  background-color: $primary;
+  border-color: $border-grey;
+}
+
 .checkbox-25:disabled{
   opacity: unset;
   border-color: $border-grey;
