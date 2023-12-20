@@ -1,6 +1,6 @@
 {
   "name": "twentyfive-style",
-  "version": "0.0.71",
+  "version": "0.0.72",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
