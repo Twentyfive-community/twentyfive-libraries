@@ -147,7 +147,13 @@ label{
   font-size: 0.75rem;
   color: $black-25;
 }
-.label-25{
+.label-25 {
+  color: $black-25;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.label-25-bold {
   font-weight: 600;
   color: $black-25;
   font-size: 1rem;
