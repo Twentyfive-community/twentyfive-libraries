@@ -884,6 +884,8 @@ ngb-datepicker{
 }
 
 .btn-only-text{
+  display: flex;
+  align-items: center;
   font-size: 1rem;
   text-decoration: underline;
   border: none;
