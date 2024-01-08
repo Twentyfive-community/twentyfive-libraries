@@ -29,9 +29,7 @@ import {TwentyfiveSwitchModule} from "twentyfive-switch";
     NgbModule,
     BrowserAnimationsModule,
     TwentyfiveDropdownModule,
-    TwentyfiveSwitchModule,
-
-
+    TwentyfiveSwitchModule
   ],
   exports: [
     TwentyfiveTableComponent,
