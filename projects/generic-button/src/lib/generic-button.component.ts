@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {emptyFunction} from "twentyfive-style";
-
+import {Component, Input} from '@angular/core';
+import {ButtonTheme, ButtonSizeTheme} from "twentyfive-style";
+import {emptyFunction} from "./empty-function";
 @Component({
   selector: 'lib-generic-button',
   templateUrl: './generic-button.component.html',
@@ -21,10 +21,9 @@ export class GenericButtonComponent {
 
   @Input() customCssClass: string = '';
   @Input() customSizeCssClass: string = '';
-  ButtonTheme: any;
-  ButtonSizeTheme: any;
 
-
+  protected ButtonTheme = ButtonTheme ;
+  protected ButtonSizeTheme = ButtonSizeTheme;
 }
 
 

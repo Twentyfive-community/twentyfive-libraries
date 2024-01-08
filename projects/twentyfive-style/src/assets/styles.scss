@@ -65,7 +65,22 @@ input{
 }
 .sidebar{
   background-color: $sidebar;
+  overflow: scroll;
 }
+
+.nav-sidebar {
+  min-width: 277px;
+  max-width: 277px;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-sidebar {
+    margin-left: -277px;
+  }
+}
+
+
 
 @media (min-width: 768px) {
   .menu-item:hover{
@@ -88,7 +103,6 @@ input{
 
 
 /* TEXTS */
-
 h1{
   font-size: 2.5rem;
   font-weight: 600;
@@ -133,7 +147,13 @@ label{
   font-size: 0.75rem;
   color: $black-25;
 }
-.label-25{
+.label-25 {
+  color: $black-25;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.label-25-bold {
   font-weight: 600;
   color: $black-25;
   font-size: 1rem;
@@ -238,12 +258,11 @@ label{
 
 
 /* SPINNER */
-
-$diameter: 2.5rem;
+$diameter: 4.5rem;
 $spinner: 0.125rem;
-$spinner-color: $primary;
-$icon-width: 1.25rem;
-$icon-height: 1.25rem;
+$spinner-color: $primary !default;
+$icon-width: 2.25rem;
+$icon-height: 2.25rem;
 #preloader {
   height: $diameter;
   width: $diameter;
@@ -618,8 +637,8 @@ ngb-datepicker{
 
 
 
-/* INPUT-GROUP */
-.input-group-addon{
+//INPUT-GROUP
+.input-group-addon {
   height: 2.75rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -628,7 +647,8 @@ ngb-datepicker{
   background-color: $secondary-hover;
   color: $black-25;
 }
-.input-group-addon:disabled{
+
+.input-group-addon:disabled {
   height: 2.75rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -637,6 +657,30 @@ ngb-datepicker{
   background-color: $secondary;
   color: $black-25;
 }
+
+.btn-input-group-primary {
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  font-size: 1rem;
+  color: $white;
+  background-color: $primary;
+}
+
+.btn-input-group-primary:hover {
+  color: $white;
+  background-color: $primary-hover;
+}
+
+.btn-input-group-primary:hover:active {
+  color: $white;
+  background-color: $primary-hover;
+}
+
+
 
 /* TEXTAREA */
 .textarea-25{
@@ -846,6 +890,8 @@ ngb-datepicker{
 }
 
 .btn-only-text{
+  display: flex;
+  align-items: center;
   font-size: 1rem;
   text-decoration: underline;
   border: none;

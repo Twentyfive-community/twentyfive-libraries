@@ -1,16 +1,11 @@
-import { NgModule } from '@angular/core';
-import { TwentyfiveTableComponent } from './twentyfive-table.component';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NgModule} from '@angular/core';
+import {TwentyfiveTableComponent} from './twentyfive-table.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import {RouterOutlet} from "@angular/router";
-import {BrowserModule} from "@angular/platform-browser";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
 import {TwentyfiveTableRowComponent} from "./twentyfive-table-row.component";
 import {TwentyfivePaginationComponent} from "./twentyfive-pagination.component";
 import {TwentyfiveDropdownModule} from "twentyfive-dropdown";
 import {TwentyfiveSwitchModule} from "twentyfive-switch";
-
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 
 
 @NgModule({
@@ -20,22 +15,18 @@ import {TwentyfiveSwitchModule} from "twentyfive-switch";
     TwentyfivePaginationComponent
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    BrowserModule,
-    RouterOutlet,
     NgbModule,
-    BrowserAnimationsModule,
     TwentyfiveDropdownModule,
-    TwentyfiveSwitchModule
+    TwentyfiveSwitchModule,
+    NgClass,
+    NgIf,
+    NgForOf
   ],
   exports: [
     TwentyfiveTableComponent,
     TwentyfiveTableRowComponent,
     TwentyfivePaginationComponent
-
   ]
 })
-export class TwentyfiveTableModule { }
+export class TwentyfiveTableModule {
+}

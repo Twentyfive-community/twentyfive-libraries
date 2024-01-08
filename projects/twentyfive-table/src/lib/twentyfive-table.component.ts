@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {SwitchTheme} from 'twentyfive-switch';
 import {TableHeader} from "./table-header";
+import {SwitchTheme, TableHeadTheme, TableTheme } from 'twentyfive-style';
 
 @Component({
   selector: 'lib-twentyfive-table',
@@ -9,7 +9,7 @@ import {TableHeader} from "./table-header";
 })
 export class TwentyfiveTableComponent {
 
-  @Input() tableHeadStyle: TableHeadTheme = TableHeadTheme.Primary;
+  @Input() tableHeadStyle: any;
   @Input() tableStyle:any;
 
   @Input() customCssClass: string = '';
@@ -23,16 +23,12 @@ export class TwentyfiveTableComponent {
   @Input() paginationStyle: any;
   @Input() checkedField: string = '';
 
-
-
   @Input() switchText: string = '';
   @Input() id: string = '';
   @Input() disabled: boolean = false;
   @Input() checked: boolean = false;
   @Input() showSwitch: boolean = false;
-  @Input() switchStyle:  SwitchTheme = SwitchTheme.Primary;
-
-
+  @Input() switchStyle: SwitchTheme = SwitchTheme.Primary;
 
   @Input() maxSize: number = 5;
   @Input() pageSize: number = 5;
@@ -54,17 +50,8 @@ export class TwentyfiveTableComponent {
     this.switchClick.emit(event);
   }
 
-
-
-
   protected readonly TableHeadTheme = TableHeadTheme;
   protected readonly TableTheme = TableTheme;
 }
-export enum TableHeadTheme {
-  Primary = 'thead-primary',
-}
-export enum TableTheme {
-  Web = 'web-element',
-  Mobile = 'mobile-element',
-}
+
 

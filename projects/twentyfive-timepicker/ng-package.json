@@ -10,6 +10,6 @@
     "bootstrap-icons",
     "twentyfive-input",
     "@angular/localize",
-    "twentyfive-style"
+    "@popperjs/core"
   ]
 }

@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import { RadioButtonTheme } from 'twentyfive-style';
 
 @Component({
   selector: 'lib-generic-radio-button',
@@ -15,7 +16,8 @@ export class GenericRadioButtonComponent {
   @Input() radioButtonStyle: any;
 
   @Input() customCssClass: string = '';
-  RadioButtonTheme: any;
+
+  protected RadioButtonTheme = RadioButtonTheme;
 }
 
 

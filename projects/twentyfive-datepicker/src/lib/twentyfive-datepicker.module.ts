@@ -1,13 +1,8 @@
-import { NgModule } from '@angular/core';
-import { TwentyfiveDatepickerComponent } from './twentyfive-datepicker.component';
-import {BrowserModule} from "@angular/platform-browser";
-import {RouterModule, RouterOutlet} from "@angular/router";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import {NgModule} from '@angular/core';
+import {TwentyfiveDatepickerComponent} from './twentyfive-datepicker.component';
+import {FormsModule} from "@angular/forms";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import {TwentyfiveInputModule} from "twentyfive-input";
-
+import {NgClass, NgIf} from "@angular/common";
 
 
 @NgModule({
@@ -15,18 +10,14 @@ import {TwentyfiveInputModule} from "twentyfive-input";
     TwentyfiveDatepickerComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot([]),
-    RouterOutlet,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule,
     NgbModule,
-    TwentyfiveInputModule
+    NgIf,
+    NgClass,
+    FormsModule
   ],
   exports: [
     TwentyfiveDatepickerComponent
   ]
 })
-export class TwentyfiveDatepickerModule { }
+export class TwentyfiveDatepickerModule {
+}

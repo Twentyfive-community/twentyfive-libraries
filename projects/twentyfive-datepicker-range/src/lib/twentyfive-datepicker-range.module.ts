@@ -1,33 +1,23 @@
-import { NgModule } from '@angular/core';
-import { TwentyfiveDatepickerRangeComponent } from './twentyfive-datepicker-range.component';
+import {NgModule} from '@angular/core';
+import {TwentyfiveDatepickerRangeComponent} from './twentyfive-datepicker-range.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import {HttpClientModule} from "@angular/common/http";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {RouterModule, RouterOutlet} from "@angular/router";
-import {BrowserModule} from "@angular/platform-browser";
-import {TwentyfiveStyleModule} from "twentyfive-style";
-
+import {FormsModule} from "@angular/forms";
+import {NgClass, NgIf} from "@angular/common";
 
 
 @NgModule({
   declarations: [
     TwentyfiveDatepickerRangeComponent,
-
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot([]),
-    RouterOutlet,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,
     NgbModule,
-    TwentyfiveStyleModule
+    NgIf,
+    NgClass
   ],
   exports: [
     TwentyfiveDatepickerRangeComponent
   ]
 })
-export class TwentyfiveDatepickerRangeModule { }
+export class TwentyfiveDatepickerRangeModule {
+}

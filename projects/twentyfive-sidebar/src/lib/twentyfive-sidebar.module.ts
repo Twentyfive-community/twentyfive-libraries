@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
-import { TwentyfiveSidebarComponent } from './twentyfive-sidebar.component';
+import {NgModule} from '@angular/core';
+import {TwentyfiveSidebarComponent} from './twentyfive-sidebar.component';
 import {TwentyfiveMenuItemModule} from "twentyfive-menu-item";
 import {NgForOf} from "@angular/common";
-
 
 
 @NgModule({
@@ -17,4 +16,5 @@ import {NgForOf} from "@angular/common";
     TwentyfiveSidebarComponent
   ]
 })
-export class TwentyfiveSidebarModule { }
+export class TwentyfiveSidebarModule {
+}

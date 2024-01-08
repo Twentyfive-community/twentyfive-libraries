@@ -5,9 +5,9 @@
     "entryFile": "src/public-api.ts"
   },
   "allowedNonPeerDependencies": [
+    "@popperjs/core",
     "@ng-bootstrap/ng-bootstrap",
     "bootstrap",
-    "bootstrap-icons",
-    "twentyfive-style"
+    "bootstrap-icons"
   ]
 }

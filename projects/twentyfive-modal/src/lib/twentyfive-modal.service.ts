@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {pipe} from "rxjs";
-import {emptyFunction} from "./emptyFunction";
-import {ButtonSizeTheme, ButtonTheme} from "generic-buttons";
+import {emptyFunction} from "../constants/emptyFunction";
 import {TwentyfiveModalComponent} from "./twentyfive-modal.component";
+import {ButtonSizeTheme, ButtonTheme} from "twentyfive-style";
 
 @Injectable({
   providedIn: 'root'
@@ -56,16 +56,9 @@ export class TwentyfiveModalService {
     this.modalRef.componentInstance.onAbort = onAbortFunction;
     this.modalRef.componentInstance.onConfirm = finalFunction;
     this.modalRef.componentInstance.onClose = this.closing;
-
-
   }
-
 
   closing = () => {
     this.modalRef?.close();
   }
-
-
-
-
 }

@@ -3,7 +3,7 @@ import {NgbCalendar, NgbDate, NgbDateParserFormatter} from "@ng-bootstrap/ng-boo
 import {ItalianDateFormatter} from "../utilities/italian-date-formatter";
 import {TwentyDate} from "./twenty-date";
 import {TranslationWidth} from "@angular/common";
-import {LabelTheme, DatePickerTheme, DatePickerButtonTheme} from "twentyfive-style";
+import {DatePickerButtonTheme, DatePickerTheme, LabelTheme} from "twentyfive-style";
 @Component({
   selector: 'lib-twentyfive-datepicker-range',
   templateUrl : 'twentyfive-datepicker-range.component.html',
@@ -85,7 +85,6 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
     return parsed && this.calendar.isValid(NgbDate.from(parsed)) ? NgbDate.from(parsed) : currentValue;
   }
 
-   readonly TranslationWidth = TranslationWidth;
   @HostListener("window:resize" , []) changeSize() {
     if(window.innerWidth < 768){
       this.numberOfMonths = 1;
@@ -99,5 +98,9 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
     this.toDate = null;
   }
 
+  readonly TranslationWidth = TranslationWidth;
+  protected readonly LabelTheme = LabelTheme;
+  protected readonly DatePickerTheme = DatePickerTheme;
+  protected readonly DatePickerButtonTheme = DatePickerButtonTheme;
 }
 

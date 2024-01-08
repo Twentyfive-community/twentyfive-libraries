@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
-import { TwentyfiveSelectComponent } from './twentyfive-select.component';
+import {NgModule} from '@angular/core';
+import {TwentyfiveSelectComponent} from './twentyfive-select.component';
 import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {ReactiveFormsModule} from "@angular/forms";
-
 
 
 @NgModule({
@@ -19,4 +18,5 @@ import {ReactiveFormsModule} from "@angular/forms";
     TwentyfiveSelectComponent
   ]
 })
-export class TwentyfiveSelectModule { }
+export class TwentyfiveSelectModule {
+}

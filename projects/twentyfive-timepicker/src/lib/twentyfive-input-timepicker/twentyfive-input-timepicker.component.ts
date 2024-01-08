@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {NgbTimepickerConfig} from "@ng-bootstrap/ng-bootstrap";
-import {LabelTheme} from "../../constants/genetric-components-themes";
+import { LabelTheme } from 'twentyfive-style';
 
 @Component({
   selector: 'lib-twentyfive-input-timepicker',
@@ -8,6 +8,7 @@ import {LabelTheme} from "../../constants/genetric-components-themes";
   styleUrls: ['./twentyfive-input-timepicker.component.css']
 })
 export class TwentyfiveInputTimepickerComponent {
+
   @Input() time:any;
   @Input() required: boolean = false;
   @Input() disabled: boolean = false;

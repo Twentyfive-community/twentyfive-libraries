@@ -1,6 +1,6 @@
 {
   "name": "twentyfive-menu-item",
-  "version": "0.0.17",
+  "version": "0.1.1",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
@@ -10,7 +10,7 @@
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
     "tslib": "^2.3.0",
-    "twentyfive-style": "^0.0.22"
+    "@popperjs/core": "^2.11.8"
   },
   "sideEffects": false
 }

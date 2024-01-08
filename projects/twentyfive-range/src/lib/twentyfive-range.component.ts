@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {LabelTheme} from "twentyfive-input";
+import { LabelTheme } from 'twentyfive-style';
 @Component({
   selector: 'lib-twentyfive-range',
   templateUrl: `./twentyfive-range.component.html`
@@ -14,7 +14,7 @@ export class TwentyfiveRangeComponent {
   @Input() step: string = '1';
   @Input() value: string = '0';
 
-  @Input() labelStyle: LabelTheme = LabelTheme.LabelMedium;
+  @Input() labelStyle: any;
 
   @Input() customLabelClass: string = '';
 

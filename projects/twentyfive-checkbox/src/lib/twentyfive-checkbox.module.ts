@@ -1,11 +1,7 @@
-import { NgModule } from '@angular/core';
-import { TwentyfiveCheckboxComponent } from './twentyfive-checkbox.component';
+import {NgModule} from '@angular/core';
+import {TwentyfiveCheckboxComponent} from './twentyfive-checkbox.component';
 import {NgClass, NgIf} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-
-
-
-
 
 
 @NgModule({
@@ -22,4 +18,5 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     TwentyfiveCheckboxComponent
   ]
 })
-export class TwentyfiveCheckboxModule { }
+export class TwentyfiveCheckboxModule {
+}

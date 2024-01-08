@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'lib-Twentyfive-pagination',
@@ -6,7 +6,4 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./twentyfive-pagination.component.scss']
 })
 export class TwentyfivePaginationComponent {
-
-
-
 }
