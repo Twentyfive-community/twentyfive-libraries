@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
-  selector: 'lib-title',
+  selector: 'app-title',
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.css'],
   animations: [
