@@ -1,0 +1,32 @@
+<nav [style.height]="!isCollapsed ? '100vh' : 'auto'" class="p-0 align-items-start navbar navbar-dark bg-primary" *ngIf="showNavbar">
+  <div class="col-12">
+    <div class="row px-3 py-4 g-0">
+
+      <div class="col-6">
+        <a class="navbar-brand" [href]="navbarNavigationUrl">
+          <img [src]="navbarLogo" width="32" height="32" alt="">
+          <app-title [title]="title" [show]="isCollapsed"></app-title>
+        </a>
+      </div>
+
+      <div role="button" class="col-6 d-md-none d-flex justify-content-end">
+        <app-animated-menu-icon [isHamburger]="isCollapsed" (evtEmitted)="expandNav($event)"></app-animated-menu-icon>
+      </div>
+
+    </div>
+
+    <div id="menu-items" *ngIf="!isCollapsed">
+      <div *ngFor="let elem of sidebarItems">
+        <lib-twentyfive-menu-item
+          (click)="expandNav(elem)"
+          [labelText]="elem.title"
+          [navigationUrl]="elem.navigationUrl"
+          [icon]="elem.icon"
+          (onClick)="emitEvent($event)"
+        >
+        </lib-twentyfive-menu-item>
+      </div>
+    </div>
+
+  </div>
+</nav>

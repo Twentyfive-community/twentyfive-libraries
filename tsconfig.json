@@ -32,6 +32,9 @@
       "twentyfive-buttons": [
         "dist/twentyfive-buttons"
       ],
+      "twentyfive-navbar": [
+        "dist/twentyfive-navbar"
+      ],
       "twentyfive-style": [
         "dist/twentyfive-style"
       ]
