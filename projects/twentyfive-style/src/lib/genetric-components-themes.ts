@@ -84,6 +84,10 @@ export  enum TextareaTheme{
     Primary = 'textarea-25'
 }
 
+export  enum NavbarTheme{
+    Primary = 'nav-primary'
+}
+
 export  enum ButtonSizeTheme {
     Small = 'btn-small',
     Medium = 'btn-medium',
@@ -91,6 +95,9 @@ export  enum ButtonSizeTheme {
     ExtraLarge = 'btn-extra-large',
     FullWidth = 'btn-full-width',
 }
+
+
+
 export  enum ButtonTheme {
     Primary = 'btn-primary',
     Secondary = 'btn-secondary',

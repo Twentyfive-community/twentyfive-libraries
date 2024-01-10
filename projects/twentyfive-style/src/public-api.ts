@@ -12,6 +12,6 @@ export {AlertTheme, ButtonSizeWithIconTheme, CheckboxTheme,
   InputIconTheme, ButtonSizeTheme, ButtonTheme,
   InputWithIconTheme, RadioButtonTheme, TableTheme,
   MobileTableTheme, MobileTheadTheme, TableHeadTheme,
-  SelectTheme, SwitchTheme, TextareaTheme, BoxTheme} from './lib/genetric-components-themes';
+  SelectTheme, SwitchTheme, TextareaTheme, BoxTheme, NavbarTheme} from './lib/genetric-components-themes';
 
 

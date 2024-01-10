@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
-  selector: 'lib-animated-menu-icon',
+  selector: 'app-animated-menu-icon',
   templateUrl: './animated-menu-icon.component.html',
   styleUrls: ['./animated-menu-icon.component.css'],
   animations: [
