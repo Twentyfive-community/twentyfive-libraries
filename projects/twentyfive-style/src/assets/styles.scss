@@ -457,6 +457,7 @@ th{
 .page-item:last-child .page-link{
   border-radius: 0.5rem;
 }
+
 .page-link{
   box-shadow: none!important;
   height: 2.75rem;
@@ -468,6 +469,10 @@ th{
   border-radius: 0.5rem;
   margin: 0 0.25rem;
 }
+.active>.page-link{
+  background-color: $primary;
+}
+
 .page-link:hover{
   border-radius: 8px;
 }

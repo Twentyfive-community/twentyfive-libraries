@@ -29,8 +29,7 @@
 </table>
 
 
-<div  [ngClass]="paginationStyle == TableTheme.Web ? 'web-element' :
-       customCssClass">
+<div  [ngClass]="paginationStyle == TableTheme.Web ? 'web-element' : customCssClass">
   <div class="d-flex justify-content-between">
     <ngb-pagination
       [collectionSize]="collectionSize"
