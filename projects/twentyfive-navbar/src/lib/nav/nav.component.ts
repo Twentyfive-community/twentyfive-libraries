@@ -24,6 +24,8 @@ export class NavComponent implements OnInit {
   @Input() sidebarItems: any[] = [];
   @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
 
+  @Input() logoWidth = 32;
+  @Input() logoHeigth = 32;
   @Input() navbarStyle: any;
   @Input() customCssClass: string = '';
 

@@ -8,7 +8,7 @@
 
       <div class="col-6">
         <a class="navbar-brand" [href]="navbarNavigationUrl">
-          <img class="me-4" *ngIf="showLogo" [src]="navbarLogo" width="32" height="32" alt="">
+          <img class="me-4" *ngIf="showLogo" [src]="navbarLogo" [width]="logoWidth" [height]="logoHeigth" alt="">
           <app-title *ngIf="showLeftTitle" [title]="title" [show]="isCollapsed"></app-title>
         </a>
       </div>
