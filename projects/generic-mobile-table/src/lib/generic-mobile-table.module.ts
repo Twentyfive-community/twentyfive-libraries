@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {GenericMobileTableComponent} from './generic-mobile-table.component';
 import {GenericMobileTableRowComponent} from "./generic-mobile-table-row.component";
 import {SlicePipe} from "@angular/common";
@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {TwentyfiveSwitchModule} from "twentyfive-switch";
 import {TwentyfiveStyleModule} from "twentyfive-style";
+import {RouterOutlet} from "@angular/router";
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import {TwentyfiveStyleModule} from "twentyfive-style";
     GenericMobileTableRowComponent
   ],
   imports: [
+    RouterOutlet,
     SlicePipe,
     BrowserAnimationsModule,
     NgbModule,
@@ -25,7 +27,8 @@ import {TwentyfiveStyleModule} from "twentyfive-style";
   exports: [
     GenericMobileTableComponent,
     GenericMobileTableRowComponent
-  ]
+  ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GenericMobileTableModule {
 }
