@@ -3,9 +3,11 @@ import {TwentyfiveTableComponent} from './twentyfive-table.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {TwentyfiveTableRowComponent} from "./twentyfive-table-row.component";
 import {TwentyfivePaginationComponent} from "./twentyfive-pagination.component";
-import {TwentyfiveDropdownModule} from "twentyfive-dropdown";
+import {TwentyfiveDropdownModule} from 'twentyfive-dropdown';
 import {TwentyfiveSwitchModule} from "twentyfive-switch";
 import {NgClass, NgForOf, NgIf} from "@angular/common";
+import {RouterOutlet} from "@angular/router";
+import {BrowserModule} from "@angular/platform-browser";
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import {NgClass, NgForOf, NgIf} from "@angular/common";
     TwentyfivePaginationComponent
   ],
   imports: [
+    BrowserModule,
+    RouterOutlet,
     NgbModule,
     TwentyfiveDropdownModule,
     TwentyfiveSwitchModule,
