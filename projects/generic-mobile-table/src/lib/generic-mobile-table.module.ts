@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {GenericMobileTableComponent} from './generic-mobile-table.component';
 import {GenericMobileTableRowComponent} from "./generic-mobile-table-row.component";
 import {SlicePipe} from "@angular/common";
@@ -27,7 +27,8 @@ import {RouterOutlet} from "@angular/router";
   exports: [
     GenericMobileTableComponent,
     GenericMobileTableRowComponent
-  ]
+  ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GenericMobileTableModule {
 }
