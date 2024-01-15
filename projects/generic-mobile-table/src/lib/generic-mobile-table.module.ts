@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {TwentyfiveSwitchModule} from "twentyfive-switch";
 import {TwentyfiveStyleModule} from "twentyfive-style";
+import {RouterOutlet} from "@angular/router";
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import {TwentyfiveStyleModule} from "twentyfive-style";
     GenericMobileTableRowComponent
   ],
   imports: [
+    RouterOutlet,
     SlicePipe,
     BrowserAnimationsModule,
     NgbModule,
