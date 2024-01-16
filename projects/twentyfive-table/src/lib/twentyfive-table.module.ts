@@ -7,7 +7,6 @@ import {TwentyfiveDropdownModule} from 'twentyfive-dropdown';
 import {TwentyfiveSwitchModule} from "twentyfive-switch";
 import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {RouterOutlet} from "@angular/router";
-import {BrowserModule} from "@angular/platform-browser";
 
 
 @NgModule({
@@ -17,7 +16,6 @@ import {BrowserModule} from "@angular/platform-browser";
     TwentyfivePaginationComponent
   ],
   imports: [
-    BrowserModule,
     RouterOutlet,
     NgbModule,
     TwentyfiveDropdownModule,
