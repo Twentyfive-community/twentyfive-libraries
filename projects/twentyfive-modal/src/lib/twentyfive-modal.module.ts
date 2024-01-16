@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {TwentyfiveModalComponent} from './twentyfive-modal.component';
-import {CommonModule, NgClass, NgIf} from "@angular/common";
+import {NgClass, NgIf} from "@angular/common";
 import {GenericButtonModule} from "generic-buttons";
 import {RouterOutlet} from "@angular/router";
 
@@ -13,8 +13,7 @@ import {RouterOutlet} from "@angular/router";
     RouterOutlet,
     NgClass,
     GenericButtonModule,
-    NgIf,
-    CommonModule
+    NgIf
   ],
   exports: [
     TwentyfiveModalComponent
