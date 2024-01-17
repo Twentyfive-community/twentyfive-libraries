@@ -18,7 +18,7 @@ export class TwentyfiveModalGenericComponentService {
     });
   }
 
-  close() {
-    this.ngModalService.dismissAll();
+  close(param?: any) {
+    this.ngModalService.dismissAll(param);
   }
 }
