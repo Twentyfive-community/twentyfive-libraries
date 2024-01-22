@@ -1,9 +1,8 @@
 <button
   [placement]="placement"
   [ngbTooltip]="tooltipText"
-  (click)="click()"
+  (click)="!disabled && click()"
   [disabled]="disabled"
-
   [routerLink]="routerLink == '' ? null : routerLink"
   [ngClass]="
   buttonStyle == ButtonTheme.PrimaryOnlyIconSmall ? 'btn btn-primary btn-only-icon-primary-sm' :

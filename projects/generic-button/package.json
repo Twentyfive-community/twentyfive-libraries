@@ -1,6 +1,6 @@
 {
   "name": "generic-buttons",
-  "version": "0.0.45",
+  "version": "0.0.47",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
