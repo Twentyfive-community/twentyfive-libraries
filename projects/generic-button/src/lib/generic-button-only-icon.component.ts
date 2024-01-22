@@ -14,7 +14,7 @@ export class GenericButtonOnlyIconComponent {
   @Input() placement: string = '';
   @Input() tooltipText: string = '';
   @Input() click: any = emptyFunction;
-  disabled: boolean = true;
+  @Input() disabled: boolean = true;
   @Input() buttonStyle: any;
   @Input() customCssClass: string = '';
 

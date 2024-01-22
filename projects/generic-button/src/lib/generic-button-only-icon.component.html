@@ -2,27 +2,7 @@
   [placement]="placement"
   [ngbTooltip]="tooltipText"
   (click)="click()"
-  [disabled]="
-  buttonStyle == ButtonTheme.DisabledOnlyIconSmall ||
-  buttonStyle == ButtonTheme.DisabledOnlyIconMedium ||
-  buttonStyle == ButtonTheme.DisabledOnlyIconLarge ||
-  buttonStyle == ButtonTheme.DisabledOnlyIconCircularSmall ||
-  buttonStyle == ButtonTheme.DisabledOnlyIconCircularMedium ||
-  buttonStyle == ButtonTheme.DisabledOnlyIconCircularLarge ||
-  buttonStyle == ButtonTheme.DisabledOnlyIconSquareSmall ||
-  buttonStyle == ButtonTheme.DisabledOnlyIconSquareMedium ||
-  buttonStyle == ButtonTheme.DisabledOnlyIconSquareLarge ||
-
-  buttonStyle == ButtonTheme.OutlineDisabledOnlyIconSmall ||
-  buttonStyle == ButtonTheme.OutlineDisabledOnlyIconMedium ||
-  buttonStyle == ButtonTheme.OutlineDisabledOnlyIconLarge ||
-  buttonStyle == ButtonTheme.OutlineDisabledOnlyIconCircularSmall ||
-  buttonStyle == ButtonTheme.OutlineDisabledOnlyIconCircularMedium ||
-  buttonStyle == ButtonTheme.OutlineDisabledOnlyIconCircularLarge ||
-  buttonStyle == ButtonTheme.OutlineDisabledOnlyIconSquareSmall ||
-  buttonStyle == ButtonTheme.OutlineDisabledOnlyIconSquareMedium ||
-  buttonStyle == ButtonTheme.OutlineDisabledOnlyIconSquareLarge
-  ? disabled : null"
+  [disabled]="disabled"
 
   [routerLink]="routerLink == '' ? null : routerLink"
   [ngClass]="
