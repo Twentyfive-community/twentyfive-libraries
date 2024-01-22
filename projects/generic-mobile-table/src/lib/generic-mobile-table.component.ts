@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {TableTheme} from "twentyfive-style";
+import {MobileTableTheme, MobileTheadTheme, TableTheme} from "twentyfive-style";
 
 @Component({
   selector: 'lib-generic-mobile-table',
@@ -7,6 +7,9 @@ import {TableTheme} from "twentyfive-style";
   styleUrls: ['./generic-mobile-table.component.scss']
 })
 export class GenericMobileTableComponent {
+
+  @Input() mobileTableStyle: any = MobileTableTheme.Primary;
+  @Input() mobileTheadStyle: any = MobileTheadTheme.Primary;
 
   @Input() actions: any = [];
   @Input() headers: any = [];
