@@ -17,7 +17,9 @@
     [dayTemplate]="t"
     outsideDays="hidden"
     [startDate]="fromDate!"
-    />
+    [minDate]="minDateRange"
+    [maxDate]="maxDateRange"
+  />
   <ng-template #t let-date let-focused="focused">
             <span
               class="custom-day"
