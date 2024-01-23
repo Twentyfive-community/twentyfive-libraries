@@ -62,10 +62,10 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
   onDateSelection(date: NgbDate) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
-    } else if (this.fromDate && !this.toDate && date && date.after(this.fromDate)) {
+    } else if (this.fromDate && !this.toDate) {
       this.toDate = date;
     } else {
-      this.toDate = undefined;
+      this.toDate = null;
       this.fromDate = date;
     }
     this.dateSelect.emit(new TwentyDate(this.fromDate , this.toDate))
