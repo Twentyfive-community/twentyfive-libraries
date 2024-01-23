@@ -1,4 +1,4 @@
-import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {NgbCalendar, NgbDate, NgbDateParserFormatter, NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
 import {ItalianDateFormatter} from "../utilities/italian-date-formatter";
 import {TwentyDate} from "./twenty-date";
@@ -8,6 +8,7 @@ import {DatePickerButtonTheme, DatePickerTheme, LabelTheme } from 'twentyfive-st
   selector: 'lib-twentyfive-datepicker-range',
   templateUrl : 'twentyfive-datepicker-range.component.html',
   styleUrls: ['twentyfive-datepicker-range.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   providers: [
     { provide: NgbDateParserFormatter, useClass: ItalianDateFormatter }
   ],
@@ -53,7 +54,7 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
   }
 
   disableOutRange = (date: NgbDateStruct) => {
-    
+
     return true
   } ;
 
