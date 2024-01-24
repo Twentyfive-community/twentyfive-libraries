@@ -35,6 +35,9 @@
       "twentyfive-navbar": [
         "dist/twentyfive-navbar"
       ],
+      "twentyfive-not-found": [
+        "dist/twentyfive-not-found"
+      ],
       "twentyfive-style": [
         "dist/twentyfive-style"
       ]
