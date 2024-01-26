@@ -1,6 +1,6 @@
-import {Component,Input} from "@angular/core";
+import {Component, EventEmitter, Input, Output} from "@angular/core";
 import {emptyFunction} from "../emptyFunction";
-import {AddonTheme, InputGroupButtonTheme, InputTheme } from "twentyfive-style";
+import {AddonTheme, InputGroupButtonTheme, InputTheme} from "twentyfive-style";
 
 @Component({
   selector: 'lib-twentyfive-input-group',
@@ -26,15 +26,20 @@ export class TwentyfiveInputGroupComponent {
   @Input() click: any = emptyFunction;
 
   @Input() inputStyle: InputTheme = InputTheme.Primary;
-  @Input() addonStyle: AddonTheme = AddonTheme.Primary;
-  @Input() buttonStyle: InputGroupButtonTheme = InputGroupButtonTheme.Primary;
+  @Input() addonStyle: any; //values from AddonTheme
+  @Input() buttonStyle: any; //values from InputGroupButtonTheme
 
   @Input() customAddonCssClass: string = '';
   @Input() customCssClass: string = '';
   @Input() customButtonCssClass: string = '';
+  @Output() appendClick: EventEmitter<any> = new EventEmitter<any>();
 
   protected readonly InputTheme = InputTheme;
   protected readonly AddonTheme = AddonTheme;
   protected readonly InputGroupButtonTheme = InputGroupButtonTheme;
+
+  onAppendClick() {
+    this.appendClick.emit();
+  }
 }
 

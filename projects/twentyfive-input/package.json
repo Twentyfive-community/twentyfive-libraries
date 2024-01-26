@@ -1,12 +1,12 @@
 {
   "name": "twentyfive-input",
-  "version": "0.0.16",
+  "version": "0.0.23",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
   },
   "dependencies": {
-    "@ng-bootstrap/ng-bootstrap": "^15.1.1",
+    "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",

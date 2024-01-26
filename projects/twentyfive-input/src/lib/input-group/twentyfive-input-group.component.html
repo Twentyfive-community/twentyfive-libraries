@@ -18,7 +18,7 @@
   >
   <div *ngIf="showAppend" class="input-group-append">
     <button
-      (click)="click()"
+      (click)="onAppendClick()"
       [ngClass]="[buttonStyle == InputGroupButtonTheme.Primary ? 'btn btn-input-group-primary' :
              customButtonCssClass]"
       type="button" >
