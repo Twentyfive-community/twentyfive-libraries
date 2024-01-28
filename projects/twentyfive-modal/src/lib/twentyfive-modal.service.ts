@@ -24,6 +24,7 @@ export class TwentyfiveModalService {
       onAbort = emptyFunction,
       onConfirm = emptyFunction,
       icon = 'bi bi-exclamation-circle',
+      size = 'lg',
       showHeaderTitle = true,
       showIcon = false,
       cancelButtonStyle = ButtonTheme.Secondary,
@@ -36,7 +37,7 @@ export class TwentyfiveModalService {
       TwentyfiveModalComponent,
       {
         centered: true,
-        size: 'lg',
+        size: size,
         backdrop: 'static',
       });
 
