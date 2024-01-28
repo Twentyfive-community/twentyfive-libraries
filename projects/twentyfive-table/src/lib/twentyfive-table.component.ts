@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {TableHeader} from "./table-header";
-import {SwitchTheme, TableHeadTheme, TableTheme } from 'twentyfive-style';
+import {ButtonTheme, SwitchTheme, TableHeadTheme, TableTheme} from 'twentyfive-style';
 
 @Component({
   selector: 'lib-twentyfive-table',
@@ -52,6 +52,7 @@ export class TwentyfiveTableComponent {
 
   protected readonly TableHeadTheme = TableHeadTheme;
   protected readonly TableTheme = TableTheme;
+  protected readonly ButtonTheme = ButtonTheme;
 }
 
 
