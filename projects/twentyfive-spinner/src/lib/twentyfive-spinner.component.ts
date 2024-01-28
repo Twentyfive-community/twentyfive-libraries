@@ -8,6 +8,6 @@ import {Component, Input} from '@angular/core';
 export class TwentyfiveSpinnerComponent {
   @Input() showImage: boolean = true;
   @Input() id: string = 'preloader';
-  @Input() src: string = '';
+  @Input() src: string = 'assets/images/color-logo-only.png';
 
 }
