@@ -17,7 +17,7 @@ export class GenericMobileTableComponent {
   @Input() tableStyle: any;
   @Input() checkedField: string = '';
   @Input() switchText: string = '';
-  @Input() switchLabelText: string = 'On/Off';
+  @Input() switchLabelText: string = 'Off/On';
   @Input() showSwitch: boolean = false;
   @Input() id: string = '';
   @Input() disabled: boolean = false;
