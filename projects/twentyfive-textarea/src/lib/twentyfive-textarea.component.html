@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label *ngIf="showLabel" [ngClass]=" labelStyle == LabelTheme.LabelMedium ? 'label-25' : customLabelClass">
+  <label *ngIf="showLabel" [ngClass]=" labelStyle == LabelTheme.LabelMedium ? 'label-25' :  labelStyle == LabelTheme.LabelBold ? 'label-25-bold' : customLabelClass">
     {{labelText}}
   </label>
   <textarea

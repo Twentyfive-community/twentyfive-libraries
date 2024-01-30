@@ -32,6 +32,9 @@
       "twentyfive-buttons": [
         "dist/twentyfive-buttons"
       ],
+      "twentyfive-error-page": [
+        "dist/twentyfive-error-page"
+      ],
       "twentyfive-navbar": [
         "dist/twentyfive-navbar"
       ],
