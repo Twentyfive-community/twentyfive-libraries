@@ -2,7 +2,7 @@
   *ngIf="showNavbar"
   [style.height]="!isCollapsed ? '100vh' : 'auto'"
   class="p-0 align-items-start navbar navbar-dark"
-  [ngClass]="[navbarStyle == NavbarTheme.Primary ? 'nav-primary' : customCssClass]">
+  [ngClass]="[navbarStyle == NavbarTheme.Primary ? 'nav-primary' :  NavbarTheme.Gradient ? 'nav-gradient' : customCssClass]">
   <div class="col-12">
     <div class="row px-4 py-4 g-0">
 
@@ -13,8 +13,15 @@
         </a>
       </div>
 
-      <div class="col-6 d-md-flex d-none justify-content-end">
+      <div class="col-6 d-md-flex flex-row d-none justify-content-end">
+        <div *ngIf="showInlineElements" id="navbarNav" class="d-flex flex-row">
+          <ul class="navbar-nav">
+            <li class="nav-item" *ngFor="let elem of sidebarItems" (click)="emitEvent(elem)">{{elem.title}}</li>
+          </ul>
+        </div>
+
         <app-title *ngIf="!showLeftTitle" [title]="title" [show]="isCollapsed"></app-title>
+
       </div>
 
       <div role="button" class="col-6 d-md-none d-flex justify-content-end">
@@ -30,11 +37,10 @@
           [labelText]="elem.title"
           [navigationUrl]="elem.navigationUrl"
           [icon]="elem.icon"
-          (onClick)="emitEvent($event)"
+          (onClick)="emitEvent(elem)"
         >
         </lib-twentyfive-menu-item>
       </div>
     </div>
-
   </div>
 </nav>

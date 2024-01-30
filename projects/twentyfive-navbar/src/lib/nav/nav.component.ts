@@ -19,7 +19,7 @@ export class NavComponent implements OnInit {
 
   @Input() showAll = true;
   @Input() navbarLogo = "assets/white-logo-only.png";
-  @Input() navbarNavigationUrl = "/qrcodetable";
+  @Input() navbarNavigationUrl = "";
   @Input() title = "";
   @Input() sidebarItems: any[] = [];
   @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
@@ -32,6 +32,7 @@ export class NavComponent implements OnInit {
   showNavbar: boolean = true;
   @Input() showLogo: boolean = true;
   @Input() showLeftTitle: boolean = true;
+  @Input() showInlineElements: boolean = false;
   isCollapsed: boolean = true;
 
 

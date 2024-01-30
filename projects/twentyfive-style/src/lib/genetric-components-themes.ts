@@ -85,7 +85,8 @@ export  enum TextareaTheme{
 }
 
 export  enum NavbarTheme{
-    Primary = 'nav-primary'
+    Primary = 'nav-primary',
+    Gradient = 'nav-gradient'
 }
 
 export  enum ButtonSizeTheme {

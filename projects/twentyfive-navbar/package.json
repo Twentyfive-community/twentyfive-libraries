@@ -1,12 +1,12 @@
 {
   "name": "twentyfive-nav",
-  "version": "0.0.9",
+  "version": "0.0.18",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
   },
   "dependencies": {
-    "@ng-bootstrap/ng-bootstrap": "^15.1.1",
+    "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
     "tslib": "^2.3.0",
