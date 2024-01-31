@@ -15,12 +15,12 @@ export class TwentyfiveModalGenericComponentService {
        {
          centered = true,
          backdropClass = 'modal-backdrop',
-       }) {
+       },  backdrop?: "static" | boolean | undefined,) {
     return this.ngModalService.open(template, {
       size: size,
       centered: centered,
       backdropClass: backdropClass,
-      backdrop: 'static'
+      backdrop: backdrop ?? 'static'
     });
   }
 
