@@ -103,6 +103,7 @@ export  enum ButtonTheme {
     Primary = 'btn-primary',
     Secondary = 'btn-secondary',
     Outline = 'btn-outline-primary',
+    OutlineReverse = 'btn btn-outline-reverse-primary',
     Disabled = 'btn-disabled',
     DisabledOutline = 'btn-outline-disabled',
     OnlyText = 'btn-only-text',

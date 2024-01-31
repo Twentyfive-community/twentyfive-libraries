@@ -5,7 +5,7 @@
 
 /* navbar style */
 $navbar-dark-color: white;
-$navbar-dark-brand-color:white;
+$navbar-dark-brand-color: white;
 $navbar-padding-y: 20px;
 $navbar-padding-x: 20px;
 $navbar-toggler-focus-width: 1;
@@ -18,7 +18,9 @@ $menu-item-color: black;
 $menu-item-color-mobile: white;
 $button-color-active: #19194b;
 
-*[role="button"] > *{cursor: pointer}
+*[role="button"] > * {
+  cursor: pointer
+}
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -27,51 +29,59 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
 }
-i{
+
+i {
   font-size: 24px;
 }
-input{
-  box-shadow: none!important;
+
+input {
+  box-shadow: none !important;
 }
 
 
 /* MENU ITEM */
-.nav-primary{
+.nav-primary {
   background-color: #1A1660;
 }
-.nav-gradient{
+
+.nav-gradient {
   background: linear-gradient(to right, #000000, #0E0026);
 }
 
 /* MENU ITEM */
 
-.menu-item{
+.menu-item {
   height: 64px;
   width: 100%;
 }
-.menu-item:hover{
+
+.menu-item:hover {
   background-color: $menu-item-hover;
 }
- /* $className-active is used to extend with routerLinkActive functionality */
-.menu-item-active{
+
+/* $className-active is used to extend with routerLinkActive functionality */
+.menu-item-active {
   background-color: $primary-active;
 }
 
-.menu-item:hover{
+.menu-item:hover {
   background-color: $primary-active;
 }
-.menu-item-text{
-  color: $white;
-}
-.menu-icon{
+
+.menu-item-text {
   color: $white;
 }
 
-.menu-item{
+.menu-icon {
+  color: $white;
+}
+
+.menu-item {
   height: 64px;
   width: 100%;
 }
-.sidebar{
+
+.sidebar {
   background-color: $sidebar;
   overflow: scroll;
 }
@@ -89,72 +99,80 @@ input{
 }
 
 
-
 @media (min-width: 768px) {
-  .menu-item:hover{
+  .menu-item:hover {
     background-color: $secondary-hover;
   }
- /*  $className-active is used to extend with routerLinkActive functionality */
-  .menu-item-active{
+  /*  $className-active is used to extend with routerLinkActive functionality */
+  .menu-item-active {
     background-color: $secondary;
   }
-  .menu-item-active:hover{
+  .menu-item-active:hover {
     background-color: $secondary;
   }
-  .menu-item-text{
+  .menu-item-text {
     color: $black-25;
   }
-  .menu-icon{
+  .menu-icon {
     color: $black-25;
   }
 }
 
 
 /* TEXTS */
-h1{
+h1 {
   font-size: 2.5rem;
   font-weight: 600;
   color: $black-25;
   margin: 0;
 }
-h2{
+
+h2 {
   font-size: 2rem;
   font-weight: 600;
   color: $black-25;
   margin: 0;
 }
-h3{
+
+h3 {
   font-size: 1.5rem;
   font-weight: 600;
   color: $black-25;
   margin: 0;
 }
-h4{
+
+h4 {
   font-size: 1.25rem;
   font-weight: 600;
   color: $black-25;
   margin: 0;
 }
-span{
+
+span {
   font-size: 1rem;
   color: $black-25;
 }
-label{
+
+label {
   font-size: 1rem;
   color: $black-25;
 }
-.subtitle-h1{
+
+.subtitle-h1 {
   font-size: 1.5rem;
   color: $black-25;
 }
-.subtitle-h2{
+
+.subtitle-h2 {
   font-size: 1.25rem;
   color: $black-25;
 }
-.label-small{
+
+.label-small {
   font-size: 0.75rem;
   color: $black-25;
 }
+
 .label-25 {
   color: $black-25;
   font-size: 1rem;
@@ -167,102 +185,117 @@ label{
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
-.text-semibold{
+
+.text-semibold {
   font-weight: 600;
 }
-.text-center{
+
+.text-center {
   text-align: center;
 }
 
 
 /* CHECKBOX */
-.checkbox-25{
+.checkbox-25 {
   cursor: pointer;
   border-color: $border-grey;
   border-width: 0.5px;
 }
-.checkbox-25:focus{
+
+.checkbox-25:focus {
   border-color: $border-grey;
 }
-.checkbox-25:disabled{
+
+.checkbox-25:disabled {
   opacity: unset;
   border-color: $border-grey;
   background-color: $secondary-hover;
 }
+
 .checkbox-25:checked:disabled[type=checkbox] {
   --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23909090' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
 }
 
 
 /* RADIO BUTTONS */
-.radio-button-25{
+.radio-button-25 {
   cursor: pointer;
   border-color: $border-grey;
   border-width: 0.5px;
 }
-.radio-button-25:focus{
+
+.radio-button-25:focus {
   border-color: $border-grey;
 }
-.radio-button-25:disabled{
+
+.radio-button-25:disabled {
   opacity: unset;
   border-color: $border-grey;
-  background-color: $secondary-hover;}
+  background-color: $secondary-hover;
+}
+
 .radio-button-25:checked:disabled[type=radio] {
   --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23909090'/%3e%3c/svg%3e");
 }
 
 
-
 /* SWITCHES */
-.switch-25{
+.switch-25 {
   cursor: pointer;
   border-color: $disabled-placeholder;
   color: $disabled-placeholder;
 }
-.switch-25:checked{
- border: none;
+
+.switch-25:checked {
+  border: none;
 }
-.switch-25:focus{
+
+.switch-25:focus {
   color: $disabled-placeholder;
   border-color: $disabled-placeholder;
 
 }
+
 .switch-25:disabled {
-   border-color: $disabled-placeholder;
+  border-color: $disabled-placeholder;
 }
+
 .form-switch .form-check-input {
   --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23909090'/%3e%3c/svg%3e");
 }
 
-.form-check-input:checked{
+.form-check-input:checked {
   background-color: $primary;
 }
 
 /* ICONS */
-.icon-size{
+.icon-size {
   font-size: var(--nome-variabile, 1.25rem);
 }
-
 
 
 /* INPUTS */
 .form-control::placeholder {
   color: $placeholder;
 }
+
 .form-control:disabled::placeholder {
   color: $disabled-placeholder;
 }
-.input-25{
+
+.input-25 {
   border-color: $border-grey;
   height: 2.75rem;
   border-width: 0.0313rem;
   color: $black-25;
 }
-.input-25:disabled{
+
+.input-25:disabled {
   background-color: $secondary-hover;
   color: $disabled-placeholder;
 }
-.input-25:focus{
+
+.input-25:focus {
   border-color: $border-grey;
 }
 
@@ -281,6 +314,7 @@ $icon-height: 2.25rem;
   left: 50%;
   margin-top: -($diameter/2);
   margin-left: -($diameter/2);
+
   &:before {
     box-sizing: content-box;
     content: "";
@@ -295,7 +329,8 @@ $icon-height: 2.25rem;
     border-top: ($spinner/2) solid transparent;
     border-radius: 100%;
   }
-  &>.icon {
+
+  & > .icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -306,12 +341,14 @@ $icon-height: 2.25rem;
     animation: wink 1s ease-in-out infinite alternate;
   }
 }
-@media only screen and (min-width:768px) {
+
+@media only screen and (min-width: 768px) {
   #preloader {
     height: ($diameter*1.5);
     width: ($diameter*1.5);
     margin-top: -(($diameter/2)*1.5);
     margin-left: -(($diameter/2)*1.5);
+
     &:before {
       left: -$spinner;
       top: -$spinner;
@@ -320,7 +357,8 @@ $icon-height: 2.25rem;
       border-bottom-width: $spinner;
       border-right-width: $spinner;
     }
-    &>.icon {
+
+    & > .icon {
       height: ($icon-height*1.5);
       width: ($icon-width*1.5);
       margin-top: -(($icon-height/2)*1.5);
@@ -328,13 +366,15 @@ $icon-height: 2.25rem;
     }
   }
 }
-@media only screen and (min-width:1200px) {
+
+@media only screen and (min-width: 1200px) {
   #preloader {
     height: ($diameter*2);
     width: ($diameter*2);
     margin-top: -(($diameter/2)*2);
     margin-left: -(($diameter/2)*2);
-    &>.icon {
+
+    & > .icon {
       height: ($icon-height*2);
       width: ($icon-width*2);
       margin-top: -(($icon-height/2)*2);
@@ -342,6 +382,7 @@ $icon-height: 2.25rem;
     }
   }
 }
+
 @keyframes rotation {
   from {
     transform: rotate(0deg);
@@ -350,32 +391,35 @@ $icon-height: 2.25rem;
     transform: rotate(359deg);
   }
 }
+
 @keyframes wink {
-  from  {
-    opacity:0;
+  from {
+    opacity: 0;
   }
-  to  {
-    opacity:1;
+  to {
+    opacity: 1;
   }
 }
 
 
-
 /* ALERT */
-.alert-primary{
+.alert-primary {
   height: 3.75rem;
   border: 0.0313rem solid $primary 0.2;
   color: $primary;
 }
-.alert-danger{
+
+.alert-danger {
   height: 3.75rem;
   border: 0.0313rem solid $danger 0.2;
 }
-.alert-success{
+
+.alert-success {
   height: 3.75rem;
   border: 0.0313rem solid $success 0.2;
 }
-.alert-dismissible .btn-close{
+
+.alert-dismissible .btn-close {
   box-shadow: none;
   font-size: 0.75rem;
   top: 40%;
@@ -385,164 +429,189 @@ $icon-height: 2.25rem;
 
 /* TABLE */
 
-.thead-primary{
+.thead-primary {
   --bs-table-color: #FFFFFF;
   --bs-table-bg: #1A1660;
 }
-th{
+
+th {
   font-weight: normal;
 }
-.table-icon{
+
+.table-icon {
   cursor: pointer;
   margin-left: 0.75rem;
   color: $primary;
   font-size: 1.25rem;
 }
-.table-menu-icon{
+
+.table-menu-icon {
   cursor: pointer;
   margin-left: 0.75rem;
   font-size: 1.25rem;
 }
-.table-menu-icon-white{
+
+.table-menu-icon-white {
   cursor: pointer;
   font-size: 1rem;
   color: $white;
 }
-.action-td{
+
+.action-td {
   display: flex;
   justify-content: end;
 }
+
 .mobile-table {
   display: none;
 }
-.mobile-table-primary{
+
+.mobile-table-primary {
   border: none;
-  box-shadow: 4px 4px 12px rgb(0,0,0,0.25);
+  box-shadow: 4px 4px 12px rgb(0, 0, 0, 0.25);
 }
-.mobile-table-body{
+
+.mobile-table-body {
   background-color: $white;
   border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius:  0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
-.mobile-thead-primary{
+
+.mobile-thead-primary {
   color: $white;
   background-color: $primary;
 }
+
 @media (max-width: 768px) {
-  .mobile-table{
+  .mobile-table {
     display: block;
   }
   .web-table {
     display: none;
   }
 }
-.dropdown-item{
+
+.dropdown-item {
   font-style: normal;
   display: flex;
   align-items: center;
   color: $black-25;
   padding: 0.5rem 1rem;
 }
-.dropdown-item:hover{
+
+.dropdown-item:hover {
   color: $black-25;
   background-color: $secondary-hover;
 }
-.dropdown-item:active{
+
+.dropdown-item:active {
   color: $white;
   background-color: $primary;
 }
 
 
-
 /* PAGINATION */
-.page-item:first-child .page-link{
-  border-radius: 0.5rem;
-}
-.page-item:last-child .page-link{
+.page-item:first-child .page-link {
   border-radius: 0.5rem;
 }
 
-.page-link{
+.page-item:last-child .page-link {
+  border-radius: 0.5rem;
+}
+
+.page-link {
   color: $primary;
-  box-shadow: none!important;
+  box-shadow: none !important;
   height: 2.75rem;
   width: 3.25rem;
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
   border: none;
   border-radius: 0.5rem;
   margin: 0 0.25rem;
 }
-.active>.page-link{
+
+.active > .page-link {
   background-color: $primary;
 }
 
-.page-link:hover{
+.page-link:hover {
   border-radius: 8px;
 }
+
 .disabled > .page-link {
   background-color: $white;
 }
 
 
 /* MODAL */
-.modal-content{
+.modal-content {
   outline: none;
   border: none;
 }
-.modal-header{
+
+.modal-header {
   background-color: #1A1660;
   color: $white;
 }
-.modal-element-padding{
+
+.modal-element-padding {
   padding-bottom: 1.25rem;
 }
-.modal-body{
+
+.modal-body {
   padding: 1.25rem;
 }
-.modal-icon{
+
+.modal-icon {
   font-size: 4.75rem;
   color: $primary;
 }
-.btn-close{
+
+.btn-close {
   --bs-btn-close-bg: url(
   "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFF'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
 }
 
 
 /* DATEPICKER */
-.datepicker-25{
+.datepicker-25 {
   border-color: $border-grey !important;
   height: 2.75rem;
   color: $black-25;
   border-width: 0.0313rem;
 }
-.datepicker-25:disabled{
+
+.datepicker-25:disabled {
   opacity: unset;
   background-color: $secondary-hover;
   color: $disabled-placeholder;
   border-width: 0.0313rem;
   border-color: $border-grey !important;
 }
-.datepicker-button-primary{
+
+.datepicker-button-primary {
   height: 2.75rem;
   border-color: $border-grey;
   border-width: 0.0313rem;
   color: $white;
   background-color: $primary;
 }
-.datepicker-button-primary:hover{
+
+.datepicker-button-primary:hover {
   border-color: $border-grey;
   color: $white;
   background-color: $primary-hover;
 }
-.datepicker-button-primary:hover:active{
+
+.datepicker-button-primary:hover:active {
   border-color: $border-grey;
   color: $white;
   background-color: $primary-hover;
 }
-.datepicker-button-primary:disabled{
+
+.datepicker-button-primary:disabled {
   height: 2.75rem;
   opacity: unset;
   border-color: $border-grey;
@@ -550,9 +619,10 @@ th{
   color: $white;
   background-color: $secondary;
 }
-ngb-datepicker{
-  box-shadow: 4px 4px 12px rgb(0,0,0,0.25)!important;
-  border: none!important;
+
+ngb-datepicker {
+  box-shadow: 4px 4px 12px rgb(0, 0, 0, 0.25) !important;
+  border: none !important;
 }
 
 /* datepicker header */
@@ -567,17 +637,18 @@ ngb-datepicker{
 }
 
 /* datepicker chevron icon */
-.ngb-dp-navigation-chevron{
-  border-width: 0.1em 0.1em 0 0!important;
+.ngb-dp-navigation-chevron {
+  border-width: 0.1em 0.1em 0 0 !important;
 }
 
 /* date picker month and year dropdown */
 .ngb-dp-navigation-select {
   display: none !important;
 }
+
 /* datepicker week header */
 .ngb-dp-weekdays {
-    border-bottom: 0 !important;
+  border-bottom: 0 !important;
   background-color: $white !important;
   color: $black-25 !important;
 }
@@ -591,23 +662,26 @@ ngb-datepicker{
 
 /* datepicker other month days */
 [ngbDatepickerDayView].outside {
-  opacity: unset!important;
-  color: $secondary!important;
+  opacity: unset !important;
+  color: $secondary !important;
 }
 
 /* datepicker current day */
-[ngbDatepickerDayView].active:not(.bg-primary){
-   background-color: $white!important;
+[ngbDatepickerDayView].active:not(.bg-primary) {
+  background-color: $white !important;
 }
-.ngb-dp-today{
-  outline: 1px solid $primary!important;
+
+.ngb-dp-today {
+  outline: 1px solid $primary !important;
   border-radius: 0.25rem;
 }
+
 /* datepicker single week row */
-.ngb-dp-week{
+.ngb-dp-week {
   gap: 0.2rem;
   margin-bottom: 0.2rem;
 }
+
 .ngb-dp-month-name {
   background-color: $white !important;
   color: $black-25 !important;
@@ -615,7 +689,7 @@ ngb-datepicker{
 
 
 /*DATEPICKER RANGE*/
-.ngb-dp-today.hidden{
+.ngb-dp-today.hidden {
   outline: none !important;
 }
 
@@ -649,8 +723,6 @@ ngb-datepicker{
   background-color: $primary-opaque;
   color: $black-25;
 }
-
-
 
 
 //INPUT-GROUP
@@ -697,50 +769,56 @@ ngb-datepicker{
 }
 
 
-
 /* TEXTAREA */
-.textarea-25{
+.textarea-25 {
   box-shadow: none !important;
   border-color: $border-grey;
   border-width: 0.0313rem;
   resize: vertical;
   color: $black-25;
 }
-.textarea-25:disabled{
+
+.textarea-25:disabled {
   background-color: $secondary-hover;
   color: $disabled-placeholder;
 }
-.textarea-25:focus{
+
+.textarea-25:focus {
   border-color: $border-grey;
 }
 
 
 /* RANGE SLIDER */
-.form-range{
+.form-range {
   height: auto;
 }
-.form-range::-webkit-slider-runnable-track{
+
+.form-range::-webkit-slider-runnable-track {
   background-color: $secondary;
 }
-.form-range::-webkit-slider-thumb{
+
+.form-range::-webkit-slider-thumb {
   background-color: $primary;
 }
-.form-range:disabled::-webkit-slider-thumb{
+
+.form-range:disabled::-webkit-slider-thumb {
   background-color: $disabled-placeholder;
   opacity: unset;
 }
-.form-range:active::-webkit-slider-thumb{
+
+.form-range:active::-webkit-slider-thumb {
   background-color: $primary;
   box-shadow: none;
 }
-.form-range:focus::-webkit-slider-thumb{
+
+.form-range:focus::-webkit-slider-thumb {
   background-color: $primary;
   box-shadow: none;
 }
 
 
 /* INPUT-GROUP */
-.input-group-addon{
+.input-group-addon {
   height: 2.75rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -749,7 +827,8 @@ ngb-datepicker{
   background-color: $secondary-hover;
   color: $black-25;
 }
-.input-group-addon:disabled{
+
+.input-group-addon:disabled {
   height: 2.75rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -759,7 +838,7 @@ ngb-datepicker{
   color: $black-25;
 }
 
-.btn-input-group-primary{
+.btn-input-group-primary {
   height: 2.75rem;
   display: flex;
   justify-content: center;
@@ -770,10 +849,12 @@ ngb-datepicker{
   color: $white;
   background-color: $primary;
 }
+
 .btn-input-group-primary:hover {
   color: $white;
   background-color: $primary-hover;
 }
+
 .btn-input-group-primary:hover:active {
   color: $white;
   background-color: $primary-hover;
@@ -781,39 +862,45 @@ ngb-datepicker{
 
 
 /* BUTTON SIZES */
-.btn-icon-small{
+.btn-icon-small {
   width: 10.5rem;
 }
-.btn-icon-medium{
+
+.btn-icon-medium {
   width: 14.25rem;
 }
-.btn-icon-large{
+
+.btn-icon-large {
   width: 18.5rem;
 }
-.btn-icon-extra-large{
+
+.btn-icon-extra-large {
   width: 21.75rem;
 }
 
-.btn-small{
+.btn-small {
   width: 8.5rem;
 }
-.btn-medium{
+
+.btn-medium {
   width: 12.25rem;
 }
-.btn-large{
+
+.btn-large {
   width: 16.5rem;
 }
-.btn-extra-large{
+
+.btn-extra-large {
   width: 19.75rem;
 }
-.btn-full-width{
+
+.btn-full-width {
   width: 100%;
 }
 
 
-
 /* BUTTONS */
-.btn-primary{
+.btn-primary {
   height: 2.75rem;
   display: flex;
   justify-content: center;
@@ -824,10 +911,12 @@ ngb-datepicker{
   color: $white;
   background-color: $primary;
 }
+
 .btn-primary:hover {
   color: $white;
   background-color: $primary-hover;
 }
+
 .btn-primary:hover:active {
   color: $white;
   background-color: $primary-hover;
@@ -844,10 +933,12 @@ ngb-datepicker{
   color: $black-25;
   background-color: $secondary;
 }
+
 .btn-secondary:hover {
   color: $black-25;
   background: $secondary-hover;
 }
+
 .btn-secondary:hover:active {
   color: $black-25;
   background: $secondary-hover;
@@ -864,10 +955,29 @@ ngb-datepicker{
   font-size: 1rem;
   background-color: $white;
 }
+
 .btn-outline-primary:hover {
   border-color: $primary;
   color: $white;
   background-color: $primary;
+}
+
+.btn-outline-reverse-primary {
+  color: $white;
+  border-color: $white;
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: $primary;
+}
+
+.btn-outline-reverse-primary:hover {
+  border-color: $white;
+  color: $primary;
+  background-color: $white;
 }
 
 .btn-disabled {
@@ -882,6 +992,7 @@ ngb-datepicker{
   color: $white;
   background-color: $secondary;
 }
+
 .btn-disabled:disabled {
   color: $white;
   opacity: unset;
@@ -900,6 +1011,7 @@ ngb-datepicker{
   background-color: $white;
   border-color: $secondary;
 }
+
 .btn-outline-disabled:disabled {
   color: $secondary;
   background-color: $white;
@@ -907,7 +1019,7 @@ ngb-datepicker{
   opacity: unset;
 }
 
-.btn-only-text{
+.btn-only-text {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -919,14 +1031,15 @@ ngb-datepicker{
   background-color: transparent;
   cursor: pointer;
 }
-.btn-only-text:hover{
+
+.btn-only-text:hover {
   color: $primary-hover;
   border: none;
 }
 
 
 /* BUTTONS ONLY ICON RECTANGULAR */
-.btn-only-icon-primary-sm{
+.btn-only-icon-primary-sm {
   height: 2.75rem;
   width: 4.5rem;
   display: flex;
@@ -937,16 +1050,18 @@ ngb-datepicker{
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-primary-sm:hover {
   color: $white;
   background-color: $primary-hover;
 }
+
 .btn-only-icon-primary-sm:hover:active {
   color: $white;
   background-color: $primary-hover;
 }
 
-.btn-only-icon-secondary-sm{
+.btn-only-icon-secondary-sm {
   height: 2.75rem;
   width: 4.5rem;
   display: flex;
@@ -957,16 +1072,18 @@ ngb-datepicker{
   color: $black-25;
   background-color: $secondary;
 }
+
 .btn-only-icon-secondary-sm:hover {
   color: $black-25;
   background-color: $secondary-hover;
 }
+
 .btn-only-icon-secondary-sm:hover:active {
   color: $black-25;
   background-color: $secondary-hover;
 }
 
-.btn-only-icon-outline-sm{
+.btn-only-icon-outline-sm {
   height: 2.75rem;
   width: 4.5rem;
   display: flex;
@@ -975,11 +1092,13 @@ ngb-datepicker{
   border-radius: 8px;
   background-color: $white;
 }
+
 .btn-only-icon-outline-sm:hover {
   border-color: $primary;
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-outline-sm:hover:active {
   border-color: $primary;
   color: $white;
@@ -998,6 +1117,7 @@ ngb-datepicker{
   color: $white;
   background-color: $secondary;
 }
+
 .btn-only-icon-disabled-sm:disabled {
   opacity: unset;
   color: $white;
@@ -1017,6 +1137,7 @@ ngb-datepicker{
   background-color: $white;
   border-color: $secondary;
 }
+
 .btn-only-icon-outline-disabled-sm:disabled {
   color: $secondary;
   background-color: $white;
@@ -1024,7 +1145,7 @@ ngb-datepicker{
   border-color: $secondary;
 }
 
-.btn-only-icon-primary-md{
+.btn-only-icon-primary-md {
   height: 3.5rem;
   width: 5.75rem;
   display: flex;
@@ -1035,16 +1156,18 @@ ngb-datepicker{
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-primary-md:hover {
   color: $white;
   background-color: $primary-hover;
 }
+
 .btn-only-icon-primary-md:hover:active {
   color: $white;
   background-color: $primary-hover;
 }
 
-.btn-only-icon-secondary-md{
+.btn-only-icon-secondary-md {
   height: 3.5rem;
   width: 5.75rem;
   display: flex;
@@ -1055,16 +1178,18 @@ ngb-datepicker{
   color: $black-25;
   background-color: $secondary;
 }
+
 .btn-only-icon-secondary-md:hover {
   color: $black-25;
   background-color: $secondary-hover;
 }
+
 .btn-only-icon-secondary-md:hover:active {
   color: $black-25;
   background-color: $secondary-hover;
 }
 
-.btn-only-icon-outline-md{
+.btn-only-icon-outline-md {
   height: 3.5rem;
   width: 5.75rem;
   display: flex;
@@ -1073,11 +1198,13 @@ ngb-datepicker{
   border-radius: 8px;
   background-color: $white;
 }
+
 .btn-only-icon-outline-md:hover {
   border-color: $primary;
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-outline-md:hover:active {
   border-color: $primary;
   color: $white;
@@ -1096,6 +1223,7 @@ ngb-datepicker{
   color: $white;
   background-color: $secondary;
 }
+
 .btn-only-icon-disabled-md:disabled {
   opacity: unset;
   color: $white;
@@ -1115,6 +1243,7 @@ ngb-datepicker{
   background-color: $white;
   border-color: $secondary;
 }
+
 .btn-only-icon-outline-disabled-md:disabled {
   opacity: unset;
   color: $secondary;
@@ -1122,7 +1251,7 @@ ngb-datepicker{
   border-color: $secondary;
 }
 
-.btn-only-icon-primary-lg{
+.btn-only-icon-primary-lg {
   height: 4.25rem;
   width: 7rem;
   display: flex;
@@ -1133,16 +1262,18 @@ ngb-datepicker{
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-primary-lg:hover {
   color: $white;
   background-color: $primary-hover;
 }
+
 .btn-only-icon-primary-lg:hover:active {
   color: $white;
   background-color: $primary-hover;
 }
 
-.btn-only-icon-secondary-lg{
+.btn-only-icon-secondary-lg {
   height: 4.25rem;
   width: 7rem;
   display: flex;
@@ -1153,16 +1284,18 @@ ngb-datepicker{
   color: $black-25;
   background-color: $secondary;
 }
+
 .btn-only-icon-secondary-lg:hover {
   color: $black-25;
   background-color: $secondary-hover;
 }
+
 .btn-only-icon-secondary-lg:hover:active {
   color: $black-25;
   background-color: $secondary-hover;
 }
 
-.btn-only-icon-outline-lg{
+.btn-only-icon-outline-lg {
   height: 4.25rem;
   width: 7rem;
   display: flex;
@@ -1172,18 +1305,20 @@ ngb-datepicker{
   background-color: $white;
 
 }
+
 .btn-only-icon-outline-lg:hover {
   border-color: $primary;
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-outline-lg:hover:active {
   border-color: $primary;
   color: $white;
   background-color: $primary;
 }
 
-.btn-only-icon-outline-disabled-lg{
+.btn-only-icon-outline-disabled-lg {
   opacity: unset;
   height: 4.25rem;
   width: 7rem;
@@ -1196,6 +1331,7 @@ ngb-datepicker{
   background-color: $white;
   border-color: $secondary;
 }
+
 .btn-only-icon-outline-disabled-lg:disabled {
   opacity: unset;
   color: $secondary;
@@ -1203,7 +1339,7 @@ ngb-datepicker{
   border-color: $secondary;
 }
 
-.btn-only-icon-disabled-lg{
+.btn-only-icon-disabled-lg {
   opacity: unset;
   height: 4.25rem;
   width: 7rem;
@@ -1215,6 +1351,7 @@ ngb-datepicker{
   color: $white;
   background-color: $secondary;
 }
+
 .btn-only-icon-disabled-lg:disabled {
   color: $white;
   opacity: unset;
@@ -1223,7 +1360,7 @@ ngb-datepicker{
 
 
 /* BUTTONS ONLY ICON CIRCULAR */
-.btn-only-icon-primary-circular-sm{
+.btn-only-icon-primary-circular-sm {
   height: 2.75rem;
   width: 2.75rem;
   display: flex;
@@ -1234,16 +1371,18 @@ ngb-datepicker{
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-primary-circular-sm:hover {
   color: $white;
   background-color: $primary-hover;
 }
+
 .btn-only-icon-primary-circular-sm:hover:active {
   color: $white;
   background-color: $primary-hover;
 }
 
-.btn-only-icon-secondary-circular-sm{
+.btn-only-icon-secondary-circular-sm {
   border-radius: 50%;
   height: 2.75rem;
   width: 2.75rem;
@@ -1254,16 +1393,18 @@ ngb-datepicker{
   color: $black-25;
   background-color: $secondary;
 }
+
 .btn-only-icon-secondary-circular-sm:hover {
   color: $black-25;
   background-color: $secondary-hover;
 }
+
 .btn-only-icon-secondary-circular-sm:hover:active {
   color: $black-25;
   background-color: $secondary-hover;
 }
 
-.btn-only-icon-outline-circular-sm{
+.btn-only-icon-outline-circular-sm {
   border-radius: 50%;
   height: 2.75rem;
   width: 2.75rem;
@@ -1272,11 +1413,13 @@ ngb-datepicker{
   align-items: center;
   background-color: $white;
 }
+
 .btn-only-icon-outline-circular-sm:hover {
   border-color: $primary;
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-outline-circular-sm:hover:active {
   border-color: $primary;
   color: $white;
@@ -1295,13 +1438,14 @@ ngb-datepicker{
   color: $white;
   background-color: $secondary;
 }
+
 .btn-only-icon-disabled-circular-sm:disabled {
   opacity: unset;
   color: $white;
   background-color: $secondary;
 }
 
-.btn-only-icon-outline-disabled-circular-sm{
+.btn-only-icon-outline-disabled-circular-sm {
   opacity: unset;
   height: 2.75rem;
   width: 2.75rem;
@@ -1314,6 +1458,7 @@ ngb-datepicker{
   background-color: $white;
   border-color: $secondary;
 }
+
 .btn-only-icon-outline-disabled-circular-sm:disabled {
   opacity: unset;
   color: $secondary;
@@ -1321,7 +1466,7 @@ ngb-datepicker{
   border-color: $secondary;
 }
 
-.btn-only-icon-primary-circular-md{
+.btn-only-icon-primary-circular-md {
   height: 3.5rem;
   width: 3.5rem;
   display: flex;
@@ -1332,16 +1477,18 @@ ngb-datepicker{
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-primary-circular-md:hover {
   color: $white;
   background-color: $primary-hover;
 }
+
 .btn-only-icon-primary-circular-md:hover:active {
   color: $white;
   background-color: $primary-hover;
 }
 
-.btn-only-icon-secondary-circular-md{
+.btn-only-icon-secondary-circular-md {
   height: 3.5rem;
   width: 3.5rem;
   display: flex;
@@ -1352,16 +1499,18 @@ ngb-datepicker{
   color: $black-25;
   background-color: $secondary;
 }
+
 .btn-only-icon-secondary-circular-md:hover {
   color: $black-25;
   background-color: $secondary-hover;
 }
+
 .btn-only-icon-secondary-circular-md:hover:active {
   color: $black-25;
   background-color: $secondary-hover;
 }
 
-.btn-only-icon-outline-circular-md{
+.btn-only-icon-outline-circular-md {
   height: 3.5rem;
   width: 3.5rem;
   display: flex;
@@ -1370,11 +1519,13 @@ ngb-datepicker{
   border-radius: 50%;
   background-color: $white;
 }
+
 .btn-only-icon-outline-circular-md:hover {
   border-color: $primary;
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-outline-circular-md:hover:active {
   border-color: $primary;
   color: $white;
@@ -1393,13 +1544,14 @@ ngb-datepicker{
   color: $white;
   background-color: $secondary;
 }
+
 .btn-only-icon-disabled-circular-md:disabled {
   opacity: unset;
   color: $white;
   background-color: $secondary;
 }
 
-.btn-only-icon-outline-disabled-circular-md{
+.btn-only-icon-outline-disabled-circular-md {
   opacity: unset;
   height: 3.5rem;
   width: 3.5rem;
@@ -1412,6 +1564,7 @@ ngb-datepicker{
   background-color: $white;
   border-color: $secondary;
 }
+
 .btn-only-icon-outline-disabled-circular-md:disabled {
   opacity: unset;
   color: $secondary;
@@ -1419,7 +1572,7 @@ ngb-datepicker{
   border-color: $secondary;
 }
 
-.btn-only-icon-primary-circular-lg{
+.btn-only-icon-primary-circular-lg {
   height: 4.25rem;
   width: 4.25rem;
   display: flex;
@@ -1430,16 +1583,18 @@ ngb-datepicker{
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-primary-circular-lg:hover {
   color: $white;
   background-color: $primary-hover;
 }
+
 .btn-only-icon-primary-circular-lg:hover:active {
   color: $white;
   background-color: $primary-hover;
 }
 
-.btn-only-icon-secondary-circular-lg{
+.btn-only-icon-secondary-circular-lg {
   height: 4.25rem;
   width: 4.25rem;
   display: flex;
@@ -1450,16 +1605,18 @@ ngb-datepicker{
   color: $black-25;
   background-color: $secondary;
 }
+
 .btn-only-icon-secondary-circular-lg:hover {
   color: $black-25;
   background-color: $secondary-hover;
 }
+
 .btn-only-icon-secondary-circular-lg:hover:active {
   color: $black-25;
   background-color: $secondary-hover;
 }
 
-.btn-only-icon-outline-circular-lg{
+.btn-only-icon-outline-circular-lg {
   height: 4.25rem;
   width: 4.25rem;
   display: flex;
@@ -1469,18 +1626,20 @@ ngb-datepicker{
   background-color: $white;
 
 }
+
 .btn-only-icon-outline-circular-lg:hover {
   border-color: $primary;
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-outline-circular-lg:hover:active {
   border-color: $primary;
   color: $white;
   background-color: $primary;
 }
 
-.btn-only-icon-disabled-circular-lg{
+.btn-only-icon-disabled-circular-lg {
   opacity: unset;
   height: 4.25rem;
   width: 4.25rem;
@@ -1492,13 +1651,14 @@ ngb-datepicker{
   color: $white;
   background-color: $secondary;
 }
+
 .btn-only-icon-disabled-circular-lg:disabled {
   opacity: unset;
   color: $white;
   background-color: $secondary;
 }
 
-.btn-only-icon-outline-disabled-circular-lg{
+.btn-only-icon-outline-disabled-circular-lg {
   opacity: unset;
   height: 4.25rem;
   width: 4.25rem;
@@ -1511,6 +1671,7 @@ ngb-datepicker{
   background-color: $white;
   border-color: $secondary;
 }
+
 .btn-only-icon-outline-disabled-circular-lg:disabled {
   opacity: unset;
   color: $secondary;
@@ -1519,7 +1680,7 @@ ngb-datepicker{
 }
 
 /* BUTTONS ONLY ICON SQUARE */
-.btn-only-icon-primary-square-sm{
+.btn-only-icon-primary-square-sm {
   height: 2.75rem;
   width: 2.75rem;
   display: flex;
@@ -1530,16 +1691,18 @@ ngb-datepicker{
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-primary-square-sm:hover {
   color: $white;
   background-color: $primary-hover;
 }
+
 .btn-only-icon-primary-square-sm:hover:active {
   color: $white;
   background-color: $primary-hover;
 }
 
-.btn-only-icon-secondary-square-sm{
+.btn-only-icon-secondary-square-sm {
   height: 2.75rem;
   width: 2.75rem;
   display: flex;
@@ -1550,16 +1713,18 @@ ngb-datepicker{
   color: $black-25;
   background-color: $secondary;
 }
+
 .btn-only-icon-secondary-square-sm:hover {
   color: $black-25;
   background-color: $secondary-hover;
 }
+
 .btn-only-icon-secondary-square-sm:hover:active {
   color: $black-25;
   background-color: $secondary-hover;
 }
 
-.btn-only-icon-outline-square-sm{
+.btn-only-icon-outline-square-sm {
   height: 2.75rem;
   width: 2.75rem;
   display: flex;
@@ -1569,11 +1734,13 @@ ngb-datepicker{
   background-color: $white;
 
 }
+
 .btn-only-icon-outline-square-sm:hover {
   border-color: $primary;
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-outline-square-sm:hover:active {
   border-color: $primary;
   color: $white;
@@ -1592,13 +1759,14 @@ ngb-datepicker{
   color: $white;
   background-color: $secondary;
 }
+
 .btn-only-icon-disabled-square-sm:disabled {
   opacity: unset;
   color: $white;
   background-color: $secondary;
 }
 
-.btn-only-icon-outline-disabled-square-sm{
+.btn-only-icon-outline-disabled-square-sm {
   opacity: unset;
   height: 2.75rem;
   width: 2.75rem;
@@ -1609,13 +1777,14 @@ ngb-datepicker{
   color: $secondary;
   background-color: white;
 }
+
 .btn-only-icon-outline-disabled-square-sm:disabled {
   opacity: unset;
   color: $secondary;
   background-color: white;
 }
 
-.btn-only-icon-primary-square-md{
+.btn-only-icon-primary-square-md {
   height: 3.5rem;
   width: 3.5rem;
   display: flex;
@@ -1626,16 +1795,18 @@ ngb-datepicker{
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-primary-square-md:hover {
   color: $white;
   background-color: $primary-hover;
 }
+
 .btn-only-icon-primary-square-md:hover:active {
   color: $white;
   background-color: $primary-hover;
 }
 
-.btn-only-icon-secondary-square-md{
+.btn-only-icon-secondary-square-md {
   height: 3.5rem;
   width: 3.5rem;
   display: flex;
@@ -1646,16 +1817,18 @@ ngb-datepicker{
   color: $black-25;
   background-color: $secondary;
 }
+
 .btn-only-icon-secondary-square-md:hover {
   color: $black-25;
   background-color: $secondary-hover;
 }
+
 .btn-only-icon-secondary-square-md:hover:active {
   color: $black-25;
   background-color: $secondary-hover;
 }
 
-.btn-only-icon-outline-square-md{
+.btn-only-icon-outline-square-md {
   height: 3.5rem;
   width: 3.5rem;
   display: flex;
@@ -1665,11 +1838,13 @@ ngb-datepicker{
   background-color: $white;
 
 }
+
 .btn-only-icon-outline-square-md:hover {
   border-color: $primary;
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-outline-square-md:hover:active {
   border-color: $primary;
   color: $white;
@@ -1688,13 +1863,14 @@ ngb-datepicker{
   color: $white;
   background-color: $secondary;
 }
+
 .btn-only-icon-disabled-square-md:disabled {
   opacity: unset;
   color: $white;
   background-color: $secondary;
 }
 
-.btn-only-icon-outline-disabled-square-md{
+.btn-only-icon-outline-disabled-square-md {
   opacity: unset;
   height: 3.5rem;
   width: 3.5rem;
@@ -1705,13 +1881,14 @@ ngb-datepicker{
   color: $secondary;
   background-color: white;
 }
+
 .btn-only-icon-outline-disabled-square-md:disabled {
   opacity: unset;
   color: $secondary;
   background-color: white;
 }
 
-.btn-only-icon-primary-square-lg{
+.btn-only-icon-primary-square-lg {
   height: 4.25rem;
   width: 4.25rem;
   display: flex;
@@ -1722,16 +1899,18 @@ ngb-datepicker{
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-primary-square-lg:hover {
   color: $white;
   background-color: $primary-hover;
 }
+
 .btn-only-icon-primary-square-lg:hover:active {
   color: $white;
   background-color: $primary-hover;
 }
 
-.btn-only-icon-secondary-square-lg{
+.btn-only-icon-secondary-square-lg {
   height: 4.25rem;
   width: 4.25rem;
   display: flex;
@@ -1742,16 +1921,18 @@ ngb-datepicker{
   color: $black-25;
   background-color: $secondary;
 }
+
 .btn-only-icon-secondary-square-lg:hover {
   color: $black-25;
   background-color: $secondary-hover;
 }
+
 .btn-only-icon-secondary-square-lg:hover:active {
   color: $black-25;
   background-color: $secondary-hover;
 }
 
-.btn-only-icon-outline-square-lg{
+.btn-only-icon-outline-square-lg {
   height: 4.25rem;
   width: 4.25rem;
   display: flex;
@@ -1761,18 +1942,20 @@ ngb-datepicker{
   background-color: $white;
 
 }
+
 .btn-only-icon-outline-square-lg:hover {
   border-color: $primary;
   color: $white;
   background-color: $primary;
 }
+
 .btn-only-icon-outline-square-lg:hover:active {
   border-color: $primary;
   color: $white;
   background-color: $primary;
 }
 
-.btn-only-icon-disabled-square-lg{
+.btn-only-icon-disabled-square-lg {
   opacity: unset;
   height: 4.25rem;
   width: 4.25rem;
@@ -1784,13 +1967,14 @@ ngb-datepicker{
   color: $white;
   background-color: $secondary;
 }
+
 .btn-only-icon-disabled-square-lg:disabled {
   opacity: unset;
   color: $white;
   background-color: $secondary;
 }
 
-.btn-only-icon-outline-disabled-square-lg{
+.btn-only-icon-outline-disabled-square-lg {
   opacity: unset;
   height: 4.25rem;
   width: 4.25rem;
@@ -1801,6 +1985,7 @@ ngb-datepicker{
   color: $secondary;
   background-color: white;
 }
+
 .btn-only-icon-outline-disabled-square-lg:disabled {
   opacity: unset;
   color: $secondary;
@@ -1810,7 +1995,7 @@ ngb-datepicker{
 
 /* SELECT */
 
-.select-25{
+.select-25 {
   cursor: pointer;
   border-color: $border-grey;
   height: 2.75rem;
@@ -1818,13 +2003,15 @@ ngb-datepicker{
   border-width: 0.0313rem;
   --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23656565' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 }
-.select-25:disabled{
+
+.select-25:disabled {
   cursor: default;
   border-color: $border-grey;
   background-color: $secondary-hover;
   color: $disabled-placeholder;
 }
-.select-25:focus{
+
+.select-25:focus {
   border-color: $border-grey;
   box-shadow: none;
 }
@@ -1838,6 +2025,7 @@ ngb-datepicker{
   color: white;
   background-color: $primary;
 }
+
 .primary-sm-25:hover {
   padding: 0.75rem 1.5rem;
   border-radius: 8px;

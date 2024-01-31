@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Injectable({
@@ -10,10 +10,16 @@ export class TwentyfiveModalGenericComponentService {
   }
 
 
-  open(template: any, size: string) {
+  open(template: any,
+       size: string,
+       {
+         centered = true,
+         backdropClass = 'modal-backdrop',
+       }) {
     return this.ngModalService.open(template, {
       size: size,
-      centered: true,
+      centered: centered,
+      backdropClass: backdropClass,
       backdrop: 'static'
     });
   }
