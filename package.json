@@ -24,7 +24,7 @@
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "twentyfive-mobile-table-and-row": "^0.0.5",
-    "twentyfive-style": "^0.0.29",
+    "twentyfive-style": "^0.0.77",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
@@ -40,6 +40,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^16.2.0",
     "typescript": "~5.1.3",
-    "twentyfive-style": "^0.0.76"
+    "twentyfive-style": "^0.0.77"
   }
 }

@@ -15,22 +15,24 @@
 >{{row[elem.value ?? 0]}}</td>
 
 <td *ngIf="showActions">
-  <div *ngIf="actions.length <= 3">
-    <i
-      *ngFor="let action of actions"
-      class="table-icon text-truncate"
-      style="max-width: 150px;"
-      [placement]="action.placement"
-      [ngbTooltip]="action.tooltipText"
-      [ngClass]="action.icon"
-      (click)="action.action(row)">
-    </i>
+  <div *ngIf="actions.length <= 3" class="d-flex">
+    <div *ngFor="let action of actions">
+      <i
+        *ngIf="action.showFunction(row) ?? true"
+        class="table-icon text-truncate"
+        style="max-width: 150px;"
+        [placement]="action.placement"
+        [ngbTooltip]="action.tooltipText"
+        [ngClass]="action.icon"
+        (click)="action.action(row)">
+      </i>
+    </div>
   </div>
   <div *ngIf="actions.length > 3">
     <i class="bi bi-three-dots-vertical table-icon" data-bs-toggle="dropdown">
       <ul class="dropdown-menu">
         <li *ngFor="let action of actions">
-          <a class="dropdown-item" (click)="action.action(row)">
+          <a *ngIf="action.showFunction(row) ?? true" class="dropdown-item" (click)="action.action(row)">
             {{action.actionName}}
           </a>
         </li>

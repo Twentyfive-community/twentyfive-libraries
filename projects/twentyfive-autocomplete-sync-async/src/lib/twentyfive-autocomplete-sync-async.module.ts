@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { TwentyfiveAutocompleteComponent } from './twentyfive-autocomplete/twentyfive-autocomplete.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {BrowserModule} from "@angular/platform-browser";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 
 
 
@@ -12,11 +11,12 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     TwentyfiveAutocompleteComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    NgClass,
+    NgIf,
+    NgForOf
   ],
   exports: [
     TwentyfiveAutocompleteComponent

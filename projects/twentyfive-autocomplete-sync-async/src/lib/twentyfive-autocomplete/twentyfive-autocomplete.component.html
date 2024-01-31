@@ -12,13 +12,13 @@
       id="typeahead-http"
       type="text"
       class="form-control"
-      (ngModelChange)="change(nTemplt)"
+      [(ngModel)]="value"
       [class.is-invalid]="searchFailed"
-      [formControl]="model"
       [ngbTypeahead]="search"
       [inputFormatter]="formatter"
       [resultTemplate]="nTemplt"
       [placeholder]="placeholder"
+      (selectItem)="onElementSelected.emit($event)"
     >
     <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
   </div>
@@ -26,7 +26,7 @@
 
 <ng-template #nTemplt let-r="result" let-t="term">
 
-  <span style="padding-top: 8px; padding-bottom: 8px" (click)="onElementSelected.emit(r)">
+  <span style="padding-top: 8px; padding-bottom: 8px">
       {{ r[textToShowField] }}
     </span>
 

@@ -25,11 +25,17 @@ export class TwentyfiveInputComponent {
 
   @Input() customCssClass: string = '';
   @Input() customLabelClass: string = '';
+  @Input() isClearable: boolean = false;
 
   @Output() changeValue = new EventEmitter<any>();
 
   changeInput(event: any){
     this.changeValue.emit(event);
+  }
+
+  clearInput(){
+    this.value = '';
+    this.changeValue.emit(this.value);
   }
 
   protected readonly InputTheme = InputTheme;

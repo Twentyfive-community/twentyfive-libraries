@@ -38,6 +38,9 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
   @Input() maxDateRange: any;
 
 
+  @Input() maxDate: NgbDate | undefined | null;
+  @Input() minDate: NgbDate | undefined | null;
+
   numberOfMonths: number = 2;
 
   constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
@@ -60,6 +63,7 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
 
 
   onDateSelection(date: NgbDate) {
+    if(date.before(this.minDate) || date.after(this.maxDate)) return;
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
     } else if (this.fromDate && !this.toDate) {
