@@ -1,0 +1,56 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <img class="modal-title py-1" src="assets/images/twentyfive-logo.png" alt="logo" width="150" height="32">
+    <button type="button" class="btn-close" (click)="close()"></button>
+  </div>
+
+  <div class="modal-body px-4">
+    <div class="row">
+      <h5>{{ title }}</h5>
+      <div [innerHTML]="htmlContent"></div>
+    </div>
+
+    <div>
+      <div class="row d-flex">
+        <!-- Scopri di più e personalizza button (1st on md and above, 2nd on sm and below) -->
+        <div class="col-lg-6 col-12 order-lg-1 order-2">
+          <div class="justify-content-lg-start justify-content-center">
+            <lib-generic-button
+              [buttonSize]="ButtonSizeTheme.Large"
+              [customCssClass]="'appearanceButtonCookie'"
+              (click)="openDetailedPopup()"
+              buttonText="Scopri di più e personalizza">
+            </lib-generic-button>
+          </div>
+        </div>
+
+        <!-- Rifiuta and Accetta buttons (2nd on lg and above, 1st on sm and below) -->
+        <div class="mb-2 align-items-center d-inline-flex
+        col-lg-6 col-12
+        order-lg-2 order-1
+        text-lg-right text-center
+        flex-lg-nowrap flex-wrap
+        row-gap-1
+        justify-content-lg-end justify-content-between">
+          <div class="me-lg-2 me-0">
+            <lib-generic-button
+              [buttonSize]="ButtonSizeTheme.Medium"
+              [buttonStyle]="ButtonTheme.Primary"
+              (click)="close()"
+              buttonText="Rifiuta">
+            </lib-generic-button>
+          </div>
+          <lib-generic-button
+            [buttonSize]="ButtonSizeTheme.Medium"
+            [buttonStyle]="ButtonTheme.Primary"
+            (click)="close()"
+            buttonText="Accetta">
+          </lib-generic-button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+

@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/twentyfive-cookie-modal",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "allowedNonPeerDependencies": [
+    "@ng-bootstrap/ng-bootstrap",
+    "twentyfive-modal-generic-component",
+    "generic-buttons",
+    "twentyfive-style"
+  ]
+}

@@ -1,0 +1,92 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <img class="modal-title py-1" src="assets/images/twentyfive-logo.png" alt="logo" width="150" height="32">
+    <div class="d-inline-flex align-items-center">
+      <lib-generic-button
+        [buttonStyle]="ButtonTheme.OutlineReverse"
+        [buttonSize]="ButtonSizeTheme.FullWidth"
+        (click)="openEntire()"
+        buttonText="Visualizza Cookie Policy completa"
+      >
+      </lib-generic-button>
+    </div>
+  </div>
+
+  <div class="p-3" style="background-color: #1A1660">
+    <h1 class="text-white mb-2">Le tue preferenze relative alla privacy</h1>
+    <p class="text-white">Questo pannello ti permette di esprimere alcune preferenze relative al trattamento delle tue informazioni personali.
+      Puoi rivedere e modificare le tue scelte in qualsiasi momento accedendo al presente pannello tramite l’apposito link.
+      Per rifiutare il tuo consenso alle attività di trattamento descritte di seguito, disattiva i singoli comandi o utilizza il pulsante “Rifiuta
+      tutto” e conferma di voler salvare le scelte effettuate.</p>
+  </div>
+
+  <div class="modal-body">
+    <div class="row">
+      <div class="mb-2 align-items-center d-inline-flex
+        col-lg-12
+        order-lg-2 order-1
+        text-lg-right text-center
+        flex-lg-nowrap flex-wrap
+        row-gap-1
+        justify-content-lg-end justify-content-between">
+        <div class="me-lg-2 me-0">
+          <lib-generic-button-text-with-icon
+            [buttonSize]="ButtonSizeTheme.FullWidth"
+            [customCssClass]="'appearanceButtonCookie'"
+            [prefixIcon]="'bi bi-x'"
+            (click)="close()"
+            buttonText="Rifiuta tutto"
+          >
+          </lib-generic-button-text-with-icon>
+        </div>
+        <lib-generic-button-text-with-icon
+          [buttonSize]="ButtonSizeTheme.FullWidth"
+          [customCssClass]="'appearanceButtonCookie'"
+          [prefixIcon]="'bi bi-check'"
+          (click)="close()"
+          buttonText="Accetta tutto">
+        </lib-generic-button-text-with-icon>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <h3 class="mb-2">Le tue preferenze relative al consenso per le tecnologie di tracciamento</h3>
+      <p>Le opzioni disponibili in questa sezione ti permettono di personalizzare le preferenze relative al consenso per qualsiasi tecnologia di
+        tracciamento utilizzata per le finalità descritte di seguito. Per ottenere ulteriori informazioni in merito all'utilità e al funzionamento di
+        tali strumenti di tracciamento, fai riferimento alla cookie policy. Tieni presente che il rifiuto del consenso per una finalità particolare
+        può rendere le relative funzioni non disponibili.</p>
+    </div>
+    <hr>
+    <div class="row" *ngFor="let row of cookieModalList">
+      <lib-cookie-detailed-row [title]="row.title" [description]="row.description" [value]="row.value"></lib-cookie-detailed-row>
+    </div>
+    <div class="row">
+      <div class="mb-2 align-items-center d-inline-flex
+        col-lg-12
+        order-lg-2 order-1
+        text-lg-right text-center
+        flex-lg-nowrap flex-wrap
+        row-gap-1
+        justify-content-between">
+        <div class="me-lg-2 me-0">
+          <lib-generic-button-text-with-icon
+            [buttonSize]="ButtonSizeTheme.FullWidth"
+            [buttonStyle]="ButtonTheme.Outline"
+            [prefixIcon]="'bi bi-arrow-left-short'"
+            (click)="close()"
+            buttonText="Indietro">
+          </lib-generic-button-text-with-icon>
+        </div>
+        <lib-generic-button
+          [buttonSize]="ButtonSizeTheme.FullWidth"
+          [buttonStyle]="ButtonTheme.Primary"
+          (click)="close()"
+          buttonText="Salva e continua">
+        </lib-generic-button>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+

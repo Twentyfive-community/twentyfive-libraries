@@ -14,11 +14,13 @@ export class TwentyfiveModalGenericComponentService {
        size: string,
        {
          centered = true,
-         keyboard = true
+         keyboard = true,
+         backdropClass = 'modal-backdrop',
        }, backdrop?: "static" | boolean | undefined) {
     return this.ngModalService.open(template, {
       size: size,
       centered: centered,
+      backdropClass: backdropClass ?? undefined,
       keyboard: keyboard ?? true,
       backdrop: backdrop ?? 'static'
     });

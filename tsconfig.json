@@ -32,6 +32,15 @@
       "twentyfive-buttons": [
         "dist/twentyfive-buttons"
       ],
+      "twentyfive-cookie-modal": [
+        "dist/twentyfive-cookie-modal"
+      ],
+      "twentyfive-cookie-modal-detailed": [
+        "dist/twentyfive-cookie-modal-detailed"
+      ],
+      "twentyfive-cookie-modal-policy": [
+        "dist/twentyfive-cookie-modal-policy"
+      ],
       "twentyfive-error-page": [
         "dist/twentyfive-error-page"
       ],

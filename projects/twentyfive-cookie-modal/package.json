@@ -1,15 +1,15 @@
 {
-  "name": "twentyfive-modal-generic-component",
-  "version": "0.0.14",
+  "name": "twentyfive-cookie-modal",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
   },
   "dependencies": {
     "@ng-bootstrap/ng-bootstrap": "^16.0.0",
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.2",
-    "bootstrap-icons": "^1.11.1",
+    "twentyfive-modal-generic-component": "^0.0.14",
+    "generic-buttons": "^0.0.49",
+    "twentyfive-style": "^0.0.82",
     "tslib": "^2.3.0"
   },
   "sideEffects": false
