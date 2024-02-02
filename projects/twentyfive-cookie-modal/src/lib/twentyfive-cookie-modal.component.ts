@@ -8,6 +8,8 @@ import {ButtonSizeTheme, ButtonTheme} from "twentyfive-style";
 })
 export class TwentyfiveCookieModalComponent {
 
+  allOptionCode: string = '000-001';
+
   @Input() title: string = 'Informativa';
   @Input() htmlContent: string = '<p>Noi e terze parti selezionate utilizziamo cookie o tecnologie simili per finalità tecniche e, con il tuo consenso, anche per altre finalità\n' +
     '        come specificato nella\n' +
@@ -21,8 +23,8 @@ export class TwentyfiveCookieModalComponent {
   constructor(private modalService: TwentyfiveModalGenericComponentService) {
 
   }
-  close() {
-    this.modalService.close()
+  close(valueSelected?: any) {
+    this.modalService.close({code: this.allOptionCode, value: valueSelected});
   }
 
   protected readonly ButtonSizeTheme = ButtonSizeTheme;

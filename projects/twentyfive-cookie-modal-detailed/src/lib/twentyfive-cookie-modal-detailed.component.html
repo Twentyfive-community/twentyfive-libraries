@@ -34,7 +34,7 @@
             [buttonSize]="ButtonSizeTheme.FullWidth"
             [customCssClass]="'appearanceButtonCookie'"
             [prefixIcon]="'bi bi-x'"
-            (click)="close()"
+            (click)="close('reject')"
             buttonText="Rifiuta tutto"
           >
           </lib-generic-button-text-with-icon>
@@ -43,7 +43,7 @@
           [buttonSize]="ButtonSizeTheme.FullWidth"
           [customCssClass]="'appearanceButtonCookie'"
           [prefixIcon]="'bi bi-check'"
-          (click)="close()"
+          (click)="close('accept')"
           buttonText="Accetta tutto">
         </lib-generic-button-text-with-icon>
       </div>
@@ -80,7 +80,7 @@
         <lib-generic-button
           [buttonSize]="ButtonSizeTheme.FullWidth"
           [buttonStyle]="ButtonTheme.Primary"
-          (click)="close()"
+          (click)="close('save')"
           buttonText="Salva e continua">
         </lib-generic-button>
       </div>

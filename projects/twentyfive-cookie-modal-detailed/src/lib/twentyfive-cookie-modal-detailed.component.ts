@@ -13,39 +13,76 @@ export class TwentyfiveCookieModalDetailedComponent {
   protected readonly ButtonSizeTheme = ButtonSizeTheme;
   protected readonly ButtonTheme = ButtonTheme;
 
+  allOptionCode: string = '000-001';
+
   cookieModalList = [
     {
+      code: '000-002',
       title: 'Necessari',
       description: 'Questi strumenti di tracciamento sono strettamente necessari per garantire il funzionamento e la fornitura del servizio che ci hai richiesto e, pertanto, non richiedono il tuo consenso.',
       value: false
     },
     {
+      code: '000-003',
       title: 'Funzionalità',
       description: 'Questi strumenti di tracciamento abilitano semplici interazioni e funzionalità che ti permettono di accedere a determinate risorse del nostro servizio e ti consentono di comunicare più facilmente con noi.',
       value: false
     },
     {
+      code: '000-004',
       title: 'Esperienza',
       description: 'Questi strumenti di tracciamento ci permettono di migliorare la qualità della tua esperienza utente e consentono le interazioni con piattaforme, reti e contenuti esterni.',
       value: false
     },
     {
+      code: '000-005',
       title: 'Misurazione',
       description: 'Questi strumenti di tracciamento ci permettono di misurare il traffico e analizzare il tuo comportamento per migliorare il nostro servizio.',
       value: false
     },
     {
+      code: '000-006',
       title: 'Marketing',
       description: 'Questi strumenti di tracciamento ci permettono di fornirti contenuti marketing o annunci personalizzati e di misurarne la performance.',
       value: false
     },
   ]
 
-  close() {
-    this.closeDetailedModal.emit();
+  close(action?: string) {
+    if (action) {
+      switch (action) {
+        case 'accept':
+          this.closeDetailedModal.emit({code: this.allOptionCode, value: true});
+          break;
+        case 'reject':
+          this.closeDetailedModal.emit({code: this.allOptionCode, value: false});
+          break;
+        case 'save':
+          this.closeDetailedModal.emit(this.composeParams());
+          break;
+      }
+    } else {
+      this.closeDetailedModal.emit();
+    }
   }
 
   openEntire() {
     this.openEntireCookiePolicy.emit();
+  }
+
+  composeParams() {
+    //check if all elements in cookieModalList has same value in value property of each element
+    let value = this.cookieModalList[0].value;
+    let allSame = this.cookieModalList.every((el) => el.value === value);
+    if (allSame) {
+      return {code: this.allOptionCode, value: value};
+    } else {
+      //return array of objects with code and value properties
+      return this.cookieModalList.map((el) => {
+        return {code: el.code, value: el.value}
+      });
+    }
+
+
   }
 }
