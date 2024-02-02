@@ -58,7 +58,7 @@
     </div>
     <hr>
     <div class="row" *ngFor="let row of cookieModalList">
-      <lib-cookie-detailed-row [title]="row.title" [description]="row.description" [value]="row.value"></lib-cookie-detailed-row>
+      <lib-cookie-detailed-row [code]="row.code" [title]="row.title" [description]="row.description" [value]="row.value" (changedValue)="changeValueList($event)"></lib-cookie-detailed-row>
     </div>
     <div class="row">
       <div class="mb-2 align-items-center d-inline-flex

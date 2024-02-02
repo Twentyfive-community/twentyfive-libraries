@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {ButtonSizeTheme, ButtonTheme} from "twentyfive-style";
+import {TwentyfiveModalGenericComponentService} from "twentyfive-modal-generic-component";
 
 @Component({
   selector: 'lib-twentyfive-cookie-modal-detailed',
@@ -48,17 +49,24 @@ export class TwentyfiveCookieModalDetailedComponent {
     },
   ]
 
+  constructor(private modalService: TwentyfiveModalGenericComponentService) {
+
+  }
+
   close(action?: string) {
     if (action) {
       switch (action) {
         case 'accept':
-          this.closeDetailedModal.emit({code: this.allOptionCode, value: true});
+          this.modalService.close({code: this.allOptionCode, value: true});
+          // this.closeDetailedModal.emit({code: this.allOptionCode, value: true});
           break;
         case 'reject':
-          this.closeDetailedModal.emit({code: this.allOptionCode, value: false});
+          this.modalService.close({code: this.allOptionCode, value: false});
+          // this.closeDetailedModal.emit({code: this.allOptionCode, value: false});
           break;
         case 'save':
-          this.closeDetailedModal.emit(this.composeParams());
+          this.modalService.close(this.composeParams());
+          // this.closeDetailedModal.emit(this.composeParams());
           break;
       }
     } else {
@@ -82,7 +90,13 @@ export class TwentyfiveCookieModalDetailedComponent {
         return {code: el.code, value: el.value}
       });
     }
+  }
 
 
+
+  changeValueList($event: any) {
+    //$event is an object with code and value properties, find in cookieModalList the element with the same code and change its value property
+    let index = this.cookieModalList.findIndex((el) => el.code === $event.code);
+    this.cookieModalList[index].value = $event.value;
   }
 }
