@@ -2,18 +2,19 @@
   <div class="modal-header">
     <img class="modal-title py-1" src="assets/images/twentyfive-logo.png" alt="logo" width="150" height="32">
     <div class="d-inline-flex align-items-center">
-      <lib-generic-button
+      <lib-generic-button-text-with-icon
         [buttonStyle]="ButtonTheme.OutlineReverse"
         [buttonSize]="ButtonSizeTheme.FullWidth"
         (click)="openEntire()"
-        buttonText="Visualizza Cookie Policy completa"
+        [prefixIcon]="'bi bi-cookie'"
+        buttonText="View Completa"
       >
-      </lib-generic-button>
+      </lib-generic-button-text-with-icon>
     </div>
   </div>
 
   <div class="p-3" style="background-color: #1A1660">
-    <h1 class="text-white mb-2">Le tue preferenze relative alla privacy</h1>
+    <h2 class="text-white mb-2">Le tue preferenze relative alla privacy</h2>
     <p class="text-white">Questo pannello ti permette di esprimere alcune preferenze relative al trattamento delle tue informazioni personali.
       Puoi rivedere e modificare le tue scelte in qualsiasi momento accedendo al presente pannello tramite l’apposito link.
       Per rifiutare il tuo consenso alle attività di trattamento descritte di seguito, disattiva i singoli comandi o utilizza il pulsante “Rifiuta
