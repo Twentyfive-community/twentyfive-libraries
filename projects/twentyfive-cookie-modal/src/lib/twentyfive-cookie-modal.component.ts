@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {TwentyfiveModalGenericComponentService} from "twentyfive-modal-generic-component";
 import {ButtonSizeTheme, ButtonTheme} from "twentyfive-style";
 

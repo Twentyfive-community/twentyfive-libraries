@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, Output} from '@angular/core';
 import {ButtonSizeTheme, ButtonTheme} from "twentyfive-style";
 import {TwentyfiveModalGenericComponentService} from "twentyfive-modal-generic-component";
 
@@ -6,8 +6,9 @@ import {TwentyfiveModalGenericComponentService} from "twentyfive-modal-generic-c
   selector: 'lib-twentyfive-cookie-modal-detailed',
   templateUrl: './twentyfive-cookie-modal-detailed.component.html',
 })
-export class TwentyfiveCookieModalDetailedComponent {
+export class TwentyfiveCookieModalDetailedComponent implements AfterViewInit{
 
+  @Input() userPreferences: any = [];
   @Output() closeDetailedModal: any = new EventEmitter<any>();
   @Output() openEntireCookiePolicy: any = new EventEmitter<any>();
 
@@ -51,6 +52,10 @@ export class TwentyfiveCookieModalDetailedComponent {
 
   constructor(private modalService: TwentyfiveModalGenericComponentService) {
 
+  }
+
+  ngAfterViewInit() {
+    this.setupUserPreferences();
   }
 
   close(action?: string) {
@@ -98,5 +103,24 @@ export class TwentyfiveCookieModalDetailedComponent {
     //$event is an object with code and value properties, find in cookieModalList the element with the same code and change its value property
     let index = this.cookieModalList.findIndex((el) => el.code === $event.code);
     this.cookieModalList[index].value = $event.value;
+  }
+
+  private setupUserPreferences() {
+    if (this.userPreferences && this.userPreferences.length > 0) {
+      if (Array.isArray(this.userPreferences)) {
+        this.cookieModalList.forEach((el) => {
+          let index = this.userPreferences.findIndex((pref: any) => pref.code === el.code);
+          if (index > -1) {
+            el.value = this.userPreferences[index].value;
+          }
+        });
+      } else {
+        this.cookieModalList.forEach((el) => {
+          if (this.userPreferences.code === el.code) {
+            el.value = this.userPreferences.value;
+          }
+        });
+      }
+    }
   }
 }
