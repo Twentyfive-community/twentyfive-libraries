@@ -6,7 +6,7 @@ import {TwentyfiveModalGenericComponentService} from "twentyfive-modal-generic-c
   selector: 'lib-twentyfive-cookie-modal-detailed',
   templateUrl: './twentyfive-cookie-modal-detailed.component.html',
 })
-export class TwentyfiveCookieModalDetailedComponent implements AfterViewInit{
+export class TwentyfiveCookieModalDetailedComponent implements AfterViewInit {
 
   @Input() userPreferences: any = [];
   @Output() closeDetailedModal: any = new EventEmitter<any>();
@@ -98,7 +98,6 @@ export class TwentyfiveCookieModalDetailedComponent implements AfterViewInit{
   }
 
 
-
   changeValueList($event: any) {
     //$event is an object with code and value properties, find in cookieModalList the element with the same code and change its value property
     let index = this.cookieModalList.findIndex((el) => el.code === $event.code);
@@ -106,21 +105,34 @@ export class TwentyfiveCookieModalDetailedComponent implements AfterViewInit{
   }
 
   private setupUserPreferences() {
-    if (this.userPreferences && this.userPreferences.length > 0) {
-      if (Array.isArray(this.userPreferences)) {
+
+    // Check if userPreferences exists and is an array
+    if (Array.isArray(this.userPreferences) && this.userPreferences.length > 0) {
+      this.cookieModalList.forEach((el) => {
+        let index = this.userPreferences.findIndex((pref: any) => pref.code === el.code);
+        if (index > -1) {
+          // If the preference for the current element is found, set its value
+          el.value = this.userPreferences[index].value;
+        }
+      });
+    } else if (this.userPreferences && typeof this.userPreferences === 'object') {
+      // Handle the case where userPreferences is a single object
+      if (typeof this.userPreferences.value === 'boolean') {
+        // If value is true, apply it to all elements in cookieModalList
+        // If value is false, also apply it to all elements in cookieModalList
         this.cookieModalList.forEach((el) => {
-          let index = this.userPreferences.findIndex((pref: any) => pref.code === el.code);
-          if (index > -1) {
-            el.value = this.userPreferences[index].value;
-          }
+          el.value = this.userPreferences.value;
         });
       } else {
-        this.cookieModalList.forEach((el) => {
-          if (this.userPreferences.code === el.code) {
-            el.value = this.userPreferences.value;
-          }
-        });
+        // If userPreferences is a single object but doesn't match the expected pattern,
+        // You might want to handle this case separately or log an error.
+        console.error("Unexpected userPreferences format", this.userPreferences);
       }
+    } else {
+      // If userPreferences is not set or empty, you might want to set a default state
+      // for cookieModalList or handle this scenario as needed.
+      console.log("No user preferences set");
     }
   }
+
 }
