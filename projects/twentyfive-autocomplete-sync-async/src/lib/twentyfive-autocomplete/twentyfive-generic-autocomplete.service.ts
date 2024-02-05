@@ -6,5 +6,16 @@ import {Observable} from "rxjs";
 })
 export abstract class TwentyfiveGenericAutocompleteService {
 
-  abstract search(search:string): Observable<any>;
+
+  /**
+  *  Gestione Cerca autocomplete
+   *
+   *  @param search il testo inserito nella finesstra di cerca
+   *  @param pivotSearch il volore 'perno' nel caso il metodo cerca
+   *  ha bisogno di un oggetto o altro valore su cui cercare
+   *
+   *  @return Observable contiente i valori di match della ricerca
+  * */
+
+  abstract search(search:string, pivotSearch?:any): Observable<any>;
 }

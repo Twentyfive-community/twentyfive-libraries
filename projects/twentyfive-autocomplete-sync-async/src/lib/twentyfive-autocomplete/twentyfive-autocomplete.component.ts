@@ -55,6 +55,7 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
   @Input() showLabel: boolean = true;
   @Output() changeValue = new EventEmitter<any>();
   @Input() value: any;
+  @Input() pivotSearch: any
 
 
   ngOnInit() {
@@ -67,7 +68,7 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
       tap(() => this.searching = true),
       switchMap(term => {
           if(this.isAsync){
-            return this.service?.search(term).pipe(
+            return this.service?.search(term, this.pivotSearch).pipe(
               tap(() => this.searchFailed = false),
               catchError(() => {
                 this.searchFailed = true;
