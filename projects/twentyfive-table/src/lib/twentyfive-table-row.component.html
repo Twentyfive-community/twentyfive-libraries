@@ -4,7 +4,7 @@
     [id]="id"
     [checked]="checked"
     [value]="checked"
-    (changeValue)="eventChange($event)"
+    (changeValue)="eventChange($event);"
     [disabled]="disabled"
     [switchText]="switchText">
   </lib-twentyfive-switch>
@@ -24,7 +24,7 @@
         [placement]="action.placement"
         [ngbTooltip]="action.tooltipText"
         [ngClass]="action.icon"
-        (click)="action.action(row)">
+        (click)="action.action(row); $event.stopPropagation()">
       </i>
     </div>
   </div>
@@ -32,7 +32,7 @@
     <i class="bi bi-three-dots-vertical table-icon" data-bs-toggle="dropdown">
       <ul class="dropdown-menu">
         <li *ngFor="let action of actions">
-          <a *ngIf="action.showFunction(row) ?? true" class="dropdown-item" (click)="action.action(row)">
+          <a *ngIf="action.showFunction(row) ?? true" class="dropdown-item" (click)="action.action(row); $event.stopPropagation()">
             {{action.actionName}}
           </a>
         </li>
