@@ -17,7 +17,7 @@
         <div *ngIf="showInlineElements" id="navbarNav" class="d-flex flex-row">
           <ul class="navbar-nav">
             <li class="nav-item" *ngFor="let elem of sidebarItems" (click)="emitEvent(elem)">
-              <a [href]="elem.href" class="text-white" style="text-decoration: none">{{elem.title}}</a>
+              <a class="text-white" style="text-decoration: none">{{elem.title}}</a>
             </li>
           </ul>
         </div>
