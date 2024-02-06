@@ -55,14 +55,6 @@ export class TwentyfiveTableComponent {
   @Output() sortableChange = new EventEmitter<SortChangeEvent>();
 
 
-  onRowClick(selectedRow: any) {
-    this.rowClicked.emit(selectedRow);
-  }
-
-  changeSwitchValue(event: any) {
-    this.switchClick.emit(event);
-  }
-
   sortingColumn(column: any): void {
     if (this.sortColumn === column) {
       // Toggle sort direction if the same column is clicked again
