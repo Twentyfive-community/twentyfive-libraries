@@ -12,7 +12,7 @@
       id="typeahead-http"
       type="text"
       class="form-control"
-      [value]="value"
+      [value]="value? value : ''"
       [class.is-invalid]="searchFailed"
       [ngbTypeahead]="search"
       [inputFormatter]="formatter"
