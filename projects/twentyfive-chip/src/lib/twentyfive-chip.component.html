@@ -1,0 +1,11 @@
+<div class="twentyfive-chip" [style]="{backgroundColor: backgroundChipColor}">
+
+  <i *ngIf="showIcon" class="bi bi-tag pe-2" [style]="{color: textColor}"></i>
+
+  <span [style]="{color: textColor}">{{ chipText }}</span>
+
+  <i *ngIf="closeableChip"
+     class="bi bi-x ps-2"
+     [style]="{cursor: 'pointer', color: textColor}"
+     (click)="iconClicked()"></i>
+</div>

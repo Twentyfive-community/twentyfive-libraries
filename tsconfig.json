@@ -32,6 +32,9 @@
       "twentyfive-buttons": [
         "dist/twentyfive-buttons"
       ],
+      "twentyfive-chip": [
+        "dist/twentyfive-chip"
+      ],
       "twentyfive-cookie-modal": [
         "dist/twentyfive-cookie-modal"
       ],

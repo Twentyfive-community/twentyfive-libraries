@@ -2059,3 +2059,16 @@ ngb-datepicker {
   background-color: lightgray;
   padding: 0 1rem;
 }
+
+
+.twentyfive-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 25px;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  border-radius: 25px;
+}
