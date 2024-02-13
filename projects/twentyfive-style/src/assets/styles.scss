@@ -2073,4 +2073,12 @@ ngb-datepicker {
   border-radius: 25px;
   background: #1A1660;
   color: white;
+
+  span {
+    color: white;
+  }
+
+  i:last-child {
+    cursor: pointer;
+  }
 }

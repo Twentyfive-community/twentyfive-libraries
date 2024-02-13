@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ChipTheme} from "twentyfive-style";
 
 @Component({
-  selector: 'lib-generic-button',
+  selector: 'lib-twentyfive-chip',
   templateUrl: './twentyfive-chip.component.html',
   styleUrls: ['./twentyfive-chip.component.scss']
 })
