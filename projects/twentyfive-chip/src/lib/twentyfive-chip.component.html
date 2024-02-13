@@ -1,11 +1,11 @@
-<div class="twentyfive-chip" [style]="{backgroundColor: backgroundChipColor}">
+<div [ngClass]="[chipStyle == ChipTheme.Primary ? 'twentyfive-chip-primary' :
+             chipStyle == ChipTheme.Secondary ? 'twentyfive-chip-secondary' : customCssClass]">
 
-  <i *ngIf="showIcon" class="bi bi-tag pe-2" [style]="{color: textColor}"></i>
+  <i *ngIf="showIcon" class="bi bi-tag pe-2"></i>
 
-  <span [style]="{color: textColor}">{{ chipText }}</span>
+  <span>{{ chipText }}</span>
 
   <i *ngIf="closeableChip"
      class="bi bi-x ps-2"
-     [style]="{cursor: 'pointer', color: textColor}"
      (click)="iconClicked()"></i>
 </div>

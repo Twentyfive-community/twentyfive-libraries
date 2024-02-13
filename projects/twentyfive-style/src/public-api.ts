@@ -6,7 +6,7 @@ export * from './lib/twentyfive-style.service';
 export * from './lib/twentyfive-style.component';
 export * from './lib/twentyfive-style.module';
 
-export {AlertTheme, ButtonSizeWithIconTheme, CheckboxTheme,
+export {AlertTheme, ButtonSizeWithIconTheme, CheckboxTheme, ChipTheme,
   DatePickerTheme,DatePickerButtonTheme, InputTheme,
   LabelTheme, AddonTheme, InputGroupButtonTheme,
   InputIconTheme, ButtonSizeTheme, ButtonTheme,
