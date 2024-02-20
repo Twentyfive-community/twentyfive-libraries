@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { TwentyfiveTextareaComponent } from './twentyfive-textarea.component';
 import {NgClass, NgIf} from "@angular/common";
-
-
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -10,7 +9,8 @@ import {NgClass, NgIf} from "@angular/common";
   ],
   imports: [
     NgClass,
-    NgIf
+    NgIf,
+    FormsModule
   ],
   exports: [
     TwentyfiveTextareaComponent

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import { InputTheme, LabelTheme } from 'twentyfive-style';
+import {InputTheme, LabelTheme} from 'twentyfive-style';
 
 @Component({
   selector: 'lib-twentyfive-input',
@@ -27,19 +27,21 @@ export class TwentyfiveInputComponent {
   @Input() customLabelClass: string = '';
   @Input() isClearable: boolean = false;
 
+  @Input() maxCharacters?: number; // New input for maximum characters
+
   /**
-    sensibilità dell'incremento del valore numerico default è 1
+   sensibilità dell'incremento del valore numerico default è 1
    */
   @Input() stepValue: any = 1;
 
 
   @Output() changeValue = new EventEmitter<any>();
 
-  changeInput(event: any){
+  changeInput(event: any) {
     this.changeValue.emit(event);
   }
 
-  clearInput(){
+  clearInput() {
     this.value = '';
     this.changeValue.emit(this.value);
   }

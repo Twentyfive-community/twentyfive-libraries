@@ -15,6 +15,7 @@
          [id]="id"
          [ngModel]="value"
          (ngModelChange)="changeInput($event)"
+         [attr.maxlength]="maxCharacters ? maxCharacters : null"
          [step]="stepValue"
          class="form-control"
   >

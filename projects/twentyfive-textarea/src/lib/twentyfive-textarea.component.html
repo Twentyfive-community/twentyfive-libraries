@@ -1,13 +1,16 @@
 <div class="form-group">
-  <label *ngIf="showLabel" [ngClass]=" labelStyle == LabelTheme.LabelMedium ? 'label-25' :  labelStyle == LabelTheme.LabelBold ? 'label-25-bold' : customLabelClass">
-    {{labelText}}
+  <label *ngIf="showLabel"
+         [ngClass]=" labelStyle == LabelTheme.LabelMedium ? 'label-25' :  labelStyle == LabelTheme.LabelBold ? 'label-25-bold' : customLabelClass">
+    {{ labelText }}
   </label>
   <textarea
-    [value]="value"
+    [(ngModel)]="value"
     [placeholder]="placeholder"
-    [rows]="rows"
+    [value]="value"
     [readOnly]="readOnly"
     [disabled]="disabled"
+    [rows]="rows"
+    [attr.maxlength]="maxCharacters ? maxCharacters : null"
     [ngClass]="textareaStyle == TextareaTheme.Primary ? 'textarea-25' : customCssClass"
     class="form-control"></textarea>
 </div>
