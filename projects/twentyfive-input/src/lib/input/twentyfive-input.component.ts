@@ -27,6 +27,12 @@ export class TwentyfiveInputComponent {
   @Input() customLabelClass: string = '';
   @Input() isClearable: boolean = false;
 
+  /**
+    sensibilità dell'incremento del valore numerico default è 1
+   */
+  @Input() stepValue: any = 1;
+
+
   @Output() changeValue = new EventEmitter<any>();
 
   changeInput(event: any){
