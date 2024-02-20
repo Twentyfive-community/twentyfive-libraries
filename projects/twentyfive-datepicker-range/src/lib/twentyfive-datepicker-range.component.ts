@@ -1,7 +1,6 @@
 import {Component, EventEmitter, HostListener, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {NgbCalendar, NgbDate, NgbDateParserFormatter, NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
 import {ItalianDateFormatter} from "../utilities/italian-date-formatter";
-import {TwentyDate} from "./twenty-date";
 import {TranslationWidth} from "@angular/common";
 import {DatePickerButtonTheme, DatePickerTheme, LabelTheme } from 'twentyfive-style';
 @Component({
@@ -62,18 +61,42 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
   } ;
 
 
-  onDateSelection(date: NgbDate) {
-    if(date.before(this.minDate) || date.after(this.maxDate)) return;
-    if (!this.fromDate && !this.toDate) {
-      this.fromDate = date;
-    } else if (this.fromDate && !this.toDate) {
-      this.toDate = date;
-    } else {
-      this.toDate = null;
-      this.fromDate = date;
+  onDateSelection(date: NgbDate | null) {
+    // Error handling for null date or invalid date inputs
+    if (!date) {
+      console.error('Invalid or null date provided');
+      return;
     }
-    this.dateSelect.emit(new TwentyDate(this.fromDate , this.toDate))
+
+    // Check if the selected date is outside the allowed date range
+    if (date.before(this.minDate) || date.after(this.maxDate)) {
+      console.error('Selected date is outside the allowed range');
+      return;
+    }
+
+    // Initialize fromDate if it's not set or reset both dates if both are already set
+    if (!this.fromDate || (this.fromDate && this.toDate)) {
+      this.fromDate = date;
+      this.toDate = null; // Ensure toDate is reset when fromDate is set or reset
+    } else if (this.fromDate && !this.toDate) {
+      // Set toDate if fromDate is already set, but only if it's after fromDate
+      // If the selected toDate is before fromDate, reset toDate and set fromDate to the new date
+      if (date.after(this.fromDate)) {
+        this.toDate = date;
+      } else {
+        this.toDate = null;
+        this.fromDate = date;
+      }
+    }
+
+    // Emit the date selection with error handling for null dates
+    /*if (this.fromDate && this.toDate) {
+      this.dateSelect.emit(new TwentyDate(this.fromDate, this.toDate));
+    } else {
+      console.error('FromDate or ToDate is null, cannot emit date selection');
+    }*/
   }
+
 
   isHovered(date: NgbDate) {
     return (
