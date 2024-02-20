@@ -14,7 +14,7 @@
     <th *ngIf="showActions" scope="col"></th>
   </tr>
   </thead>
-  <tbody>
+  <tbody *ngIf="rows.length > 0">
   <tr table-row
       [showActions]="showActions"
       [showSwitch]="showSwitch"
@@ -31,10 +31,13 @@
       *ngFor="let row of rows">
   </tr>
   </tbody>
+  <tbody class="text-center" *ngIf="rows.length === 0">
+  <td [colSpan]="headers.length">Non ci sono elementi da visualizzare</td>
+  </tbody>
 </table>
 
 
-<div [ngClass]="paginationStyle == TableTheme.Web ? 'web-element' : customCssClass">
+<div [ngClass]="paginationStyle == TableTheme.Web ? 'web-element' : customCssClass" *ngIf="isPaginated">
   <div class="d-flex justify-content-between">
     <ngb-pagination
       [collectionSize]="collectionSize"

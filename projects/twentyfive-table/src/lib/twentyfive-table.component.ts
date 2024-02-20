@@ -39,6 +39,7 @@ export class TwentyfiveTableComponent {
   @Input() checked: boolean = false;
   @Input() showSwitch: boolean = false;
   @Input() switchStyle: SwitchTheme = SwitchTheme.Primary;
+  @Input() isPaginated:boolean = true;
 
   @Input() maxSize: number = 5;
   @Input() pageSize: number = 5;
