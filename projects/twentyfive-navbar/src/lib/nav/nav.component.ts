@@ -43,6 +43,7 @@ export class NavComponent implements OnInit {
   }
 
   expandNav(elem: any) {
+    this.emitEvent(elem);
     this.isCollapsed = !this.isCollapsed;
   }
 

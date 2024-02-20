@@ -1,6 +1,6 @@
 {
   "name": "twentyfive-datepicker-range",
-  "version": "0.0.35",
+  "version": "0.0.38",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0",

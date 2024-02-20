@@ -1,33 +1,28 @@
 <fieldset class="form-inline">
   <div class="form-group">
     <label *ngIf="showLabel"
-           [ngClass]="
-         labelStyle == LabelTheme.LabelMedium ? 'label-25' :
-         labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :
-         customLabelClass">
-      {{labelText}}
-    </label>
+           [ngClass]="labelStyle == LabelTheme.LabelMedium ? 'label-25' :
+                      labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :
+                      customLabelClass"> {{ labelText }} </label>
     <input
-      [ngClass]="inputStyle == InputTheme.Primary ? 'input-25': customCssClass"
+      [ngClass]="inputStyle == InputTheme.Primary ? 'input-25' : customCssClass"
       id="typeahead-http"
       type="text"
       class="form-control"
-      [value]="value? value : ''"
+
+      [value]="value ? value : ''"
       [class.is-invalid]="searchFailed"
+      (keyup)="change($event)"
+
       [ngbTypeahead]="search"
       [inputFormatter]="formatter"
       [resultTemplate]="nTemplt"
       [placeholder]="placeholder"
-      (selectItem)="onElementSelected.emit($event)"
-    >
+      (selectItem)="onElementSelected.emit($event)">
     <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
   </div>
 </fieldset>
 
 <ng-template #nTemplt let-r="result" let-t="term">
-
-  <span style="padding-top: 8px; padding-bottom: 8px">
-      {{ r[textToShowField] }}
-    </span>
-
+  <span style="padding-top: 8px; padding-bottom: 8px">{{ r[textToShowField] }}</span>
 </ng-template>

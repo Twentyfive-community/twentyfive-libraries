@@ -20,5 +20,6 @@ export class TwentyfiveMenuItemComponent {
 
   emitEvent() {
     this.onClick.emit(this.menuItem);
+    this.click();
   }
 }

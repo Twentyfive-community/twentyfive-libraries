@@ -2,18 +2,20 @@ import {Component, EventEmitter, HostListener, Input, OnInit, Output, ViewEncaps
 import {NgbCalendar, NgbDate, NgbDateParserFormatter, NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
 import {ItalianDateFormatter} from "../utilities/italian-date-formatter";
 import {TranslationWidth} from "@angular/common";
-import {DatePickerButtonTheme, DatePickerTheme, LabelTheme } from 'twentyfive-style';
+import {DatePickerButtonTheme, DatePickerTheme, LabelTheme} from 'twentyfive-style';
+import {TwentyDate} from "./twenty-date";
+
 @Component({
   selector: 'lib-twentyfive-datepicker-range',
-  templateUrl : 'twentyfive-datepicker-range.component.html',
+  templateUrl: 'twentyfive-datepicker-range.component.html',
   styleUrls: ['twentyfive-datepicker-range.component.scss'],
   encapsulation: ViewEncapsulation.None,
   providers: [
-    { provide: NgbDateParserFormatter, useClass: ItalianDateFormatter }
+    {provide: NgbDateParserFormatter, useClass: ItalianDateFormatter}
   ],
 
 })
-export class TwentyfiveDatepickerRangeComponent  implements OnInit{
+export class TwentyfiveDatepickerRangeComponent implements OnInit {
 
   @Input() labelText: string = 'Label';
   @Input() showLabel: boolean = true;
@@ -26,7 +28,7 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
   @Input() datePickerButtonStyle: DatePickerButtonTheme = DatePickerButtonTheme.ButtonPrimary;
   @Input() customCssClass: string = '';
   @Input() customButtonClass: string = '';
-  @Output() dateSelect:EventEmitter<any> = new EventEmitter<any>();
+  @Output() dateSelect: EventEmitter<any> = new EventEmitter<any>();
 
   @Input() hoveredDate: NgbDate | undefined | null = undefined;
   @Input() fromDate: NgbDate | undefined | null;
@@ -48,7 +50,7 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
   }
 
   ngOnInit(): void {
-    if(window.innerWidth <= 768){
+    if (window.innerWidth <= 768) {
       this.numberOfMonths = 1;
     } else {
       this.numberOfMonths = 2;
@@ -58,8 +60,7 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
   disableOutRange = (date: NgbDateStruct) => {
 
     return true
-  } ;
-
+  };
 
   onDateSelection(date: NgbDate | null) {
     // Error handling for null date or invalid date inputs
@@ -68,34 +69,24 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
       return;
     }
 
-    // Check if the selected date is outside the allowed date range
-    if (date.before(this.minDate) || date.after(this.maxDate)) {
-      console.error('Selected date is outside the allowed range');
-      return;
-    }
-
     // Initialize fromDate if it's not set or reset both dates if both are already set
     if (!this.fromDate || (this.fromDate && this.toDate)) {
       this.fromDate = date;
       this.toDate = null; // Ensure toDate is reset when fromDate is set or reset
     } else if (this.fromDate && !this.toDate) {
-      // Set toDate if fromDate is already set, but only if it's after fromDate
-      // If the selected toDate is before fromDate, reset toDate and set fromDate to the new date
-      if (date.after(this.fromDate)) {
+      // Adjusted logic to allow toDate to be equal to fromDate
+      // We consider "not before" as "after or the same", which allows equality
+      if (!date.before(this.fromDate)) {
         this.toDate = date;
       } else {
+        // If the selected date is before fromDate, reset toDate and set fromDate to the new date
         this.toDate = null;
         this.fromDate = date;
       }
     }
-
-    // Emit the date selection with error handling for null dates
-    /*if (this.fromDate && this.toDate) {
-      this.dateSelect.emit(new TwentyDate(this.fromDate, this.toDate));
-    } else {
-      console.error('FromDate or ToDate is null, cannot emit date selection');
-    }*/
+    this.dateSelect.emit(new TwentyDate(this.fromDate, this.toDate));
   }
+
 
 
   isHovered(date: NgbDate) {
@@ -122,8 +113,8 @@ export class TwentyfiveDatepickerRangeComponent  implements OnInit{
     return parsed && this.calendar.isValid(NgbDate.from(parsed)) ? NgbDate.from(parsed) : currentValue;
   }
 
-  @HostListener("window:resize" , []) changeSize() {
-    if(window.innerWidth < 768){
+  @HostListener("window:resize", []) changeSize() {
+    if (window.innerWidth < 768) {
       this.numberOfMonths = 1;
     } else {
       this.numberOfMonths = 2;

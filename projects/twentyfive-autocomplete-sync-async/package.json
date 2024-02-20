@@ -1,6 +1,6 @@
 {
   "name": "twentyfive-autocomplete-sync-async",
-  "version": "0.0.37",
+  "version": "0.0.55",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0",
@@ -9,10 +9,10 @@
     "rxjs": "~7.8.0"
   },
   "dependencies": {
-    "@ng-bootstrap/ng-bootstrap": "^15.1.1",
+    "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.2",
-    "bootstrap-icons": "^1.11.1",
+    "bootstrap-icons": "^1.11.3",
     "tslib": "^2.3.0"
   },
   "sideEffects": false

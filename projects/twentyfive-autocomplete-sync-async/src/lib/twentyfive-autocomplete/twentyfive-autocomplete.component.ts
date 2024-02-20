@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl} from "@angular/forms";
-import {catchError, distinctUntilChanged, Observable,debounceTime, of, OperatorFunction, switchMap, tap} from "rxjs";
+import {catchError, distinctUntilChanged, Observable, debounceTime, of, OperatorFunction, switchMap, tap} from "rxjs";
 import {TwentyfiveGenericAutocompleteService} from "./twentyfive-generic-autocomplete.service";
 import {InputTheme, LabelTheme} from "twentyfive-style";
 
@@ -10,7 +10,7 @@ import {InputTheme, LabelTheme} from "twentyfive-style";
   templateUrl: './twentyfive-autocomplete.component.html',
   styleUrls: ['./twentyfive-autocomplete.component.css']
 })
-export class TwentyfiveAutocompleteComponent implements OnInit{
+export class TwentyfiveAutocompleteComponent implements OnInit {
 
   @Input()
   model: FormControl = new FormControl();
@@ -57,6 +57,8 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
   @Input() value: any;
   @Input() pivotSearch: any
 
+  private debounceTimer: any;
+
 
   ngOnInit() {
   }
@@ -67,7 +69,10 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
       distinctUntilChanged(),
       tap(() => this.searching = true),
       switchMap(term => {
-          if(this.isAsync){
+          if (this.isAsync) {
+            if (!term || term.trim().length === 0) {
+              return of([]);
+            }
             return this.service?.search(term, this.pivotSearch).pipe(
               tap(() => this.searchFailed = false),
               catchError(() => {
@@ -80,7 +85,7 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
         }
       ),
       switchMap(elem => {
-        if(this.isPaginated){
+        if (this.isPaginated) {
           return of(elem['content']);
         }
         return of(elem);
@@ -92,8 +97,8 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
     return x[this.textToShowField];
   }
 
-  searchSyncInDataset(term: string){
-    const result = this.dataset.filter( element => {
+  searchSyncInDataset(term: string) {
+    const result = this.dataset.filter(element => {
       const fieldToMatch = (element[this.identifierField] as string).toUpperCase();
       const termToMatch = term.toUpperCase();
       return fieldToMatch.includes(termToMatch);
@@ -101,13 +106,20 @@ export class TwentyfiveAutocompleteComponent implements OnInit{
     return of(result);
   }
 
-  elementClicked(r: any){
-    this.model = r[this.textToShowField];
-    this.onElementSelected.emit(r);
-  }
-
   change(event: any) {
-    this.changeValue.emit(event);
+    // Clear any existing debounce timer
+    clearTimeout(this.debounceTimer);
+
+    // Set a new debounce timer
+    this.debounceTimer = setTimeout(() => {
+      // Check if the input is empty
+      if (event.target.value === '') {
+        // Emit the event or perform any action you need
+        this.changeValue.emit(null);
+
+      }
+    }, this.debounceTime); // Wait for 200m
+
   }
 
   protected readonly InputTheme = InputTheme;
