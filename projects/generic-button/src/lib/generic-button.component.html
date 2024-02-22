@@ -2,7 +2,7 @@
   [placement]="placement"
   [ngbTooltip]="tooltipText"
   [type]="type"
-  (click)="click()"
+  (click)="!disabled && click()"
   [disabled]="disabled"
   [routerLink]="routerLink == '' ? null : routerLink"
   [ngClass]="[buttonStyle == ButtonTheme.Primary ? 'btn btn-primary' :
