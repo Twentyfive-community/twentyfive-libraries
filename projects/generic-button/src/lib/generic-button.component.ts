@@ -14,7 +14,7 @@ export class GenericButtonComponent {
   @Input() tooltipText: string = '';
   @Input() type: string = '';
   @Input() click: any = emptyFunction;
-  disabled: boolean = true;
+  @Input() disabled: boolean = true;
 
   @Input() buttonStyle: any;
   @Input() buttonSize: any;
