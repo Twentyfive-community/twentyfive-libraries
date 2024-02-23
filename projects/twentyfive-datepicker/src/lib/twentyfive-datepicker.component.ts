@@ -30,7 +30,7 @@ export class TwentyfiveDatepickerComponent {
   @Input() customButtonClass: string = '';
 
   @Output() dateSelected = new EventEmitter<Date>();
-  @Input()  selectedDate: Date = new Date();
+  @Input()  selectedDate: Date | undefined;
 
   onDateSelect(event: any) {
     const selectedDate = new Date(event.year, event.month - 1, event.day);
