@@ -4,7 +4,7 @@
            [ngClass]="labelStyle == LabelTheme.LabelMedium ? 'label-25' :
                       labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :
                       customLabelClass"> {{ labelText }} </label>
-    <input
+    <input *ngIf="!showAppend"
       [ngClass]="inputStyle == InputTheme.Primary ? 'input-25' : customCssClass"
       id="typeahead-http"
       type="text"
@@ -19,6 +19,34 @@
       [resultTemplate]="nTemplt"
       [placeholder]="placeholder"
       (selectItem)="onElementSelected.emit($event)">
+
+
+    <div class="input-group" *ngIf="showAppend">
+
+      <input
+        [ngClass]="inputStyle == InputTheme.Primary ? 'input-25' : customCssClass"
+        id="typeahead-http-cross"
+        #autocompleteElement
+        type="text"
+        class="form-control autocomplete-input-25"
+        [value]="value ? value : ''"
+        [class.is-invalid]="searchFailed"
+        (keyup)="change($event)"
+        [ngbTypeahead]="search"
+        [inputFormatter]="formatter"
+        [resultTemplate]="nTemplt"
+        [placeholder]="placeholder"
+        (selectItem)="onElementSelected.emit($event)">
+      <div class="input-group-append">
+        <button
+          (click)="resetField()"
+          class="customIconCssClass"
+          type="button">
+          <i [ngClass]="appendIcon"></i>
+        </button>
+      </div>
+    </div>
+
     <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
   </div>
 </fieldset>

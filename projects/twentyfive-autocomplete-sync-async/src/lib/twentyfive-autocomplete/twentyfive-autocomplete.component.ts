@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {catchError, distinctUntilChanged, Observable, debounceTime, of, OperatorFunction, switchMap, tap} from "rxjs";
 import {TwentyfiveGenericAutocompleteService} from "./twentyfive-generic-autocomplete.service";
@@ -10,39 +10,31 @@ import {InputTheme, LabelTheme} from "twentyfive-style";
   templateUrl: './twentyfive-autocomplete.component.html',
   styleUrls: ['./twentyfive-autocomplete.component.css']
 })
-export class TwentyfiveAutocompleteComponent implements OnInit {
+export class TwentyfiveAutocompleteComponent {
 
-  @Input()
-  model: FormControl = new FormControl();
+  @ViewChild('autocompleteElement') autocompleteInput: ElementRef | undefined;
+
+  @Input() model: FormControl = new FormControl();
+
   searching = false;
   searchFailed = false;
 
-  @Input()
-  isAsync: boolean = false;
+  @Input() isAsync: boolean = false;
 
-  @Input()
-  isPaginated: boolean = false;
+  @Input() isPaginated: boolean = false;
 
   // Dataset is used if is NOT @async, so we have all the possible values in the client
-  @Input()
-  dataset: any[] = [];
-
-  @Input()
-  identifierField: string = 'id';
-
-  @Input()
-  textToShowField: string = 'textValue';
+  @Input() dataset: any[] = [];
+  @Input() identifierField: string = 'id';
+  @Input() textToShowField: string = 'textValue';
 
   // Service is used if is @async
   // Note that the service should be inserted as input, otherwise the service called will be an empty box
-  @Input()
-  service: TwentyfiveGenericAutocompleteService | undefined;
+  @Input() service: TwentyfiveGenericAutocompleteService | undefined;
 
-  @Input()
-  debounceTime: number = 300;
+  @Input() debounceTime: number = 300;
 
-  @Output()
-  onElementSelected: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onElementSelected: EventEmitter<any> = new EventEmitter<any>();
 
   @Input() inputStyle: any;
   @Input() labelStyle: any;
@@ -57,11 +49,12 @@ export class TwentyfiveAutocompleteComponent implements OnInit {
   @Input() value: any;
   @Input() pivotSearch: any
 
+  @Input() appendIcon = 'bi bi-x'
+  @Input() showAppend = false;
+
+
   private debounceTimer: any;
-
-
-  ngOnInit() {
-  }
+  private currentAutocompleteValue = '';
 
   search: OperatorFunction<string, any[]> = (text$: Observable<string>) =>
     text$.pipe(
@@ -69,6 +62,7 @@ export class TwentyfiveAutocompleteComponent implements OnInit {
       distinctUntilChanged(),
       tap(() => this.searching = true),
       switchMap(term => {
+          this.currentAutocompleteValue = term;
           if (this.isAsync) {
             if (!term || term.trim().length === 0) {
               return of([]);
@@ -124,4 +118,11 @@ export class TwentyfiveAutocompleteComponent implements OnInit {
 
   protected readonly InputTheme = InputTheme;
   protected readonly LabelTheme = LabelTheme;
+
+  resetField() {
+    this.autocompleteInput!.nativeElement.value = '';
+    this.currentAutocompleteValue = '';
+    this.changeValue.emit(null);
+    this.autocompleteInput!.nativeElement.focus();
+  }
 }
