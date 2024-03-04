@@ -943,6 +943,11 @@ ngb-datepicker {
   background-color: $primary-hover;
 }
 
+.btn-primary:active {
+  color: $white;
+  background-color: $primary-hover;
+}
+
 .btn-secondary {
   height: 2.75rem;
   display: flex;
@@ -965,6 +970,11 @@ ngb-datepicker {
   background: $secondary-hover;
 }
 
+.btn-secondary:active {
+  color: $black-25;
+  background: $secondary-hover;
+}
+
 .btn-outline-primary {
   color: $primary;
   border-color: $primary;
@@ -983,6 +993,18 @@ ngb-datepicker {
   background-color: $primary;
 }
 
+.btn-outline-primary:hover:active {
+  border-color: $primary;
+  color: $white;
+  background-color: $primary;
+}
+
+.btn-outline-primary:active {
+  border-color: $primary;
+  color: $white;
+  background-color: $primary;
+}
+
 .btn-outline-reverse-primary {
   color: $white;
   border-color: $white;
@@ -996,6 +1018,18 @@ ngb-datepicker {
 }
 
 .btn-outline-reverse-primary:hover {
+  border-color: $white;
+  color: $primary;
+  background-color: $white;
+}
+
+.btn-outline-reverse-primary:hover:active {
+  border-color: $white;
+  color: $primary;
+  background-color: $white;
+}
+
+.btn-outline-reverse-primary:active {
   border-color: $white;
   color: $primary;
   background-color: $white;
