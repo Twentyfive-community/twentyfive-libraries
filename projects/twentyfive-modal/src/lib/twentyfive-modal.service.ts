@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {pipe} from "rxjs";
 import {emptyFunction} from "../constants/emptyFunction";
@@ -12,16 +12,18 @@ export class TwentyfiveModalService {
 
   modalRef: NgbModalRef | undefined;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal) {
+  }
 
 
   openModal(
-    bodyText:string,
-    modalTitle:string,
-    cancelButtonText:string,
-    confirmButtonText:string,
+    bodyText: string,
+    modalTitle: string,
+    cancelButtonText: string,
+    confirmButtonText: string,
     {
       onAbort = emptyFunction,
+      onClose = emptyFunction,
       onConfirm = emptyFunction,
       icon = 'bi bi-exclamation-circle',
       size = 'lg',
@@ -32,7 +34,7 @@ export class TwentyfiveModalService {
       confirmButtonSize = ButtonSizeTheme.Small,
       cancelButtonSize = ButtonSizeTheme.Small,
     }
-  ){
+  ) {
     this.modalRef = this.modalService.open(
       TwentyfiveModalComponent,
       {
@@ -41,7 +43,7 @@ export class TwentyfiveModalService {
         backdrop: 'static',
       });
 
-    let finalFunction = pipe(onConfirm,this.closing);
+    let finalFunction = pipe(onConfirm, this.closing);
     let onAbortFunction = pipe(onAbort, this.closing);
     this.modalRef.componentInstance.bodyText = bodyText;
     this.modalRef.componentInstance.modalTitle = modalTitle;
@@ -56,7 +58,10 @@ export class TwentyfiveModalService {
     this.modalRef.componentInstance.confirmButtonSize = confirmButtonSize;
     this.modalRef.componentInstance.onAbort = onAbortFunction;
     this.modalRef.componentInstance.onConfirm = finalFunction;
-    this.modalRef.componentInstance.onClose = this.closing;
+    this.modalRef.componentInstance.onClose = () => {
+      onClose();
+      this.closing();
+    };
   }
 
   closing = () => {

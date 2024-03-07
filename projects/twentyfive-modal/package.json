@@ -1,18 +1,17 @@
 {
   "name": "twentyfive-modal",
-  "version": "0.0.48",
+  "version": "0.0.50",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
   },
   "dependencies": {
-    "@ng-bootstrap/ng-bootstrap": "^15.1.1",
+    "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.2",
-    "bootstrap-icons": "^1.11.1",
-    "generic-buttons": "^0.0.45",
-    "tslib": "^2.3.0",
-    "twentyfive-mobile-table-and-row": "^0.0.46"
+    "bootstrap-icons": "^1.11.3",
+    "generic-buttons": "^0.0.52",
+    "tslib": "^2.3.0"
   },
   "sideEffects": false
 }
