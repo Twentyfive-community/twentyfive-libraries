@@ -1,4 +1,4 @@
-@import "./variables";
+@import "./partenup_variables";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 @import "bootstrap/dist/css/bootstrap.css";
 
@@ -12,10 +12,10 @@ $navbar-toggler-focus-width: 1;
 /* our colors */
 $menu-item-active: #D9D9D9;
 $menu-item-hover: #EEEEEE;
-$menu-item-active-mobile: #1A1635;
+$menu-item-active-mobile: darken($primary, 20%) !default;
 $menu-item-color: black;
 $menu-item-color-mobile: white;
-$button-color-active: #19194b;
+$button-color-active: darken($primary, 15%) !default;
 
 *[role="button"] > * {
   cursor: pointer
@@ -40,7 +40,7 @@ input {
 
 /* MENU ITEM */
 .nav-primary {
-  background-color: #1A1660;
+  background-color: #2d6788;
 }
 
 .nav-gradient {
@@ -430,7 +430,7 @@ $icon-height: 2.25rem;
 
 .thead-primary {
   --bs-table-color: #FFFFFF;
-  --bs-table-bg: #1A1660;
+  --bs-table-bg: #2d6788;
 }
 
 th {
@@ -572,7 +572,7 @@ lib-twentyfive-autocomplete span {
 }
 
 .modal-header {
-  background-color: #1A1660;
+  background-color: #2d6788;
   color: $white;
 }
 
@@ -2095,7 +2095,7 @@ ngb-datepicker {
   right: 10px;
   z-index: 1000;
   background-color: white;
-  border: 1px solid #1A1660;
+  border: 1px solid #2d6788;
   padding: 5px 10px;
   border-radius: 8px;
   cursor: pointer;
@@ -2125,7 +2125,7 @@ ngb-datepicker {
   font-size: 18px;
   line-height: 50px;
   border-radius: 25px;
-  background: #1A1660;
+  background: #2d6788;
   color: white;
 
   // text color
