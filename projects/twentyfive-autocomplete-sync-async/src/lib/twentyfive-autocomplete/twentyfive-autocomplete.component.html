@@ -5,20 +5,20 @@
                       labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :
                       customLabelClass"> {{ labelText }} </label>
     <input *ngIf="!showAppend"
-      [ngClass]="inputStyle == InputTheme.Primary ? 'input-25' : customCssClass"
-      id="typeahead-http"
-      type="text"
-      class="form-control"
+           [ngClass]="inputStyle == InputTheme.Primary ? 'input-25' : customCssClass"
+           id="typeahead-http"
+           type="text"
+           class="form-control"
 
-      [value]="value ? value : ''"
-      [class.is-invalid]="searchFailed"
-      (keyup)="change($event)"
-
-      [ngbTypeahead]="search"
-      [inputFormatter]="formatter"
-      [resultTemplate]="nTemplt"
-      [placeholder]="placeholder"
-      (selectItem)="onElementSelected.emit($event)">
+           [value]="value ? value : ''"
+           [class.is-invalid]="searchFailed"
+           (keyup)="change($event)"
+           [disabled]="disabled"
+           [ngbTypeahead]="search"
+           [inputFormatter]="formatter"
+           [resultTemplate]="nTemplt"
+           [placeholder]="placeholder"
+           (selectItem)="onElementSelected.emit($event)">
 
 
     <div class="input-group" *ngIf="showAppend">
@@ -36,6 +36,7 @@
         [inputFormatter]="formatter"
         [resultTemplate]="nTemplt"
         [placeholder]="placeholder"
+        [disabled]="disabled"
         (selectItem)="onElementSelected.emit($event)">
       <div class="input-group-append">
         <button

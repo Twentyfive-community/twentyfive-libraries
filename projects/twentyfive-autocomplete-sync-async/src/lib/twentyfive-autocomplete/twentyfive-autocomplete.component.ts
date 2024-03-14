@@ -51,6 +51,7 @@ export class TwentyfiveAutocompleteComponent {
 
   @Input() appendIcon = 'bi bi-x'
   @Input() showAppend = false;
+  @Input() disabled = false;
 
 
   private debounceTimer: any;

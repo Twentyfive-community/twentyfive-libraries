@@ -91,14 +91,14 @@ input {
   transition: all 0.3s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .nav-sidebar {
     margin-left: -277px;
   }
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .menu-item:hover {
     background-color: $secondary-hover;
   }
