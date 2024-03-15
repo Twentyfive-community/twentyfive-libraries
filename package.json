@@ -25,7 +25,8 @@
     "tslib": "^2.3.0",
     "twentyfive-mobile-table-and-row": "^0.0.5",
     "twentyfive-style": "^0.0.77",
-    "zone.js": "~0.13.0"
+    "zone.js": "~0.13.0",
+    "@stomp/rx-stomp": "^2.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.7",

@@ -53,6 +53,9 @@
       "twentyfive-not-found": [
         "dist/twentyfive-not-found"
       ],
+      "twentyfive-stomp-client": [
+        "dist/twentyfive-stomp-client"
+      ],
       "twentyfive-style": [
         "dist/twentyfive-style"
       ]

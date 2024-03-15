@@ -1058,6 +1058,39 @@
           }
         }
       }
+    },
+    "twentyfive-stomp-client": {
+      "projectType": "library",
+      "root": "projects/twentyfive-stomp-client",
+      "sourceRoot": "projects/twentyfive-stomp-client/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/twentyfive-stomp-client/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/twentyfive-stomp-client/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/twentyfive-stomp-client/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/twentyfive-stomp-client/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   },
 
