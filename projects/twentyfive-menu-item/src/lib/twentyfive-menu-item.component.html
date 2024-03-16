@@ -1,15 +1,16 @@
-<div *ngIf="!disable" class="ps-4 menu-item d-flex justify-content-start align-items-center"
-     role="button" [routerLink]="navigationUrl"
+<div class="d-flex align-items-center"
+     role="button"
+     [ngClass]="{'ps-4 menu-item justify-content-start': type==='STANDARD', 'py-2 w-100 justify-content-center': type==='IMAGE'}"
+     [routerLink]="menuItem.navigationUrl"
      [routerLinkActive]="'menu-item-active'"
-     (click)="emitEvent()">
-  <i class="menu-icon" [style.color]="labelColor" [class]="icon"></i>
-  <label class="menu-item-text ps-4" [style.color]="labelColor">{{labelText}}</label>
-</div>
+     (click)="disable ? $event.stopPropagation() : emitEvent()">
 
-<div *ngIf="disable" class="ps-4 menu-item d-flex justify-content-start align-items-center"
-     role="button" [routerLink]="navigationUrl"
-     [routerLinkActive]="'menu-item-active'"
->
-  <i class="menu-icon" [style.color]="labelColor" [class]="icon"></i>
-  <label class="menu-item-text ps-4" [style.color]="labelColor">{{labelText}}</label>
+  <div *ngIf="type==='STANDARD'">
+    <i class="menu-icon" [style.color]="labelColor" [class]="menuItem.icon"></i>
+    <label class="menu-item-text ps-4" [style.color]="labelColor">{{ menuItem.title }}</label>
+  </div>
+
+  <div *ngIf="type==='IMAGE'" class="d-inline-flex align-items-center justify-content-center">
+    <img [src]="menuItem.sourceImg" alt="" [width]="menuItem.widthImg" [height]="menuItem.heightImg">
+  </div>
 </div>

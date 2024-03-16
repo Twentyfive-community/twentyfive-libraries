@@ -2,9 +2,7 @@
   <div *ngFor="let elem of sidebarItems">
     <lib-twentyfive-menu-item
       [menuItem]="elem"
-      [labelText]="elem.title"
-      [navigationUrl]="elem.navigationUrl"
-      [icon]="elem.icon"
+      [type]="elem.type ?? 'STANDARD'"
       (onClick)="emitEvent($event)">
     </lib-twentyfive-menu-item>
   </div>

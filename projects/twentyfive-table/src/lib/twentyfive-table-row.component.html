@@ -11,8 +11,7 @@
 </td>
 
 
-<td *ngFor="let elem of headers, let i = index" class="text-truncate" style="max-width: 15vw"
->{{row[elem.value ?? 0]}}</td>
+<td *ngFor="let elem of headers, let i = index" class="text-truncate" style="max-width: 15vw">{{row[elem.value ?? 0]}}</td>
 
 <td *ngIf="showActions">
   <div *ngIf="actions.length <= 3" class="d-flex">

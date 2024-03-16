@@ -9,13 +9,11 @@ export class TwentyfiveMenuItemComponent {
 
   @Input() menuItem: any;
 
-  @Input() labelText: string | undefined | null = 'Text';
-  @Input() icon: string | undefined | null = '';
-  @Input() navigationUrl: string | undefined | null = '';
   @Input() click: any = emptyFunction;
   @Input() disable: boolean | undefined = false;
   @Input() labelColor: string = '';
   @Input() inputColor: string = '';
+  @Input() type: string = 'STANDARD';
   @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
 
   emitEvent() {

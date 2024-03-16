@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {TwentyfiveMenuItemComponent} from './twentyfive-menu-item.component';
 import {RouterLink, RouterLinkActive} from "@angular/router";
-import {NgIf} from "@angular/common";
+import {NgClass, NgIf} from "@angular/common";
 
 
 @NgModule({
@@ -11,7 +11,8 @@ import {NgIf} from "@angular/common";
   imports: [
     RouterLinkActive,
     RouterLink,
-    NgIf
+    NgIf,
+    NgClass
   ],
   exports: [
     TwentyfiveMenuItemComponent
