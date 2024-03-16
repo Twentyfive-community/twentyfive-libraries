@@ -18,6 +18,7 @@ export class TwentyfiveModalComponent {
   @Input() confirmButtonStyle: any;
   @Input() confirmButtonSize: any;
   @Input() onClose: any;
+  @Input() crossClicked: any;
   @Input() onConfirm: any = emptyFunction;
 
   @Input() showHeaderTitle: boolean = true;

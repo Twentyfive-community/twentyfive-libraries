@@ -11,7 +11,9 @@
 </td>
 
 
-<td *ngFor="let elem of headers, let i = index" class="text-truncate" style="max-width: 15vw">{{row[elem.value ?? 0]}}</td>
+<td *ngFor="let elem of headers, let i = index" class="text-truncate"
+    [style.max-width.vw]="maxWidthValue | slice:0:-2">{{parseValue(row, elem)}}
+</td>
 
 <td *ngIf="showActions">
   <div *ngIf="actions.length <= 3" class="d-flex">
@@ -31,8 +33,9 @@
     <i class="bi bi-three-dots-vertical table-icon" data-bs-toggle="dropdown" (click)="$event.stopPropagation()">
       <ul class="dropdown-menu">
         <li *ngFor="let action of actions">
-          <a *ngIf="action.showFunction(row) ?? true" class="dropdown-item" (click)="action.action(row); $event.stopPropagation()">
-            {{action.actionName}}
+          <a *ngIf="action.showFunction(row) ?? true" class="dropdown-item"
+             (click)="action.action(row); $event.stopPropagation()">
+            {{ action.actionName }}
           </a>
         </li>
       </ul>

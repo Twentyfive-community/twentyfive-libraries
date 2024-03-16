@@ -27,6 +27,7 @@
       [disabled]="disabled"
       [actions]="actions"
       [row]="row"
+      [maxWidthValue]="maxWidthValue"
       (click)="rowClicked.emit(row)"
       *ngFor="let row of rows">
   </tr>

@@ -58,6 +58,7 @@ export class TwentyfiveModalService {
     this.modalRef.componentInstance.confirmButtonSize = confirmButtonSize;
     this.modalRef.componentInstance.onAbort = onAbortFunction;
     this.modalRef.componentInstance.onConfirm = finalFunction;
+    this.modalRef.componentInstance.crossClicked = this.closing;
     this.modalRef.componentInstance.onClose = () => {
       onClose();
       this.closing();

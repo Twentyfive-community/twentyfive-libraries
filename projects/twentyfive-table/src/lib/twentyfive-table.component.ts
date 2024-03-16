@@ -51,6 +51,8 @@ export class TwentyfiveTableComponent {
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
   @Input() dropdownElements: any[] = [];
 
+  @Input() maxWidthValue: string = '15vw';
+
   @Output() rowClicked = new EventEmitter<any>();
   @Output() switchClick = new EventEmitter<any>();
   @Output() sortableChange = new EventEmitter<SortChangeEvent>();
