@@ -23,6 +23,9 @@
       "Twentyfive-libraries": [
         "dist/twentyfive-libraries"
       ],
+      "twentyfive-accordion-table": [
+        "dist/twentyfive-accordion-table"
+      ],
       "twentyfive-autocomplete": [
         "dist/twentyfive-autocomplete"
       ],

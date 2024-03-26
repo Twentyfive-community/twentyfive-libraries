@@ -1,0 +1,56 @@
+<table class="table">
+  <thead [ngClass]="'thead-primary'">
+  <tr>
+    <th *ngFor="let header of headers" scope="col" (click)="isSortable ? sortingColumn(header.value) : null"
+        [ngStyle]="{'cursor': isSortable ? 'pointer' : 'default'}">{{header.name}}
+      <ng-container *ngIf="isSortable">
+        <span *ngIf="sortEvent.sortColumn === header.value && sortEvent.sortDirection === SortDirection.ASCENDING" class="bi bi-arrow-down text-white"></span>
+        <span *ngIf="sortEvent.sortColumn === header.value && sortEvent.sortDirection === SortDirection.DESCENDING" class="bi bi-arrow-up text-white"></span>
+        <span *ngIf="sortEvent.sortDirection === SortDirection.NONE" class="bi bi-arrow-down-up text-white"></span>
+      </ng-container>
+    </th>
+  </tr>
+  </thead>
+  <tbody *ngIf="data.length > 0">
+  <ng-container *ngFor="let row of data; let i = index">
+    <tr data-toggle="collapse" [attr.data-target]="'#rowDetails' + i" aria-expanded="false" aria-controls="rowDetails"
+        (click)="toggleCollapse(row, i)">
+      <td *ngFor="let header of headers">{{ row[header.value] ?? '-'}}</td>
+    </tr>
+    <tr>
+      <td colspan="4" class="hiddenRow">
+        <div id="rowDetails{{ i }}" class="collapse card card-body" [collapse]="collapseStates[i]"
+             [@expandCollapse]="collapseStates[i]">
+          <div *ngFor="let info of dataDetails">
+            <div *ngFor="let label of extras">
+              <ng-container [ngTemplateOutlet]="templateRef"
+                            [ngTemplateOutletContext]="{ $implicit: '-', detailLabel: label, detailInfo: info, getValueByPath, isObject }"
+              ></ng-container>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </ng-container>
+  </tbody>
+  <tbody *ngIf="data.length === 0" class="text-center">
+  <tr>
+    <td [attr.colspan]="headers.length">Non ci sono Dati da visualizzare</td>
+  </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-between p-2 align-content-center" *ngIf="data.length > 0">
+  <ngb-pagination
+    [collectionSize]="collectionSize"
+    [(page)]="page"
+    [maxSize]="maxSize"
+    [pageSize]="pageSize"
+    [rotate]="true"
+    (pageChange)="changePage($event)">
+  </ngb-pagination>
+  <select name="pageSize" [(ngModel)]="pageSize" (change)="selectSize(pageSize)" class="btn btn-primary">
+    <option [ngValue]="2">2</option>
+    <option [ngValue]="4">4</option>
+    <option [ngValue]="10">10</option>
+  </select>
+</div>
