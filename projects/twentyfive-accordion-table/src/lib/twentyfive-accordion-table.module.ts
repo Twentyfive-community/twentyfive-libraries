@@ -5,6 +5,7 @@ import {NgbPagination} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule} from "@angular/forms";
 import {ShowDataObjectComponent} from "./show-data-object/show-data-object.component";
 import {CollapseModule} from "ngx-bootstrap/collapse";
+import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
 
 
 
@@ -20,11 +21,13 @@ import {CollapseModule} from "ngx-bootstrap/collapse";
     NgStyle,
     NgbPagination,
     FormsModule,
-    CollapseModule
+    CollapseModule,
+    NgxSkeletonLoaderModule
   ],
   exports: [
     TwentyfiveAccordionTableComponent,
-    ShowDataObjectComponent
+    ShowDataObjectComponent,
+    NgxSkeletonLoaderModule
   ],
   schemas:[
     CUSTOM_ELEMENTS_SCHEMA,
