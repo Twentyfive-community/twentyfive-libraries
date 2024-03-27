@@ -1,7 +1,6 @@
 import {AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, Output, TemplateRef} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {Header} from "./classes/header";
-import {SortEvent, SortDirection} from "./classes/sort-event";
 import {TableHeadTheme} from "twentyfive-style";
 
 
@@ -187,4 +186,16 @@ export class TwentyfiveAccordionTableComponent implements AfterViewInit{
     return typeof input === 'object';
   }
   protected readonly SortDirection = SortDirection;
+}
+
+
+export enum SortDirection {
+  ASCENDING = 'asc',
+  DESCENDING = 'desc',
+  NONE = ''
+}
+
+export interface SortEvent {
+  sortColumn: any;
+  sortDirection: 'asc' | 'desc' | '';
 }

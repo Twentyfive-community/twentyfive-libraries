@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Header} from "../classes/header";
 
 @Component({
-  selector: 'app-show-data-object',
+  selector: 'show-data-object',
   templateUrl: './show-data-object.component.html',
   styleUrls: ['./show-data-object.component.scss']
 })
