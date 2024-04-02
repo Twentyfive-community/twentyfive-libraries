@@ -52,6 +52,7 @@ export class TwentyfiveTableComponent {
   @Input() dropdownElements: any[] = [];
 
   @Input() maxWidthValue: string = '15vw';
+  @Input() ellipsisBoolean: boolean = false;
 
   @Output() rowClicked = new EventEmitter<any>();
   @Output() switchClick = new EventEmitter<any>();
