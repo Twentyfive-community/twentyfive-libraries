@@ -50,6 +50,9 @@
       "twentyfive-error-page": [
         "dist/twentyfive-error-page"
       ],
+      "twentyfive-keycloak-new": [
+        "./dist/twentyfive-keycloak-new"
+      ],
       "twentyfive-navbar": [
         "dist/twentyfive-navbar"
       ],

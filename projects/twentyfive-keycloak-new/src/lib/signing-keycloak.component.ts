@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-signing-keycloak-new',
+  selector: 'lib-signing-keycloak',
   template: `
     <p>
       signing-keycloak works!
