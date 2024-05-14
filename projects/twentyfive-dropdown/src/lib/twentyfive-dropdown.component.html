@@ -1,9 +1,9 @@
-<div *ngIf="showButton" class="dropdown">
-  <a  [ngClass]="[buttonStyle == ButtonTheme.Primary ? 'btn btn-primary' : customCssClass]"
+<div ngbDropdown *ngIf="showButton" class="dropdown">
+  <a ngbDropdownToggle [ngClass]="[buttonStyle == ButtonTheme.Primary ? 'btn btn-primary' : customCssClass]"
       class=" dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     {{model}}
   </a>
-  <ul class="dropdown-menu dropdown-menu-end">
+  <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
     <li *ngFor="let item of dropdownItems" [value]="item.value" (click)="modelChange.emit(item.value)">
       <a class="dropdown-item">
         {{item.actionName}}

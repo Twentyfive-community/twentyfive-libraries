@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { TwentyfiveDropdownComponent } from './twentyfive-dropdown.component';
 import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 
@@ -13,7 +14,8 @@ import {FormsModule} from "@angular/forms";
     NgIf,
     NgClass,
     FormsModule,
-    NgForOf
+    NgForOf,
+    NgbModule
   ],
   exports: [
     TwentyfiveDropdownComponent
