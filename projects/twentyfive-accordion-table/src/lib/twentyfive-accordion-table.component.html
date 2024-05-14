@@ -1,29 +1,79 @@
 <table class="table">
   <thead [ngClass]="'thead-primary'">
   <tr>
-    <th *ngFor="let header of headers" scope="col" (click)="isSortable ? sortingColumn(header.value) : null"
-        [ngStyle]="{'cursor': isSortable ? 'pointer' : 'default'}">{{header.name}}
-      <ng-container *ngIf="isSortable">
+    <th *ngIf="showSwitch" scope="col">{{ switchHeaderText }}</th>
+
+    <th *ngFor="let header of headers" scope="col" (click)="isSortable && header.sortable ? sortingColumn(header.value) : null"
+        [ngStyle]="{'cursor': isSortable && header.sortable ? 'pointer' : 'default'}">
+      {{header.name}}
+      <ng-container *ngIf="isSortable && header.sortable">
         <span *ngIf="sortEvent.sortColumn === header.value && sortEvent.sortDirection === SortDirection.ASCENDING" class="bi bi-arrow-down text-white"></span>
         <span *ngIf="sortEvent.sortColumn === header.value && sortEvent.sortDirection === SortDirection.DESCENDING" class="bi bi-arrow-up text-white"></span>
         <span *ngIf="sortEvent.sortDirection === SortDirection.NONE" class="bi bi-arrow-down-up text-white"></span>
       </ng-container>
     </th>
+
+    <th *ngIf="showActions" scope="col"></th>
   </tr>
   </thead>
   <tbody *ngIf="data.length > 0">
   <ng-container *ngFor="let row of data; let i = index">
     <tr data-toggle="collapse" [attr.data-target]="'#rowDetails' + i" aria-expanded="false" aria-controls="rowDetails"
-        (click)="toggleCollapse(row, i)">
-      <td *ngFor="let header of headers">{{ row[header.value] ?? '-'}}</td>
+        (click)="toggleCollapse(row, i, $event)">
+
+      <td *ngIf="showSwitch">
+        <lib-twentyfive-switch
+          [checked]="row[checkedField]"
+          [value]="row[checkedField]"
+          (changeValue)="switchChange(row);"
+          [disabled]="switchDisabled"
+          [switchText]="switchText"
+          [switchStyle]="switchStyle"
+        ></lib-twentyfive-switch>
+      </td>
+
+      <td *ngFor="let header of headers">
+        <ng-container *ngIf="columnTemplateRefs[header.value]; else defaultCell">
+          <ng-container [ngTemplateOutlet]="columnTemplateRefs[header.value]" [ngTemplateOutletContext]="{ $implicit: row, header: header }"></ng-container>
+        </ng-container>
+        <ng-template #defaultCell>{{ row[header.value] ?? '-' }}</ng-template>
+      </td>
+      <td *ngIf="showActions">
+        <div *ngIf="actions.length <= 3" class="d-flex">
+          <div *ngFor="let action of actions">
+            <i
+              *ngIf="action.showFunction(row) ?? true"
+              class="table-icon text-truncate"
+              style="max-width: 150px;"
+              [placement]="action.placement"
+              [ngbTooltip]="action.tooltipText"
+              [ngClass]="action.icon"
+              (click)="action.action(row); $event.stopPropagation()">
+            </i>
+          </div>
+        </div>
+        <div ngbDropdown *ngIf="actions.length > 3">
+          <i ngbDropdownToggle class="bi bi-three-dots-vertical dropdown-toggle" data-bs-toggle="dropdown" (click)="$event.stopPropagation()">
+            <ul ngbDropdownMenu class="dropdown-menu">
+              <li *ngFor="let action of actions">
+                <a *ngIf="action.showFunction(row) ?? true" class="dropdown-item"
+                   (click)="action.action(row); $event.stopPropagation()">
+                  {{ action.actionName }}
+                </a>
+              </li>
+            </ul>
+          </i>
+        </div>
+      </td>
+
     </tr>
     <tr>
-      <td colspan="4" class="hiddenRow">
+      <td colspan="12" class="hiddenRow">
         <div id="rowDetails{{ i }}" class="card card-body" [collapse]="collapseStates[i]"
              [@expandCollapse]="collapseStates[i]" [ngClass]="collapseStates[i] ? 'collapse' : ''">
           <div *ngFor="let info of dataDetails">
             <div *ngFor="let label of extras">
-              <ng-container [ngTemplateOutlet]="templateRef"
+              <ng-container [ngTemplateOutlet]="detailsTemplateRef"
                             [ngTemplateOutletContext]="{ $implicit: '-', detailLabel: label, detailInfo: info, getValueByPath, isObject }"
               ></ng-container>
             </div>
@@ -39,7 +89,7 @@
   </tr>
   </tbody>
 </table>
-<div class="d-flex justify-content-between p-2 align-content-center" *ngIf="data.length > 0">
+<div class="d-flex justify-content-between p-2 align-content-center" *ngIf="isPaginated && data.length > 0">
   <ngb-pagination
     [collectionSize]="collectionSize"
     [(page)]="page"
@@ -48,9 +98,11 @@
     [rotate]="true"
     (pageChange)="changePage($event)">
   </ngb-pagination>
-  <select name="pageSize" [(ngModel)]="pageSize" (change)="selectSize(pageSize)" class="btn btn-primary">
-    <option [ngValue]="2">2</option>
-    <option [ngValue]="4">4</option>
-    <option [ngValue]="10">10</option>
-  </select>
+
+  <lib-twentyfive-dropdown
+    [model]="pageSize"
+    [buttonStyle]="ButtonTheme.Primary"
+    (modelChange)="selectSize($event)"
+    [dropdownItems]="dropdownElements"
+  ></lib-twentyfive-dropdown>
 </div>

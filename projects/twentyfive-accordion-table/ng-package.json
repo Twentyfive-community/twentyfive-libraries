@@ -3,5 +3,27 @@
   "dest": "../../dist/twentyfive-accordion-table",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "@angular/animations",
+    "@angular/common",
+    "@angular/core",
+    "@angular/compiler",
+    "@angular/forms",
+    "@angular/localize",
+    "@angular/platform-browser",
+    "@angular/platform-browser-dynamic",
+    "@angular/router",
+    "@ng-bootstrap/ng-bootstrap",
+    "bootstrap-icons",
+    "bootstrap",
+    "ngx-bootstrap",
+    "ngx-skeleton-loader",
+    "rxjs",
+    "twentyfive-dropdown",
+    "twentyfive-style",
+    "twentyfive-switch",
+    "tslib",
+    "zone.js"
+  ]
 }

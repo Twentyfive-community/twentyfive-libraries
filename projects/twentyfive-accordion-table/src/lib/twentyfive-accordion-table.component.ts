@@ -1,7 +1,14 @@
 import {AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, Output, TemplateRef} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {Header} from "./classes/header";
-import {TableHeadTheme} from "twentyfive-style";
+import {ButtonTheme, SwitchTheme, TableHeadTheme} from "twentyfive-style";
+
+
+export enum SortDirection {
+  ASCENDING = 'asc',
+  DESCENDING = 'desc',
+  NONE = ''
+}
 
 
 @Component({
@@ -36,10 +43,58 @@ export class TwentyfiveAccordionTableComponent implements AfterViewInit{
    * */
   @Input() extras: Header [] = [];
 
+  // SWITCH OPTION
+  /**
+   * If true show a Switch at the start of each row
+   * */
+  @Input() showSwitch: boolean = false;
+  /**
+   * Header for the switch's column. Off/On by default
+   * */
+  @Input() switchHeaderText: string = 'Off/On';
+  /**
+   * Text shown next to the switch
+   * */
+  @Input() switchText: string = '';
+  /**
+   * If true the switch will not be clickable
+   * */
+  @Input() switchDisabled: boolean = false;
+  /**
+   * Initial state of the switch
+   * */
+  @Input() checked: boolean = false;
+  /**
+   *
+   * */
+  @Input() checkedField: string = '';
+  /**
+   *
+   * */
+  @Input() switchStyle: SwitchTheme = SwitchTheme.Primary;
+  // SWITCH END
+
+  /**
+   *  If true show the table action
+   * */
+  @Input() showActions: boolean = false;
+
+  /**
+   *
+   * */
+  @Input() actions: any = [];
+
   /**
    * The Template Reference for constructing the graphical display of table details.
    * */
-  @Input() templateRef: TemplateRef<any> = {} as TemplateRef<any> ;
+  @Input() detailsTemplateRef: TemplateRef<any> = {} as TemplateRef<any> ;
+
+  /**
+   * The Template References used to construct custom column display.
+   * Each template assigned to a specific column based on its header value.
+   * */
+  @Input() columnTemplateRefs: { [key: string]: TemplateRef<any> } = {};
+
   /**
    * If true, only one detail can be open at a time. If false, multiple details can be open simultaneously.
    * */
@@ -51,6 +106,10 @@ export class TwentyfiveAccordionTableComponent implements AfterViewInit{
   @Input()  isSortable!: boolean;
 
   // ngb-pagination
+  /**
+   * If true the table will show the paginator element
+   */
+  @Input() isPaginated:boolean = true;
   /**
    * The maximum number of pages to display.
    */
@@ -82,6 +141,11 @@ export class TwentyfiveAccordionTableComponent implements AfterViewInit{
    * If `true`, the "Next" and "Previous" page links are shown.
    */
   @Input() directionLinks!: boolean;
+  /**
+   * Represents the values for which the table size can be modified.
+   */
+  @Input() dropdownElements: any[] = [];
+
 
   /**
    * Emitter to capture the information of the clicked row.
@@ -98,8 +162,11 @@ export class TwentyfiveAccordionTableComponent implements AfterViewInit{
 
   @Output() selectEmitter = new EventEmitter<number>();
 
+  @Output() modelChange: EventEmitter<number> = new EventEmitter<number>();
+
   @Output() detailsUpdate: EventEmitter<any> = new EventEmitter<any>();
 
+  @Output() changeSwitchValue = new EventEmitter<any>();
 
 
   collapseStates: { [key: number]: boolean } = {};
@@ -112,19 +179,22 @@ export class TwentyfiveAccordionTableComponent implements AfterViewInit{
   constructor(private cdr: ChangeDetectorRef) {
   }
 
-  toggleCollapse(row: any, rowId: number) {
-    if(this.collapseStates[rowId]){
-      this.detailsEmitter.emit({id: row.id} );
-    }
-    if(!this.singleOpen) {
-      this.collapseStates[rowId] = !this.collapseStates[rowId];
-    }else{
-      if (this.collapseStates[rowId]) {
-        this.initiateCollapse();
-      }
-      this.collapseStates[rowId] = !this.collapseStates[rowId];
-    }
+  toggleCollapse(row: any, rowId: number, event: any) {
+    const tdType = event.target.tagName.toLowerCase();
 
+    if (tdType !== 'input') {
+      if (this.collapseStates[rowId]) {
+        this.detailsEmitter.emit({id: row.id});
+      }
+      if (!this.singleOpen) {
+        this.collapseStates[rowId] = !this.collapseStates[rowId];
+      } else {
+        if (this.collapseStates[rowId]) {
+          this.initiateCollapse();
+        }
+        this.collapseStates[rowId] = !this.collapseStates[rowId];
+      }
+    }
   }
 
   ngAfterViewInit() {
@@ -171,6 +241,10 @@ export class TwentyfiveAccordionTableComponent implements AfterViewInit{
     });
   }
 
+  switchChange(event: any) {
+    this.changeSwitchValue.emit(event);
+  }
+
   getValueByPath(obj: any, path: string): any {
     const parts = path.split('.');
     let value = obj;
@@ -186,13 +260,7 @@ export class TwentyfiveAccordionTableComponent implements AfterViewInit{
     return typeof input === 'object';
   }
   protected readonly SortDirection = SortDirection;
-}
-
-
-export enum SortDirection {
-  ASCENDING = 'asc',
-  DESCENDING = 'desc',
-  NONE = ''
+  protected readonly ButtonTheme = ButtonTheme;
 }
 
 export interface SortEvent {
