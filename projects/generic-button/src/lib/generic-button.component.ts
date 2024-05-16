@@ -22,6 +22,8 @@ export class GenericButtonComponent {
   @Input() customCssClass: string = '';
   @Input() customSizeCssClass: string = '';
 
+  @Input() customStyles: {[p: string]: any} = {}
+
   protected ButtonTheme = ButtonTheme ;
   protected ButtonSizeTheme = ButtonSizeTheme;
 }

@@ -87,6 +87,7 @@ export enum TextareaTheme {
 
 export enum NavbarTheme {
   Primary = 'nav-primary',
+  Secondary = 'nav-secondary',
   Gradient = 'nav-gradient'
 }
 

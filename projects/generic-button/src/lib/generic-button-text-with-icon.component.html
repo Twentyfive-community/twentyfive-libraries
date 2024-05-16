@@ -7,6 +7,7 @@
   buttonStyle == ButtonTheme.DisabledOutline ? disabled :
   null"
   [routerLink]="routerLink == '' ? null : routerLink"
+  [ngStyle]="customStyles"
   [ngClass]="[
              buttonStyle == ButtonTheme.Primary ? 'btn btn-primary' :
              buttonStyle == ButtonTheme.Secondary ? 'btn btn-secondary' :

@@ -18,5 +18,8 @@ export class GenericButtonOnlyIconComponent {
   @Input() buttonStyle: any;
   @Input() customCssClass: string = '';
 
+  @Input() customStyles: {[p: string]: any} = {}
+
+
   protected ButtonTheme = ButtonTheme ;
 }

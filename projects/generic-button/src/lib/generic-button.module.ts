@@ -5,7 +5,7 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {GenericButtonOnlyIconComponent} from "./generic-button-only-icon.component";
 import {GenericButtonTextWithIconComponent} from "./generic-button-text-with-icon.component";
 import {GenericRadioButtonComponent} from "./generic-radio-button.component";
-import {NgClass, NgIf} from "@angular/common";
+import {NgClass, NgIf, NgStyle} from "@angular/common";
 
 
 @NgModule({
@@ -15,12 +15,13 @@ import {NgClass, NgIf} from "@angular/common";
     GenericButtonTextWithIconComponent,
     GenericRadioButtonComponent
   ],
-  imports: [
-    NgbModule,
-    RouterLink,
-    NgClass,
-    NgIf
-  ],
+    imports: [
+        NgbModule,
+        RouterLink,
+        NgClass,
+        NgIf,
+        NgStyle
+    ],
   exports: [
     GenericButtonComponent,
     GenericButtonOnlyIconComponent,

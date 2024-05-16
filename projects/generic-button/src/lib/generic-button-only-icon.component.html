@@ -4,6 +4,7 @@
   (click)="!disabled && click()"
   [disabled]="disabled"
   [routerLink]="routerLink == '' ? null : routerLink"
+  [ngStyle]="customStyles"
   [ngClass]="
   buttonStyle == ButtonTheme.PrimaryOnlyIconSmall ? 'btn btn-primary btn-only-icon-primary-sm' :
   buttonStyle == ButtonTheme.SecondaryOnlyIconSmall ? 'btn btn-secondary btn-only-icon-secondary-sm' :

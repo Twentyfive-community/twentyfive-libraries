@@ -5,6 +5,7 @@
   (click)="!disabled && click()"
   [disabled]="disabled"
   [routerLink]="routerLink == '' ? null : routerLink"
+  [ngStyle]="customStyles"
   [ngClass]="[buttonStyle == ButtonTheme.Primary ? 'btn btn-primary' :
              buttonStyle == ButtonTheme.Secondary ? 'btn btn-secondary' :
              buttonStyle == ButtonTheme.Outline ? 'btn btn-outline-primary' :
@@ -18,6 +19,7 @@
              buttonSize == ButtonSizeTheme.ExtraLarge ? 'btn-extra-large' :
              buttonSize == ButtonSizeTheme.FullWidth ? 'btn-full-width' :
              customSizeCssClass
-             ]">
+             ]"
+  >
   {{buttonText}}
 </button>

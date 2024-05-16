@@ -25,6 +25,8 @@ export class GenericButtonTextWithIconComponent {
   @Input() customCssClass: string = '';
   @Input() customSizeCssClass: string = '';
 
+  @Input() customStyles: {[p: string]: any} = {}
+
   protected ButtonTheme = ButtonTheme;
   protected ButtonSizeWithIconTheme = ButtonSizeWithIconTheme;
   protected ButtonSizeTheme = ButtonSizeTheme;
