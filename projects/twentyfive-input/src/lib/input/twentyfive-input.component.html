@@ -8,6 +8,7 @@
   </label>
   <input [type]="inputType"
          [ngClass]="inputStyle == InputTheme.Primary ? 'input-25': customCssClass"
+         [ngStyle]="customStyles"
          [placeholder]="placeholder"
          [readOnly]="readOnly"
          [disabled]="disabled"

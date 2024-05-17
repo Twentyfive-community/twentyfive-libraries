@@ -27,6 +27,8 @@ export class TwentyfiveInputComponent {
   @Input() customLabelClass: string = '';
   @Input() isClearable: boolean = false;
 
+  @Input() customStyles: {[p: string]: any} = {}
+
   @Input() maxCharacters?: number; // New input for maximum characters
 
   /**
