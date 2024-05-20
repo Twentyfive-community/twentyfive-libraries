@@ -16,6 +16,8 @@
       [disabled]="disabledInput"
       [placeholder]="placeholder"
       [value]="selectedDate | date:'dd/MM/yyyy'"
+      [minDate]="minDate"
+      [markDisabled]="markDisabled"
       (dateSelect)="onDateSelect($event)"
       class="form-control"
       ngbDatepicker
