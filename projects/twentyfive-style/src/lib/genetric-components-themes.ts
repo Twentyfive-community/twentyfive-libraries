@@ -21,6 +21,7 @@ export enum DatePickerTheme {
 
 export enum DatePickerButtonTheme {
   ButtonPrimary = 'btn datepicker-button-primary',
+  ButtonSecondary = 'btn datepicker-button-secondary'
 }
 
 export enum InputTheme {
