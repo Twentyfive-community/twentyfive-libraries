@@ -1,6 +1,6 @@
 {
   "name": "twentyfive-table",
-  "version": "0.0.99",
+  "version": "0.0.101",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
@@ -11,7 +11,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "tslib": "^2.3.1",
-    "twentyfive-dropdown": "^0.0.7",
+    "twentyfive-dropdown": "^0.0.12",
     "twentyfive-switch": "^0.0.8",
     "twentyfive-style": "^0.0.100"
   },

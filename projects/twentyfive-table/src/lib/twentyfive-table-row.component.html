@@ -4,7 +4,7 @@
     [id]="id"
     [checked]="checked"
     [value]="checked"
-    (changeValue)="eventChange($event);"
+    (click)="eventChange($event); $event.stopPropagation()"
     [disabled]="disabled"
     [switchText]="switchText">
   </lib-twentyfive-switch>

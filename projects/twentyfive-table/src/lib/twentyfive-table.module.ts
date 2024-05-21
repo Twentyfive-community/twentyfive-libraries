@@ -15,17 +15,17 @@ import {RouterOutlet} from "@angular/router";
     TwentyfiveTableRowComponent,
     TwentyfivePaginationComponent
   ],
-    imports: [
-        RouterOutlet,
-        NgbModule,
-        TwentyfiveDropdownModule,
-        TwentyfiveSwitchModule,
-        NgClass,
-        NgIf,
-        NgForOf,
-        NgStyle,
-        SlicePipe
-    ],
+  imports: [
+    RouterOutlet,
+    NgbModule,
+    NgClass,
+    NgIf,
+    NgForOf,
+    NgStyle,
+    SlicePipe,
+    TwentyfiveDropdownModule,
+    TwentyfiveSwitchModule,
+  ],
   exports: [
     TwentyfiveTableComponent,
     TwentyfiveTableRowComponent,
