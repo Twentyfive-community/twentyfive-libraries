@@ -33,11 +33,17 @@ export class TwentyfiveDatepickerComponent implements OnInit{
   @Output() dateSelected = new EventEmitter<Date>();
   @Input()  selectedDate: Date | undefined;
 
+  @Input() minDate!: NgbDate;
+  @Input() maxDate!: NgbDate;
+
+  /**
+  * Using this parameter, minDate will be overridden
+  **/
   @Input() setMinDateToToday: boolean = false;
 
   @Input() disabledDates: NgbDate[] = [];
 
-  minDate: NgbDateStruct = new NgbDate(0, 0, 0);
+
 
   constructor(private calendar: NgbCalendar) {
   }
