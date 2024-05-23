@@ -25,6 +25,8 @@ export class TwentyfiveGenericTimepickerComponent {
 
   @Input() time: any;
 
+  @Input() timeOptions: string[] = [];
+
   @Output() changeTime:EventEmitter<any> = new EventEmitter<any>()
 
   protected readonly InputTheme = InputTheme;

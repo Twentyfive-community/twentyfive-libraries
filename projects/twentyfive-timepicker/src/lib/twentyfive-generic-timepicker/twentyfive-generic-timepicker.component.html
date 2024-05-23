@@ -5,16 +5,29 @@
           customLabelClass">
     {{labelText}}
   </label>
-  <input type="time"
-         [ngClass]="inputStyle == InputTheme.Primary ? 'input-25': customCssClass"
-         [placeholder]="placeholder"
-         [readOnly]="readOnly"
-         [value]="value"
-         [disabled]="disabled"
-         [required]="required"
-         [id]="id"
-         [ngModel]="time"
-         (ngModelChange)="changeTime.emit($event)"
-
-         class="form-control"
-  ></div>
+  <div *ngIf="timeOptions.length > 0; else timeInput">
+    <select class="form-control"
+            [ngClass]="inputStyle == InputTheme.Primary ? 'input-25': customCssClass"
+            [value]="value"
+            [disabled]="disabled"
+            [required]="required"
+            [id]="id"
+            [ngModel]="time"
+            (ngModelChange)="changeTime.emit($event)">
+      <option value="" disabled selected>--Seleziona un orario--</option>
+      <option *ngFor="let option of timeOptions" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+  <ng-template #timeInput>
+    <input class="form-control" type="time"
+           [ngClass]="inputStyle == InputTheme.Primary ? 'input-25': customCssClass"
+           [placeholder]="placeholder"
+           [readOnly]="readOnly"
+           [value]="value"
+           [disabled]="disabled"
+           [required]="required"
+           [id]="id"
+           [ngModel]="time"
+           (ngModelChange)="changeTime.emit($event)">
+  </ng-template>
+</div>
