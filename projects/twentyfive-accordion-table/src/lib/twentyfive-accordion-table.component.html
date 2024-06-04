@@ -55,7 +55,7 @@
         <div ngbDropdown *ngIf="actions.length > 3">
           <i ngbDropdownToggle class="bi bi-three-dots-vertical dropdown-toggle" data-bs-toggle="dropdown" (click)="$event.stopPropagation()">
             <ul ngbDropdownMenu class="dropdown-menu">
-              <li *ngFor="let action of actions">
+              <li style="cursor: pointer;" *ngFor="let action of actions">
                 <a *ngIf="action.showFunction(row) ?? true" class="dropdown-item"
                    (click)="action.action(row); $event.stopPropagation()">
                   {{ action.actionName }}
