@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {NgClass, NgIf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {NgbModule, NgbTimepicker} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {
@@ -19,7 +19,8 @@ import {TwentyfiveInputTimepickerComponent} from './twentyfive-input-timepicker/
     FormsModule,
     NgClass,
     NgIf,
-    NgbTimepicker
+    NgbTimepicker,
+    NgForOf
   ],
   exports: [
     TwentyfiveGenericTimepickerComponent,
