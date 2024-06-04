@@ -42,6 +42,7 @@ export class TwentyfiveDatepickerComponent implements OnInit{
   @Input() setMinDateToToday: boolean = false;
 
   @Input() disabledDates: NgbDate[] = [];
+  @Input() enabledDates: NgbDate[] = [];
 
 
 
@@ -55,9 +56,13 @@ export class TwentyfiveDatepickerComponent implements OnInit{
   }
 
   markDisabled = (date: NgbDate): boolean => {
-    return this.disabledDates.some(disabledDate =>
-      date.equals(disabledDate)
-    );
+    if (this.disabledDates.length > 0) {
+      return this.disabledDates.some(disabledDate => date.equals(disabledDate));
+    }
+    if (this.enabledDates.length > 0) {
+      return !this.enabledDates.some(enabledDate => date.equals(enabledDate));
+    }
+    return false;
   };
 
   onDateSelect(event: any) {
