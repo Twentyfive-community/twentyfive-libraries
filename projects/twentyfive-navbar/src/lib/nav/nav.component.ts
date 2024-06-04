@@ -30,9 +30,16 @@ export class NavComponent implements OnInit {
   @Input() customCssClass: string = '';
 
   showNavbar: boolean = true;
+  @Input() showSideMenu: boolean = true;
   @Input() showLogo: boolean = true;
+  @Input() logoCentered: boolean = false;
   @Input() showLeftTitle: boolean = true;
   @Input() showInlineElements: boolean = false;
+  @Input() onlyIcon: boolean = false;
+
+  itemLeft: any[] = [];
+  itemRight: any[] = [];
+
   isCollapsed: boolean = true;
 
 
@@ -40,6 +47,21 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.logoCentered) {
+      this.splitSidebarItems();
+    }
+  }
+
+  splitSidebarItems(): void {
+    if (this.sidebarItems.length === 0) return;
+
+    this.sidebarItems.forEach((item, index) => {
+      if (index % 2 === 0) {
+        this.itemLeft.push(item);
+      } else {
+        this.itemRight.push(item);
+      }
+    });
   }
 
   expandNav(elem: any) {

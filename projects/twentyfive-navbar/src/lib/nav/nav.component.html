@@ -2,31 +2,68 @@
   *ngIf="showNavbar"
   [style.height]="!isCollapsed ? '100vh' : 'auto'"
   class="p-0 align-items-start navbar navbar-dark"
-  [ngClass]="[navbarStyle == NavbarTheme.Primary ? 'nav-primary' :  NavbarTheme.Gradient ? 'nav-gradient' : customCssClass]">
+  [ngClass]="[navbarStyle == NavbarTheme.Primary ? 'nav-primary' :
+             navbarStyle == NavbarTheme.Secondary ? 'nav-secondary' :
+             navbarStyle == NavbarTheme.Gradient ? 'nav-gradient' :
+             customCssClass]">
   <div class="col-12">
     <div class="row px-4 py-4 g-0">
 
-      <div class="col-6">
-        <a class="navbar-brand" [href]="navbarNavigationUrl">
+      <div *ngIf="logoCentered && showInlineElements" [ngClass]="showSideMenu ? 'd-none' : 'd-flex'"
+           class="col-5 align-items-center justify-content-start">
+        <div id="navbarItemLeft" class="d-flex flex-row">
+          <ul *ngIf="onlyIcon" class="navbar-nav">
+            <li class="nav-item" *ngFor="let elem of itemLeft" (click)="emitEvent(elem)">
+              <a class="text-white" style="text-decoration: none" [routerLink]="elem.navigationUrl"><i [class]="elem.icon"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div *ngIf="!logoCentered" class="col-6">
+      <a class="navbar-brand" [href]="navbarNavigationUrl">
           <img class="me-4" *ngIf="showLogo" [src]="navbarLogo" [width]="logoWidth" [height]="logoHeigth" alt="">
           <app-title *ngIf="showLeftTitle" [title]="title" [show]="isCollapsed"></app-title>
         </a>
       </div>
 
-      <div class="col-6 d-md-flex flex-row d-none justify-content-end">
-        <div *ngIf="showInlineElements" id="navbarNav" class="d-flex flex-row">
-          <ul class="navbar-nav">
+      <div *ngIf="logoCentered" class="col-2 m-auto d-flex justify-content-center">
+        <a class="m-0 navbar-brand" [href]="navbarNavigationUrl">
+          <img *ngIf="showLogo" [src]="navbarLogo" [width]="logoWidth" [height]="logoHeigth" alt="">
+        </a>
+      </div>
+
+      <div *ngIf="!logoCentered && showInlineElements" class="col-6 d-md-flex flex-row d-none align-items-center justify-content-end">
+        <div id="navbarNav" class="d-flex flex-row">
+          <ul *ngIf="!onlyIcon" class="navbar-nav">
             <li class="nav-item" *ngFor="let elem of sidebarItems" (click)="emitEvent(elem)">
               <a class="text-white" style="text-decoration: none">{{elem.title}}</a>
             </li>
           </ul>
+
+          <ul *ngIf="onlyIcon" class="navbar-nav">
+            <li class="nav-item" *ngFor="let elem of sidebarItems" (click)="emitEvent(elem)">
+              <a class="text-white" style="text-decoration: none" [routerLink]="elem.navigationUrl"><i [class]="elem.icon"></i></a>
+            </li>
+          </ul>
+
         </div>
 
-        <app-title *ngIf="!showLeftTitle" [title]="title" [show]="isCollapsed"></app-title>
-
+        <app-title class="ms-3" *ngIf="!showLeftTitle" [title]="title" [show]="isCollapsed"></app-title>
       </div>
 
-      <div role="button" class="col-6 d-md-none d-flex justify-content-end">
+      <div *ngIf="logoCentered && showInlineElements" [ngClass]="showSideMenu ? 'd-none' : 'd-flex'"
+           class="col-5 align-items-center justify-content-end">
+        <div id="navbarItemRight" class="d-flex flex-row">
+          <ul *ngIf="onlyIcon" class="navbar-nav">
+            <li class="nav-item" *ngFor="let elem of itemRight" (click)="emitEvent(elem)">
+              <a class="text-white" style="text-decoration: none" [routerLink]="elem.navigationUrl"><i [class]="elem.icon"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div [ngClass]="showSideMenu ? 'd-md-none d-flex' : 'd-none'" role="button" class="col-6 justify-content-end">
         <app-animated-menu-icon [isHamburger]="isCollapsed" (evtEmitted)="expandNav($event)"></app-animated-menu-icon>
       </div>
 
@@ -36,12 +73,9 @@
       <div *ngFor="let elem of sidebarItems">
         <lib-twentyfive-menu-item
           (click)="expandNav(elem)"
-          [labelText]="elem.title"
-          [navigationUrl]="elem.navigationUrl"
-          [icon]="elem.icon"
+          [menuItem]="elem"
           (onClick)="emitEvent(elem)"
-        >
-        </lib-twentyfive-menu-item>
+        ></lib-twentyfive-menu-item>
       </div>
     </div>
   </div>
