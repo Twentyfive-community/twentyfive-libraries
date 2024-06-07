@@ -23,7 +23,7 @@
              buttonSize == ButtonSizeTheme.FullWidth ? 'btn-full-width' :
              customSizeCssClass
              ]">
-  <i *ngIf="iconLeft" [class]="prefixIcon + ' pe-2 icon-size'"></i>
+  <i *ngIf="iconLeft" [class]="prefixIcon + ' pe-2 icon-size'" style="cursor: pointer"></i>
   {{buttonText}}
-  <i *ngIf="!iconLeft" [class]="suffixIcon + ' ps-2 icon-size'"></i>
+  <i *ngIf="!iconLeft" [class]="suffixIcon + ' ps-2 icon-size'" style="cursor: pointer"></i>
 </button>
