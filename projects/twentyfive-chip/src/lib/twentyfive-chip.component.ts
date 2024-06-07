@@ -9,6 +9,8 @@ import {ChipTheme} from "twentyfive-style";
 export class TwentyfiveChipComponent {
 
   @Input() chipText: string = 'Testo della chip';
+  @Input() chipIcon: string = 'bi bi-tag';
+  @Input() chipImg: string = '';
   @Input() closeableChip: boolean = true;
   @Input() showIcon: boolean = true;
 
