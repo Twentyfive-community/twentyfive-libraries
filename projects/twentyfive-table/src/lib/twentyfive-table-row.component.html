@@ -12,7 +12,11 @@
 
 
 <td *ngFor="let elem of headers, let i = index" class="text-truncate"
-    [style.max-width.vw]="maxWidthValue | slice:0:-2">{{parseValue(row, elem)}}
+    [style.max-width.vw]="maxWidthValue | slice:0:-2">
+  <ng-container *ngIf="columnTemplateRefs[elem.value!]; else defaultCell">
+    <ng-container [ngTemplateOutlet]="columnTemplateRefs[elem.value!]" [ngTemplateOutletContext]="{ $implicit: row, header: elem }"></ng-container>
+  </ng-container>
+  <ng-template #defaultCell>{{parseValue(row, elem)}}</ng-template>
 </td>
 
 <td *ngIf="showActions">

@@ -29,6 +29,7 @@
       [row]="row"
       [maxWidthValue]="maxWidthValue"
       (click)="rowClicked.emit(row)"
+      [columnTemplateRefs]="columnTemplateRefs"
       *ngFor="let row of rows">
   </tr>
   </tbody>

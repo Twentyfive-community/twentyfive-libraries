@@ -5,7 +5,7 @@ import {TwentyfiveTableRowComponent} from "./twentyfive-table-row.component";
 import {TwentyfivePaginationComponent} from "./twentyfive-pagination.component";
 import {TwentyfiveDropdownModule} from 'twentyfive-dropdown';
 import {TwentyfiveSwitchModule} from "twentyfive-switch";
-import {NgClass, NgForOf, NgIf, NgStyle, SlicePipe} from "@angular/common";
+import {NgClass, NgForOf, NgIf, NgStyle, NgTemplateOutlet, SlicePipe} from "@angular/common";
 import {RouterOutlet} from "@angular/router";
 
 
@@ -25,6 +25,7 @@ import {RouterOutlet} from "@angular/router";
     SlicePipe,
     TwentyfiveDropdownModule,
     TwentyfiveSwitchModule,
+    NgTemplateOutlet,
   ],
   exports: [
     TwentyfiveTableComponent,

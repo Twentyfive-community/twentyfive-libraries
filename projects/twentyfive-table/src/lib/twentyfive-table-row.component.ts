@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, TemplateRef} from '@angular/core';
 import {TableHeader} from "./table-header";
 import {SwitchTheme} from 'twentyfive-style';
 
@@ -20,6 +20,9 @@ export class TwentyfiveTableRowComponent implements OnInit {
   @Input() showActions: boolean = false;
   @Input() switchStyle: SwitchTheme = SwitchTheme.Primary;
   @Input() headers: TableHeader[] = [];
+
+  @Input() columnTemplateRefs: { [key: string]: TemplateRef<any> } = {};
+
 
   @Input() showSwitch: boolean = false;
 

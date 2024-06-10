@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, TemplateRef} from '@angular/core';
 import {TableHeader} from "./table-header";
 import {ButtonTheme, SwitchTheme, TableHeadTheme, TableTheme} from 'twentyfive-style';
 
@@ -40,6 +40,8 @@ export class TwentyfiveTableComponent {
   @Input() showSwitch: boolean = false;
   @Input() switchStyle: SwitchTheme = SwitchTheme.Primary;
   @Input() isPaginated:boolean = true;
+
+  @Input() columnTemplateRefs: { [key: string]: TemplateRef<any> } = {};
 
   @Input() maxSize: number = 5;
   @Input() pageSize: number = 5;
