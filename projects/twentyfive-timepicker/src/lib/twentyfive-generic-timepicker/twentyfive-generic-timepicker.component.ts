@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { InputTheme, LabelTheme } from 'twentyfive-style';
 
 @Component({
@@ -6,7 +6,7 @@ import { InputTheme, LabelTheme } from 'twentyfive-style';
   templateUrl: './twentyfive-generic-timepicker.component.html',
   styleUrls: ['./twentyfive-generic-timepicker.component.css']
 })
-export class TwentyfiveGenericTimepickerComponent {
+export class TwentyfiveGenericTimepickerComponent implements OnInit {
 
   @Input() placeholder: string = 'Placeholder';
   @Input() value: string = '';
@@ -28,6 +28,13 @@ export class TwentyfiveGenericTimepickerComponent {
   @Input() timeOptions: string[] = [];
 
   @Output() changeTime:EventEmitter<any> = new EventEmitter<any>()
+
+  ngOnInit() {
+    if (!this.time) {
+      this.time = '';
+    }
+  }
+
 
   protected readonly InputTheme = InputTheme;
   protected readonly LabelTheme = LabelTheme;
