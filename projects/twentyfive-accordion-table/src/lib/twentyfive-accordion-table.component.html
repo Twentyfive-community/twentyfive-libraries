@@ -69,8 +69,7 @@
     </tr>
     <tr>
       <td colspan="12" class="hiddenRow">
-        <div id="rowDetails{{ i }}" class="card card-body" [collapse]="collapseStates[i]"
-             [@expandCollapse]="collapseStates[i]" [ngClass]="collapseStates[i] ? 'collapse' : ''">
+        <div id="rowDetails{{ i }}" class="card card-body" [ngClass]="collapseStates[i] ? 'collapse' : ''">
           <div *ngFor="let info of dataDetails">
             <div *ngFor="let label of extras">
               <ng-container [ngTemplateOutlet]="detailsTemplateRef"

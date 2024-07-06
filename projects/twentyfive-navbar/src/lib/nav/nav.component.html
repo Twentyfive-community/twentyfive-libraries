@@ -5,7 +5,9 @@
   [ngClass]="[navbarStyle == NavbarTheme.Primary ? 'nav-primary' :
              navbarStyle == NavbarTheme.Secondary ? 'nav-secondary' :
              navbarStyle == NavbarTheme.Gradient ? 'nav-gradient' :
-             customCssClass]">
+             customCssClass]"
+  [ngStyle]="customStyles"
+>
   <div class="col-12">
     <div class="row px-4 py-4 g-0">
 

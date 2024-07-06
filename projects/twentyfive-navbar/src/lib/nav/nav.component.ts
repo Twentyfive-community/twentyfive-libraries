@@ -28,6 +28,7 @@ export class NavComponent implements OnInit {
   @Input() logoHeigth = 32;
   @Input() navbarStyle: any;
   @Input() customCssClass: string = '';
+  @Input() customStyles: {[p: string]: any} = {}
 
   showNavbar: boolean = true;
   @Input() showSideMenu: boolean = true;
