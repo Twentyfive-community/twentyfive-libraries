@@ -12,7 +12,8 @@ import {InputTheme, LabelTheme} from "twentyfive-style";
 })
 export class TwentyfiveAutocompleteComponent {
 
-  @ViewChild('autocompleteElement') autocompleteInput: ElementRef | undefined;
+  @ViewChild('autocompleteElement') autocompleteElement: ElementRef | undefined;
+  @ViewChild('autocompleteAppendElement') autocompleteAppendElement: ElementRef | undefined;
 
   @Input() model: FormControl = new FormControl();
 
@@ -49,6 +50,8 @@ export class TwentyfiveAutocompleteComponent {
   @Input() value: any;
   @Input() pivotSearch: any
 
+  @Input() showHint: boolean = false
+
   @Input() appendIcon = 'bi bi-x'
   @Input() showAppend = false;
   @Input() disabled = false;
@@ -56,6 +59,13 @@ export class TwentyfiveAutocompleteComponent {
 
   private debounceTimer: any;
   private currentAutocompleteValue = '';
+
+  initializeInitialSearch(event: any): void {
+    const inputElement = event.target as HTMLInputElement;
+
+    const inputEvent = new Event('input', { bubbles: true, cancelable: true });
+    inputElement.dispatchEvent(inputEvent);
+  }
 
   search: OperatorFunction<string, any[]> = (text$: Observable<string>) =>
     text$.pipe(
@@ -65,11 +75,23 @@ export class TwentyfiveAutocompleteComponent {
       switchMap(term => {
           this.currentAutocompleteValue = term;
           if (this.isAsync) {
-            if (!term || term.trim().length === 0) {
+            if (!term) {
+              return this.service?.search('', this.pivotSearch).pipe(
+                tap(results => {
+                  this.searchFailed = false;
+                }),
+                catchError((err) => {
+                  this.searchFailed = true;
+                  return of([]);
+                })) ?? of([]);
+            }
+            if(term.trim().length === 0) {
               return of([]);
             }
             return this.service?.search(term, this.pivotSearch).pipe(
-              tap(() => this.searchFailed = false),
+              tap(results => {
+                this.searchFailed = false;
+              }),
               catchError(() => {
                 this.searchFailed = true;
                 return of([]);
@@ -107,23 +129,50 @@ export class TwentyfiveAutocompleteComponent {
 
     // Set a new debounce timer
     this.debounceTimer = setTimeout(() => {
-      // Check if the input is empty
-      if (event.target.value === '') {
-        // Emit the event or perform any action you need
-        this.changeValue.emit(null);
 
-      }
+        this.changeValue.emit(null);
     }, this.debounceTime); // Wait for 200m
 
+  }
+
+  onItemSelect(event: any) {
+    this.onElementSelected.emit(event);
+
+    this.resetField();
+
+    if (this.autocompleteElement) {
+      const inputElement = this.autocompleteElement.nativeElement;
+      inputElement.blur(); // toglie focus all'input
+      setTimeout(() => {
+        inputElement.focus(); // rimette focus all'input
+      }, 0); // Ritardo minimo
+    }
+
+    if (this.autocompleteAppendElement) {
+      const inputElement = this.autocompleteAppendElement.nativeElement;
+      inputElement.blur();
+      setTimeout(() => {
+        inputElement.focus();
+      }, 0);
+    }
   }
 
   protected readonly InputTheme = InputTheme;
   protected readonly LabelTheme = LabelTheme;
 
   resetField() {
-    this.autocompleteInput!.nativeElement.value = '';
-    this.currentAutocompleteValue = '';
-    this.changeValue.emit(null);
-    this.autocompleteInput!.nativeElement.focus();
+    setTimeout(() => {
+      if (this.autocompleteAppendElement) {
+        this.autocompleteAppendElement!.nativeElement.value = '';
+        this.currentAutocompleteValue = '';
+        this.changeValue.emit(null);
+        this.autocompleteAppendElement!.nativeElement.focus();
+      } else if (this.autocompleteElement) {
+        this.autocompleteElement!.nativeElement.value = '';
+        this.currentAutocompleteValue = '';
+        this.changeValue.emit(null);
+        this.autocompleteElement!.nativeElement.focus();
+      }
+    }, 0);
   }
 }
