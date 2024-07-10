@@ -105,6 +105,11 @@ export class TwentyfiveAccordionTableComponent implements AfterViewInit{
    */
   @Input()  isSortable!: boolean;
 
+  /**
+   * A function to get styles for a row based on its data.
+   */
+  @Input() rowStyles: (row: any) => { [key: string]: string } = () => ({});
+
   // ngb-pagination
   /**
    * If true the table will show the paginator element
@@ -199,6 +204,10 @@ export class TwentyfiveAccordionTableComponent implements AfterViewInit{
 
   ngAfterViewInit() {
     this.initiateCollapse();
+  }
+
+  getRowStyle(row: any) {
+    return this.rowStyles(row);
   }
 
   private initiateCollapse(){

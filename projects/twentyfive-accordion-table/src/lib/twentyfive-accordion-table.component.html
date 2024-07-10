@@ -21,7 +21,7 @@
     <tr data-toggle="collapse" [attr.data-target]="'#rowDetails' + i" aria-expanded="false" aria-controls="rowDetails"
         (click)="toggleCollapse(row, i, $event)">
 
-      <td *ngIf="showSwitch">
+      <td *ngIf="showSwitch" [ngStyle]="getRowStyle(row)">
         <lib-twentyfive-switch
           [checked]="row[checkedField]"
           [value]="row[checkedField]"
@@ -32,13 +32,13 @@
         ></lib-twentyfive-switch>
       </td>
 
-      <td *ngFor="let header of headers">
+      <td *ngFor="let header of headers" [ngStyle]="getRowStyle(row)">
         <ng-container *ngIf="columnTemplateRefs[header.value]; else defaultCell">
           <ng-container [ngTemplateOutlet]="columnTemplateRefs[header.value]" [ngTemplateOutletContext]="{ $implicit: row, header: header }"></ng-container>
         </ng-container>
         <ng-template #defaultCell>{{ row[header.value] ?? '-' }}</ng-template>
       </td>
-      <td *ngIf="showActions">
+      <td *ngIf="showActions" [ngStyle]="getRowStyle(row)">
         <div *ngIf="actions.length <= 3" class="d-flex">
           <div *ngFor="let action of actions">
             <i
