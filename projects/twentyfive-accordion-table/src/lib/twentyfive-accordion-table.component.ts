@@ -1,4 +1,13 @@
-import {AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, Output, TemplateRef} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input, OnChanges,
+  Output,
+  SimpleChanges,
+  TemplateRef
+} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {Header} from "./classes/header";
 import {ButtonTheme, SwitchTheme, TableHeadTheme} from "twentyfive-style";
@@ -22,7 +31,7 @@ export enum SortDirection {
       transition(`${true}`+' <=> '+`${false}`, [animate('250ms cubic-bezier(0.4, 0.0, 0.2, 1)')])
     ])]
 })
-export class TwentyfiveAccordionTableComponent implements AfterViewInit{
+export class TwentyfiveAccordionTableComponent implements AfterViewInit, OnChanges{
 
   /**
    * Data to display
@@ -205,6 +214,20 @@ export class TwentyfiveAccordionTableComponent implements AfterViewInit{
   ngAfterViewInit() {
     this.initiateCollapse();
   }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['data']) {
+      this.resetCollapseStates();
+    }
+  }
+
+  resetCollapseStates() {
+    this.collapseStates = {};
+    for (let i = 0; i < this.data.length; i++) {
+      this.collapseStates[i] = true;
+    }
+  }
+
 
   getRowStyle(row: any) {
     return this.rowStyles(row);
