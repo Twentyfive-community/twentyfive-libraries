@@ -15,7 +15,7 @@
       [required]="required"
       [disabled]="disabledInput"
       [placeholder]="placeholder"
-      [value]="selectedDate | date:'dd/MM/yyyy'"
+      [(ngModel)]="selectedDate"
       [minDate]="minDate"
       [maxDate]="maxDate"
       [markDisabled]="markDisabled"

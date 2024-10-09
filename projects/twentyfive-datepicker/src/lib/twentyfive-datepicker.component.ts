@@ -70,6 +70,11 @@ export class TwentyfiveDatepickerComponent implements OnInit{
     this.dateSelected.emit(selectedDate);
   }
 
+  reset() {
+    this.selectedDate = undefined;
+    this.dateSelected.emit(undefined);
+  }
+
   protected TranslationWidth = TranslationWidth;
   protected DatePickerTheme = DatePickerTheme;
   protected DatePickerButtonTheme = DatePickerButtonTheme;
