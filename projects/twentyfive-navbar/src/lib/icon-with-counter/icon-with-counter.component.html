@@ -1,0 +1,10 @@
+<div class="icon-container d-flex justify-content-center align-items-center">
+  <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" [routerLink]="navigationUrl">
+    <i [class]="iconClass"></i>
+    <span *ngIf="showCounter" class="position-absolute badge-counter"
+          [style.background-color]="counterColor || 'red'"
+          [style.color]="counterFontColor || 'white'">
+      {{ counterValue }}
+    </span>
+  </a>
+</div>

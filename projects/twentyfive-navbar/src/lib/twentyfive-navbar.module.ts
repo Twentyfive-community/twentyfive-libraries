@@ -5,13 +5,15 @@ import {AnimatedMenuIconComponent} from './animated-menu-icon/animated-menu-icon
 import {NgClass, NgForOf, NgIf, NgStyle} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {TwentyfiveMenuItemModule} from "twentyfive-menu-item";
+import { IconWithCounterComponent } from './icon-with-counter/icon-with-counter.component';
 
 
 @NgModule({
   declarations: [
     TitleComponent,
     NavComponent,
-    AnimatedMenuIconComponent
+    AnimatedMenuIconComponent,
+    IconWithCounterComponent
   ],
   imports: [
     TwentyfiveMenuItemModule,

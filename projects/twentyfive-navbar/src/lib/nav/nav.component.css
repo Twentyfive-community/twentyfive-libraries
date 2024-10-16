@@ -2,14 +2,25 @@
   color: white;
 }
 
-#navbarNav .navbar-nav {
+#navbarNav .navbar-nav,
+#navbarItemLeft .navbar-nav,
+#navbarItemRight .navbar-nav {
   display: flex;
   flex-direction: row;
   list-style-type: none; /* Removes bullet points from list */
   padding-left: 0; /* Removes default padding */
 }
 
-#navbarNav .nav-item {
+#navbarNav .nav-item,
+#navbarItemLeft .nav-item,
+#navbarItemRight .nav-item {
   cursor: pointer;
-  margin-right: 30px; /* Adds some space between items, adjust as needed */
+  margin-right: 5px; /* Adds some space between items, adjust as needed */
+  margin-left: 5px;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none; /* Disabilita il click */
+  cursor: not-allowed; /* Cambia il cursore */
 }

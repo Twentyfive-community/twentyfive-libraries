@@ -6,8 +6,8 @@
              navbarStyle == NavbarTheme.Secondary ? 'nav-secondary' :
              navbarStyle == NavbarTheme.Gradient ? 'nav-gradient' :
              customCssClass]"
-  [ngStyle]="customStyles"
->
+  [ngStyle]="customStyles">
+
   <div class="col-12">
     <div class="row px-4 py-4 g-0">
 
@@ -15,8 +15,17 @@
            class="col-5 align-items-center justify-content-start">
         <div id="navbarItemLeft" class="d-flex flex-row">
           <ul *ngIf="onlyIcon" class="navbar-nav">
-            <li class="nav-item" *ngFor="let elem of itemLeft" (click)="emitEvent(elem)">
-              <a class="text-white" style="text-decoration: none" [routerLink]="elem.navigationUrl"><i [class]="elem.icon"></i></a>
+            <li class="nav-item" *ngFor="let elem of itemLeft"
+                [ngClass]="{'disabled': elem.disableClick}" (click)="!elem.disableClick && emitEvent(elem)">
+              <lib-icon-with-counter
+                [iconClass]="elem.icon"
+                [navigationUrl]="elem.navigationUrl"
+                [showCounter]="elem.showCounter"
+                [dynamicCounter]="elem.dynamicCounter"
+                [counterValue]="elem.counterValue"
+                [counterColor]="elem.counterColor"
+                [counterFontColor]="elem.counterFontColor">
+              </lib-icon-with-counter>
             </li>
           </ul>
         </div>
@@ -44,8 +53,17 @@
           </ul>
 
           <ul *ngIf="onlyIcon" class="navbar-nav">
-            <li class="nav-item" *ngFor="let elem of sidebarItems" (click)="emitEvent(elem)">
-              <a class="text-white" style="text-decoration: none" [routerLink]="elem.navigationUrl"><i [class]="elem.icon"></i></a>
+            <li class="nav-item" *ngFor="let elem of sidebarItems"
+                [ngClass]="{'disabled': elem.disableClick}" (click)="!elem.disableClick && emitEvent(elem)">
+              <lib-icon-with-counter
+                [iconClass]="elem.icon"
+                [navigationUrl]="elem.navigationUrl"
+                [showCounter]="elem.showCounter"
+                [dynamicCounter]="elem.dynamicCounter"
+                [counterValue]="elem.counterValue"
+                [counterColor]="elem.counterColor"
+                [counterFontColor]="elem.counterFontColor">
+              </lib-icon-with-counter>
             </li>
           </ul>
 
@@ -58,8 +76,17 @@
            class="col-5 align-items-center justify-content-end">
         <div id="navbarItemRight" class="d-flex flex-row">
           <ul *ngIf="onlyIcon" class="navbar-nav">
-            <li class="nav-item" *ngFor="let elem of itemRight" (click)="emitEvent(elem)">
-              <a class="text-white" style="text-decoration: none" [routerLink]="elem.navigationUrl"><i [class]="elem.icon"></i></a>
+            <li class="nav-item" *ngFor="let elem of itemRight"
+                [ngClass]="{'disabled': elem.disableClick}" (click)="!elem.disableClick && emitEvent(elem)">
+              <lib-icon-with-counter
+                [iconClass]="elem.icon"
+                [navigationUrl]="elem.navigationUrl"
+                [showCounter]="elem.showCounter"
+                [dynamicCounter]="elem.dynamicCounter"
+                [counterValue]="elem.counterValue"
+                [counterColor]="elem.counterColor"
+                [counterFontColor]="elem.counterFontColor">
+              </lib-icon-with-counter>
             </li>
           </ul>
         </div>
