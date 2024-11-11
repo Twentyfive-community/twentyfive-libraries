@@ -1,4 +1,4 @@
-import {Component,Input} from "@angular/core";
+import {Component, EventEmitter, Input, Output} from "@angular/core";
 import {BoxTheme, InputIconTheme, InputTheme, InputWithIconTheme } from "twentyfive-style";
 
 @Component({
@@ -22,6 +22,14 @@ export class TwentyfiveInputWithIconComponent {
   @Input() iconStyle: InputIconTheme = InputIconTheme.Primary;
   @Input() boxStyle: BoxTheme = BoxTheme.Primary;
   @Input() inputStyle: InputWithIconTheme = InputWithIconTheme.Primary;
+
+  inputValue: string = '';
+
+  @Output() iconClick = new EventEmitter<string>();
+
+  onIconClick() {
+    this.iconClick.emit(this.inputValue);
+  }
 
   protected readonly InputTheme = InputTheme;
   protected readonly InputIconTheme = InputIconTheme;
