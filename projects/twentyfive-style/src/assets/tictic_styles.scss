@@ -1,21 +1,7 @@
-@import "./variables";
+@import "./tictic_variables";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 @import "bootstrap/dist/css/bootstrap.css";
 
-/* navbar style */
-$navbar-dark-color: white;
-$navbar-dark-brand-color: white;
-$navbar-padding-y: 20px;
-$navbar-padding-x: 20px;
-$navbar-toggler-focus-width: 1;
-
-/* our colors */
-$menu-item-active: #D9D9D9;
-$menu-item-hover: #EEEEEE;
-$menu-item-active-mobile: #1A1635;
-$menu-item-color: black;
-$menu-item-color-mobile: white;
-$button-color-active: #19194b;
 
 *[role="button"] > * {
   cursor: pointer
@@ -40,7 +26,7 @@ input {
 
 /* MENU ITEM */
 .nav-primary {
-  background-color: #1A1660;
+  background-color: $primary;
 }
 
 .nav-gradient {
@@ -430,7 +416,7 @@ $icon-height: 2.25rem;
 
 .thead-primary {
   --bs-table-color: #FFFFFF;
-  --bs-table-bg: #1A1660;
+  --bs-table-bg: $primary;
 }
 
 th {
@@ -509,7 +495,7 @@ th {
 }
 
 .dropdown-item.active, .dropdown-item:active {
-  background-color: #D9D9D9 !important;
+  background-color: $secondary !important;
 }
 
 ngb-typeahead-window {
@@ -572,7 +558,7 @@ lib-twentyfive-autocomplete span {
 }
 
 .modal-header {
-  background-color: #1A1660;
+  background-color: $primary;
   color: $white;
 }
 
@@ -2095,7 +2081,7 @@ ngb-datepicker {
   right: 10px;
   z-index: 1000;
   background-color: white;
-  border: 1px solid #1A1660;
+  border: 1px solid $primary;
   padding: 5px 10px;
   border-radius: 8px;
   cursor: pointer;
@@ -2109,7 +2095,7 @@ ngb-datepicker {
   border-radius: 8px;
   border: none;
   font-size: 1rem;
-  color: #252525;
+  color: $black-25;
   background-color: lightgray;
   padding: 0 1rem;
 }
@@ -2125,7 +2111,7 @@ ngb-datepicker {
   font-size: 18px;
   line-height: 50px;
   border-radius: 25px;
-  background: #1A1660;
+  background: $primary;
   color: white;
 
   // text color
@@ -2149,12 +2135,12 @@ ngb-datepicker {
   font-size: 18px;
   line-height: 50px;
   border-radius: 25px;
-  background: #D9D9D9;
-  color: #252525;
+  background: $secondary;
+  color: $black-25;
 
   // text color
   span {
-    color: #252525;
+    color: $black-25;
   }
 
   //last icon to close chip
