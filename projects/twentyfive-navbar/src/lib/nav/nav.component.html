@@ -93,7 +93,7 @@
       </div>
 
       <div [ngClass]="showSideMenu ? 'd-md-none d-flex' : 'd-none'" role="button" class="col-6 justify-content-end">
-        <app-animated-menu-icon [isHamburger]="isCollapsed" (evtEmitted)="expandNav($event)"></app-animated-menu-icon>
+        <app-animated-menu-icon [isHamburger]="isCollapsed" (evtEmitted)="expandNav()"></app-animated-menu-icon>
       </div>
 
     </div>
@@ -101,7 +101,7 @@
     <div id="menu-items" *ngIf="!isCollapsed">
       <div *ngFor="let elem of sidebarItems">
         <lib-twentyfive-menu-item
-          (click)="expandNav(elem)"
+          (click)="$event.preventDefault(); $event.stopPropagation(); expandNav()"
           [menuItem]="elem"
           (onClick)="emitEvent(elem)"
         ></lib-twentyfive-menu-item>
