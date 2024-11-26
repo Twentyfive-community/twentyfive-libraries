@@ -3,13 +3,15 @@ import {InputTheme, LabelTheme} from 'twentyfive-style';
 
 @Component({
   selector: 'lib-twentyfive-input',
-  templateUrl: `./twentyfive-input.component.html`
+  templateUrl: `./twentyfive-input.component.html`,
+  styleUrls: [`./twentyfive-input.component.scss`]
 })
 export class TwentyfiveInputComponent {
 
   @Input() placeholder: string = 'Placeholder';
   @Input() inputType: string = 'text';
   @Input() value: string = '';
+  @Input() minValue?: number;
   @Input() labelText: string = '';
   @Input() invalidText: string = '';
   @Input() validText: string = '';
@@ -36,16 +38,33 @@ export class TwentyfiveInputComponent {
    */
   @Input() stepValue: any = 1;
 
-
   @Output() changeValue = new EventEmitter<any>();
 
+  isValid: boolean = true;
+
   changeInput(event: any) {
-    this.changeValue.emit(event);
+    this.validateInput(event);
+    if (this.isValid) {
+      this.changeValue.emit(event);
+    }
   }
 
   clearInput() {
     this.value = '';
     this.changeValue.emit(this.value);
+  }
+
+  validateInput(event: any) {
+    const numericValue = parseFloat(event);
+
+    if (this.minValue !== undefined && numericValue) {
+      if (numericValue < this.minValue) {
+        this.isValid = false;
+        return;
+      }
+    }
+
+    this.isValid = true;
   }
 
   protected readonly InputTheme = InputTheme;

@@ -7,24 +7,24 @@
     {{labelText}}
   </label>
   <input [type]="inputType"
-         [ngClass]="inputStyle == InputTheme.Primary ? 'input-25': customCssClass"
+         [ngClass]="{'invalid': !isValid, 'input-25': inputStyle == InputTheme.Primary}"
          [ngStyle]="customStyles"
          [placeholder]="placeholder"
          [readOnly]="readOnly"
          [disabled]="disabled"
          [required]="required"
          [id]="id"
+         [min]="minValue"
          [ngModel]="value"
          (ngModelChange)="changeInput($event)"
          [attr.maxlength]="maxCharacters ? maxCharacters : null"
          [step]="stepValue"
-         class="form-control"
-  >
+         class="form-control">
 
-  <div class="valid-feedback">
+  <p *ngIf="isValid && validText" class="valid-txt">
     {{validText}}
-  </div>
-  <div class="invalid-feedback">
+  </p>
+  <p *ngIf="!isValid && invalidText" class="invalid-txt">
     {{invalidText}}
-  </div>
+  </p>
 </div>
