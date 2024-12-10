@@ -23,6 +23,9 @@ export class TwentyfiveInputWithIconComponent {
   @Input() boxStyle: BoxTheme = BoxTheme.Primary;
   @Input() inputStyle: InputWithIconTheme = InputWithIconTheme.Primary;
 
+  @Input() buttonText: string = '';
+  @Input() textColor: string = 'white'
+
   inputValue: string = '';
 
   @Output() iconClick = new EventEmitter<string>();

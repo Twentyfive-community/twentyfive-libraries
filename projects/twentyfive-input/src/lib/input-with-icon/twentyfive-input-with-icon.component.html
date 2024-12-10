@@ -10,7 +10,8 @@
   <div class="input-group-append" >
     <span [ngClass]="boxStyle == BoxTheme.Primary ? 'box-primary-25' : customBoxCssClass" class="input-group-text"
           (click)="onIconClick()">
-      <i [ngClass]="[icon, iconStyle == InputIconTheme.Primary ? 'icon-primary-25' : customIconCssClass]"></i>
+      <i *ngIf="!buttonText" [ngClass]="[icon, iconStyle == InputIconTheme.Primary ? 'icon-primary-25' : customIconCssClass]"></i>
+      <span *ngIf="buttonText" [ngStyle]="{'color': textColor}"> {{ buttonText }} </span>
     </span>
   </div>
 </div>
