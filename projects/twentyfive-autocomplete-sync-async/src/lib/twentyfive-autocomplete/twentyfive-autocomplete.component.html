@@ -1,61 +1,40 @@
-<fieldset class="form-inline">
-  <div class="form-group">
-    <label *ngIf="showLabel"
-           [ngClass]="labelStyle == LabelTheme.LabelMedium ? 'label-25' :
-                      labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :
-                      customLabelClass"> {{ labelText }} </label>
-    <input *ngIf="!showAppend"
-           [ngClass]="inputStyle == InputTheme.Primary ? 'input-25' : customCssClass"
-           id="typeahead-http"
-           #autocompleteElement
-           type="text"
-           class="form-control"
-           [value]="value ? value : ''"
-           [class.is-invalid]="searchFailed"
-           (keyup)="change($event)"
-           (focus)="initializeInitialSearch($event)"
-           [disabled]="disabled"
-           [ngbTypeahead]="search"
-           [inputFormatter]="formatter"
-           [resultTemplate]="nTemplt"
-           [placeholder]="placeholder"
-           [showHint]="showHint"
-           (selectItem)="onItemSelect($event)">
+<div class="autocomplete">
+  <div class="input-group">
+    <input
+      [ngStyle]="customInputStyles"
+      [ngClass]="{'input-25': inputStyle === InputTheme.Primary}"
+      type="text"
+      class="form-control"
+      [placeholder]="placeholder"
+      [value]="currentValue"
+      [disabled]="disabled"
+      (input)="search($event)"
+    />
 
-
-    <div class="input-group" *ngIf="showAppend">
-
-      <input
-        [ngClass]="inputStyle == InputTheme.Primary ? 'input-25' : customCssClass"
-        id="typeahead-http-cross"
-        #autocompleteAppendElement
-        type="text"
-        class="form-control autocomplete-input-25"
-        [value]="value ? value : ''"
-        [class.is-invalid]="searchFailed"
-        (keyup)="change($event)"
-        (focus)="initializeInitialSearch($event)"
-        [ngbTypeahead]="search"
-        [inputFormatter]="formatter"
-        [resultTemplate]="nTemplt"
-        [placeholder]="placeholder"
-        [disabled]="disabled"
-        [showHint]="showHint"
-        (selectItem)="onItemSelect($event)">
-      <div class="input-group-append">
-        <button
-          (click)="resetField()"
-          class="customIconCssClass"
-          type="button">
-          <i [ngClass]="appendIcon"></i>
-        </button>
-      </div>
+    <!-- Pulsante di reset -->
+    <div *ngIf="resetButton && currentValue" class="input-group-append">
+      <button
+        [ngStyle]="customButtonStyles"
+        [ngClass]="{'btn btn-primary': buttonStyle === ButtonTheme.Primary,
+        'btn btn-secondary': buttonStyle === ButtonTheme.Secondary}"
+        class="btn btn-outline-secondary" (click)="resetField()" type="button">
+        <i class="bi bi-x"></i>
+      </button>
     </div>
-
-    <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
   </div>
-</fieldset>
 
-<ng-template #nTemplt let-r="result" let-t="term">
-  <span style="padding-top: 8px; padding-bottom: 8px">{{ r[textToShowField] }}</span>
-</ng-template>
+  <!-- Dropdown  -->
+  <ul *ngIf="searchResults.length > 0" class="dropdown-menu show">
+    <li
+      *ngFor="let result of searchResults"
+      (click)="selectItem(result)"
+      class="dropdown-item">
+      {{ result[textField] }}
+    </li>
+  </ul>
+
+  <!-- Messaggio d'errore -->
+  <div *ngIf="searchFailedFlag" class="invalid-feedback d-block">
+    Si è verificato un errore durante la ricerca.
+  </div>
+</div>
