@@ -3,6 +3,7 @@
          [ngClass]="inputStyle == InputWithIconTheme.Primary ? 'input-primary-25': customInputCssClass"
          [placeholder]="placeholder"
          [(ngModel)]="inputValue"
+         (ngModelChange)="onInputChange($event)"
          [readOnly]="readOnly"
          [disabled]="disabled"
          class="form-control"

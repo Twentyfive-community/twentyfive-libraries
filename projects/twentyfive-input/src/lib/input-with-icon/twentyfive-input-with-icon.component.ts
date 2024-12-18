@@ -26,9 +26,15 @@ export class TwentyfiveInputWithIconComponent {
   @Input() buttonText: string = '';
   @Input() textColor: string = 'white'
 
-  inputValue: string = '';
+  @Input() inputValue: string = '';
 
+  @Output() inputValueChange = new EventEmitter<string>();
   @Output() iconClick = new EventEmitter<string>();
+
+  onInputChange(value: string) {
+    this.inputValue = value;
+    this.inputValueChange.emit(value); // Notifica il valore al genitore
+  }
 
   onIconClick() {
     this.iconClick.emit(this.inputValue);
