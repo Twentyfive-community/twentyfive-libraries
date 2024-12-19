@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, TemplateRef} from '@angular/core';
 import {MobileTableTheme, MobileTheadTheme, TableTheme} from "twentyfive-style";
 
 @Component({
@@ -23,6 +23,7 @@ export class GenericMobileTableComponent {
   @Input() disabled: boolean = false;
   @Input() showLabel: boolean = true;
   @Input() checked: boolean = false;
+  @Input() templateRefs: { [key: string]: TemplateRef<any> } = {};
 
   @Input() switchStyle: any;
 

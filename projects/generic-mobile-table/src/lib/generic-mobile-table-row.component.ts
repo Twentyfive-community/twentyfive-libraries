@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, TemplateRef} from '@angular/core';
 import {TableHeader} from "./table-header";
 import {MobileTableTheme, MobileTheadTheme} from "twentyfive-style";
 
@@ -17,6 +17,7 @@ export class GenericMobileTableRowComponent{
   @Input() actions: any = [];
   @Input() headers: TableHeader [] = [];
   @Input() rows: any = [];
+  @Input() templateRefs: { [key: string]: TemplateRef<any> } = {};
 
   @Input() customCssClass: string = '';
   @Input() customHeaderCssClass: string = '';

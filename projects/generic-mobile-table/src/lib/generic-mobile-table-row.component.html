@@ -1,4 +1,3 @@
-
 <div class="card mb-4"
      [ngClass]="mobileTableStyle == MobileTableTheme.Primary ? 'mobile-table-primary' :
                 customCssClass
@@ -11,21 +10,21 @@
       </div>
       <div class="col-6 d-flex justify-content-end">
 
-       <!--<lib-twentyfive-dropdown  [showButton]="false" toggleIcon="bi bi-three-dots-vertical" [dropdownItems]="actions"></lib-twentyfive-dropdown>-->
-         <i class="bi bi-three-dots-vertical table-menu-icon-white area-clickable-increased"  data-bs-toggle="dropdown">
-               <ul class="dropdown-menu dropdown-menu-end">
-                   <li *ngFor="let action of actions">
-                       <a class="dropdown-item" (click)="action.action(row)">
-                           {{action.actionName}}
-                       </a>
-                   </li>
-               </ul>
-           </i>
+        <!--<lib-twentyfive-dropdown  [showButton]="false" toggleIcon="bi bi-three-dots-vertical" [dropdownItems]="actions"></lib-twentyfive-dropdown>-->
+        <i class="bi bi-three-dots-vertical table-menu-icon-white area-clickable-increased" data-bs-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li *ngFor="let action of actions">
+              <a class="dropdown-item" (click)="action.action(row)">
+                {{action.actionName}}
+              </a>
+            </li>
+          </ul>
+        </i>
       </div>
     </div>
   </div>
 
-  <div class="card-body" >
+  <div class="card-body">
 
     <label *ngIf="showSwitch" class="text-semibold ">{{switchLabelText}}</label>
 
@@ -49,11 +48,18 @@
         </div>
       </div>
 
-      <div class="row mb-3">
-        <div class="col-12">
-          <label class="mw-100 text-truncate">{{row[elem.value ?? '']}}</label>
-        </div>
+      <div class="mb-3">
+        <ng-container  *ngIf="templateRefs[elem.value!]; else defaultRow">
+          <ng-container [ngTemplateOutlet]="templateRefs[elem.value!]" [ngTemplateOutletContext]="{ $implicit: row, header: elem }"></ng-container>
+        </ng-container>
       </div>
+      <ng-template #defaultRow>
+        <div class="row mb-3">
+          <div class="col-12">
+            <label class="mw-100 text-truncate">{{row[elem.value ?? '']}}</label>
+          </div>
+        </div>
+      </ng-template>
 
     </div>
   </div>
