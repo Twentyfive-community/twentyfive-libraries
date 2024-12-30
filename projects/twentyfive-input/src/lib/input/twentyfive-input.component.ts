@@ -11,7 +11,7 @@ export class TwentyfiveInputComponent {
   @Input() placeholder: string = 'Placeholder';
   @Input() inputType: string = 'text';
   @Input() value: string = '';
-  @Input() minValue?: number;
+  @Input() minValue: number = 0;
   @Input() labelText: string = '';
   @Input() invalidText: string = '';
   @Input() validText: string = '';
