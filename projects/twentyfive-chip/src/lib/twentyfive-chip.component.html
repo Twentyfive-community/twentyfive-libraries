@@ -1,8 +1,8 @@
 <div [ngClass]="[chipStyle == ChipTheme.Primary ? 'twentyfive-chip-primary' :
              chipStyle == ChipTheme.Secondary ? 'twentyfive-chip-secondary' : customCssClass]">
 
-  <i *ngIf="showIcon && !chipImg" [ngClass]="chipIcon" class="pe-2"></i>
-  <img *ngIf="chipImg" [src]="chipImg" class="me-2" style="width: 2rem; height: 2rem">
+  <i *ngIf="showIcon" [ngClass]="chipIcon" class="pe-2"></i>
+  <img *ngIf="showImg" [src]="chipImg" class="me-2" style="width: 2rem; height: 2rem">
 
   <span>{{ chipText }}</span>
 

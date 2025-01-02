@@ -12,7 +12,8 @@ export class TwentyfiveChipComponent {
   @Input() chipIcon: string = 'bi bi-tag';
   @Input() chipImg: string = '';
   @Input() closeableChip: boolean = true;
-  @Input() showIcon: boolean = true;
+  @Input() showIcon: boolean = false;
+  @Input() showImg: boolean = false;
 
   @Input() chipStyle: any;
   @Input() customCssClass: string = '';

@@ -1,11 +1,20 @@
 <div class="form-group">
-  <label *ngIf="showLabel"
-         [ngClass]="
+  <div *ngIf="showLabel" class=" row">
+    <label [ngClass]="
          labelStyle == LabelTheme.LabelMedium ? 'label-25' :
          labelStyle == LabelTheme.LabelBold ? 'label-25-bold' :
          customLabelClass">
-    {{labelText}}
-  </label>
+      {{labelText}}
+    </label>
+  </div>
+
+  <div *ngIf="showInputDescription" class="row mb-1">
+    <label [ngClass]="labelStyle == LabelTheme.LabelSmall ? 'label-small' :
+         customInputDescriptionClass">
+      {{inputDescriptionText}}
+    </label>
+  </div>
+
   <input [type]="inputType"
          [ngClass]="{'invalid': !isValid, 'input-25': inputStyle == InputTheme.Primary}"
          [ngStyle]="customStyles"
@@ -15,12 +24,11 @@
          [required]="required"
          [id]="id"
          [min]="minValue"
-         [ngModel]="value"
+         [(ngModel)]="value"
          (ngModelChange)="changeInput($event)"
          [attr.maxlength]="maxCharacters ? maxCharacters : null"
          [step]="stepValue"
          class="form-control">
-
   <p *ngIf="isValid && validText" class="valid-txt">
     {{validText}}
   </p>

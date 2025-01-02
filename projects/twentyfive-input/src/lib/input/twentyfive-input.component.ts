@@ -13,6 +13,7 @@ export class TwentyfiveInputComponent {
   @Input() value: string = '';
   @Input() minValue: number = 0;
   @Input() labelText: string = '';
+  @Input() inputDescriptionText: string = '';
   @Input() invalidText: string = '';
   @Input() validText: string = '';
   @Input() id: string = '';
@@ -21,12 +22,13 @@ export class TwentyfiveInputComponent {
   @Input() required: boolean = false;
   @Input() disabled: boolean = false;
   @Input() showLabel: boolean = true;
+  @Input() showInputDescription: boolean = false;
 
   @Input() inputStyle: InputTheme = InputTheme.Primary;
   @Input() labelStyle: LabelTheme = LabelTheme.LabelMedium;
-
   @Input() customCssClass: string = '';
   @Input() customLabelClass: string = '';
+  @Input() customInputDescriptionClass: string = '';
   @Input() isClearable: boolean = false;
 
   @Input() customStyles: {[p: string]: any} = {}

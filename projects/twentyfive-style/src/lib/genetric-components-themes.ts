@@ -30,7 +30,8 @@ export enum InputTheme {
 
 export enum LabelTheme {
   LabelMedium = 'label-25',
-  LabelBold = 'label-25-bold'
+  LabelBold = 'label-25-bold',
+  LabelSmall = 'label-small',
 }
 
 export enum AddonTheme {
