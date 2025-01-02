@@ -15,6 +15,7 @@ export class TwentyfiveInputGroupComponent {
   @Input() prependIcon: string = 'bi bi-person';
   @Input() value: string = '';
   @Input() id: string = '';
+  @Input() ngModel: string = '';
 
   @Input() readOnly: boolean = false;
   @Input() required: boolean = false;
