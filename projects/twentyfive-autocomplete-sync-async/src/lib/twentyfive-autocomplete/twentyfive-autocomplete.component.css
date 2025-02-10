@@ -1,3 +1,29 @@
+/* Assicura che il contenitore dell'autocomplete sia relativo, in modo che
+   il posizionamento assoluto del menu venga calcolato in riferimento a questo */
+.autocomplete {
+  position: relative;
+}
+
+/* Stile per il menu a tendina */
+.autocomplete .dropdown-menu {
+  position: absolute;
+  top: 100%;      /* posiziona il menu subito sotto l'input */
+  left: 0;
+  right: 0;
+  z-index: 1000;  /* per essere visibile sopra gli altri elementi */
+  margin-top: 0.25rem;  /* piccolo margine, regolabile in base al design */
+  max-height: 200px;    /* altezza massima, con scroll verticale se necessario */
+  overflow-y: auto;
+  overflow-x: hidden;   /* nasconde eventuali overflow orizzontali */
+}
+
+/* Troncamento del testo in ciascun elemento del menu */
+.autocomplete .dropdown-menu .dropdown-item {
+  white-space: nowrap;      /* impedisce la rottura del testo su più righe */
+  text-overflow: ellipsis;  /* aggiunge le ellissi (…) alla fine del testo troncato */
+}
+
+/* Mantenimento della formattazione del pulsante (se necessario) */
 button {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
