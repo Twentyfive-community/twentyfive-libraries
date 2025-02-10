@@ -64,6 +64,9 @@
       ],
       "twentyfive-style": [
         "dist/twentyfive-style"
+      ],
+      "twentyfive-table-ultimate": [
+        "dist/twentyfive-table-ultimate"
       ]
     },
     "lib": [
