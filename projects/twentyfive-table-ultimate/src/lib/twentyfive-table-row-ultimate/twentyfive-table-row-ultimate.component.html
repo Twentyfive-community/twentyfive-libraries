@@ -1,0 +1,48 @@
+<td *ngIf="showSwitch">
+  <lib-twentyfive-switch
+    [ngClass]="switchStyle"
+    [id]="id"
+    [checked]="checked"
+    [value]="checked"
+    (click)="eventChange($event); $event.stopPropagation()"
+    [disabled]="disabled"
+    [switchText]="switchText">
+  </lib-twentyfive-switch>
+</td>
+
+
+<td *ngFor="let elem of headers, let i = index" class="text-truncate"
+    [style.max-width.vw]="maxWidthValue | slice:0:-2">
+  <ng-container *ngIf="columnTemplateRefs[elem.value!]; else defaultCell">
+    <ng-container [ngTemplateOutlet]="columnTemplateRefs[elem.value!]" [ngTemplateOutletContext]="{ $implicit: row, header: elem }"></ng-container>
+  </ng-container>
+  <ng-template #defaultCell>{{parseValue(row, elem)}}</ng-template>
+</td>
+
+<td *ngIf="showActions">
+  <div *ngIf="actions.length <= 3" class="d-flex">
+    <div *ngFor="let action of actions">
+      <i
+        *ngIf="action.showFunction(row) ?? true"
+        class="table-icon text-truncate"
+        style="max-width: 150px;"
+        [placement]="action.placement"
+        [ngbTooltip]="action.tooltipText"
+        [ngClass]="action.icon"
+        (click)="action.action(row); $event.stopPropagation()">
+      </i>
+    </div>
+  </div>
+  <div *ngIf="actions.length > 3">
+    <i class="bi bi-three-dots-vertical table-icon" data-bs-toggle="dropdown" (click)="$event.stopPropagation()">
+      <ul class="dropdown-menu">
+        <li *ngFor="let action of actions">
+          <a *ngIf="action.showFunction(row) ?? true" class="dropdown-item"
+             (click)="action.action(row); $event.stopPropagation()">
+            {{ action.actionName }}
+          </a>
+        </li>
+      </ul>
+    </i>
+  </div>
+</td>
