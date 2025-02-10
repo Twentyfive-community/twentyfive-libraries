@@ -9,6 +9,7 @@ import {TwentyfiveModalGenericComponentService} from "twentyfive-modal-generic-c
 export class TwentyfiveCookieModalDetailedComponent implements AfterViewInit {
 
   @Input() userPreferences: any = [];
+  @Input() viewDetailed = true;
   @Output() closeDetailedModal: any = new EventEmitter<any>();
   @Output() openEntireCookiePolicy: any = new EventEmitter<any>();
 

@@ -4,7 +4,7 @@
       <div class="col-sm-12 col-md-auto text-center text-md-left mb-3 mb-md-0">
         <img class="modal-title py-1" src="assets/images/twentyfive-logo.png" alt="logo" width="150" height="32">
       </div>
-      <div class="col-sm-12 col-md d-flex justify-content-center justify-content-md-end">
+      <div class="col-sm-12 col-md d-flex justify-content-center justify-content-md-end" *ngIf="viewDetailed">
         <lib-generic-button-text-with-icon
           [buttonStyle]="ButtonTheme.OutlineReverse"
           [buttonSize]="ButtonSizeTheme.FullWidth"

@@ -3,7 +3,7 @@ import { TwentyfiveCookieModalDetailedComponent } from './twentyfive-cookie-moda
 import { CookieDetailedRowComponent } from './cookie-detailed-row/cookie-detailed-row.component';
 import {TwentyfiveSwitchModule} from "twentyfive-switch";
 import {GenericButtonModule} from "generic-buttons";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 
 
 
@@ -12,13 +12,14 @@ import {NgForOf} from "@angular/common";
     TwentyfiveCookieModalDetailedComponent,
     CookieDetailedRowComponent
   ],
-  imports: [
-    TwentyfiveSwitchModule,
-    GenericButtonModule,
-    GenericButtonModule,
-    GenericButtonModule,
-    NgForOf
-  ],
+    imports: [
+        TwentyfiveSwitchModule,
+        GenericButtonModule,
+        GenericButtonModule,
+        GenericButtonModule,
+        NgForOf,
+        NgIf
+    ],
   exports: [
     TwentyfiveCookieModalDetailedComponent
   ]
