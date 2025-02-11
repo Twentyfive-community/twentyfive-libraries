@@ -27,6 +27,7 @@ body {
   width: 100vw;
   overflow-y: hidden;
   overflow-x: hidden;
+  background-color: #EDEDED;
 }
 
 i {
@@ -40,7 +41,7 @@ input {
 
 /* MENU ITEM */
 .nav-primary {
-  background-color: #1A1660;
+  background-color: $primary;
 }
 
 .nav-gradient {
@@ -102,6 +103,7 @@ input {
 @media (min-width: 768px) {
   .menu-item:hover {
     background-color: $secondary-hover;
+    border-radius: 12px;
   }
   /*  $className-active is used to extend with routerLinkActive functionality */
   .menu-item-active {
@@ -110,6 +112,7 @@ input {
   }
   .menu-item-active:hover {
     background-color: $secondary;
+    border-radius: 12px;
   }
   .menu-item-text {
     color: $white;
@@ -118,7 +121,7 @@ input {
     color: $white;
   }
   .new-padded-menu-item {
-    padding: 0 1rem;
+    padding: 0.2rem 1rem;
   }
 }
 
