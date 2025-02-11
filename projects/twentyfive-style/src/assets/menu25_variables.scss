@@ -26,7 +26,12 @@ $sidebar: #A10702 !default;
 $placeholder:#CACACA !default;
 $disabled-placeholder:#909090 !default;
 
+$reverse: #FAA613;
+$reverse-hover: #e37707;
+
 :root {
+
+  --bs-primary-rgb: rgb(161,7,2);
 
  /* BUTTON PRIMARY */
   --button-primary-bg: $primary;

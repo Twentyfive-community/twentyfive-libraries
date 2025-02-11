@@ -110,6 +110,7 @@ export enum ButtonTheme {
   Disabled = 'btn-disabled',
   DisabledOutline = 'btn-outline-disabled',
   OnlyText = 'btn-only-text',
+  Fat = 'btn-fat',
 
   /*RECTANGULAR ONLY ICON BUTTONS*/
   PrimaryOnlyIconSmall = 'btn-only-icon-primary-sm',
@@ -117,18 +118,21 @@ export enum ButtonTheme {
   OutlineOnlyIconSmall = 'btn-only-icon-outline-sm',
   DisabledOnlyIconSmall = 'btn-only-icon-disabled-sm',
   OutlineDisabledOnlyIconSmall = 'btn-only-icon-outline-disabled-sm',
+  FatOnlyIconSmall = 'btn-only-icon-fat-sm',
 
   PrimaryOnlyIconMedium = 'btn-only-icon-primary-md',
   SecondaryOnlyIconMedium = 'btn-only-icon-secondary-md',
   OutlineOnlyIconMedium = 'btn-only-icon-outline-md',
   DisabledOnlyIconMedium = 'btn-only-icon-disabled-md',
   OutlineDisabledOnlyIconMedium = 'btn-only-icon-outline-disabled-md',
+  FatOnlyIconMedium = 'btn-only-icon-fat-md',
 
   PrimaryOnlyIconLarge = 'btn-only-icon-primary-lg',
   SecondaryOnlyIconLarge = 'btn-only-icon-secondary-lg',
   OutlineOnlyIconLarge = 'btn-only-icon-outline-lg',
   DisabledOnlyIconLarge = 'btn-only-icon-disabled-lg',
   OutlineDisabledOnlyIconLarge = 'btn-only-icon-outline-disabled-lg',
+  FatOnlyIconLarge = 'btn-only-icon-fat-lg',
 
   /*CIRCULAR ONLY ICON BUTTONS*/
   PrimaryOnlyIconCircularSmall = 'btn-only-icon-primary-circular-sm',
@@ -136,18 +140,21 @@ export enum ButtonTheme {
   OutlineOnlyIconCircularSmall = 'btn-only-icon-outline-circular-sm',
   DisabledOnlyIconCircularSmall = 'btn-only-icon-disabled-circular-sm',
   OutlineDisabledOnlyIconCircularSmall = 'btn-only-icon-outline-disabled-circular-sm',
+  FatOnlyIconCircularSmall = 'btn-only-icon-fat-circular-sm',
 
   PrimaryOnlyIconCircularMedium = 'btn-only-icon-primary-circular-md',
   SecondaryOnlyIconCircularMedium = 'btn-only-icon-secondary-circular-md',
   OutlineOnlyIconCircularMedium = 'btn-only-icon-outline-circular-md',
   DisabledOnlyIconCircularMedium = 'btn-only-icon-disabled-circular-md',
   OutlineDisabledOnlyIconCircularMedium = 'btn-only-icon-outline-disabled-circular-md',
+  FatOnlyIconCircularMedium = 'btn-only-icon-fat-circular-md',
 
   PrimaryOnlyIconCircularLarge = 'btn-only-icon-primary-circular-lg',
   SecondaryOnlyIconCircularLarge = 'btn-only-icon-secondary-circular-lg',
   OutlineOnlyIconCircularLarge = 'btn-only-icon-outline-circular-lg',
   DisabledOnlyIconCircularLarge = 'btn-only-icon-disabled-circular-lg',
   OutlineDisabledOnlyIconCircularLarge = 'btn-only-icon-outline-disabled-circular-lg',
+  FatOnlyIconCircularLarge = 'btn-only-icon-fat-circular-lg',
 
   /*SQUARE ONLY ICON BUTTONS*/
   PrimaryOnlyIconSquareSmall = 'btn-only-icon-primary-square-sm',
@@ -155,18 +162,21 @@ export enum ButtonTheme {
   OutlineOnlyIconSquareSmall = 'btn-only-icon-outline-square-sm',
   DisabledOnlyIconSquareSmall = 'btn-only-icon-disabled-square-sm',
   OutlineDisabledOnlyIconSquareSmall = 'btn-only-icon-outline-disabled-square-sm',
+  FatOnlyIconSquareSmall = 'btn-only-icon-fat-square-sm',
 
   PrimaryOnlyIconSquareMedium = 'btn-only-icon-primary-square-md',
   SecondaryOnlyIconSquareMedium = 'btn-only-icon-secondary-square-md',
   OutlineOnlyIconSquareMedium = 'btn-only-icon-outline-square-md',
   DisabledOnlyIconSquareMedium = 'btn-only-icon-disabled-square-md',
   OutlineDisabledOnlyIconSquareMedium = 'btn-only-icon-outline-disabled-square-md',
+  FatOnlyIconSquareMedium = 'btn-only-icon-fat-square-md',
 
   PrimaryOnlyIconSquareLarge = 'btn-only-icon-primary-square-lg',
   SecondaryOnlyIconSquareLarge = 'btn-only-icon-secondary-square-lg',
   OutlineOnlyIconSquareLarge = 'btn-only-icon-outline-square-lg',
   DisabledOnlyIconSquareLarge = 'btn-only-icon-disabled-square-lg',
   OutlineDisabledOnlyIconSquareLarge = 'btn-only-icon-outline-disabled-square-lg',
+  FatOnlyIconSquareLarge = 'btn-only-icon-fat-square-lg',
 
 }
 

@@ -10,8 +10,8 @@ $navbar-padding-x: 20px;
 $navbar-toggler-focus-width: 1;
 
 /* our colors */
-$menu-item-active: $secondary;
-$menu-item-hover: $secondary-hover;
+$menu-item-active: #b83c34;
+$menu-item-hover: #b83c34;
 $menu-item-active-mobile: #1A1635;
 $menu-item-color: black;
 $menu-item-color-mobile: white;
@@ -61,11 +61,11 @@ input {
 
 /* $className-active is used to extend with routerLinkActive functionality */
 .menu-item-active {
-  background-color: $secondary-hover;
+  background-color: $menu-item-active;
 }
 
 .menu-item:hover {
-  background-color: $primary-active;
+  background-color: $menu-item-hover;
 }
 
 .menu-item-text {
@@ -102,16 +102,16 @@ input {
 
 @media (min-width: 768px) {
   .menu-item:hover {
-    background-color: $secondary-hover;
+    background-color: $menu-item-hover;
     border-radius: 12px;
   }
   /*  $className-active is used to extend with routerLinkActive functionality */
   .menu-item-active {
-    background-color: $secondary;
+    background-color: $menu-item-active;
     border-radius: 12px;
   }
   .menu-item-active:hover {
-    background-color: $secondary;
+    background-color: $menu-item-hover;
     border-radius: 12px;
   }
   .menu-item-text {
@@ -507,7 +507,7 @@ th {
 }
 
 .dropdown-item:hover {
-  color: $black-25;
+  color: white;
   background-color: $secondary-hover;
 }
 
@@ -955,6 +955,34 @@ ngb-datepicker {
   background-color: $primary-hover;
 }
 
+.btn-fat{
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0.3rem 2rem;
+  border-radius: 24px;
+  font-size: 1rem;
+  color: $white;
+  background-color: $reverse;
+}
+
+.btn-fat:hover {
+  color: $white;
+  background-color: $reverse-hover;
+}
+
+.btn-fat:hover:active {
+  color: $white;
+  background-color: $reverse-hover;
+}
+
+.btn-fat:active {
+  color: $white;
+  background-color: $reverse-hover;
+}
+
 .btn-secondary {
   height: 2.75rem;
   display: flex;
@@ -963,23 +991,23 @@ ngb-datepicker {
   border-radius: 8px;
   border: none;
   font-size: 1rem;
-  color: $black-25;
-  background-color: $secondary;
+  color: white;
+  background-color: $reverse;
 }
 
 .btn-secondary:hover {
-  color: $black-25;
-  background: $secondary-hover;
+  color: white;
+  background: $reverse-hover;
 }
 
 .btn-secondary:hover:active {
-  color: $black-25;
-  background: $secondary-hover;
+  color: white;
+  background: $reverse-hover;
 }
 
 .btn-secondary:active {
-  color: $black-25;
-  background: $secondary-hover;
+  color: white;
+  background: $reverse-hover;
 }
 
 .btn-outline-primary {
