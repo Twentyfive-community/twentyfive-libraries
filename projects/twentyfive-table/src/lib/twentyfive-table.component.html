@@ -5,10 +5,10 @@
   <tr>
     <th *ngIf="showSwitch" scope="col">{{ switchHeaderText }}</th>
 
-    <th *ngFor="let elem of headers" scope="col" (click)="sortable ? sortingColumn(elem.value) : null"
-        [ngStyle]="{'cursor': sortable ? 'pointer' : 'default'}">
+    <th *ngFor="let elem of headers" scope="col" (click)="sortable && elem.sortable ? sortingColumn(elem.value) : null"
+        [ngStyle]="{'cursor': sortable && elem.sortable ? 'pointer' : 'default'}">
       {{ elem.name }}
-      <span *ngIf="sortable && sortColumn === elem.value" style="color: white">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
+      <span *ngIf="(sortable && elem.sortable) && sortColumn === elem.value" style="color: white">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
     </th>
 
     <th *ngIf="showActions" scope="col"></th>

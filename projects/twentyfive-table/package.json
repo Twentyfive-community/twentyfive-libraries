@@ -1,6 +1,6 @@
 {
   "name": "twentyfive-table",
-  "version": "0.0.104",
+  "version": "0.0.105",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
