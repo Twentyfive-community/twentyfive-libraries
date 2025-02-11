@@ -17,6 +17,8 @@ $menu-item-color: black;
 $menu-item-color-mobile: white;
 $button-color-active: #19194b;
 
+$background: #EDEDED;
+
 *[role="button"] > * {
   cursor: pointer
 }
@@ -27,7 +29,7 @@ body {
   width: 100vw;
   overflow-y: hidden;
   overflow-x: hidden;
-  background-color: #EDEDED;
+  background-color: $background;
 }
 
 i {
@@ -438,7 +440,7 @@ $icon-height: 2.25rem;
 
 .thead-primary {
   --bs-table-color: #FFFFFF;
-  --bs-table-bg: #1A1660;
+  --bs-table-bg: #A10702;
 }
 
 th {
@@ -992,7 +994,7 @@ ngb-datepicker {
   border: none;
   font-size: 1rem;
   color: white;
-  background-color: $reverse;
+  background-color: $secondary;
 }
 
 .btn-secondary:hover {
@@ -1019,7 +1021,7 @@ ngb-datepicker {
   align-items: center;
   border-radius: 8px;
   font-size: 1rem;
-  background-color: $white;
+  background-color: $background;
 }
 
 .btn-outline-primary:hover {
