@@ -30,7 +30,7 @@ export class NavComponent implements OnInit {
   @Input() customCssClass: string = '';
   @Input() customStyles: {[p: string]: any} = {}
 
-  showNavbar: boolean = true;
+  @Input() showNavbar: boolean = true;
   @Input() showSideMenu: boolean = true;
   @Input() showLogo: boolean = true;
   @Input() logoCentered: boolean = false;
