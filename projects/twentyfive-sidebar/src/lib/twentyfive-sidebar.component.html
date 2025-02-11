@@ -1,5 +1,6 @@
 <nav class="sidebar nav-sidebar h-100">
-  <div *ngFor="let elem of sidebarItems">
+  <!-- this class is to follow new design, if you use it define it in scss of your project -->
+  <div *ngFor="let elem of sidebarItems" class="new-padded-menu-item">
     <lib-twentyfive-menu-item
       [menuItem]="elem"
       [type]="elem.type ?? 'STANDARD'"

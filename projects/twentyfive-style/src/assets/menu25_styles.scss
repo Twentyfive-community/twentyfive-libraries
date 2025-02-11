@@ -1,4 +1,4 @@
-@import "./variables";
+@import "./menu25_variables";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 @import "bootstrap/dist/css/bootstrap.css";
 
@@ -10,8 +10,8 @@ $navbar-padding-x: 20px;
 $navbar-toggler-focus-width: 1;
 
 /* our colors */
-$menu-item-active: #D9D9D9;
-$menu-item-hover: #EEEEEE;
+$menu-item-active: $secondary;
+$menu-item-hover: $secondary-hover;
 $menu-item-active-mobile: #1A1635;
 $menu-item-color: black;
 $menu-item-color-mobile: white;
@@ -60,7 +60,7 @@ input {
 
 /* $className-active is used to extend with routerLinkActive functionality */
 .menu-item-active {
-  background-color: $primary-active;
+  background-color: $secondary-hover;
 }
 
 .menu-item:hover {
@@ -106,15 +106,19 @@ input {
   /*  $className-active is used to extend with routerLinkActive functionality */
   .menu-item-active {
     background-color: $secondary;
+    border-radius: 12px;
   }
   .menu-item-active:hover {
     background-color: $secondary;
   }
   .menu-item-text {
-    color: $black-25;
+    color: $white;
   }
   .menu-icon {
-    color: $black-25;
+    color: $white;
+  }
+  .new-padded-menu-item {
+    padding: 0 1rem;
   }
 }
 
@@ -573,7 +577,7 @@ lib-twentyfive-autocomplete span {
 }
 
 .modal-header {
-  background-color: #1A1660;
+  background-color: #A10702;
   color: $white;
 }
 
