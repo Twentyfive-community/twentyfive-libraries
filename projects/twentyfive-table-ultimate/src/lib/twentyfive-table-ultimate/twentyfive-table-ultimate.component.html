@@ -67,12 +67,12 @@
       (pageChange)="onPaginationChange($event, pageSize)">
     </ngb-pagination>
 
-    <app-twentyfive-dropdown
+    <lib-twentyfive-dropdown
       [model]="pageSize"
       [buttonStyle]="ButtonTheme.Primary"
       (modelChange)="onPaginationChange(page, $event)"
       [dropdownItems]="dropdownElements">
-    </app-twentyfive-dropdown>
+    </lib-twentyfive-dropdown>
   </div>
 </div>
 
