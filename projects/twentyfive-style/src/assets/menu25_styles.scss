@@ -310,7 +310,7 @@ label {
 
 
 /* SPINNER */
-$diameter: 4.5rem;
+$diameter: 3.5rem;
 $spinner: 0.125rem;
 $spinner-color: $primary !default;
 $icon-width: 2.25rem;
@@ -319,6 +319,7 @@ $icon-height: 2.25rem;
   height: $diameter;
   width: $diameter;
   position: absolute;
+  z-index: 1000;
   top: 50%;
   left: 50%;
   margin-top: -($diameter/2);
@@ -403,10 +404,10 @@ $icon-height: 2.25rem;
 
 @keyframes wink {
   from {
-    opacity: 0;
+    opacity: 1;
   }
   to {
-    opacity: 1;
+    opacity: 0;
   }
 }
 
@@ -1011,6 +1012,70 @@ ngb-datepicker {
   color: white;
   background: $reverse-hover;
 }
+
+.btn-fat-outline-primary{
+  color: $primary;
+  border-color: $primary;
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  font-size: 1rem;
+  background-color: $background;
+}
+
+
+.btn-fat-outline-primary:hover {
+  border-color: $primary;
+  color: $white;
+  background-color: $primary;
+}
+
+.btn-fat-outline-primary:hover:active {
+  border-color: $primary;
+  color: $white;
+  background-color: $primary;
+}
+
+.btn-fat-outline-primary:active {
+  border-color: $primary;
+  color: $white;
+  background-color: $primary;
+}
+
+
+.btn-fat-outline-secondary{
+  color: $reverse;
+  border-color: $reverse;
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  font-size: 1rem;
+  background-color: $background;
+}
+
+
+.btn-fat-outline-secondary:hover {
+  border-color: $reverse;
+  color: $white;
+  background-color: $reverse;
+}
+
+.btn-fat-outline-secondary:hover:active {
+  border-color: $reverse;
+  color: $white;
+  background-color: $reverse;
+}
+
+.btn-fat-outline-secondary:active {
+  border-color: $reverse;
+  color: $white;
+  background-color: $reverse;
+}
+
 
 .btn-outline-primary {
   color: $primary;
