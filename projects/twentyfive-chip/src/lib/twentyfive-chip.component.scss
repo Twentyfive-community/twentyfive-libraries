@@ -1,0 +1,8 @@
+.chip-text {
+  display: inline-block;  /* Assicura che le proprietà di overflow funzionino */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle; /* Per allineare correttamente il testo rispetto alle icone */
+
+}
