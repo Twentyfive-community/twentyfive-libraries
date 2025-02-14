@@ -28,6 +28,7 @@
         [headers]="headers"
         [showSwitch]="showSwitch"
         [switchText]="switchText"
+        (changeSwitchValue)="switchClick.emit(row)"
         [id]="id"
         [checked]="row[checkedField]"
         [disabled]="disabled"

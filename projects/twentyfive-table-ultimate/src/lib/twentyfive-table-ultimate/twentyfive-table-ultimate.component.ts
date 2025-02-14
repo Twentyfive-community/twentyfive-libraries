@@ -93,7 +93,7 @@ export class TwentyfiveTableUltimateComponent implements OnInit, OnChanges {
 
 
   /** pagina attuale */
-  page: number = 1;
+  page: number = 0;
   /** totale pagine */
   totalPages: number = 0;
   /** totale elementi nella table
@@ -108,7 +108,7 @@ export class TwentyfiveTableUltimateComponent implements OnInit, OnChanges {
   };
 
   tableState: TableState = {
-    page: 1,
+    page: 0,
     pageSize: 5,
     sortColumn: '',
     sortDirection: SortDirection.NONE
