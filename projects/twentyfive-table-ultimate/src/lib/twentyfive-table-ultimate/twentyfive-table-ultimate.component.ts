@@ -144,7 +144,7 @@ export class TwentyfiveTableUltimateComponent implements OnInit, OnChanges {
     this.expandedRowIndex = -1;
 
     this.tableState = {
-      page: this.page,
+      page: this.page-1,
       pageSize: this.pageSize,
       sortColumn: this.sortEvent.sortColumn,
       sortDirection: this.sortEvent.sortDirection
