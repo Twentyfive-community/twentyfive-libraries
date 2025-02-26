@@ -1,17 +1,17 @@
 {
   "name": "twentyfive-not-found",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "peerDependencies": {
-    "@angular/common": "^16.2.0",
-    "@angular/core": "^16.2.0"
+    "@angular/common": "^17.3.12",
+    "@angular/core": "^17.3.12"
   },
   "dependencies": {
-    "@ng-bootstrap/ng-bootstrap": "^15.1.1",
+    "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
     "tslib": "^2.3.0",
-    "generic-buttons": "^0.0.45"
+    "generic-buttons": "^0.0.59"
   },
   "sideEffects": false
 }
