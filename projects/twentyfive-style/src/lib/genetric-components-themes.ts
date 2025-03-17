@@ -111,7 +111,7 @@ export enum ButtonTheme {
   DisabledOutline = 'btn-outline-disabled',
   OnlyText = 'btn-only-text',
   Fat = 'btn-fat',
-  DisabledFat = 'btn-fat-disable',
+  DisabledFat = 'btn-fat-disabled',
   OutlineFat = 'btn-fat-outline-primary',
   OutlineFatSecondary = 'btn-fat-outline-secondary',
 
