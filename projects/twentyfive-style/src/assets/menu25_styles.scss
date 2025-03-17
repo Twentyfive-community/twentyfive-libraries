@@ -999,6 +999,12 @@ ngb-datepicker {
   background-color: $secondary;
 }
 
+.btn-fat-disabled:disabled {
+  color: $white;
+  opacity: unset;
+  background-color: $secondary;
+}
+
 .btn-secondary {
   height: 2.75rem;
   display: flex;
