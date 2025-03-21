@@ -968,20 +968,48 @@ ngb-datepicker {
   border-radius: 24px;
   font-size: 1rem;
   color: $white;
-  background-color: $reverse;
+  background-color: $primary;
 }
 
 .btn-fat:hover {
   color: $white;
-  background-color: $reverse-hover;
+  background-color: $primary-hover;
 }
 
 .btn-fat:hover:active {
   color: $white;
-  background-color: $reverse-hover;
+  background-color: $primary-hover;
 }
 
 .btn-fat:active {
+  color: $white;
+  background-color: $primary-hover;
+}
+
+.btn-fat-reverse{
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0.3rem 2rem;
+  border-radius: 24px;
+  font-size: 1rem;
+  color: $white;
+  background-color: $reverse;
+}
+
+.btn-fat-reverse:hover {
+  color: $white;
+  background-color: $reverse-hover;
+}
+
+.btn-fat-reverse:hover:active {
+  color: $white;
+  background-color: $reverse-hover;
+}
+
+.btn-fat-reverse:active {
   color: $white;
   background-color: $reverse-hover;
 }
