@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <div class="card-body">
+  <div (click)="cardClick.emit(row)" class="card-body">
 
     <label *ngIf="showSwitch" class="text-semibold ">{{switchLabelText}}</label>
 

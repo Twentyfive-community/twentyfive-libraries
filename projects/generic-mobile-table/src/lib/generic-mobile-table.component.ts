@@ -30,6 +30,7 @@ export class GenericMobileTableComponent {
   @Input() customSwitchCssClass: string = '';
   @Input() customCssClass: string = '';
   @Output() switchClick = new EventEmitter<any>();
+  @Output() cardClick = new EventEmitter<any>();
 
   changeSwitchValue(event: any) {
     this.switchClick.emit(event);

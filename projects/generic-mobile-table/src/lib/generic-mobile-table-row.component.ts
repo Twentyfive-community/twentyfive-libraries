@@ -32,6 +32,7 @@ export class GenericMobileTableRowComponent{
   @Input() checked: boolean = false;
 
   @Output() changeSwitchValue = new EventEmitter<any>();
+  @Output() cardClick = new EventEmitter<any>();
 
   fields: string[] = [];
 
