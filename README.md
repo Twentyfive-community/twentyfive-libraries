@@ -1,27 +1,27 @@
-# TwentyfiveLibraries
+1 - Aggiorna la versione nel package.json della libreria
+    (rispettando il Semantic Versioning)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+2 - Esegui il build della libreria dalla root del progetto:
+       ng build <nome-libreria>
 
-## Development server
+3 - Entra nella cartella dist generata:
+       cd dist/<nome-libreria>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+4 - Verifica di essere loggato su npm con l'account corretto (twentyfivesrl):
+       npm whoami
 
-## Code scaffolding
+4.5 - Se necessario effettua il login:
+       npm login
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+5 - Pubblica il pacchetto:
+       npm publish
 
-## Build
+5.5 - Se richiesto, passa il codice OTP del 2FA:
+        npm publish --otp=<codice>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+6 - Verifica la pubblicazione su npmjs.com
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+7 - Nel progetto consumer, dopo la pubblicazione aggiorna la dipendenza:
+        npm install <nome-libreria>@latest
