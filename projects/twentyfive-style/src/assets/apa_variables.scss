@@ -15,10 +15,10 @@ $menu-item-hover: lighten($primary, 15%) !default;
 $button-color-active: darken($primary, 15%) !default;
 $menu-item-color: black !default;
 
-$secondary: #CDBB6D !default;
+$secondary: #D9B78A !default;
 $secondary-hover: lighten($secondary, 10%) !default; // Lighter and slightly more saturated.
 $secondary-active: darken($secondary, 10%) !default; // Slightly darker and less saturated.
-$secondary-opaque: rgba(#CDBB6D, 0.5) !default;
+$secondary-opaque: rgba(#D9B78A, 0.5) !default;
 $menu-item-active-mobile: darken($secondary, 20%) !default;
 $menu-item-color-mobile: white !default;
 $menu-item-active: lighten($secondary, 5%) !default;
